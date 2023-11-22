@@ -89,7 +89,7 @@ DATABASES = {
         'PORT': 3000,
         'NAME': 'pablofederico',
         'USER': 'postgres',
-        'PASSWORD': '4068taller4068',
+        'PASSWORD': '4068xrcz4068',
     }    
 }
 
