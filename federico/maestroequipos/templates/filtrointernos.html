@@ -1,0 +1,98 @@
+<!-- templates/mi_template.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vista</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            border: 1px solid #000; /* Borde de 1 píxel sólido en color negro */
+            padding: 8px; /* Espaciado para mejorar la apariencia */
+            text-align: left;
+        }
+    
+        th {
+            background-color: #f2f2f2; /* Fondo gris para las celdas de encabezado */
+        }
+        /* Estilos para el formulario de filtro */
+        .filtro-form {
+            margin: 10px 0;
+        }
+        /* Estilos para el contenedor de cada filtro */
+        .filtro-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para la etiqueta del filtro */
+        .filtro-item label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Estilos para el campo de filtro */
+        .filtro-item select,
+        .filtro-item input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        /* Estilos para el botón "Filtrar" */
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a mi vista</h1>
+    <p>Esta es una página de ejemplo para probar la vista en Django.</p>
+    <p><a href="{% url 'cargointernos' %}">Cargo de Equipos</a></p>
+    <p><a href="{%url 'filtrointernos' %}">Filtro Equipos</a></p>
+    
+    <form method="get">
+        {{ filter.form.as_p }}
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Editar</th>
+                {% for nombre in lista_nombres %}
+                    <th>{{ nombre }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato, interno in lista_internos %}
+                <tr>
+                    <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
+                    {% for data in interno %}
+                            <td>{{ data }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
