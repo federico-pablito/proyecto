@@ -4,7 +4,7 @@ Django==3.2.23
 django-environ==0.11.2
 django-filter==23.3
 djangorestframework==3.14.0
-filelock==3.13.1
+filelock==3.12.1
 numpy==1.26.1
 pandas==2.1.2
 Pillow==10.1.0
