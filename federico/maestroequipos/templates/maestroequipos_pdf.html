@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +21,9 @@
     </style>
 </head>
 <body>
-    <p><a href="{% url 'cargointernos' %}">Cargo de Equipos</a></p>
-    <p><a href="{%url 'filtrointernos' %}">Filtro Equipos</a></p>
-    <p><a href="{%url 'internos_pd_view' %}">Internos PDF</a></p>
     <table>
         <thead>
             <tr>
-                <th>Editar</th>
                 {% for nombre in lista_nombres %}
                     <th>{{ nombre }}</th>
                 {% endfor %}
@@ -37,7 +32,6 @@
         <tbody>
             {% for dato, interno in lista_internos %}
                 <tr>
-                    <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
                     {% for data in interno %}
                             <td>{{ data }}</td>
                     {% endfor %}
