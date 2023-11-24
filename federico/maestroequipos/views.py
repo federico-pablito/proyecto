@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect
 from tablamadre.models import Internos, TablaMadre, Reparaciones
 from .forms import internosforms
 from .filters import internosfilter
+from io import BytesIO
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.views import View
+from xhtml2pdf import pisa
 
 
 def mainmaestroequipos(request):
@@ -64,6 +69,16 @@ def editar_interno(request, id=None):
         form = internosforms(instance=instancia)
     return render(request, 'editar_interno.html', {'form': form, 'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
 
+def internos_pdf(template_src, context_dict={}):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), content_type='application/pdf')
+    return None
+
+
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = Internos._meta
@@ -71,8 +86,21 @@ def listador(datos):
     lista_nombres = []
     for nombre in nombres:
         if nombre == 'up':
+            lista_nombres.append('up_id')
             lista_nombres.append(nombre)
             lista_nombres.append('ubicacion')
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
+
+
+class internos_pd_view(View):
+    def get(self, request, *args, **kwargs):
+        internos = Internos.objects.all()
+        lista_internos, lista_nombres = listador(internos)
+        context = {
+            'lista_internos': lista_internos,
+            'lista_nombres': lista_nombres,
+        }
+        pdf = internos_pdf('maestroequipos_pdf.html', context)
+        return HttpResponse(pdf, content_type='application/pdf')
