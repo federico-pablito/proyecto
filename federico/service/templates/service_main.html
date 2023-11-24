@@ -6,22 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Vista</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-    
-        th, td {
-            border: 1px solid #000; /* Borde de 1 píxel sólido en color negro */
-            padding: 8px; /* Espaciado para mejorar la apariencia */
-            text-align: left;
-        }
-    
-        th {
-            background-color: #f2f2f2; /* Fondo gris para las celdas de encabezado */
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
     <h1>Vista General Maestros</h1>
@@ -32,26 +18,28 @@
     </form>
     <p><a href="{% url 'create-serv' %}">crear serv</a></p>
     <p><a href="{%url 'internos_pd_view' %}">Services PDF</a></p>
-    <table>
-        <thead>
-            <tr>
-                <th>Editar</th>
-                {% for nombre in lista_nombres %}
-                    <th>{{ nombre }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for dato, services in lista_services %}
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
-                    {% for data in services %}
-                            <td>{{ data }}</td>
+                    <th scope="col">Editar</th>
+                    {% for nombre in lista_nombres %}
+                        <th scope="col">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for dato, services in lista_services %}
+                    <tr>
+                        <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
+                        {% for data in services %}
+                                <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
