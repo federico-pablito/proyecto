@@ -19,7 +19,7 @@ def logistica_crear(request):
             up = Internos.objects.get(id=interno.id).up
             last_reparacion = Reparaciones.objects.filter(interno=interno).last()
             if last_reparacion is None:
-                last_reparacion = None
+                last_reparacion = 1
             new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
                                          logistica=new_logistica, observaciones=descripcion, dolardia=0, reparaciones=last_reparacion)
             new_tabla_madre.save()

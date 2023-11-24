@@ -54,7 +54,7 @@ def editar_interno(request, id=None):
     if id:
         instancia = Internos.objects.get(pk=id)
     else:
-        instancia = Interno()  # Asigna una instancia de alquiler
+        instancia = Internos()  # Asigna una instancia de alquiler
     if request.method == 'POST':
         form = internosforms(request.POST, instance=instancia)
         if form.is_valid():

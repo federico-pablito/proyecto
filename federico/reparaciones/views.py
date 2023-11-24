@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from tablamadre.models import Reparaciones, Internos, TablaMadre
 from .forms import reparaciones_form
 from .filters import reparaciones_filter

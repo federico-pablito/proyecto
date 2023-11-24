@@ -6,12 +6,12 @@ class TablaMadre(models.Model):
     fecha_registro = models.DateTimeField(auto_now_add=True)
     internos = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     services = models.ForeignKey('Services', on_delete=models.CASCADE, default=1)
+    novedades = models.ForeignKey('Novedades', on_delete=models.CASCADE, default=1)
     unidadesdeproduccion = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
     reparaciones = models.ForeignKey('Reparaciones', on_delete=models.CASCADE, default=1)
     logistica = models.ForeignKey('Logistica', on_delete=models.CASCADE, default=1)
     dolardia = models.IntegerField()
     partesdiarions = models.ForeignKey('PartesDiarios', on_delete=models.CASCADE, default=1)
-    novedades = models.ForeignKey('Novedades', on_delete=models.CASCADE, default=1)
     observaciones = models.CharField(max_length=512)
     def __str__(self):
         return ', '.join([str(self.internos), str(self.services), str(self.unidadesdeproduccion), str(self.reparaciones), str(self.logistica), str(self.dolardia), str(self.partesdiarions), str(self.novedades), str(self.observaciones), str(self.id)])
@@ -23,10 +23,10 @@ class Internos(models.Model):
     up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
     marca = models.CharField(max_length=256)
     modelo = models.CharField(max_length=512)
-    tipovehiculo = models.CharField(max_length=512)
+    tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
     chasis = models.CharField(max_length=512)
     motor = models.CharField(max_length=512)
-    dominio = models.CharField(max_length=15)
+    dominio = models.CharField(max_length=255, default='default_value')
     anio = models.IntegerField()
     aseguradora = models.CharField(max_length=512)
     seguro = models.CharField(max_length=512)
@@ -51,7 +51,7 @@ class Internos(models.Model):
              str(self.propietario), str(self.chofer), str(self.alquilado), str(self.valorpesos), str(self.valordolares),
              str(self.orden), str(self.actividadvehiculo)])
 class Services(models.Model):
-    id = models.IntegerField(primary_key=True, serialize=True, auto_created=True)
+    id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     fechaservicio = models.DateTimeField()
     fechaparte = models.DateTimeField()
@@ -67,7 +67,7 @@ class Services(models.Model):
 
 
 class UnidadesdeProduccion(models.Model):
-    id = models.IntegerField(primary_key=True, serialize=True, auto_created=True)
+    id = models.AutoField(primary_key=True)
     unidadproduccion = models.CharField(max_length=15)
     ubicacion = models.CharField(max_length=512)
     def __str__(self):
@@ -91,7 +91,7 @@ class Reparaciones(models.Model):
 
 
 class Logistica(models.Model):
-    id = models.IntegerField(primary_key=True, serialize=True, auto_created=True)
+    id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     carreton = models.CharField(max_length=512)
     choferlogistica = models.CharField(max_length=512)
@@ -111,7 +111,7 @@ class Logistica(models.Model):
 
 
 class PartesDiarios(models.Model):
-    id = models.IntegerField(primary_key=True, serialize=True, auto_created=True)
+    id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     proveedores = models.CharField(max_length=512)
     razonsocial = models.CharField(max_length=512)
@@ -135,8 +135,8 @@ class PartesDiarios(models.Model):
     def __str__(self):
         return ', '.join([str(self.interno), str(self.proveedores), str(self.razonsocial), str(self.cantidadequipos), str(self.kilometrajeinicial), str(self.kilometrajefinal), str(self.turnoreparacion), str(self.horometro), str(self.hsxkmcarga), str(self.tipocombustible), str(self.tipogasoil), str(self.tiponafta), str(self.litrosgasoil), str(self.litrosnafta), str(self.tipoaceite), str(self.litrosaceite), str(self.maquinista), str(self.kmsxhs), str(self.id), str(self.tipodefalla), str(self.reparado)])
 class Novedades(models.Model):
-    id = models.IntegerField(primary_key=True, serialize=True, auto_created=True)
-    interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+    id = models.AutoField(primary_key=True)
+    Internos = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     tipofalla = models.CharField(max_length=512)
     reparado = models.BooleanField(default=False)
     def __str__(self):
