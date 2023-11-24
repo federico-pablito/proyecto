@@ -22,20 +22,19 @@
             background-color: #f2f2f2; /* Fondo gris para las celdas de encabezado */
         }
     </style>
+    <script>
+        document.querySelectorAll('th').forEach(header => {
+        header.addEventListener('click', () => {
+            window.location.search = `?order_by=${header.dataset.field}`;
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Vista General Maestros</h1>
-    <p>Esta es una página de ejemplo para probar la vista en Django.</p>
-    <form method="get">
-        {{ filter.form.as_p }}
-        <button type="submit">Filtrar</button>
-    </form>
-    <p><a href="{% url 'create-serv' %}">crear serv</a></p>
-    <p><a href="{%url 'internos_pd_view' %}">Services PDF</a></p>
     <table>
         <thead>
             <tr>
-                <th>Editar</th>
                 {% for nombre in lista_nombres %}
                     <th>{{ nombre }}</th>
                 {% endfor %}
@@ -44,7 +43,6 @@
         <tbody>
             {% for dato, services in lista_services %}
                 <tr>
-                    <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
                     {% for data in services %}
                             <td>{{ data }}</td>
                     {% endfor %}
@@ -52,20 +50,5 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last</a>
-            {% endif %}
-        </span>
-    </div>
 </body>
 </html>
