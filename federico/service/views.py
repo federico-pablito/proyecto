@@ -3,7 +3,11 @@ from tablamadre.models import Services, TablaMadre, Internos, Reparaciones
 from .forms import service_form
 from .filters import service_filter
 from django.core.paginator import Paginator
-
+from io import BytesIO
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.views import View
+from xhtml2pdf import pisa
 
 # Create your views here.
 def service_main(request):
@@ -74,6 +78,15 @@ def crear_serv(request):
     lista_services, lista_nombres = listador(partediario)
     return render(request, 'crean_service.html', {'partediario': partediario, 'form': form, 'lista_services': lista_services, 'lista_nombres': lista_nombres,})
 
+def service_pdf(template_src, context_dict={}):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), content_type='application/pdf')
+    return None
+
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = Services._meta
@@ -91,3 +104,14 @@ def listador(datos):
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
+
+class internos_pd_view(View):
+    def get(self, request, *args, **kwargs):
+        services = Services.objects.all()
+        lista_services, lista_nombres = listador(services)
+        context = {
+            'lista_services': lista_services,
+            'lista_nombres': lista_nombres,
+        }
+        pdf = service_pdf('service_pdf.html', context)
+        return HttpResponse(pdf, content_type='application/pdf')
