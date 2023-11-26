@@ -6,62 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Vista</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-    
-        th, td {
-            border: 1px solid #000; /* Borde de 1 píxel sólido en color negro */
-            padding: 8px; /* Espaciado para mejorar la apariencia */
-            text-align: left;
-        }
-    
-        th {
-            background-color: #f2f2f2; /* Fondo gris para las celdas de encabezado */
-        }
-        /* Estilos para el formulario de filtro */
-        .filtro-form {
-            margin: 10px 0;
-        }
-        /* Estilos para el contenedor de cada filtro */
-        .filtro-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        /* Estilos para la etiqueta del filtro */
-        .filtro-item label {
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        /* Estilos para el campo de filtro */
-        .filtro-item select,
-        .filtro-item input {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 200px;
-        }
-
-        /* Estilos para el botón "Filtrar" */
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-    </style>
 </head>
 <body>
     <h1>Bienvenido a mi vista</h1>
@@ -74,25 +20,27 @@
         <button type="submit">Filtrar</button>
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Editar</th>
-                {% for nombre in lista_nombres %}
-                    <th>{{ nombre }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for dato, interno in lista_internos %}
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
-                    {% for data in interno %}
-                            <td>{{ data }}</td>
+                    <th scope="col">Editar</th>
+                    {% for nombre in lista_nombres %}
+                        <th scope="col">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for dato, interno in lista_internos %}
+                    <tr>
+                        <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
+                        {% for data in interno %}
+                                <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
