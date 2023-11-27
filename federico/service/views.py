@@ -63,12 +63,14 @@ def crear_serv(request):
             else:
                 new_service.necesidadservice = 'Necesita Service'
             interno = new_service.interno
-            up = Internos.objects.get(id=interno).up
+            up = Internos.objects.get(id=interno.id).up
             last_reparacion = Reparaciones.objects.filter(interno=interno).last()
-            if last_reparacion is None:
-                last_reparacion = None
             descripcion = form.cleaned_data.get('descripcion')
-            new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
+            if last_reparacion is None:
+                new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
+                                             observaciones=descripcion)
+            else:
+                new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
                                          reparaciones=last_reparacion, observaciones=descripcion)
             new_service.save()
             new_tabla_madre.services = new_service
