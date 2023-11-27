@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, services in lista_services %}
+                {% for dato, services in lista_reparaciones %}
                     <tr>
                         <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
                         {% for data in services %}
