@@ -6,7 +6,6 @@ class TablaMadre(models.Model):
     fecha_registro = models.DateTimeField(auto_now_add=True)
     internos = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     services = models.ForeignKey('Services', on_delete=models.CASCADE, default=1)
-    novedades = models.ForeignKey('Novedades', on_delete=models.CASCADE, default=1)
     unidadesdeproduccion = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
     reparaciones = models.ForeignKey('Reparaciones', on_delete=models.CASCADE, default=1)
     logistica = models.ForeignKey('Logistica', on_delete=models.CASCADE, default=1)
