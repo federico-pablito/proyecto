@@ -7,7 +7,7 @@
 
 </head>
 <body>
-    <p><a href="{% url 'partediario_crear' %}">Crear logistica</a></p>
+    <p><a href="{% url 'partediario_crear' %}">Crear parte</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, interno in lista_logistica %}
+                {% for dato, interno in lista_partediario %}
                     <tr>
                         <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
                         {% for data in interno %}
