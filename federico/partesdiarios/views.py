@@ -14,14 +14,14 @@ def partediario_crear(request):
         form = partediario_form(request.POST)
         if form.is_valid():
             descripcion = form.cleaned_data.pop('descripcion', None)
-            new_logistica = form.save()
-            interno = new_logistica.interno
+            new_parte = form.save()
+            interno = new_parte.interno
             up = Internos.objects.get(id=interno.id).up
-            last_reparacion = Reparaciones.objects.filter(interno=interno).last()
+            last_reparacion = Reparaciones.objects.filter(interno=interno.id).last()
             if last_reparacion is None:
-                last_reparacion = None
+                last_reparacion = Reparaciones.objects.first()
             new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         logistica=new_logistica, observaciones=descripcion, dolardia=0, reparaciones=last_reparacion)
+                                         partesdiarions=new_parte, observaciones=descripcion, dolardia=0, reparaciones=last_reparacion)
             new_tabla_madre.save()
             return redirect('partesdiario_main')
     else:

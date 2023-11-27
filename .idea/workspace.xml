@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7dd2ebd6-a628-4bfb-a78e-87cf9979e82d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/federico/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/tablamadre/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/tablamadre/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/partesdiarios/templates/partediario_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/federico/partesdiarios/templates/partediario_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/partesdiarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/partesdiarios/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
       <updated>1700666760126</updated>
       <workItem from="1700666764851" duration="826000" />
       <workItem from="1701102264647" duration="254000" />
-      <workItem from="1701102576791" duration="6289000" />
+      <workItem from="1701102576791" duration="8147000" />
     </task>
     <servers />
   </component>
