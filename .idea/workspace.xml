@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dd2ebd6-a628-4bfb-a78e-87cf9979e82d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/federico/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/reparaciones/templates/reparaciones_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/federico/reparaciones/templates/reparaciones_main.html" afterDir="false" />
-    </list>
+    <list default="true" id="7dd2ebd6-a628-4bfb-a78e-87cf9979e82d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +69,7 @@
       <updated>1700666760126</updated>
       <workItem from="1700666764851" duration="826000" />
       <workItem from="1701102264647" duration="254000" />
-      <workItem from="1701102576791" duration="9794000" />
+      <workItem from="1701102576791" duration="10653000" />
     </task>
     <servers />
   </component>
