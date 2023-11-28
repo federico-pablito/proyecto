@@ -93,7 +93,7 @@ DATABASES = {
         'USER': 'pablofederico_user',
         'PASSWORD': 'BRy4GuIDJEEuCcsH1JipZKiA3enLpWeB',
         'HOST': 'dpg-clifuh1e313s73aivbo0-a.ohio-postgres.render.com',
-        'PORT': '5432',
+        'PORT': '58708',
     }
 }
 
