@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ 
+DEBUG = True
 
-ALLOWED_HOSTS = [".onrender.com"]
 
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -46,9 +45,6 @@ INSTALLED_APPS = [
     'reparaciones',
     'logistica',
     'partesdiarios',
-    'login'
-    
-    
 ]
 
 
@@ -87,13 +83,13 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'default':{ 
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'localhost',
+        'PORT': 3000,
         'NAME': 'pablofederico',
-        'USER': 'pablofederico_user',
-        'PASSWORD': 'BRy4GuIDJEEuCcsH1JipZKiA3enLpWeB',
-        'HOST': 'dpg-clifuh1e313s73aivbo0-a.ohio-postgres.render.com',
-        'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': '4068xrcz4068',
     }
 }
 
