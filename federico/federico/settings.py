@@ -83,13 +83,13 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default':{ 
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'localhost',
-        'PORT': 3000,
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pablofederico',
-        'USER': 'postgres',
-        'PASSWORD': '4068xrcz4068',
+        'USER': 'pablofederico_user',
+        'PASSWORD': 'BRy4GuIDJEEuCcsH1JipZKiA3enLpWeB',
+        'HOST': 'dpg-clifuh1e313s73aivbo0-a.ohio-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
