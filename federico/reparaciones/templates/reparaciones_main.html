@@ -16,7 +16,7 @@
         {{ filter.form.as_p }}
         <button type="submit">Filtrar</button>
     </form>
-    <p><a href="{% url 'reparaciones-crear' %}">crear reparacion</a></p>
+    <p><a class="btn btn-primary" href="{% url 'reparaciones_pd_view' %}" role="button">Reparaciones PDF</a></p>
      <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -28,12 +28,19 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, services in lista_reparaciones %}
+                {% for dato in reparaciones %}
                     <tr>
-                        <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
-                        {% for data in services %}
-                                <td>{{ data }}</td>
-                        {% endfor %}
+                        <td><a class="btn btn-primary" href="{% url 'reparaciones-editar' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.ubicacion }}</td>
+                        <td>{{ dato.falla }}</td>
+                        <td>{{ dato.porcentajeavance }}</td>
+                        <td>{{ dato.fechareparacionestimada }}</td>
+                        <td>{{ dato.fechaentrada }}</td>
+                        <td>{{ dato.fechasalida }}</td>
+                        <td>{{ dato.estadoreparacion }}</td>
+                        <td>{{ dato.estadoequipo }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

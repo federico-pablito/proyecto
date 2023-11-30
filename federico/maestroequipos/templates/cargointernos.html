@@ -12,8 +12,6 @@
 <body>
     <h1>Vista General Maestros</h1>
     <p>Esta es una página de ejemplo para probar la vista en Django.</p>
-    <p><a href="{% url 'cargointernos' %}">Cargo de Equipos</a></p>
-    <p><a href="{%url 'filtrointernos' %}">Filtro Equipos</a></p>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -30,12 +28,34 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, interno in lista_internos %}
+                {% for dato in internos %}
                     <tr>
-                        <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
-                        {% for data in interno %}
-                                <td>{{ data }}</td>
-                        {% endfor %}
+                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.up }}</td>
+                        <td>{{ dato.marca }}</td>
+                        <td>{{ dato.modelo }}</td>
+                        <td>{{ dato.tipovehiculo }}</td>
+                        <td>{{ dato.chasis }}</td>
+                        <td>{{ dato.motor }}</td>
+                        <td>{{ dato.dominio }}</td>
+                        <td>{{ dato.anio }}</td>
+                        <td>{{ dato.aseguradora }}</td>
+                        <td>{{ dato.seguro }}</td>
+                        <td>{{ dato.seguro_pdf }}</td>
+                        <td>{{ dato.itv }}</td>
+                        <td>{{ dato.itv_pdf }}</td>
+                        <td>{{ dato.titulo_pdf }}</td>
+                        <td>{{ dato.tarjeta }}</td>
+                        <td>{{ dato.tarjeta_pdf }}</td>
+                        <td>{{ dato.propietario }}</td>
+                        <td>{{ dato.chofer }}</td>
+                        <td>{{ dato.alquilado }}</td>
+                        <td>{{ dato.valorpesos }}</td>
+                        <td>{{ dato.valordolares }}</td>
+                        <td>{{ dato.orden }}</td>
+                        <td>{{ dato.actividadvehiculo }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

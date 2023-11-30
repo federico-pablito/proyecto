@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from tablamadre.models import Reparaciones, Internos, TablaMadre
 from .forms import reparaciones_form
+from io import BytesIO
+from django.http import HttpResponse
+from django.template.loader import get_template
+from django.views import View
+from xhtml2pdf import pisa
 from .filters import reparaciones_filter
 
 # Create your views here.
@@ -52,20 +57,32 @@ def reparaciones_editar(request, id=None):
         form = reparaciones_form(instance=instancia)
         lista_reparaciones, lista_nombres = listador(tabla)
     return render(request, 'editar_reparaciones.html', {'tabla': tabla, 'form': form, 'lista_reparaciones':lista_reparaciones, 'lista_nombres': lista_nombres})
+
+def reparaciones_pdf(template_src, context_dict={}):
+    template = get_template(template_src)
+    html = template.render(context_dict)
+    result = BytesIO()
+    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), content_type='application/pdf')
+    return None
+
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = Reparaciones._meta
     nombres = [campo.name for campo in meta_clase.fields]
-    nombres_dependencias = [campo.name for campo in Internos._meta.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'interno':
-            for item in nombres_dependencias:
-                if item == 'up':
-                    lista_nombres.append(item)
-                else:
-                    lista_nombres.append(item)
-            lista_nombres.append('ubicacion')
-        else:
-            lista_nombres.append(nombre)
+        lista_nombres.append(nombre)
     return lista_datos, lista_nombres
+
+class reparaciones_pd_view(View):
+    def get(self, request, *args, **kwargs):
+        reparaciones = Reparaciones.objects.all()
+        lista_partes, lista_nombres = listador(reparaciones)
+        context = {
+            'reparaciones': reparaciones,
+            'lista_nombres': lista_nombres,
+        }
+        pdf = reparaciones_pdf('reparaciones_pdf.html', context)
+        return HttpResponse(pdf, content_type='application/pdf')

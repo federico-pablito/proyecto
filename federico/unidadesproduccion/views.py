@@ -12,7 +12,8 @@ def verunidadproduccion(request):
     nombres = [campo.name for campo in meta_clase.fields]
     tabla = UnidadesdeProduccion.objects.all()
     lista_unidadesp, lista_nombres = listador(tabla)
-    return render(request, 'holaquease.html', {'tabla': tabla, 'nombres': nombres, 'lista_unidadesp': lista_unidadesp, 'lista_nombres': lista_nombres,})
+    return render(request, 'holaquease.html',
+                  {'tabla': tabla, 'nombres': nombres, 'lista_unidadesp': lista_unidadesp, 'lista_nombres': lista_nombres})
 
 def unidadproduccion_pdf(template_src, context_dict={}):
     template = get_template(template_src)

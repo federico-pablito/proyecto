@@ -21,23 +21,36 @@
     </style>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                {% for nombre in lista_nombres %}
-                    <th>{{ nombre }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for dato, interno in lista_logistica %}
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    {% for data in interno %}
-                            <td>{{ data }}</td>
+                    <th scope="col">Editar</th>
+                    {% for nombre in lista_nombres %}
+                        <th scope="col">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for dato in tabla_logistica %}
+                    <tr>
+                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.carreton }}</td>
+                        <td>{{ dato.choferlogistica }}</td>
+                        <td>{{ dato.numeroremito }}</td>
+                        <td>{{ dato.proveedor }}</td>
+                        <td>{{ dato.origen }}</td>
+                        <td>{{ dato.destino }}</td>
+                        <td>{{ dato.kmentredestinos }}</td>
+                        <td>{{ dato.transporte }}</td>
+                        <td>{{ dato.consumekmxlitros }}</td>
+                        <td>{{ dato.valorviaje }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

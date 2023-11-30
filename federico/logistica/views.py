@@ -11,8 +11,9 @@ from xhtml2pdf import pisa
 def logistica_main(request):
     logistica = Logistica.objects.all()
     lista_logistica, lista_nombres = listador(logistica)
+    tabla_logistica = Logistica.objects.all()
     # HACER EL FILTRO
-    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,})
+    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,'tabla_logistica':tabla_logistica})
 
 def logistica_crear(request):
     if request.method == 'POST':
@@ -63,13 +64,8 @@ def listador(datos):
     nombres_dependencias = [campo.name for campo in Internos._meta.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'interno':
-            for item in nombres_dependencias:
-                if item == 'up':
-                    lista_nombres.append(item)
-                else:
-                    lista_nombres.append(item)
-            lista_nombres.append('ubicacion')
+        if nombre == 'up':
+            lista_nombres.append(nombre)
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
@@ -79,7 +75,7 @@ class logistica_pdf_view(View):
         logistica = Logistica.objects.all()
         lista_logistica, lista_nombres = listador(logistica)
         context = {
-            'lista_logistica': lista_logistica,
+            'tabla_logistica': logistica,
             'lista_nombres': lista_nombres,
         }
         pdf = logistica_pdf('logistica_pdf.html', context)

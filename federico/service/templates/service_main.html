@@ -16,8 +16,7 @@
         {{ filter.form.as_p }}
         <button type="submit">Filtrar</button>
     </form>
-    <p><a href="{% url 'create-serv' %}">crear serv</a></p>
-    <p><a href="{%url 'internos_pd_view' %}">Services PDF</a></p>
+    <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -29,12 +28,20 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, services in lista_services %}
+                {% for dato in services %}
                     <tr>
-                        <td><a href="{% url 'editar_serv' dato%}">Editar</a></td>
-                        {% for data in services %}
-                                <td>{{ data }}</td>
-                        {% endfor %}
+                        <td><a class="btn btn-primary" href="{% url 'service_editar' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.fechaservicio }}</td>
+                        <td>{{ dato.fechaparte }}</td>
+                        <td>{{ dato.ultimoservice }}</td>
+                        <td>{{ dato.planrealizado_hs }}</td>
+                        <td>{{ dato.planrealizado }}</td>
+                        <td>{{ dato.proximoservice }}</td>
+                        <td>{{ dato.hsxkmactuales }}</td>
+                        <td>{{ dato.hsxkmrestantes }}</td>
+                        <td>{{ dato.necesidadservice }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

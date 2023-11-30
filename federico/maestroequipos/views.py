@@ -12,7 +12,8 @@ from xhtml2pdf import pisa
 def mainmaestroequipos(request):
     internos = Internos.objects.all()
     lista_internos, lista_nombres = listador(Internos.objects.all())
-    return render(request, 'MainMaestro.html', {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
+    return render(request, 'MainMaestro.html',
+                  {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
 
 
 # Create your views here.
@@ -35,8 +36,9 @@ def cargointerno(request):
             new_tabla_madre.save()
     else:
         form = internosforms()
-    return render(request, 'cargointernos.html', {'internos': internos,
-                                                    'form': form, 'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
+    return render(request, 'cargointernos.html', {'internos': internos, 'form': form,
+                                                  'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
+
 
 def filtrointernos(request):
     internos = Internos.objects.all()
@@ -50,11 +52,13 @@ def filtrointernos(request):
         form = internosforms()
     filter = internosfilter(request.GET, queryset=internos)
     lista_internos, lista_nombres = listador(filter.qs)
-    return render(request, 'filtrointernos.html', { 'form': form,
-                                                     'filter': filter, 'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
+    return render(request, 'filtrointernos.html', {'form': form, 'internos': internos,
+                                                   'filter': filter, 'lista_internos': lista_internos,
+                                                   'lista_nombres': lista_nombres})
 
 
 def editar_interno(request, id=None):
+    internos = Internos.objects.all()
     lista_internos, lista_nombres = listador(Internos.objects.all())
     if id:
         instancia = Internos.objects.get(pk=id)
@@ -67,7 +71,9 @@ def editar_interno(request, id=None):
             return redirect('main-maestroequipos')
     else:
         form = internosforms(instance=instancia)
-    return render(request, 'editar_interno.html', {'form': form, 'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
+    return render(request, 'editar_interno.html',
+                  {'internos': internos, 'form': form, 'lista_internos': lista_internos, 'lista_nombres': lista_nombres})
+
 
 def internos_pdf(template_src, context_dict={}):
     template = get_template(template_src)

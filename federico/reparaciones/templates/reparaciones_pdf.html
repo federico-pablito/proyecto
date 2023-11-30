@@ -1,8 +1,11 @@
+<!-- templates/mi_template.html -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vista</title>
     <style>
         table {
             border-collapse: collapse;
@@ -21,7 +24,8 @@
     </style>
 </head>
 <body>
-    <div class="container d-inline-flex p-2">
+    <h1>Vista General Maestros</h1>
+     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -31,11 +35,18 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato in tabla %}
+                {% for dato in parte %}
                     <tr>
                         <td>{{ dato.id }}</td>
-                        <td>{{ dato.unidadproduccion }}</td>
+                        <td>{{ dato.interno }}</td>
                         <td>{{ dato.ubicacion }}</td>
+                        <td>{{ dato.falla }}</td>
+                        <td>{{ dato.porcentajeavance }}</td>
+                        <td>{{ dato.fechareparacionestimada }}</td>
+                        <td>{{ dato.fechaentrada }}</td>
+                        <td>{{ dato.fechasalida }}</td>
+                        <td>{{ dato.estadoreparacion }}</td>
+                        <td>{{ dato.estadoequipo }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

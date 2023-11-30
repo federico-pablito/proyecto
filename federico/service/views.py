@@ -30,7 +30,7 @@ def service_main(request):
     page_obj = paginator.get_page(page_number)
     lista_services, lista_nombres = listador(page_obj)
     # ARREGLAR EL FILTRO
-    return render(request, 'service_main.html', {'form': form, 'ilter':parte_filter,
+    return render(request, 'service_main.html', {'form': form, 'ilter':parte_filter, 'services':partediario,
                                                 'lista_services': lista_services, 'lista_nombres': lista_nombres,})
 
 def editar_serv(request, id=None):
@@ -78,7 +78,8 @@ def crear_serv(request):
     else:
         form = service_form()
     lista_services, lista_nombres = listador(partediario)
-    return render(request, 'crean_service.html', {'partediario': partediario, 'form': form, 'lista_services': lista_services, 'lista_nombres': lista_nombres,})
+    return render(request, 'crean_service.html', {'services': partediario, 'form': form,
+                                                  'lista_services': lista_services, 'lista_nombres': lista_nombres,})
 
 def service_pdf(template_src, context_dict={}):
     template = get_template(template_src)
@@ -93,21 +94,12 @@ def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = Services._meta
     nombres = [campo.name for campo in meta_clase.fields]
-    nombres_dependencias = [campo.name for campo in Internos._meta.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'interno':
-            for item in nombres_dependencias:
-                if item == 'up':
-                    lista_nombres.append(item)
-                else:
-                    lista_nombres.append(item)
-            lista_nombres.append('ubicacion')
-        else:
-            lista_nombres.append(nombre)
+        lista_nombres.append(nombre)
     return lista_datos, lista_nombres
 
-class internos_pd_view(View):
+class services_pd_view(View):
     def get(self, request, *args, **kwargs):
         services = Services.objects.all()
         lista_services, lista_nombres = listador(services)

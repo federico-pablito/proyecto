@@ -21,8 +21,7 @@
     </ul>
   </nav>
 <body>
-    <p><a href="{% url 'logistica_crear' %}">Crear logistica</a></p>
-    <p><a href="{% url 'logistica_pdf' %}">pdf</a></p>
+    <p><a class="btn btn-primary" href="{% url 'logistica_pdf_view' %}" role="button">Logistica PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -34,12 +33,21 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, interno in lista_logistica %}
+                {% for dato in tabla_logistica %}
                     <tr>
-                        <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
-                        {% for data in interno %}
-                                <td>{{ data }}</td>
-                        {% endfor %}
+                        <td><a class="btn btn-primary" href="{% url 'logistica_editar' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.carreton }}</td>
+                        <td>{{ dato.choferlogistica }}</td>
+                        <td>{{ dato.numeroremito }}</td>
+                        <td>{{ dato.proveedor }}</td>
+                        <td>{{ dato.origen }}</td>
+                        <td>{{ dato.destino }}</td>
+                        <td>{{ dato.kmentredestinos }}</td>
+                        <td>{{ dato.transporte }}</td>
+                        <td>{{ dato.consumekmxlitros }}</td>
+                        <td>{{ dato.valorviaje }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

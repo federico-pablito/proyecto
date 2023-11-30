@@ -32,23 +32,35 @@
 </head>
 <body>
     <h1>Vista General Maestros</h1>
-    <table>
-        <thead>
-            <tr>
-                {% for nombre in lista_nombres %}
-                    <th>{{ nombre }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for dato, services in lista_services %}
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    {% for data in services %}
-                            <td>{{ data }}</td>
+                    <th scope="col">Editar</th>
+                    {% for nombre in lista_nombres %}
+                        <th scope="col">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for dato in services %}
+                    <tr>
+                        <td><a class="btn btn-primary" href="{% url 'service_editar' dato.id%}" role="button">Editar</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.fechaservicio }}</td>
+                        <td>{{ dato.fechaparte }}</td>
+                        <td>{{ dato.ultimoservice }}</td>
+                        <td>{{ dato.planrealizado_hs }}</td>
+                        <td>{{ dato.planrealizado }}</td>
+                        <td>{{ dato.proximoservice }}</td>
+                        <td>{{ dato.hsxkmactuales }}</td>
+                        <td>{{ dato.hsxkmrestantes }}</td>
+                        <td>{{ dato.necesidadservice }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

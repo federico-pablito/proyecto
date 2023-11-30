@@ -12,7 +12,6 @@
 <body>
     <h1>Vista General Maestros</h1>
     <p>Esta es una página de ejemplo para probar la vista en Django.</p>
-    <p><a href="{% url 'cargointernos' %}">Ir a equipos</a></p>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

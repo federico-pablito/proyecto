@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <p><a href="{% url 'unidades_pdf_view' %}">Crear PDF</a></p>
+    <p><a class="btn btn-primary" href="{% url 'unidades_pdf_view' %}" role="button">Unidades PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -20,11 +20,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato, interno in lista_unidadesp %}
+                {% for dato in tabla %}
                     <tr>
-                        {% for data in interno %}
-                                <td>{{ data }}</td>
-                        {% endfor %}
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.unidadproduccion }}</td>
+                        <td>{{ dato.ubicacion }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

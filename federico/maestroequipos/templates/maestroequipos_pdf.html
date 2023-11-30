@@ -21,23 +21,47 @@
     </style>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                {% for nombre in lista_nombres %}
-                    <th>{{ nombre }}</th>
-                {% endfor %}
-            </tr>
-        </thead>
-        <tbody>
-            {% for dato, interno in lista_internos %}
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    {% for data in interno %}
-                            <td>{{ data }}</td>
+                    {% for nombre in lista_nombres %}
+                        <th scope="col">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for dato in internos %}
+                    <tr>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.up }}</td>
+                        <td>{{ dato.marca }}</td>
+                        <td>{{ dato.modelo }}</td>
+                        <td>{{ dato.tipovehiculo }}</td>
+                        <td>{{ dato.chasis }}</td>
+                        <td>{{ dato.motor }}</td>
+                        <td>{{ dato.dominio }}</td>
+                        <td>{{ dato.anio }}</td>
+                        <td>{{ dato.aseguradora }}</td>
+                        <td>{{ dato.seguro }}</td>
+                        <td>{{ dato.seguro_pdf }}</td>
+                        <td>{{ dato.itv }}</td>
+                        <td>{{ dato.itv_pdf }}</td>
+                        <td>{{ dato.titulo_pdf }}</td>
+                        <td>{{ dato.tarjeta }}</td>
+                        <td>{{ dato.tarjeta_pdf }}</td>
+                        <td>{{ dato.propietario }}</td>
+                        <td>{{ dato.chofer }}</td>
+                        <td>{{ dato.alquilado }}</td>
+                        <td>{{ dato.valorpesos }}</td>
+                        <td>{{ dato.valordolares }}</td>
+                        <td>{{ dato.orden }}</td>
+                        <td>{{ dato.actividadvehiculo }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
