@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< Updated upstream
 ALLOWED_HOSTS = []
+=======
+ALLOWED_HOSTS = ["*"]
+>>>>>>> Stashed changes
 
 
 # Application definition
@@ -45,6 +49,13 @@ INSTALLED_APPS = [
     'reparaciones',
     'logistica',
     'partesdiarios',
+<<<<<<< Updated upstream
+=======
+    'render',
+    'login'
+    
+    
+>>>>>>> Stashed changes
 ]
 
 
@@ -90,7 +101,13 @@ DATABASES = {
         'NAME': 'pablofederico',
         'USER': 'postgres',
         'PASSWORD': '4068xrcz4068',
+<<<<<<< Updated upstream
     }    
+=======
+        'HOST': 'localhost',
+        'PORT': '3000',
+    }
+>>>>>>> Stashed changes
 }
 
 

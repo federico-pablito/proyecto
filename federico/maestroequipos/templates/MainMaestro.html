@@ -23,6 +23,7 @@
 </head>
 <body>
     <p><a href="{% url 'cargointernos' %}">Cargo de Equipos</a></p>
+<<<<<<< Updated upstream
     <p><a href="{%url 'filtrointernos' %}">Filtro Equipos</a></p>
     <p><a href="{%url 'internos_pd_view' %}">Internos PDF</a></p>
     <table>
@@ -36,6 +37,13 @@
         </thead>
         <tbody>
             {% for dato, interno in lista_internos %}
+=======
+    <p><a href="{% url 'filtrointernos' %}">Filtro Equipos</a></p>
+    <p><a href="{% url 'internos_pd_view' %}">Internos PDF</a></p>
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
+>>>>>>> Stashed changes
                 <tr>
                     <td><a href="{% url 'editar_interno' dato%}">Editar</a></td>
                     {% for data in interno %}
