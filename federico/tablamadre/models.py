@@ -44,11 +44,7 @@ class Internos(models.Model):
     orden = models.CharField(max_length=512)
     actividadvehiculo = models.CharField(max_length=512)
     def __str__(self):
-        return ', '.join([str(self.id), str(self.interno), str(self.up), str(self.marca), str(self.modelo), str(self.tipovehiculo),str(self.chasis),
-             str(self.motor), str(self.dominio),str(self.anio), str(self.aseguradora), str(self.seguro), str(self.seguro_pdf),
-             str(self.itv), str(self.itv_pdf), str(self.titulo_pdf), str(self.tarjeta), str(self.tarjeta_pdf),
-             str(self.propietario), str(self.chofer), str(self.alquilado), str(self.valorpesos), str(self.valordolares),
-             str(self.orden), str(self.actividadvehiculo)])
+        return str(self.interno)
 class Services(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)

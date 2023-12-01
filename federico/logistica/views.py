@@ -47,7 +47,7 @@ def logistica_editar(request):
     else:
         form = logistica_form(instance=instancia)
     return render(request, 'partediario_editar.html',
-                  { 'form': form})
+                  {'form': form})
 def logistica_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
 	html  = template.render(context_dict)
