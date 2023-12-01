@@ -44,7 +44,7 @@
             <tbody>
                 {% for dato in reparaciones %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'reparaciones-editar' dato.id%}" role="button">Editar</a></td>
+                        <td><a class="btn btn-primary" href="{% url 'reparaciones-editar' dato.id %}" role="button">Editar</a></td>
                         <td>{{ dato.id }}</td>
                         <td>{{ dato.interno }}</td>
                         <td>{{ dato.ubicacion }}</td>

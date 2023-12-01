@@ -66,7 +66,7 @@ class UnidadesdeProduccion(models.Model):
     unidadproduccion = models.CharField(max_length=15)
     ubicacion = models.CharField(max_length=512)
     def __str__(self):
-        return ', '.join([str(self.id), str(self.unidadproduccion), str(self.ubicacion)])
+        return str(self.unidadproduccion)
 
 class Reparaciones(models.Model):
     id = models.AutoField(primary_key=True)
