@@ -11,9 +11,8 @@ from xhtml2pdf import pisa
 def logistica_main(request):
     logistica = Logistica.objects.all()
     lista_logistica, lista_nombres = listador(logistica)
-    tabla_logistica = Logistica.objects.all()
     # HACER EL FILTRO
-    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,'tabla_logistica':tabla_logistica})
+    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,'tabla_logistica':logistica})
 
 def logistica_crear(request):
     if request.method == 'POST':
@@ -34,7 +33,7 @@ def logistica_crear(request):
         form = logistica_form()
     return render(request, 'partediario_crear.html', {'form': form})
 
-def logistica_editar(request):
+def logistica_editar(request, id=None):
     if id:
         instancia = Logistica.objects.get(pk=id)
     else:
