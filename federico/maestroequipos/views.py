@@ -92,9 +92,10 @@ def listador(datos):
     lista_nombres = []
     for nombre in nombres:
         if nombre == 'up':
-            lista_nombres.append('up_id')
+            pass
+        elif nombre == 'interno':
             lista_nombres.append(nombre)
-            lista_nombres.append('ubicacion')
+            lista_nombres.append('UP')
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
