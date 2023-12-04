@@ -25,10 +25,7 @@ def service_main(request):
         partediario = parte_filter.qs
     order_by = request.GET.get('order_by', 'fechaservicio')
     partediario = partediario.order_by(order_by)
-    paginator = Paginator(partediario, 10)  # Show 10 items per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    lista_services, lista_nombres = listador(page_obj)
+    lista_services, lista_nombres = listador(partediario)
     # ARREGLAR EL FILTRO
     return render(request, 'service_main.html', {'form': form, 'ilter':parte_filter, 'services':partediario,
                                                 'lista_services': lista_services, 'lista_nombres': lista_nombres,})

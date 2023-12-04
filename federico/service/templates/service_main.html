@@ -24,12 +24,13 @@
     </ul>
 </nav>
 <body>
-    <h1>Vista General Maestros</h1>
-    <p>Esta es una página de ejemplo para probar la vista en Django.</p>
+    <h1>Services</h1>
+    <!--
     <form method="get">
         {{ filter.form.as_p }}
         <button type="submit">Filtrar</button>
     </form>
+    -->
     <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
@@ -61,20 +62,6 @@
             </tbody>
         </table>
     </div>
-    <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last</a>
-            {% endif %}
-        </span>
-    </div>
+
 </body>
 </html>
