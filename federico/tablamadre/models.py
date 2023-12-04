@@ -19,13 +19,10 @@ class TablaMadre(models.Model):
 class Internos(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.CharField(max_length=50)
-    up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
     marca = models.CharField(max_length=256)
     modelo = models.CharField(max_length=512)
-    tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
     chasis = models.CharField(max_length=512)
     motor = models.CharField(max_length=512)
-    dominio = models.CharField(max_length=255, default='default_value')
     anio = models.IntegerField()
     aseguradora = models.CharField(max_length=512)
     seguro = models.CharField(max_length=512)
@@ -43,6 +40,10 @@ class Internos(models.Model):
     valordolares = models.IntegerField()
     orden = models.CharField(max_length=512)
     actividadvehiculo = models.CharField(max_length=512)
+    up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
+    dominio = models.CharField(max_length=255, default='default_value')
+    tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
+
     def __str__(self):
         return str(self.interno)
 class Services(models.Model):
@@ -132,7 +133,6 @@ class PartesDiarios(models.Model):
 class Novedades(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-    tipofalla = models.CharField(max_length=512)
     reparado = models.BooleanField(default=False)
 def __str__(self):
         return ', '.join([str(self.interno), str(self.tipofalla), str(self.reparado), str(self.id)])
