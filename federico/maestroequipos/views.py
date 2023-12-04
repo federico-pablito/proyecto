@@ -91,11 +91,14 @@ def listador(datos):
     nombres = [campo.name for campo in meta_clase.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'up':
+        if nombre == 'up' or nombre == 'tipovehiculo':
             pass
         elif nombre == 'interno':
             lista_nombres.append(nombre)
             lista_nombres.append('UP')
+        elif nombre == 'modelo':
+            lista_nombres.append(nombre)
+            lista_nombres.append('Tipo Vehiculo')
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
