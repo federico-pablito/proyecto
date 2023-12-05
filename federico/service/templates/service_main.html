@@ -36,9 +36,9 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Editar</th>
+                    <th scope="col" class="align-middle">Editar</th>
                     {% for nombre in lista_nombres %}
-                        <th scope="col">{{ nombre }}</th>
+                        <th scope="col" class="align-middle">{{ nombre }}</th>
                     {% endfor %}
                 </tr>
             </thead>
@@ -46,17 +46,17 @@
                 {% for dato in services %}
                     <tr>
                         <td><a class="btn btn-primary" href="{% url 'service_editar' dato.id%}" role="button">Editar</a></td>
-                        <td>{{ dato.id }}</td>
-                        <td>{{ dato.interno }}</td>
-                        <td>{{ dato.fechaservicio }}</td>
-                        <td>{{ dato.fechaparte }}</td>
-                        <td>{{ dato.ultimoservice }}</td>
-                        <td>{{ dato.planrealizado_hs }}</td>
-                        <td>{{ dato.planrealizado }}</td>
-                        <td>{{ dato.proximoservice }}</td>
-                        <td>{{ dato.hsxkmactuales }}</td>
-                        <td>{{ dato.hsxkmrestantes }}</td>
-                        <td>{{ dato.necesidadservice }}</td>
+                        <td class="align-middle">{{ dato.id }}</td>
+                        <td class="align-middle">{{ dato.interno }}</td>
+                        <td class="align-middle">{{ dato.fechaservicio }}</td>
+                        <td class="align-middle">{{ dato.fechaparte }}</td>
+                        <td class="align-middle">{{ dato.ultimoservice }}</td>
+                        <td class="align-middle">{{ dato.planrealizado_hs }}</td>
+                        <td class="align-middle">{{ dato.planrealizado }}</td>
+                        <td class="align-middle">{{ dato.proximoservice }}</td>
+                        <td class="align-middle">{{ dato.hsxkmactuales }}</td>
+                        <td class="align-middle">{{ dato.hsxkmrestantes }}</td>
+                        <td class="align-middle">{{ dato.necesidadservice }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

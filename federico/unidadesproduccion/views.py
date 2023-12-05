@@ -27,7 +27,7 @@ def unidadproduccion_pdf(template_src, context_dict={}):
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = UnidadesdeProduccion._meta
-    nombres = [campo.name for campo in meta_clase.fields]
+    nombres = [campo.name.capitalize() for campo in meta_clase.fields]
     lista_nombres = nombres
     return lista_datos, lista_nombres
 

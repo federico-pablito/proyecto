@@ -89,11 +89,8 @@ def service_pdf(template_src, context_dict={}):
 
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    meta_clase = Services._meta
-    nombres = [campo.name for campo in meta_clase.fields]
-    lista_nombres = []
-    for nombre in nombres:
-        lista_nombres.append(nombre)
+    lista_nombres = ['Id', 'Interno', 'Fecha Servicio', 'Fecha Parte', 'Ultimo Service', 'Plan Realizado HS',
+                     'Plan Realizado', 'Proximo Service', 'HSxKM Actuales', 'HSxKM Restantes', 'Necesidad Service']
     return lista_datos, lista_nombres
 
 class services_pd_view(View):

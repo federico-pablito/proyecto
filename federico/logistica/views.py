@@ -47,9 +47,11 @@ def logistica_editar(request, id=None):
         form = logistica_form(instance=instancia)
     return render(request, 'partediario_editar.html',
                   {'form': form})
+
+
 def logistica_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
-	html  = template.render(context_dict)
+	html = template.render(context_dict)
 	result = BytesIO()
 	pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
 	if not pdf.err:

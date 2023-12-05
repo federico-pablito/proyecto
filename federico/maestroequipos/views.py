@@ -14,6 +14,8 @@ def mainmaestroequipos(request):
     lista_internos, lista_nombres = listador(Internos.objects.all())
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
+
+
 def alquileresinternos(request):
     internos = Internos.objects.filter(alquilado=True)
     lista_internos, lista_nombres = listador(Internos.objects.all())
@@ -96,19 +98,28 @@ def listador(datos):
     nombres = [campo.name for campo in meta_clase.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'up' or nombre == 'tipovehiculo' or nombre == 'dominio':
+        if nombre == 'up' or nombre == 'tipovehiculo' or nombre == 'dominio' or nombre == 'valorpesos' or nombre == 'valordolares':
             pass
         elif nombre == 'interno':
-            lista_nombres.append(nombre)
+            lista_nombres.append(nombre.capitalize())
             lista_nombres.append('UP')
         elif nombre == 'modelo':
-            lista_nombres.append(nombre)
+            lista_nombres.append(nombre.capitalize())
             lista_nombres.append('Tipo Vehiculo')
         elif nombre == 'motor':
-            lista_nombres.append(nombre)
+            lista_nombres.append(nombre.capitalize())
             lista_nombres.append('Dominio')
+        elif '_' in nombre:
+            nombre = [valor.capitalize() for valor in nombre.split('_')]
+            lista_nombres.append(' '.join(nombre))
+        elif nombre == 'alquilado':
+            lista_nombres.append(nombre.capitalize())
+            lista_nombres.append('Valor Pesos')
+            lista_nombres.append('Valor Dolares')
+        elif nombre == 'actividadvehiculo':
+            lista_nombres.append('Actividad Vehiculo')
         else:
-            lista_nombres.append(nombre)
+            lista_nombres.append(nombre.capitalize())
     return lista_datos, lista_nombres
 
 
