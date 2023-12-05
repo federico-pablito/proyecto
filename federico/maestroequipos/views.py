@@ -10,7 +10,7 @@ from xhtml2pdf import pisa
 
 
 def mainmaestroequipos(request):
-    internos = Internos.objects.all()
+    internos = Internos.objects.filter(alquilado=False)
     lista_internos, lista_nombres = listador(Internos.objects.all())
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
