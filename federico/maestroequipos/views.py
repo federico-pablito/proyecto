@@ -14,6 +14,11 @@ def mainmaestroequipos(request):
     lista_internos, lista_nombres = listador(Internos.objects.all())
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
+def alquileresinternos(request):
+    internos = Internos.objects.filter(alquilado=True)
+    lista_internos, lista_nombres = listador(Internos.objects.all())
+    return render(request, 'alquilerinternos.html',
+                  {'internos': internos, 'lista_nombres': lista_nombres, 'lista_internos': lista_internos})
 
 
 # Create your views here.
@@ -91,7 +96,7 @@ def listador(datos):
     nombres = [campo.name for campo in meta_clase.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'up' or nombre == 'tipovehiculo':
+        if nombre == 'up' or nombre == 'tipovehiculo' or nombre == 'dominio':
             pass
         elif nombre == 'interno':
             lista_nombres.append(nombre)
@@ -99,6 +104,9 @@ def listador(datos):
         elif nombre == 'modelo':
             lista_nombres.append(nombre)
             lista_nombres.append('Tipo Vehiculo')
+        elif nombre == 'motor':
+            lista_nombres.append(nombre)
+            lista_nombres.append('Dominio')
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
