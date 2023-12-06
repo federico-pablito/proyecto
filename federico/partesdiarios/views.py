@@ -69,7 +69,15 @@ def listador(datos):
     nombres = [campo.name for campo in meta_clase.fields]
     lista_nombres = []
     for nombre in nombres:
-        lista_nombres.append(nombre)
+        if nombre == 'hsxkmcarga':
+            lista_nombres.append('HSxKM Carga')
+        elif nombre == 'kmsxhs':
+            lista_nombres.append('KMSxHS')
+        elif '_' in nombre:
+            nombre = ' '.join([valor.capitalize() for valor in nombre.split('_')])
+            lista_nombres.append(nombre)
+        else:
+            lista_nombres.append(nombre.capitalize())
     return lista_datos, lista_nombres
 
 
