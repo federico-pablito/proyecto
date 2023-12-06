@@ -60,15 +60,8 @@ def logistica_pdf(template_src, context_dict={}):
 
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    meta_clase = Logistica._meta
-    nombres = [campo.name for campo in meta_clase.fields]
-    nombres_dependencias = [campo.name for campo in Internos._meta.fields]
-    lista_nombres = []
-    for nombre in nombres:
-        if nombre == 'up':
-            lista_nombres.append(nombre)
-        else:
-            lista_nombres.append(nombre)
+    lista_nombres = ['Id', 'Interno', 'Carreton', 'Chofer Logistica', 'Numero Remito', 'Proveedor', 'Origen', 'Destino',
+                     'KM Entre Destinos', 'Transporte', 'Consumo KMxLitros', 'Valor Viaje']
     return lista_datos, lista_nombres
 
 class logistica_pdf_view(View):

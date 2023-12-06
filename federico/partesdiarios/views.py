@@ -14,7 +14,7 @@ def partesdiario_main(request):
     lista_partediario, lista_nombres = listador(partediario)
     # HACER EL FILTRO
     return render(request, 'partediario_main.html',
-                  {'lista_partediario': lista_partediario, 'lista_nombres': lista_nombres, 'parte':partediario})
+                  {'lista_partediario': lista_partediario, 'lista_nombres': lista_nombres, 'parte': partediario})
 
 
 def partediario_crear(request):
@@ -67,18 +67,9 @@ def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = PartesDiarios._meta
     nombres = [campo.name for campo in meta_clase.fields]
-    nombres_dependencias = [campo.name for campo in Internos._meta.fields]
     lista_nombres = []
     for nombre in nombres:
-        if nombre == 'interno':
-            for item in nombres_dependencias:
-                if item == 'up':
-                    lista_nombres.append(item)
-                else:
-                    lista_nombres.append(item)
-            lista_nombres.append('ubicacion')
-        else:
-            lista_nombres.append(nombre)
+        lista_nombres.append(nombre)
     return lista_datos, lista_nombres
 
 

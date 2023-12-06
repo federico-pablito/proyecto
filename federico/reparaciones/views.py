@@ -69,11 +69,9 @@ def reparaciones_pdf(template_src, context_dict={}):
 
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    meta_clase = Reparaciones._meta
-    nombres = [campo.name for campo in meta_clase.fields]
-    lista_nombres = []
-    for nombre in nombres:
-        lista_nombres.append(nombre)
+    lista_nombres = ['Id', 'Interno', 'Ubicacion', 'Falla', 'Porcentaje Avance', 'Fecha Reparacion Estimada',
+                     'Fecha entrada', 'Fecha Salida', 'Estado Reparacion', 'Estado Equipo']
+
     return lista_datos, lista_nombres
 
 class reparaciones_pd_view(View):
