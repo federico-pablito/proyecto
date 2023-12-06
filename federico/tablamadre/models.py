@@ -138,5 +138,29 @@ class Novedades(models.Model):
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     tipofalla = models.CharField(max_length=512)
     reparado = models.BooleanField(default=False)
+<<<<<<< Updated upstream
     def __str__(self):
         return ', '.join([str(self.interno), str(self.tipofalla), str(self.reparado), str(self.id)])
+=======
+def __str__(self):
+        return ', '.join([str(self.interno), str(self.reparado), str(self.id)])
+
+class Choferes(models.Model):
+     id = models.AutoField(primary_key=True)
+     nombre = models.CharField(max_length=512)
+     añoIngreso = models.DateTimeField()
+     dni = models.IntegerField()
+     licencia = models.CharField(max_length=512)
+def __str__(self):
+    return ', '.join([str(self.id), str(self.nombre), str(self.añoingreso), str(self.dni),str(self.licencia)])
+      
+    
+class Consumos(models.Model):
+    id = models.AutoField(primary_key=True)
+    interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1) 
+    fecha = models.DateTimeField()
+    hsKm = models.IntegerField()
+    choferes = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
+def __str__(self):
+     return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKM),str(self.choferes)])
+>>>>>>> Stashed changes
