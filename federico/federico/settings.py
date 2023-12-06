@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pablofederico',
-        'USER': 'pablofederico_user',
-        'PASSWORD': 'BRy4GuIDJEEuCcsH1JipZKiA3enLpWeB',
-        'HOST': 'dpg-clifuh1e313s73aivbo0-a.ohio-postgres.render.com',
+        'NAME': 'pablofederico_f95l',
+        'USER': 'empresa',
+        'PASSWORD': 'IaAAlxoMxGevScOiDQv8YL6zMpfUhiy3',
+        'HOST': 'dpg-cln08tnfeb2c73ee4j1g-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }

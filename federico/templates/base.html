@@ -27,6 +27,9 @@
   <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css' %}">
   <!-- summernote -->
   <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.min.css' %}">
+  <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -50,6 +53,7 @@
         <a href="{% url 'inicio-sesion'%}" class="nav-link">login</a>
       </li>
     </ul>
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -206,6 +210,7 @@
         </div>
       </div>
 
+
 <!-- Sidebar Menu -->
 <nav class="mt-2">
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -215,7 +220,7 @@
       <a href="#" class="nav-link">
         <i class="nav-icon fas fa-chart-pie"></i>
         <p>
-          Maestro 
+          Maestro
           <i class="right fas fa-angle-left"></i>
         </p>
       </a>
@@ -227,11 +232,11 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="pages/charts/flot.html" class="nav-link">
+          <a href="{% url 'alquileresinternos' %}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Flota Alquilada</p>
           </a>
-        </li>              
+        </li>
       </ul>
     </li>
 
@@ -262,7 +267,7 @@
             <i class="far fa-circle nav-icon"></i>
             <p>Ordenes de Service</p>
           </a>
-        </li>              
+        </li>
       </ul>
     </li>
 
@@ -368,59 +373,73 @@
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-  </aside>
-            <!-- Calendar -->
-            <div class="card bg-gradient-success">
-              <div class="card-header border-0">
 
-                <h3 class="card-title">
-                  <i class="far fa-calendar-alt"></i>
-                  Calendar
-                </h3>
-                <!-- tools card -->
-                <div class="card-tools">
-                  <!-- button with a dropdown -->
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
-                      <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="dropdown-menu" role="menu">
-                      <a href="#" class="dropdown-item">Add new event</a>
-                      <a href="#" class="dropdown-item">Clear events</a>
-                      <div class="dropdown-divider"></div>
-                      <a href="#" class="dropdown-item">View calendar</a>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /. tools -->
+  </aside>
+             <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">DOLAR HOY</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Dolar Nacion</h3>
+                <h4>Compra: ${{ official_compra }}</h4>
+                <h4>Venta: ${{ official_venta }}</h4>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body pt-0">
-                <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
+              <div class="icon">
+                <i class="fa-solid fa-dollar-sign"></i>
               </div>
-              <!-- /.card-body -->
+              <a href="https://www.lanacion.com.ar/dolar-hoy/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <!-- /.card -->
-          </section>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Dolar Blue</h3>
+                <h4>Compra: ${{ blue_compra }}</h4>
+                <h4>Venta: ${{ blue_venta }}</h4>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+              <a href="https://www.lanacion.com.ar/tema/dolar-blue-tid67294/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
+      </div>
+    <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
+  <!-- /.content -->
   </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="{% static 'assets/https://adminlte.io' %}">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
+     <div class="float-right d-none d-sm-inline-block">
       <b>Empresa PabloFederico</b>
     </div>
   </footer>

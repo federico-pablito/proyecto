@@ -25,10 +25,7 @@ def service_main(request):
         partediario = parte_filter.qs
     order_by = request.GET.get('order_by', 'fechaservicio')
     partediario = partediario.order_by(order_by)
-    paginator = Paginator(partediario, 10)  # Show 10 items per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    lista_services, lista_nombres = listador(page_obj)
+    lista_services, lista_nombres = listador(partediario)
     # ARREGLAR EL FILTRO
     return render(request, 'service_main.html', {'form': form, 'ilter':parte_filter, 'services':partediario,
                                                 'lista_services': lista_services, 'lista_nombres': lista_nombres,})
@@ -92,11 +89,8 @@ def service_pdf(template_src, context_dict={}):
 
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    meta_clase = Services._meta
-    nombres = [campo.name for campo in meta_clase.fields]
-    lista_nombres = []
-    for nombre in nombres:
-        lista_nombres.append(nombre)
+    lista_nombres = ['Id', 'Interno', 'Fecha Servicio', 'Fecha Parte', 'Ultimo Service', 'Plan Realizado HS',
+                     'Plan Realizado', 'Proximo Service', 'HSxKM Actuales', 'HSxKM Restantes', 'Necesidad Service']
     return lista_datos, lista_nombres
 
 class services_pd_view(View):

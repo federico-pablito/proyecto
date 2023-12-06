@@ -1,4 +1,4 @@
-INSERT INTO unidadesproduccion_unidadesproducciontabla(id, unidadproduccion, ubicacion) VALUES
+INSERT INTO tablamadre_unidadesdeproduccion(id, unidadproduccion, ubicacion) VALUES
 (1,'UP-00', 'Sede central'),
 (2,'UP-0', 'Taller central'),
 (3,'UP-1', 'Planta de asfalto los boulevares'),

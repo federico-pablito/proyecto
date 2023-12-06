@@ -19,13 +19,10 @@ class TablaMadre(models.Model):
 class Internos(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.CharField(max_length=50)
-    up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
     marca = models.CharField(max_length=256)
     modelo = models.CharField(max_length=512)
-    tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
     chasis = models.CharField(max_length=512)
     motor = models.CharField(max_length=512)
-    dominio = models.CharField(max_length=255, default='default_value')
     anio = models.IntegerField()
     aseguradora = models.CharField(max_length=512)
     seguro = models.CharField(max_length=512)
@@ -43,12 +40,12 @@ class Internos(models.Model):
     valordolares = models.IntegerField()
     orden = models.CharField(max_length=512)
     actividadvehiculo = models.CharField(max_length=512)
+    up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
+    dominio = models.CharField(max_length=255, default='default_value')
+    tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
+
     def __str__(self):
-        return ', '.join([str(self.id), str(self.interno), str(self.up), str(self.marca), str(self.modelo), str(self.tipovehiculo),str(self.chasis),
-             str(self.motor), str(self.dominio),str(self.anio), str(self.aseguradora), str(self.seguro), str(self.seguro_pdf),
-             str(self.itv), str(self.itv_pdf), str(self.titulo_pdf), str(self.tarjeta), str(self.tarjeta_pdf),
-             str(self.propietario), str(self.chofer), str(self.alquilado), str(self.valorpesos), str(self.valordolares),
-             str(self.orden), str(self.actividadvehiculo)])
+        return str(self.interno)
 class Services(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -70,7 +67,7 @@ class UnidadesdeProduccion(models.Model):
     unidadproduccion = models.CharField(max_length=15)
     ubicacion = models.CharField(max_length=512)
     def __str__(self):
-        return ', '.join([str(self.id), str(self.unidadproduccion), str(self.ubicacion)])
+        return str(self.unidadproduccion)
 
 class Reparaciones(models.Model):
     id = models.AutoField(primary_key=True)
@@ -113,30 +110,48 @@ class PartesDiarios(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
     proveedores = models.CharField(max_length=512)
-    razonsocial = models.CharField(max_length=512)
-    cantidadequipos = models.IntegerField()
-    kilometrajeinicial = models.IntegerField()
-    kilometrajefinal = models.IntegerField()
-    turnoreparacion = models.CharField(max_length=512)
+    razon_social = models.CharField(max_length=512)
+    cantida_de_quipos = models.IntegerField()
+    kilometraje_inicial = models.IntegerField()
+    kilometraje_final = models.IntegerField()
+    turno_reparacion = models.CharField(max_length=512)
     horometro = models.IntegerField()
     hsxkmcarga = models.IntegerField()
-    tipocombustible = models.CharField(max_length=512)
-    tipogasoil = models.CharField(max_length=512)
-    tiponafta = models.CharField(max_length=512)
-    litrosgasoil = models.IntegerField()
-    litrosnafta = models.IntegerField()
-    tipoaceite = models.CharField(max_length=512)
-    litrosaceite = models.IntegerField()
+    tipo_combustible = models.CharField(max_length=512)
+    tipo_gasoil = models.CharField(max_length=512)
+    tipo_nafta = models.CharField(max_length=512)
+    litros_gasoil = models.IntegerField()
+    litros_nafta = models.IntegerField()
+    tipo_aceite = models.CharField(max_length=512)
+    litros_aceite = models.IntegerField()
     maquinista = models.CharField(max_length=512)
     kmsxhs = models.IntegerField()
-    tipodefalla = models.CharField(max_length=512, default='No hay falla')
+    tipo_de_falla = models.CharField(max_length=512, default='No hay falla')
     reparado = models.BooleanField(default=False)
     def __str__(self):
         return ', '.join([str(self.interno), str(self.proveedores), str(self.razonsocial), str(self.cantidadequipos), str(self.kilometrajeinicial), str(self.kilometrajefinal), str(self.turnoreparacion), str(self.horometro), str(self.hsxkmcarga), str(self.tipocombustible), str(self.tipogasoil), str(self.tiponafta), str(self.litrosgasoil), str(self.litrosnafta), str(self.tipoaceite), str(self.litrosaceite), str(self.maquinista), str(self.kmsxhs), str(self.id), str(self.tipodefalla), str(self.reparado)])
 class Novedades(models.Model):
     id = models.AutoField(primary_key=True)
     interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-    tipofalla = models.CharField(max_length=512)
     reparado = models.BooleanField(default=False)
 def __str__(self):
-        return ', '.join([str(self.interno), str(self.tipofalla), str(self.reparado), str(self.id)])
+        return ', '.join([str(self.interno), str(self.reparado), str(self.id)])
+
+class Choferes(models.Model):
+     id = models.AutoField(primary_key=True)
+     nombre = models.CharField(max_length=512)
+     añoIngreso = models.DateTimeField()
+     dni = models.IntegerField()
+     licencia = models.CharField(max_length=512)
+def __str__(self):
+    return ', '.join([str(self.id), str(self.nombre), str(self.añoingreso), str(self.dni),str(self.licencia)])
+      
+    
+class Consumos(models.Model):
+    id = models.AutoField(primary_key=True)
+    interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1) 
+    fecha = models.DateTimeField()
+    hsKm = models.IntegerField()
+    choferes = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
+def __str__(self):
+     return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKM),str(self.choferes)])

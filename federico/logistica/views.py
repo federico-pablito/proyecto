@@ -11,9 +11,8 @@ from xhtml2pdf import pisa
 def logistica_main(request):
     logistica = Logistica.objects.all()
     lista_logistica, lista_nombres = listador(logistica)
-    tabla_logistica = Logistica.objects.all()
     # HACER EL FILTRO
-    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,'tabla_logistica':tabla_logistica})
+    return render(request, 'logisticatabla.html', {'lista_logistica': lista_logistica, 'lista_nombres': lista_nombres,'tabla_logistica':logistica})
 
 def logistica_crear(request):
     if request.method == 'POST':
@@ -34,7 +33,7 @@ def logistica_crear(request):
         form = logistica_form()
     return render(request, 'partediario_crear.html', {'form': form})
 
-def logistica_editar(request):
+def logistica_editar(request, id=None):
     if id:
         instancia = Logistica.objects.get(pk=id)
     else:
@@ -47,10 +46,12 @@ def logistica_editar(request):
     else:
         form = logistica_form(instance=instancia)
     return render(request, 'partediario_editar.html',
-                  { 'form': form})
+                  {'form': form})
+
+
 def logistica_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
-	html  = template.render(context_dict)
+	html = template.render(context_dict)
 	result = BytesIO()
 	pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
 	if not pdf.err:
@@ -59,15 +60,8 @@ def logistica_pdf(template_src, context_dict={}):
 
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    meta_clase = Logistica._meta
-    nombres = [campo.name for campo in meta_clase.fields]
-    nombres_dependencias = [campo.name for campo in Internos._meta.fields]
-    lista_nombres = []
-    for nombre in nombres:
-        if nombre == 'up':
-            lista_nombres.append(nombre)
-        else:
-            lista_nombres.append(nombre)
+    lista_nombres = ['Id', 'Interno', 'Carreton', 'Chofer Logistica', 'Numero Remito', 'Proveedor', 'Origen', 'Destino',
+                     'KM Entre Destinos', 'Transporte', 'Consumo KMxLitros', 'Valor Viaje']
     return lista_datos, lista_nombres
 
 class logistica_pdf_view(View):
