@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'reparaciones',
     'logistica',
     'partesdiarios',
+    'disponibilidadequipos',
 ]
 
 

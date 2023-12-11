@@ -21,6 +21,7 @@ class disponibilidad_form(forms.ModelForm):
         widget=forms.DateInput(attrs={'type': 'date'}),
         label='Fecha de Ingreso de Obra'
     )
+    anio = forms.IntegerField(required=True, label='Año')
     mes = forms.ChoiceField(choices=MESES_OPCIONES, widget=forms.Select, label='Mes')
     dia = forms.IntegerField(required=True, label='Dia')
     actividad = forms.ModelChoiceField(queryset=TipoActividad.objects.all(), empty_label=None, required=False, label='Actividad')

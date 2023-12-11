@@ -147,13 +147,13 @@ def __str__(self):
 		return ', '.join([str(self.interno), str(self.reparado), str(self.id)])
 
 class Choferes(models.Model):
-	 id = models.AutoField(primary_key=True)
-	 nombre = models.CharField(max_length=512)
-	 añoIngreso = models.DateTimeField()
-	 dni = models.IntegerField()
-	 licencia = models.CharField(max_length=512)
+	id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=512)
+	anioIngreso = models.DateTimeField()
+	dni = models.IntegerField()
+	licencia = models.CharField(max_length=512)
 def __str__(self):
-	return ', '.join([str(self.id), str(self.nombre), str(self.añoingreso), str(self.dni), str(self.licencia)])
+	return ', '.join([str(self.id), str(self.nombre), str(self.anioingreso), str(self.dni), str(self.licencia)])
 
 
 class Consumos(models.Model):
@@ -169,8 +169,10 @@ class DisponibilidadEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
 	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
 	fecha_ingreso_de_obra = models.DateTimeField()
 	cantidad_de_dias_en_obra = models.IntegerField()
+	anio = models.IntegerField(default=2024)
 	mes = models.CharField(max_length=15)
 	dia = models.IntegerField()
 	actividad = models.ForeignKey('TipoActividad', on_delete=models.CASCADE, default=1)

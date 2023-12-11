@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Choferes, Consumos, TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica, PartesDiarios, Novedades
+from .models import (Choferes, Consumos, TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica,
+                     PartesDiarios, Novedades, DisponibilidadEquipos, TipoActividad)
 
 
 # Register your models here.
@@ -13,4 +14,5 @@ admin.site.register(Reparaciones)
 admin.site.register(Logistica)
 admin.site.register(PartesDiarios)
 admin.site.register(Novedades)
-
+admin.site.register(DisponibilidadEquipos)
+admin.site.register(TipoActividad)
