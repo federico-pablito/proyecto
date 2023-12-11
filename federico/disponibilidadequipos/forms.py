@@ -14,7 +14,7 @@ class disponibilidad_form(forms.ModelForm):
                     ('octubre', 'Octubre'),
                     ('noviembre', 'Noviembre'),
                     ('diciembre', 'Diciembre'))
-    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Internos')
+    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=True, label='Internos')
     up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='Unidad de Produccion')
     fecha_ingreso_de_obra = forms.DateField(
         required=True,

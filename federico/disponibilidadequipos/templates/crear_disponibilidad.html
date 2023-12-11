@@ -27,7 +27,13 @@
     <h1>Cargo Disponibilidad</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.interno.label_tag }} {{ form.interno }}
+        {{ form.up.label_tag }} {{ form.up }}
+        {{ form.fecha_ingreso_de_obra.label_tag }} {{ form.fecha_ingreso_de_obra }}
+        {{ form.anio.label_tag }} {{ form.anio }}
+        {{ form.mes.label_tag }} {{ form.mes }}
+        {{ form.dia.label_tag }} {{ form.dia }}
+        {{ form.actividad.label_tag }} {{ form.actividad }}
         <button type="submit">Enviar</button>
     </form>
 
