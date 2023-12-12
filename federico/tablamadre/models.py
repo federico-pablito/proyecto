@@ -11,7 +11,6 @@ class TablaMadre(models.Model):
 	logistica = models.ForeignKey('Logistica', on_delete=models.CASCADE, default=1)
 	dolardia = models.IntegerField()
 	partesdiarions = models.ForeignKey('PartesDiarios', on_delete=models.CASCADE, default=1)
-	observaciones = models.CharField(max_length=512)
 	def __str__(self):
 		return ', '.join([str(self.internos), str(self.services), str(self.unidadesdeproduccion),
 						  str(self.reparaciones), str(self.logistica), str(self.dolardia), str(self.partesdiarions),
@@ -61,9 +60,7 @@ class Services(models.Model):
 	hsxkmrestantes = models.IntegerField()
 	necesidadservice = models.CharField(max_length=512)
 	def __str__(self):
-		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.fechaparte), str(self.ultimoservice),
-						  str(self.planrealizado_hs), str(self.planrealizado), str(self.proximoservice),
-						  str(self.hsxkmactuales), str(self.hsxkmrestantes), str(self.necesidadservice), str(self.id)])
+		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
 
 
 class UnidadesdeProduccion(models.Model):
@@ -76,18 +73,18 @@ class UnidadesdeProduccion(models.Model):
 class Reparaciones(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	ubicacion = models.CharField(max_length=512, default='Taller')
-	falla = models.CharField(max_length=512)
-	porcentajeavance = models.IntegerField()
+	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
+	mecanico_encargado = models.ForeignKey('MecanicosEncargados', on_delete=models.CASCADE, default=1)
+	falla_general = models.CharField(max_length=512)
 	fechareparacionestimada = models.DateTimeField()
 	fechaentrada = models.DateTimeField()
 	fechasalida = models.DateTimeField()
 	estadoreparacion = models.CharField(max_length=512)
 	estadoequipo = models.CharField(max_length=512)
+	descripcion = models.CharField(max_length=512)
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.interno), str(self.ubicacion), str(self.falla),
-						  str(self.porcentajeavance),str(self.fechareparacionestimada), str(self.fechaentrada),
-						  str(self.fechasalida), str(self.estadoreparacion), str(self.estadoequipo)])
+						  str(self.mecanico_encargado)])
 
 
 class Logistica(models.Model):
@@ -105,9 +102,7 @@ class Logistica(models.Model):
 	valorviaje = models.IntegerField()
 
 	def __str__(self):
-		return ', '.join([str(self.interno), str(self.carreton), str(self.choferlogistica), str(self.numeroremito),
-						  str(self.proveedor), str(self.origen), str(self.destino), str(self.kmentredestinos),
-						  str(self.transporte), str(self.consumokmxlitros), str(self.valorviaje), str(self.id)])
+		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
 
 
 class PartesDiarios(models.Model):
@@ -133,12 +128,7 @@ class PartesDiarios(models.Model):
 	tipo_de_falla = models.CharField(max_length=512, default='No hay falla')
 	reparado = models.BooleanField(default=False)
 	def __str__(self):
-		return ', '.join([str(self.interno), str(self.proveedores), str(self.razonsocial), str(self.cantidadequipos),
-						  str(self.kilometrajeinicial), str(self.kilometrajefinal), str(self.turnoreparacion),
-						  str(self.horometro), str(self.hsxkmcarga), str(self.tipocombustible), str(self.tipogasoil),
-						  str(self.tiponafta), str(self.litrosgasoil), str(self.litrosnafta), str(self.tipoaceite),
-						  str(self.litrosaceite), str(self.maquinista), str(self.kmsxhs), str(self.id),
-						  str(self.tipodefalla), str(self.reparado)])
+		return ', '.join([str(self.interno), str(self.cantidadequipos), str(self.tipodefalla), str(self.reparado)])
 class Novedades(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -163,7 +153,7 @@ class Consumos(models.Model):
 	hsKm = models.IntegerField()
 	choferes = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
 	def __str__(self):
-		return ' '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKM),str(self.choferes)])
+		return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKM), str(self.choferes)])
 
 class DisponibilidadEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -176,10 +166,27 @@ class DisponibilidadEquipos(models.Model):
 	mes = models.CharField(max_length=15)
 	dia = models.IntegerField()
 	actividad = models.ForeignKey('TipoActividad', on_delete=models.CASCADE, default=1)
+	def __str__(self):
+		return ', '.join([str(self.id), str(self.up), str(self.interno)])
 
 class TipoActividad(models.Model):
 	id = models.AutoField(primary_key=True)
 	categoria = models.CharField(max_length=1)
 	descripcion = models.CharField(max_length=125)
 	def __str__(self):
-		return ' '.join([self.categoria, self.descripcion])
+		return ', '.join([self.categoria, self.descripcion])
+
+class Talleres(models.Model):
+	id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=512)
+	ubicacion = models.CharField(max_length=512)
+	def __str__(self):
+		return ', '.join([self.nombre, self.ubicacion])
+
+class MecanicosEncargados(models.Model):
+	id = models.AutoField(primary_key=True)
+	codigo = models.CharField(max_length=512)
+	nombre = models.CharField(max_length=512)
+	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
+	def __str__(self):
+		return ', '.join([self.nombre, self.taller])

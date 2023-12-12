@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
-from .filters import reparaciones_filter
 
 # Create your views here.
 def reparaciones_main(request):
@@ -27,7 +26,6 @@ def reparaciones_crear(request):
     if request.method == 'POST':
         form = reparaciones_form(request.POST)
         if form.is_valid():
-            descripcion = form.cleaned_data.pop('descripcion', None)
             new_reparacion = form.save()
             interno = new_reparacion.interno
             if new_reparacion.estadoreparacion == 'Pendiente':
@@ -36,7 +34,7 @@ def reparaciones_crear(request):
                 new_reparacion.estadoequipo = 'Operativo'
             up = Internos.objects.get(id=interno.id).up
             new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         reparaciones=new_reparacion, observaciones=descripcion, dolardia=0)
+                                         reparaciones=new_reparacion, dolardia=0)
             new_tabla_madre.save()
     else:
         form = reparaciones_form()

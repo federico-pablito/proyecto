@@ -85,15 +85,14 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pablofederico_f95l',
-        'USER': 'empresa',
-        'PASSWORD': 'IaAAlxoMxGevScOiDQv8YL6zMpfUhiy3',
-        'HOST': 'dpg-cln08tnfeb2c73ee4j1g-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u428871755_527F70B6C33FE6',
+        'USER': 'u428871755_49D33E3A8AA590',
+        'PASSWORD': '8d3A{0ViK!G!>@?FTp',
+        'HOST': '193.203.175.54',  # Puedes cambiarlo si tu base de datos está en un host diferente
+        'PORT': '3306',  # Puerto de MySQL
     }
 }
-
 
 
 # Password validation
