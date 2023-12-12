@@ -28,6 +28,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form.interno.label_tag }} {{ form.interno }}
+        {{ form.chofer.label_tag }} {{ form.chofer }}
         {{ form.up.label_tag }} {{ form.up }}
         {{ form.fecha_ingreso_de_obra.label_tag }} {{ form.fecha_ingreso_de_obra }}
         {{ form.anio.label_tag }} {{ form.anio }}

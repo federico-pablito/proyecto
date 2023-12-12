@@ -18,10 +18,15 @@ def main_disponibilidad(request):
     return render(request, 'main_disponibilidad.html')
 
 
-def mostrar_disponibilidad(request, mes=None, anio=None):
+def mostrar_disponibilidad(request, anio=None, mes=None):
     dataset_mes = transpose_disponibilidad(mes, anio)
-    columns = ['Equipos Obra', 'Operador', 'Dueño', 'Interno', 'Ingreso a Obra', 'Dias en Obra', range(1, 32), 'Dias Trabajados', 'Dias No Trabajados']
-    return render(request, 'mostrar_disponibilidad.html', {'dataset_mes': dataset_mes, 'columns': columns, 'mes': mes.title(), 'anio': anio.title()})
+    columns = ['Interno', 'Dueño', 'Operador', 'Ingreso a Obra', 'Dias en Obra']
+    for item in range(1, 32):
+        columns.append(item)
+    columns.append('Dias Trabajados')
+    columns.append('Dias No Trabajados')
+    return render(request, 'mostrar_disponibilidad.html', {'dataset_mes': dataset_mes, 'columns': columns,
+                                                           'mes': mes.title(), 'anio': anio})
 
 
 def transpose_disponibilidad(mes, anio):
@@ -42,7 +47,8 @@ def transpose_disponibilidad(mes, anio):
             for item in range(1, 32):
                 if item in tabla.filter(interno=dato).values_list('dia', flat=True):
                     act = tabla.filter(dia=item).values_list('actividad', flat=True)
-                    row.append(act[0])
+                    a = DisponibilidadEquipos.objects.get(id=act[0])
+                    row.append(a.actividad.categoria.upper())
                     actividad.append(act[0])
                 else:
                     row.append(' ')
@@ -54,6 +60,8 @@ def transpose_disponibilidad(mes, anio):
                     dias_trabajados += 1
                 elif item == 'r':
                     dias_trabajados += 0.5
+                else:
+                    dias_trabajados += 0
             row.append(dias_trabajados)
             # Dias no trabajados
             row.append(30 - dias_trabajados)

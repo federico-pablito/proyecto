@@ -1,5 +1,5 @@
 from django import forms
-from tablamadre.models import Internos, UnidadesdeProduccion, TipoActividad
+from tablamadre.models import Internos, UnidadesdeProduccion, TipoActividad, Choferes
 
 class disponibilidad_form(forms.ModelForm):
     MESES_OPCIONES=(('enero', 'Enero'),
@@ -15,6 +15,7 @@ class disponibilidad_form(forms.ModelForm):
                     ('noviembre', 'Noviembre'),
                     ('diciembre', 'Diciembre'))
     interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=True, label='Internos')
+    chofer = forms.ModelChoiceField(queryset=Choferes.objects.all(), empty_label=None, required=True, label='Choferes')
     up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='Unidad de Produccion')
     fecha_ingreso_de_obra = forms.DateField(
         required=True,
