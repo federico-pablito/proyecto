@@ -59,19 +59,8 @@ def crear_serv(request):
                 new_service.necesidadservice = 'Proximo'
             else:
                 new_service.necesidadservice = 'Necesita Service'
-            interno = new_service.interno
-            up = Internos.objects.get(id=interno.id).up
-            last_reparacion = Reparaciones.objects.filter(interno=interno).last()
             descripcion = form.cleaned_data.get('descripcion')
-            if last_reparacion is None:
-                new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                             observaciones=descripcion)
-            else:
-                new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         reparaciones=last_reparacion, observaciones=descripcion)
             new_service.save()
-            new_tabla_madre.services = new_service
-            new_tabla_madre.save()
     else:
         form = service_form()
     lista_services, lista_nombres = listador(partediario)

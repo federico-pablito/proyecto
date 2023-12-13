@@ -32,15 +32,6 @@ def cargointerno(request):
         if form.is_valid():
             descripcion = form.cleaned_data.pop('descripcion', None)
             new_interno = form.save()
-            interno_id = new_interno.id
-            up = new_interno.up
-            interno_instance = Internos.objects.get(id=interno_id)
-            last_reparacion = Reparaciones.objects.filter(interno=interno_id).last()
-            if last_reparacion is None:
-                last_reparacion = None
-            new_tabla_madre = TablaMadre(internos=interno_instance, unidadesdeproduccion=up,
-                                         observaciones=descripcion, dolardia=0)
-            new_tabla_madre.save()
     else:
         form = internosforms()
     return render(request, 'cargointernos.html', {'internos': internos, 'form': form,

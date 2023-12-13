@@ -20,14 +20,6 @@ def logistica_crear(request):
         if form.is_valid():
             descripcion = form.cleaned_data.pop('descripcion', None)
             new_logistica = form.save()
-            interno = new_logistica.interno
-            up = Internos.objects.get(id=interno.id).up
-            last_reparacion = Reparaciones.objects.filter(interno=interno).last()
-            if last_reparacion is None:
-                last_reparacion = 1
-            new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         logistica=new_logistica, observaciones=descripcion, dolardia=0, reparaciones=last_reparacion)
-            new_tabla_madre.save()
             return redirect('logistica_main')
     else:
         form = logistica_form()
