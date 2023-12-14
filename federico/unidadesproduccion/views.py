@@ -39,6 +39,7 @@ class unidades_pdf_view(View):
         context = {
             'lista_unidadesp': lista_unidadesp,
             'lista_nombres': lista_nombres,
+            'tabla': unidad_produccion,
         }
         pdf = unidadproduccion_pdf('unidades_pdf.html', context)
         return HttpResponse(pdf, content_type='application/pdf')

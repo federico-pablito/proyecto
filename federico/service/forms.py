@@ -17,8 +17,9 @@ class service_form(forms.ModelForm):
     planrealizado_hs = forms.IntegerField(required=True, label='Plan Realizado')
     proximoservice = forms.IntegerField(required=True, label='Proximo Service')
     hsxkmactuales = forms.IntegerField(required=True)
-    descripcion = forms.CharField(required=False)
+    operativo = forms.ChoiceField(choices=(('Operativo', 'Operativo'), ('Inoperativo', 'Inoperativo')),
+                                  widget=forms.Select, label='Operativo')
     class Meta:
         model = Services
         fields = ['interno', 'fechaservicio', 'fechaparte', 'ultimoservice', 'planrealizado_hs', 'planrealizado',
-                  'proximoservice', 'hsxkmactuales', 'descripcion']
+                  'proximoservice', 'hsxkmactuales', 'operativo']
