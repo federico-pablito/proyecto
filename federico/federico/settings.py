@@ -22,10 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["http://62.72.9.43:8000/",
-                 "62.72.9.43:8000"]
+ALLOWED_HOSTS = ["fedemanager.com", "www.fedemanager.com"]
 
 # Application definition
 
