@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
-
+from .views import inicio_view
 
 urlpatterns = [
-    path('', views.log, name='inicio-sesion')
+    # Otras URL de tu aplicación
+    path('', inicio_view, name='login'),
 ]

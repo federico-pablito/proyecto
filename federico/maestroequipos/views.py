@@ -7,6 +7,8 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.mixins import PermissionRequiredMixin
+
 
 
 def mainmaestroequipos(request):
@@ -114,7 +116,7 @@ def listador(datos):
     return lista_datos, lista_nombres
 
 
-class internos_pd_view(View):
+class internos_pd_view(PermissionRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         internos = Internos.objects.all()
         lista_internos, lista_nombres = listador(internos)

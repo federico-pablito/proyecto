@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'logistica',
     'partesdiarios',
     'disponibilidadequipos',
+    'login',
 ]
 
 MIDDLEWARE = [
