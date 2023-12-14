@@ -9,6 +9,7 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 
+
 # Create your views here.
 def service_main(request):
     if request.method == 'POST':
@@ -29,6 +30,7 @@ def service_main(request):
     # ARREGLAR EL FILTRO
     return render(request, 'service_main.html', {'form': form, 'ilter':parte_filter, 'services':partediario,
                                                 'lista_services': lista_services, 'lista_nombres': lista_nombres,})
+
 
 def editar_serv(request, id=None):
     partediario = Services.objects.all()
@@ -59,13 +61,13 @@ def crear_serv(request):
                 new_service.necesidadservice = 'Proximo'
             else:
                 new_service.necesidadservice = 'Necesita Service'
-            descripcion = form.cleaned_data.get('descripcion')
             new_service.save()
     else:
         form = service_form()
     lista_services, lista_nombres = listador(partediario)
     return render(request, 'crean_service.html', {'services': partediario, 'form': form,
                                                   'lista_services': lista_services, 'lista_nombres': lista_nombres,})
+
 
 def service_pdf(template_src, context_dict={}):
     template = get_template(template_src)
@@ -76,11 +78,13 @@ def service_pdf(template_src, context_dict={}):
         return HttpResponse(result.getvalue(), content_type='application/pdf')
     return None
 
+
 def listador(datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     lista_nombres = ['Id', 'Interno', 'Fecha Servicio', 'Fecha Parte', 'Ultimo Service', 'Plan Realizado HS',
                      'Plan Realizado', 'Proximo Service', 'HSxKM Actuales', 'HSxKM Restantes', 'Necesidad Service']
     return lista_datos, lista_nombres
+
 
 class services_pd_view(View):
     def get(self, request, *args, **kwargs):
