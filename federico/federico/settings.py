@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["http://62.72.9.43:8000/", "62.72.9.43:8000"]
 
 # Application definition
 
@@ -86,14 +86,15 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pablofederico',
-        'USER': 'postgres',
-        'PASSWORD': '4068xrcz4068',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
+        'USER': 'PabloFederico',
+        'PASSWORD': '8d3A{0ViK!G!>@?FTp',
         'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host diferente
-        'PORT': '3000',  # Puerto de MySQL
+        'PORT': '3306',  # Puerto de MySQL
     }
 }
+
 
 
 # Password validation

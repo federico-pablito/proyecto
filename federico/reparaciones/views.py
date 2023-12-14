@@ -27,15 +27,6 @@ def reparaciones_crear(request):
         form = reparaciones_form(request.POST)
         if form.is_valid():
             new_reparacion = form.save()
-            interno = new_reparacion.interno
-            if new_reparacion.estadoreparacion == 'Pendiente':
-                new_reparacion.estadoequipo = 'Inoperativo'
-            else:
-                new_reparacion.estadoequipo = 'Operativo'
-            up = Internos.objects.get(id=interno.id).up
-            new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         reparaciones=new_reparacion, dolardia=0)
-            new_tabla_madre.save()
     else:
         form = reparaciones_form()
     lista_reparaciones, lista_nombres = listador(tabla)
