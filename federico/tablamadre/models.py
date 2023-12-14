@@ -75,7 +75,9 @@ class UnidadesdeProduccion(PermissionRequiredMixin, models.Model):
     id = models.AutoField(primary_key=True)
     unidadproduccion = models.CharField(max_length=15)
     ubicacion = models.CharField(max_length=512)
-
+    permission_required = 'unidadesproduccion.views_mostrartablamadre'
+    permission_denied_message = 'no perro'
+    
     def __str__(self):
         return str(self.unidadproduccion)
 
