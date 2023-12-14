@@ -6,7 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', include('login.urls')),
+    path('main/', include('main.urls')),
     path('maestroequipo/', include('maestroequipos.urls')),
     path('service/', include('service.urls')),
     path('unidadesproduccion/', include('unidadesproduccion.urls')),
@@ -15,7 +16,7 @@ urlpatterns = [
     path('logistica/', include('logistica.urls')),
     path('partesdiarios/', include('partesdiarios.urls')),
     path('maininicio/', include('login.urls')),
-    path('disponibilidadequipos/', include('disponibilidadequipos.urls')),
+    path('disponibilidadequipos/', include('disponibilidadequipos.urls')),    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

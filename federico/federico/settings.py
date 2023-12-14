@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'logistica',
     'partesdiarios',
     'disponibilidadequipos',
+    'login',
 ]
 
 
@@ -85,12 +86,12 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u428871755_527F70B6C33FE6',
-        'USER': 'u428871755_49D33E3A8AA590',
-        'PASSWORD': '8d3A{0ViK!G!>@?FTp',
-        'HOST': '193.203.175.54',  # Puedes cambiarlo si tu base de datos está en un host diferente
-        'PORT': '3306',  # Puerto de MySQL
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pablofederico',
+        'USER': 'postgres',
+        'PASSWORD': '4068xrcz4068',
+        'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host diferente
+        'PORT': '3000',  # Puerto de MySQL
     }
 }
 

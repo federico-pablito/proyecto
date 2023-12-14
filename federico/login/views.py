@@ -1,9 +1,15 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-import templates
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 
 
-def log(request):
-     return render(request, 'login.html')
-    
+def inicio_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            login(request, form.get_user())
+            return redirect('pablofederico')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
     

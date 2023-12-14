@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from .models import TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica, PartesDiarios, Novedades
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from .models import TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica, PartesDiarios, Novedades, Choferes, Consumos
 
 # Create your views here.
-def mostrartablamadre(request):
+def mostrartablamadre(permission_required, request):
     lista_tm, lista_nombres = listador(TablaMadre.objects.all())
     return render(request, 'archivomustratabla.html', {'lista_tm':lista_tm, 'lista_nombres': lista_nombres })
-def listador(datos):
+    
+def listador(permission_required, datos):
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     nombres = [campo.name for campo in TablaMadre._meta.fields]
     internos = [campo.name for campo in Internos._meta.fields]
@@ -46,5 +48,6 @@ def listador(datos):
             for item in novedades:
                 lista_nombres.append(item)
         else:
-            lista_nombres.append(nombre)
+            lista_nombres.append(nombre)    
     return lista_datos, lista_nombres
+    permission_required = 'unidadesproduccion.urls_mostrartablamadre'
