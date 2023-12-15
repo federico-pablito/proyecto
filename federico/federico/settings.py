@@ -24,7 +24,9 @@ SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["fedemanager.com", "www.fedemanager.com"]
+
+ALLOWED_HOSTS = ["fedemanager.com", "www.fedemanager.com", "https://fedemanager.com"]
+
 
 # Application definition
 
@@ -131,7 +133,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'images'
 
-# Default primary key f^ield type
+# Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
