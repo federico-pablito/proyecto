@@ -86,12 +86,12 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pablofederico',
-        'USER': 'postgres',
-        'PASSWORD': '4068xrcz4068',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pablofederico_db',
+        'USER': 'pablofederico',
+        'PASSWORD': '121203',
         'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host diferente
-        'PORT': '3000',  # Puerto de MySQL
+        'PORT': '3306',  # Puerto de MySQL
     }
 }
 

@@ -1,8 +1,7 @@
 from django.db import models
-from django.contrib.auth.mixins import PermissionRequiredMixin
 
 # Create your models here.
-class TablaMadre(PermissionRequiredMixin, models.Model):
+class TablaMadre(models.Model):
 	id = models.AutoField(primary_key=True, serialize=True, auto_created=True)
 	fecha_registro = models.DateTimeField(auto_now_add=True)
 	internos = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -18,7 +17,7 @@ class TablaMadre(PermissionRequiredMixin, models.Model):
 						  str(self.novedades), str(self.observaciones), str(self.id)])
 
 
-class Internos(PermissionRequiredMixin, models.Model):
+class Internos(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.CharField(max_length=50)
 	marca = models.CharField(max_length=256)
@@ -50,7 +49,7 @@ class Internos(PermissionRequiredMixin, models.Model):
 	def __str__(self):		
 		return str(self.interno)
 		
-class Services(PermissionRequiredMixin, models.Model):
+class Services(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	fechaservicio = models.DateTimeField()
@@ -66,7 +65,7 @@ class Services(PermissionRequiredMixin, models.Model):
 		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
 
 
-class UnidadesdeProduccion(PermissionRequiredMixin, models.Model):
+class UnidadesdeProduccion(models.Model):
 	id = models.AutoField(primary_key=True)
 	unidadproduccion = models.CharField(max_length=15)
 	ubicacion = models.CharField(max_length=512)
@@ -75,7 +74,7 @@ class UnidadesdeProduccion(PermissionRequiredMixin, models.Model):
 	def __str__(self):
 		return str(self.unidadproduccion)
 
-class Reparaciones(PermissionRequiredMixin, models.Model):
+class Reparaciones(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
@@ -92,7 +91,7 @@ class Reparaciones(PermissionRequiredMixin, models.Model):
 						  str(self.mecanico_encargado)])
 
 
-class Logistica(PermissionRequiredMixin, models.Model):
+class Logistica(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	carreton = models.CharField(max_length=512)
@@ -110,7 +109,7 @@ class Logistica(PermissionRequiredMixin, models.Model):
 		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
 
 
-class PartesDiarios(PermissionRequiredMixin, models.Model):
+class PartesDiarios(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	proveedores = models.CharField(max_length=512)
