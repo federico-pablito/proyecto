@@ -5,7 +5,12 @@ from .models import TablaMadre, Internos, Services, UnidadesdeProduccion, Repara
 def mostrartablamadre(request):
     lista_tm, lista_nombres = listador(TablaMadre.objects.all())
     return render(request, 'archivomustratabla.html', {'lista_tm':lista_tm, 'lista_nombres': lista_nombres })
+<<<<<<< Updated upstream
 def listador(datos):
+=======
+    
+def listador( datos):
+>>>>>>> Stashed changes
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     nombres = [campo.name for campo in TablaMadre._meta.fields]
     internos = [campo.name for campo in Internos._meta.fields]
@@ -46,5 +51,11 @@ def listador(datos):
             for item in novedades:
                 lista_nombres.append(item)
         else:
+<<<<<<< Updated upstream
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
+=======
+            lista_nombres.append(nombre)    
+    return lista_datos, lista_nombres
+    
+>>>>>>> Stashed changes

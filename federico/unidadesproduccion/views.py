@@ -5,14 +5,22 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 # Create your views here.
 def verunidadproduccion(request):
     meta_clase = UnidadesdeProduccion._meta
     nombres = [campo.name for campo in meta_clase.fields]
     tabla = UnidadesdeProduccion.objects.all()
+<<<<<<< Updated upstream
     lista_unidadesp, lista_nombres = listador(tabla)
     return render(request, 'holaquease.html', {'tabla': tabla, 'nombres': nombres, 'lista_unidadesp': lista_unidadesp, 'lista_nombres': lista_nombres,})
+=======
+    lista_unidadesp, lista_nombres = listador(tabla) 
+    return render(request, 'holaquease.html',
+                  {'tabla': tabla, 'nombres': nombres, 'lista_unidadesp': lista_unidadesp, 'lista_nombres': lista_nombres})
+   
+>>>>>>> Stashed changes
 
 def unidadproduccion_pdf(template_src, context_dict={}):
     template = get_template(template_src)

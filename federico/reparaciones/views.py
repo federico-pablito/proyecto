@@ -53,6 +53,7 @@ def reparaciones_editar(request, id=None):
         lista_reparaciones, lista_nombres = listador(tabla)
     return render(request, 'editar_reparaciones.html', {'tabla': tabla, 'form': form, 'lista_reparaciones':lista_reparaciones, 'lista_nombres': lista_nombres})
 def listador(datos):
+<<<<<<< Updated upstream
     lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
     meta_clase = Reparaciones._meta
     nombres = [campo.name for campo in meta_clase.fields]
@@ -69,3 +70,21 @@ def listador(datos):
         else:
             lista_nombres.append(nombre)
     return lista_datos, lista_nombres
+=======
+    lista_datos = []
+    lista_nombres = ['Id', 'Interno', 'Ubicacion', 'Falla', 'Porcentaje Avance', 'Fecha Reparacion Estimada',
+                     'Fecha entrada', 'Fecha Salida', 'Estado Reparacion', 'Estado Equipo']
+
+    return lista_datos, lista_nombres
+
+class reparaciones_pd_view(View):
+    def get(self, request, *args, **kwargs):
+        reparaciones = Reparaciones.objects.all()
+        lista_partes, lista_nombres = listador(reparaciones)
+        context = {
+            'reparaciones': reparaciones,
+            'lista_nombres': lista_nombres,
+        }
+        pdf = reparaciones_pdf('reparaciones_pdf.html', context)
+        return HttpResponse(pdf, content_type='application/pdf')
+>>>>>>> Stashed changes

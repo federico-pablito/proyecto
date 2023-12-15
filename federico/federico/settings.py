@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["*"]
 >>>>>>> Stashed changes
 
+<<<<<<< Updated upstream
+=======
+ALLOWED_HOSTS = ["*"]
+>>>>>>> Stashed changes
 
 # Application definition
 
@@ -50,10 +54,15 @@ INSTALLED_APPS = [
     'logistica',
     'partesdiarios',
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
     'render',
     'login'
     
+    
+>>>>>>> Stashed changes
+=======
+    'disponibilidadequipos',
     
 >>>>>>> Stashed changes
 ]
@@ -67,6 +76,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.RemoteUserMiddleware',
 ]
 
 ROOT_URLCONF = 'federico.urls'
@@ -96,6 +107,7 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+<<<<<<< Updated upstream
         'HOST': 'localhost',
         'PORT': 3000,
         'NAME': 'pablofederico',
@@ -106,6 +118,13 @@ DATABASES = {
 =======
         'HOST': 'localhost',
         'PORT': '3000',
+=======
+        'NAME': 'pablofederico',
+        'USER': 'postgres',
+        'PASSWORD': '4068xrcz4068',
+        'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host diferente
+        'PORT': '3000',  # Puerto de MySQL
+>>>>>>> Stashed changes
     }
 >>>>>>> Stashed changes
 }

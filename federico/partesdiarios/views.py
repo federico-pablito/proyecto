@@ -43,7 +43,7 @@ def partediario_editar(request):
     return render(request, 'partediario_editar.html',
                   { 'form': form})
 def listador(datos):
-    lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
+    lista_datos = []
     meta_clase = PartesDiarios._meta
     nombres = [campo.name for campo in meta_clase.fields]
     nombres_dependencias = [campo.name for campo in Internos._meta.fields]

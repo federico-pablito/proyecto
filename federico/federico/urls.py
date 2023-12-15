@@ -22,7 +22,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< Updated upstream
     path('', include('main.urls')),
+=======
+    path('', include('main.urls')), 
+>>>>>>> Stashed changes
     path('maestroequipo/', include('maestroequipos.urls')),
     path('service/', include('service.urls')),
     path('unidadesproduccion/', include('unidadesproduccion.urls')),
@@ -30,6 +34,11 @@ urlpatterns = [
     path('reparaciones/', include('reparaciones.urls')),
     path('logistica/', include('logistica.urls')),
     path('partesdiarios/', include('partesdiarios.urls')),
+<<<<<<< Updated upstream
+=======
+    path('maininicio/', include('main.urls')),
+    path('disponibilidadequipos/', include('disponibilidadequipos.urls')),    
+>>>>>>> Stashed changes
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
