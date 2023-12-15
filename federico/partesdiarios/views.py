@@ -23,15 +23,6 @@ def partediario_crear(request):
         if form.is_valid():
             descripcion = form.cleaned_data.pop('descripcion', None)
             new_parte = form.save()
-            interno = new_parte.interno
-            up = Internos.objects.get(id=interno.id).up
-            last_reparacion = Reparaciones.objects.filter(interno=interno.id).last()
-            if last_reparacion is None:
-                last_reparacion = Reparaciones.objects.first()
-            new_tabla_madre = TablaMadre(internos=interno, unidadesdeproduccion=up,
-                                         partesdiarions=new_parte, observaciones=descripcion, dolardia=0, reparaciones=last_reparacion)
-            new_tabla_madre.save()
-            return redirect('partesdiario_main')
     else:
         form = partediario_form()
     return render(request, 'partediario_crear.html', {'form': form})

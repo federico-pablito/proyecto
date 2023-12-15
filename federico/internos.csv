@@ -1,0 +1,277 @@
+1,ACO 1,Generico,Acoplado Generico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MMM001,Acoplado,1
+2,ACO 2,COOPERTAN,TANQUE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Acoplado,1
+3,ACO 3,ACOPLAR,Acoplado Semi,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,UQV842,Acoplado,1
+4,ACO 4,SALTO,Acoplado Generico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA706NU,Acoplado,1
+5,ACO 5,SALTO,Acoplado Generico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AB159GB,Acoplado,1
+6,ACO 6,SALTO,BATEA SRV 3E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF102TQ,Acoplado,1
+7,ACO 7,SALTO,BATEA SRV 3E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF144QL,Acoplado,1
+8,ACO 8,SALTO,BATEA SRV 3E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF102TR,Acoplado,1
+9,ACO 9,SALTO,BATEA SRV 3E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Acoplado,1
+10,BA 1,CATERPILLAR,Barredora Generica,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD098,Barredora,1
+11,BA 2,CATERPILLAR,BU115,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Barredora,1
+12,CAM 1,FORD,F7000,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,WXM138,Camion Reg. Asf.,1
+13,CAM 2,FORD,F14000,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CZY234,Camion Reg. Agua,1
+14,CAM 3,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,JFC183,Camion,1
+15,CAM 4,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,JFC182,Camion Mixer,1
+16,CAM 5,IVECO,EUROCARGO ATTACK 170E22 3690,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,KPQ427,Camion,1
+17,CAM 6,IVECO,EUROCARGO ATTACK 170E22 3690,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,KPQ428,Camion,1
+18,CAM 7,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,KBM972,Camion Mixer,1
+19,CAM 8,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MMF791,Camion Mixer,1
+20,CAM 11,MERCEDES BENZ,LS 1938-46 AA - Supertorque,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,SFE367,Camion,1
+21,CAM 12,MERCEDES BENZ,LK 1618/42,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AKI881,Camion Reg. Asf.,1
+22,CAM 13,MERCEDES BENZ,LS 1938-46 AA - Electronico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CTG592,Camion,1
+23,CAM 16,SCANIA,R 113H-360HP 4X2 38 DSC,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BJI168,Camion,1
+24,CAM 18,VOLKSWAGEN,15.160/35 // 15.170/35,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DHX489,Camion Reg. Asf.,1
+25,CAM 19,VOLKSWAGEN,15.310/35,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GEE752,Camion Reg. Agua,1
+26,CAM 20,VOLKSWAGEN,26.260E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GQM336,Camion Tatu,1
+27,CAM 21,VOLKSWAGEN,26.260E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GUH210,Camion Mixer,1
+28,CAM 22,VOLKSWAGEN,26.260E 41 D/C,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,NDS880,Camion Mixer,1
+29,CAM 23,VOLKSWAGEN,19.320E 43,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,NDS883,Camion,1
+30,CAM 24,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,PAA780,Camion Mixer,1
+31,CAM 25,IVECO,EUROCARGO 260E25,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,PCN255,Camion,1
+32,CAM 26,IVECO,EUROCARGO 170E22N,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA379VB,Camion,1
+33,CAM 27,IVECO,EUROCARGO 170E22N attack,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA379VC,Camion,1
+34,CAM 28,FORD,CARGO 1722/37 E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,POQ248,Camion,1
+35,CAM 29,IVECO,EUROCARGO 170E22N,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA485QS,Camion,1
+36,CAM 30,IVECO,TECTOR E5 BU-170E28T 3690 5670MLL PIVOT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA981PR,Camion,1
+37,CAM 31,IVECO,TECTOR CB-260E28 3690 6X4 4815MLC,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA981PS,Camion Mixer,1
+38,CAM 34,IVECO,429-DAILY 35C15 PASO 3750,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AB813XF,Camion,1
+39,CAM 35,IVECO,TECTOR 260E28,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC236RH,Camion Mixer,1
+40,CAM 36,FORD,F1729-37 CD MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC819NQ,Camion,1
+41,CAM 37,FORD,F1729-37 CD AMT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC819NX,Camion,1
+42,CAM 38,IVECO,TECTOR ATTACK DV 260E30N MLC3690,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD155CP,Camion Mixer,1
+43,CAM 39,IVECO,TECTOR ATTACK DV 260E30N MLC3690,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD155CU,Camion Mixer,1
+44,CAM 40,IVECO,TECTOR ATTACK 260E30NCM24,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AE707OW,Camion Mixer,1
+45,CAM 41,MERCEDES BENZ,1114,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,SMH253,Camion Reg. Agua,1
+46,CAM 42,IVECO,1114,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AE450HS,Camion,1
+47,CAM 43,IVECO,EUROCARGO 150 E20,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CDQ359,Camion Reg. Agua,1
+48,CAM 44,IVECO,360 EUROTRONIC,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF241TZ,Camion Tractor,1
+49,CAM 45,IVECO,170 E30,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF294SI,Camion Tractor,1
+50,CAM 47,MERCEDES BENZ,4844,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF496RX,Camion,1
+51,CAM 48,IVECO,170E28TLM21,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF531FK,Camion,1
+52,CAM 49,MERCEDES BENZ,4844,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF496RW,Camion,1
+53,CAM 50,FOTON,Camion Generico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF496RW,Camion,1
+54,CAM 51,FIAT IVECO,TECTOR 260E30,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF412GI,Camion Mixer,1
+55,CAM 52,FIAT IVECO,440 T44NCA16,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF737ZM,Camion,1
+56,CAM 53,FIAT IVECO,DG-260E30NMC24,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF737ZT,Camion,1
+57,CAM 54,FIAT IVECO,DG-260E30NMC24,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF737ZV,Camion,1
+58,CAM 55,IVECO,TRACKER 440,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF833GD,Camion,1
+59,CAM 57,IVECO,260 E30,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF921LK,Camion,1
+60,CAM 58,IVECO,260 E30,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF999GC,Camion,1
+61,CAM 59,IVECO,AT360,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF999GF,Camion,1
+62,COMP 1,SULLAIR,185DP,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,MOTOCOMPRESOR,1
+63,F 2,CATERPILLAR,RP450,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AYN95,Fresadora,1
+64,F 3,CMI,RS 500B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD094,Reclamadora,1
+65,F 4,WIRTGEN,W100,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD132,Fresadora,1
+66,F 5,WIRTGEN,W200,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD134,Fresadora,1
+67,F 6,WIRTGEN,WR200,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Reclamadora,1
+68,MA 1,GENIE,GTH-844,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Manipulador,1
+69,MC 1,CATERPILLAR,226B High Flow,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BIG67,Minicargador,1
+70,MC 2,CATERPILLAR,226B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BMN33,Minicargador,1
+71,MC 3,CATERPILLAR,226B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD100,Minicargador,1
+72,MC 4,CATERPILLAR,226B2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD101,Minicargador,1
+73,MC 5,ASTARSA,AA 45,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+74,MC 6,CATERPILLAR,246D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+75,MC 7,BOBCAT,S 630,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+76,MC 7,BOBCAT,S 630,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+77,MC 8,CATERPILLAR,246 D3,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+78,MC 9,CATERPILLAR,236 D3,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Minicargador,1
+79,MN 1,CHAMPION,710A,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD106,Motoniveladora,1
+80,MN 2,VOLVO,G940,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD107,Motoniveladora,1
+81,MN 3,CHAMPION,720A,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,ANN37,Motoniveladora,1
+82,MN 5,CATERPILLAR,140K,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD110,Motoniveladora,1
+83,MN 6,SDLG,G9190,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD108,Motoniveladora,1
+84,MN 7,SDLG,G9190,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+85,MN 8,SDLG,G9190,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+86,MN 9,CATERPILLAR,140K,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,JPA04356,Motoniveladora,1
+87,MN 10,SDLG,G9190,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+88,MN 11,CATERPILLAR,140K,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+89,MN 12,CATERPILLAR,140K,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+90,MN 13,CATERPILLAR,140H,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+91,MN 14,CATERPILLAR,140K,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+92,MN 15,CATERPILLAR,120 H,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Motoniveladora,1
+93,MOV 4,KIA,K-2500,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,HCE017,Camioneta,1
+94,MOV 5,AGRALE,05-6000  RD E-MEX,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA173VG,Camion,1
+95,MOV 8,TOYOTA,ETIOS XLS 1.5 5 PUERTAS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,ODV889,Automovil,1
+96,MOV 10,TOYOTA,HILUX SW4 SRV 3.0 TDI AT C/cuero,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GAD093,Camioneta,1
+98,MOV 16,TOYOTA,HILUX 3.0 DOBLE CABINA 4X4,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,IIZ494,Camioneta,1
+97,MOV 14,TOYOTA,HILUX 4X4 DC SRV 3.0 TDI,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GUV799,Camioneta,1
+99,MOV 17,TOYOTA,HILUX SW4 4X4 SRV 3,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MIN819,Camioneta,1
+100,MOV 18,VOLKSWAGEN,CADDY 1.9 SD,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,HUV841,Camioneta,1
+101,MOV 19,VOLKSWAGEN,CADDY 1.9 SD,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,HUV841,Camioneta,1
+102,MOV 20,VOLKSWAGEN,SAVEIRO 1.9 SD PLUS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,ICT141,Camioneta,1
+103,MOV 27,RENAULT,SANDERO 1.6 16V LUXE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,LDH938,Automovil,1
+104,MOV 32,TOYOTA,COROLLA 1.8 XEI A/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MYP926,Automovil,1
+105,MOV 33,TOYOTA,HILUX 4X2 DC DX 2.4 TDI 6 M/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD461JW,Camioneta,1
+106,MOV 35,TOYOTA,HILUX L/16 2.4 DC 4X2 DX TDI 6 M/T VER,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD218HB,Camioneta,1
+107,MOV 36,TOYOTA,HILUX 4X2 DC DX 2.4 TDI 6 M/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD541WB,Camioneta,1
+108,MOV 37,TOYOTA,HILUX 4X4 DC SR 2.8 TDI 6 M/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC818GQ,Camioneta,1
+109,MOV 38,TOYOTA,HILUX 4X2 DC DX 2.4 TDI 6 M/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC341SW,Camioneta,1
+110,MOV 39,TOYOTA,HILUX L/16 2.4 DC 4X2 DX TDI 6 M/T VER,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC341SV,Camioneta,1
+111,MOV 40,TOYOTA,COROLLA 1.8 XEI,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD426RY,Automovil,1
+112,MOV 41,FORD,100 XLT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CWJ970,Automovil,1
+113,MOV 43,TOYOTA,HILUX 4X4 DC SRX 2.8 TDI 6 M/T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC110SB,Automovil,1
+114,MOV 44,HONDA,HR-V 1.8 LX CVT L/19,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AD541XS,Automovil,1
+115,MOV 46,TOYOTA,ETIOS XLS 1.5 4 PUERTAS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,PBA738,Automovil,1
+138,MOV 71,FIAT,STRADA 1.3L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF584ZG,Camioneta,1
+116,MOV 48,TOYOTA,HILUX 4X2 C/D SRV 3.0 TDI - B3,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,NOK410,Camioneta,1
+117,MOV 49,FIAT,CHRONOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF013XH,Automovil,1
+118,MOV 50,FIAT,CHRONOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AE993VV,Automovil,1
+119,MOV 51,RENAULT,ALASKAN ICONIC 4X4 MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF013XA,Camioneta,1
+120,MOV 52,RENAULT,KANGOO 1.6 NAFTA,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,LHS660,Automovil,1
+121,MOV 53,RENAULT,KANGOO 1.6 NAFTA,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,KVF615,Automovil,1
+122,MOV 54,VOLKSWAGEN,AMAROK V6,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA472SR,Camioneta,1
+123,MOV 55,FORD,RANGER,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA472SR,Camioneta,1
+124,MOV 56,FORD,RANGER,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,OHO588,Camioneta,1
+125,MOV 57,TOYOTA,HILUX SW4 TDI SRX,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF403HP,Camioneta,1
+126,MOV 58,RENAULT,ALASKAN ICONIC 4X4 MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF192MS,Camioneta,1
+127,MOV 59,RENAULT,ALASKAN ICONIC 4X4 MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF192MX,Camioneta,1
+128,MOV 61,FORD,RANGER 2.2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF217IG,Camioneta,1
+129,MOV 62,FORD,RANGER 2.2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF217IF,Camioneta,1
+130,MOV 63,FIAT,CHRONOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF241TF,Automovil,1
+131,MOV 64,FORD,RANGER 3.2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF260BI,Automovil,1
+132,MOV 65,TOYOTA,COROLLA 1.6 6MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,OBD881,Automovil,1
+133,MOV 66,RENAULT,ALASKAN ICONIC 4X4 MT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF192MY,Camioneta,1
+139,MOV 72,FIAT,STRADA 1.3L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF584ZH,Camioneta,1
+134,MOV 67,FORD,RANGER DC 4X2 XL 2.2L D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF531FZ,Camioneta,1
+135,MOV 68,FORD,RANGER DC 4X2 XL 2.2L D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF531FX,Camioneta,1
+136,MOV 69,FORD,RANGER DC 4X2 XL 2.2L D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF531FA,Camioneta,1
+137,MOV 70,FORD,RANGER DC 4X2 XL 2.2L D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF531FY,Camioneta,1
+140,MOV 73,FIAT,CHRONOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF241TJ,Automovil,1
+141,MOV 74,TOYOTA,ETIOS AIBO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF637EG,Automovil,1
+142,MOV 75,TOYOTA,ETIOS AIBO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF637EH,Automovil,1
+143,MOV 76,CHEVROLET,CRUZE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA226FW,Automovil,1
+144,MOV 77,FORD,RANGER CS 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868RK,Camioneta,1
+145,MOV 78,FORD,RANGER CS 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868RL,Camioneta,1
+146,MOV 79,FORD,RANGER CS 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868RM,Camioneta,1
+151,MOV 84,FORD,RANGER DC 4X4 LTD AT 3.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF906MH,Camioneta,1
+147,MOV 80,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868MM,Camioneta,1
+148,MOV 81,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868MN,Camioneta,1
+149,MOV 82,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868MP,Camioneta,1
+150,MOV 83,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF868MQ,Camioneta,1
+152,MOV 85,FORD,RANGER DC 4X4 LTD AT 3.2L D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AF921LF,Camioneta,1
+153,MOV 86,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG055EK,Camioneta,1
+154,MOV 87,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG055EH,Camioneta,1
+155,MOV 88,FORD,RANGER DC 4X2 XL 2.2L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG055EI,Camioneta,1
+156,MOV 89,FORD,RAPTOR 3.0 V6,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG036RP,Camioneta,1
+157,MOV 90,JEEP,COMMANDER,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG036QA,Camioneta,1
+158,MOV 91,TOYOTA,COROLLA CROSS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG064UE,Automovil,1
+159,MOV 92,VOLKSWAGEN,AMAROK 2.0L TDI 4X2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MYM315,Camioneta,1
+160,PA 1,PARKER,M356 BLACKMOBILE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta Asfaltica,1
+161,PA 2,WEDAC,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta Asfaltica,1
+162,PA 3,WEDAC,60 TPH,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta Asfaltica,1
+163,PA 4,MARINI,MAGNUM 120,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta Asfaltica,1
+164,PC 2,CATERPILLAR,930T SERIE II,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD112,Pala Cargadora,1
+165,PC 3,CATERPILLAR,924HZ,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CEI18,Pala Cargadora,1
+166,PC 4,CATERPILLAR,930T SERIE II,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD114,Pala Cargadora,1
+167,PC 5,CATERPILLAR,924F,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AEM07,Pala Cargadora,1
+168,PC 6,CATERPILLAR,930T SERIE II,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD116,Pala Cargadora,1
+169,PC 7,LONKING,CDM 833,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD117,Pala Cargadora,1
+170,PC 8,LONKING,CDM 833,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD118,Pala Cargadora,1
+171,PC 9,SAKAI,L4,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD119,Pala Cargadora,1
+172,PC 10,LIUGONG,CLG836,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+173,PC 11,HIDROMEC,102B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora Con Retro,1
+174,PC 12,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+175,PC 13,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+176,PC 14,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+177,PC 15,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+178,PC 16,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+179,PC 17,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+180,PC 18,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+181,PC 19,SDLG,933L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+182,PC 20,HYUNDAI,HL740-7,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+183,PC 20,NEW HOLLAND,W710.B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Pala Cargadora,1
+184,PLH 2,IMMAQ,PDH 80 SM,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta de Hormigon,1
+185,PLH 3,TECMAC,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Planta de Hormigon,1
+186,PLT1,DBN,KE500C75-4,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Trituradora de Piedra,1
+187,RA 1,AGROVIAL,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rastra 22 Hojas,1
+188,RA 2,GENOVESE,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rastra 24 Hojas,1
+189,RA 3,AGROVIAL,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rastra 20 Hojas,1
+190,RA 4,BERNARDIN,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rastra 28 Hojas,1
+191,RC 1,SAKAI,SW800 - V5W35_10252,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CSD78,Aplanadora Asfalto,1
+192,RC 2,SAKAI,TAMBOR SIMPLE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD069,Rodillo Liso Chico,1
+193,RC 4,WACKER,RD 880V,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD071,Rodillo Liso Chico,1
+194,RC 5,WACKER,RD 880V,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD072,Rodillo Liso Chico,1
+195,RC 6,CATERPILLAR,CS533E,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD073,Rodillo Pata de Cabra Dual,1
+196,RC 7,CATERPILLAR,CS534D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD074,Aplanadora Suelo,1
+197,RC 9,CATERPILLAR,825B SOBRE RUEDAS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD076,Rodillo Pata de Cabra,1
+198,RC 10,TORNE,RN 7.23 SOBRE NEUMATICOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CAA16,Rodillo Neumatico Asfalto,1
+199,RC 11,TORNE,RN 7.23 SOBRE NEUMATICOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD078,Rodillo Neumatico Asfalto,1
+200,RC 12,TORNE,RN 7.23 SOBRE NEUMATICOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD079,Rodillo Neumatico Asfalto,1
+201,RC 13,TERRA BROS,9 RUEDAS AUTOPROPULSADO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD080,Rodillo Neumatico Suelo,1
+202,RC 14,TERRA BROS,230 RN,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Neumatico Suelo,1
+203,RC 15,STONE,GENERICO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD082,Rodillo Liso Chico,1
+204,RC 17,G,CS553,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD084,Rodillo Liso,1
+205,RC 18,TORTONE,230 RN,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,VWD210,Rodillo Neumatico Suelo,1
+206,RC 19,SAKAI,SV520TF,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD086,Rodillo Pata de Cabra Dual,1
+207,RC 20,SAKAI,HVE1 ST 660 KG - DOBLE TAMBOR - 2016,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD087,Rodillo Liso Chico,1
+208,RC 20,SAKAI,HVE1 ST 660 KG - DOBLE TAMBOR - 2016,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD087,Rodillo Liso Chico,1
+209,RC 21,SAKAI,HV61ST,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD085,Rodillo Liso Chico,1
+211,RC 24,CATERPILLAR,CB534D (CON CABINA),Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD137,Aplanadora Asfalto,1
+210,RC 22,SAKAI,HV61ST (REPARAR MOTOR),Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD093,Rodillo Liso Chico,1
+212,RC 25,DYNAPAC,CA250 PD,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BBG84,Rodillo Pata de Cabra,1
+213,RC 26,SAKAI,HV61ST,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD115,Rodillo Liso Chico,1
+214,RC 27,VOLVO,SD105,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra Dual,1
+215,RC 28,SDLG,RS7120,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra,1
+216,RC 29,CATERPILLAR,CS54B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BHG5400193,Rodillo Pata de Cabra Dual,1
+217,RC 30,CATERPILLAR,CS54B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,BHG5400786,Rodillo Pata de Cabra Dual,1
+218,RC 31,AMMANN,AP - 240H,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Neumatico Suelo,1
+219,RC 32,BOMAG,BW202AADH-2,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Neumatico Suelo,1
+220,RC 33,HYPACK,C 766 C,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Aplanadora Suelo,1
+221,RC 34,TORTONE,RN 7.23 SOBRE NEUMATICOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Neumatico Suelo,1
+222,RC 35,VOLVO,SD110,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Liso,1
+223,RC 36,CATERPILLAR,CS54B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra Dual,1
+224,RC 37,TORTONE,RN 7.23 SOBRE NEUMATICOS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Neumatico Asfalto,1
+225,RC 38,CATERPILLAR,CS54B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra Dual,1
+226,RC 39,CATERPILLAR,CS54B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra Dual,1
+227,RC 40,LIUGONG,YZ6,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Combinado Chico,1
+228,RC 42,HAMM,3518,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Pata de Cabra Dual,1
+229,RC 41,LIUGONG,YZ6,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Compactador Chico,1
+230,RC 43,HAMM,3518,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Rodillo Compactador Liso,1
+231,RE 1,BENATI,3.22-BHS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD120,Retroexcavadora,1
+232,RE 2,CATERPILLAR,320CL,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,ATR67,Retroexcavadora,1
+233,RE 3,LIANGONG,RD 323,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD122,Retroexcavadora,1
+234,RE 4,VOLVO,EC460B,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD123,Retroexcavadora,1
+235,RE 5,VOLVO,EC210DL,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+236,RE 6,VOLVO,EC200L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+237,RE 7,VOLVO,EC200D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+238,RE 8,VOLVO,EC200D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+239,RE 9,LIEBHERR,920,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+240,RE 10,LIEBHERR,920,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+241,RE 11,VOLVO,EC380DL,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Retroexcavadora,1
+242,RE 12,LIEBHERR,R920,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,GEJ-647,Retroexcavadora,1
+243,SR 1,HELVETICA,"""\'""SR-3E VT 25TT 2 \'""\'""E\'""\'"" 1938E\'""""",Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,RDC422,Semiremolque,1
+244,SR 2,HELVETICA,SR-3E VT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DCR915,Semiremolque,1
+245,SR 3,HELVETICA,SR-3E VT,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,XDK008,Semiremolque,1
+246,SR 4,DEPAOLI,S25CVN27500/1000,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,LCP672,Batea,1
+247,SR 5,DEPAOLI,S25CVN27500/1000,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CCL437,Batea,1
+248,SR 6,DEPAOLI,CARRETON,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,IVM143,Acoplado,1
+249,SR 7,COMAR,CARRETON S16-12,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CWQ084,Acoplado,1
+250,SR 8,TAHNOS,Acoplado Generico,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DAL035,Acoplado,1
+251,SR 9,PLUSCARGA,S-BA,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,JOQ797,Semiremolque,1
+252,SR 10,NAVARRO,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC8570E,Semiremolque,1
+253,SR 11,VULCANO,CARRETON 04-CVP,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,FOO757,Semiremolque,1
+255,TER 5,CATERPILLAR,CAT AP655D,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD133,Terminadora,1
+254,TER 3,GEHL,1648 / 1649,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD003,Terminadora,1
+256,TER 6,ASTARSA,XCMG RP452L,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,MNG133,Terminadora,1
+257,TER 8,VOGELE,S1600,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Terminadora,1
+258,TER 9,DYNAPAC,F2500CS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Terminadora,1
+259,TOP 1,CATERPILLAR,D8R,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD124,Topadora,1
+260,TOP 2,LIANGONG,SD7,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD125,Topadora,1
+261,TOP 3,LIANGONG,SD7,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD126,Topadora,1
+262,TOP 4,CATERPILLAR,D8T,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Topadora,1
+263,TRA 1,MASSEY FERGUSON,MF 1215,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD124,Tractor,1
+264,TRA 2,NEW HOLLAND,7830,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD128,Tractor,1
+265,TRA 3,SHANGHAI,504,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD129,Tractor,1
+266,TRA 4,SHANGHAI,504,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD130,Tractor,1
+267,TRA 5,FIAT,780,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,DDD131,Tractor,1
+268,TRA 6,PAUNY,250 A,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CC12518,Tractor,1
+269,TRA 7,PAUNY,250 A,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CC12517,Tractor,1
+270,TRA 8,PAUNY,250 A,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,CC12517,Tractor,1
+271,CR 1,FORD,SIN MODELO,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,UFK880,Camion Regador,1
+272,CA 1,TRAILER,DOBLE EJE,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Carro Playo,1
+273,CAM 60,IVECO,IVECO 460,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AAA0000,Camion,1
+274,CAM 61,IVECO,IVECO 260,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG144CZ,Camion,1
+275,MOV 93,PEUGEOT,408 FELINE 1.6 HDI,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AA519NI,Automovil,1
+276,MOV 94,CITROEN,C3 AIRCROSS,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AC091HZ,Automovil,1
+277,SR 12,CORMETAL,SBXB21,Chasis Generico,Motor Generico,2022,Generico,Generico,No,Generico,No,No,Generico,No,Pablofederico,Generico,f,0,0,No hay OC,Activo,AG318LL,Batea,1
