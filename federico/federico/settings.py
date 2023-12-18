@@ -20,13 +20,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
-ALLOWED_HOSTS = ["fedemanager.com", "www.fedemanager.com", "https://fedemanager.com"]
-
+ALLOWED_HOSTS = ["fedemanager.com", "www.fedemanager.com",  "https://fedemanager.com", "https://www.fedemanager.com"]
 
 # Application definition
 
@@ -133,7 +135,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'images'
 
-# Default primary key field type
+# Default primary key f^ield type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
