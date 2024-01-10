@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+
     <style>
         .button-container {
           display: flex;
@@ -30,20 +32,117 @@
     </ul>
 </nav>
 <body>
-    <h1>Maestro Equipos</h1>
+    <h1>Maestro Equipos Alquileres</h1>
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button">Filtro Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'internos_pd_view' %}" role="button">Internos PDF</a></p>
+    </div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.interno_value.label_tag }}{{ form.interno_value }}
+            {{ form.up_value.label_tag }}{{ form.up_value }}
+            {{ form.marca_value.label_tag }}{{ form.marca_value }}
+            {{ form.modelo_value.label_tag }}{{ form.modelo_value }}
+            {{ form.tipovehiculo_value.label_tag }}{{ form.tipovehiculo_value }}
+            {{ form.chasis_value.label_tag }}{{ form.chasis_value }}
+            {{ form.motor_value.label_tag }}{{ form.motor_value }}
+            {{ form.dominio_value.label_tag }}{{ form.dominio_value }}
+            {{ form.anio_value.label_tag }}{{ form.anio_value }}
+            {{ form.aseguradora_value.label_tag }}{{ form.aseguradora_value }}
+            {{ form.seguro_value.label_tag }}{{ form.seguro_value }}
+            {{ form.seguro_pdf_value.label_tag }}{{ form.seguro_pdf_value }}
+            {{ form.itv_value.label_tag }}{{ form.itv_value }}
+            {{ form.itv_pdf_value.label_tag }}{{ form.itv_pdf_value }}
+            {{ form.titulo_pdf_value.label_tag }}{{ form.titulo_pdf_value }}
+            {{ form.tarjeta_value.label_tag }}{{ form.tarjeta_value }}
+            {{ form.tarjeta_pdf_value.label_tag }}{{ form.tarjeta_pdf_value }}
+            {{ form.propietario_value.label_tag }}{{ form.propietario_value }}
+            {{ form.chofer_value.label_tag }}{{ form.chofer_value }}
+            {{ form.alquilado_value.label_tag }}{{ form.alquilado_value }}
+            {{ form.valorpesos_value.label_tag }}{{ form.valorpesos_value }}
+            {{ form.valordolares_value.label_tag }}{{ form.valordolares_value }}
+            {{ form.actividadvehiculo_value.label_tag }}{{ form.actividadvehiculo_value }}
+            <input type="submit" value="Filtrar">
+        </form>
     </div>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col" class="align-middle">Editar</th>
-                    {% for nombre in lista_nombres %}
-                        <th scope="col" class="align-middle">{{ nombre }}</th>
-                    {% endfor %}
+                    <th scope="col" class="align-middle">Id</th>
+                    {% if form_values.interno_value %}
+                        <th scope="col" class="align-middle">Interno</th>
+                    {% endif %}
+                    {% if form_values.up_value %}
+                        <th scope="col" class="align-middle">UP</th>
+                    {% endif %}
+                    {% if form_values.marca_value %}
+                        <th scope="col" class="align-middle">Marca</th>
+                    {% endif %}
+                    {% if form_values.modelo_value %}
+                        <th scope="col" class="align-middle">Modelo</th>
+                    {% endif %}
+                    {% if form_values.tipovehiculo_value %}
+                        <th scope="col" class="align-middle">Tipo Vehiculo</th>
+                    {% endif %}
+                    {% if form_values.chasis_value %}
+                        <th scope="col" class="align-middle">Chasis</th>
+                    {% endif %}
+                    {% if form_values.motor_value %}
+                        <th scope="col" class="align-middle">Motor</th>
+                    {% endif %}
+                    {% if form_values.dominio_value %}
+                        <th scope="col" class="align-middle">Dominio</th>
+                    {% endif %}
+                    {% if form_values.anio_value %}
+                        <th scope="col" class="align-middle">Año</th>
+                    {% endif %}
+                    {% if form_values.aseguradora_value %}
+                        <th scope="col" class="align-middle">Aseguradora</th>
+                    {% endif %}
+                    {% if form_values.seguro_value %}
+                        <th scope="col" class="align-middle">Seguro</th>
+                    {% endif %}
+                    {% if form_values.seguro_pdf_value %}
+                        <th scope="col" class="align-middle">Seguro PDF</th>
+                    {% endif %}
+                    {% if form_values.itv_value %}
+                        <th scope="col" class="align-middle">ITV</th>
+                    {% endif %}
+                    {% if form_values.itv_pdf_value %}
+                        <th scope="col" class="align-middle">ITV PDF</th>
+                    {% endif %}
+                    {% if form_values.titulo_pdf_value %}
+                        <th scope="col" class="align-middle">Titulo PDF</th>
+                    {% endif %}
+                    {% if form_values.tarjeta_value %}
+                        <th scope="col" class="align-middle">Tarjeta</th>
+                    {% endif %}
+                    {% if form_values.tarjeta_pdf_value %}
+                        <th scope="col" class="align-middle">Tarjeta PDF</th>
+                    {% endif %}
+                    {% if form_values.propietario_value %}
+                        <th scope="col" class="align-middle">Propietario</th>
+                    {% endif %}
+                    {% if form_values.chofer_value %}
+                        <th scope="col" class="align-middle">Chofer</th>
+                    {% endif %}
+                    {% if form_values.alquilado_value %}
+                        <th scope="col" class="align-middle">Alquilado</th>
+                    {% endif %}
+                    {% if form_values.valorpesos_value %}
+                        <th scope="col" class="align-middle">Valor Pesos</th>
+                    {% endif %}
+                    {% if form_values.valordolares_value %}
+                        <th scope="col" class="align-middle">Valor Dolares</th>
+                    {% endif %}
+                    <th scope="col" class="align-middle">Orden</th>
+                    {% if form_values.actividadvehiculo_value %}
+                        <th scope="col" class="align-middle">Actividad Vehiculo</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
@@ -51,29 +150,75 @@
                     <tr>
                         <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a></td>
                         <td>{{ dato.id }}</td>
-                        <td>{{ dato.interno }}</td>
+                        {% if form_values.interno_value %}
+                            <td>{{ dato.interno }}</td>
+                        {% endif %}
+                        {% if form_values.up_value %}
                         <td>{{ dato.up }}</td>
+                        {% endif %}
+                        {% if form_values.marca_value %}
                         <td>{{ dato.marca }}</td>
+                        {% endif %}
+                        {% if form_values.modelo_value %}
                         <td>{{ dato.modelo }}</td>
+                        {% endif %}
+                        {% if form_values.tipovehiculo_value %}
                         <td>{{ dato.tipovehiculo }}</td>
+                        {% endif %}
+                        {% if form_values.chasis_value %}
                         <td>{{ dato.chasis }}</td>
+                        {% endif %}
+                        {% if form_values.motor_value %}
                         <td>{{ dato.motor }}</td>
+                        {% endif %}
+                        {% if form_values.dominio_value %}
                         <td>{{ dato.dominio }}</td>
+                        {% endif %}
+                        {% if form_values.anio_value %}
                         <td>{{ dato.anio }}</td>
+                        {% endif %}
+                        {% if form_values.aseguradora_value %}
                         <td>{{ dato.aseguradora }}</td>
+                        {% endif %}
+                        {% if form_values.seguro_value %}
                         <td>{{ dato.seguro }}</td>
+                        {% endif %}
+                        {% if form_values.seguro_pdf_value %}
                         <td>{{ dato.seguro_pdf }}</td>
+                        {% endif %}
+                        {% if form_values.itv_value %}
                         <td>{{ dato.itv }}</td>
+                        {% endif %}
+                        {% if form_values.itv_pdf_value %}
                         <td>{{ dato.itv_pdf }}</td>
+                        {% endif %}
+                        {% if form_values.titulo_pdf_value %}
                         <td>{{ dato.titulo_pdf }}</td>
+                        {% endif %}
+                        {% if form_values.tarjeta_value %}
                         <td>{{ dato.tarjeta }}</td>
+                        {% endif %}
+                        {% if form_values.tarjeta_pdf_value %}
                         <td>{{ dato.tarjeta_pdf }}</td>
+                        {% endif %}
+                        {% if form_values.propietario_value %}
                         <td>{{ dato.propietario }}</td>
+                        {% endif %}
+                        {% if form_values.chofer_value %}
                         <td>{{ dato.chofer }}</td>
+                        {% endif %}
+                        {% if form_values.alquilado_value %}
                         <td>{{ dato.alquilado }}</td>
+                        {% endif %}
+                        {% if form_values.valorpesos_value %}
                         <td>{{ dato.valorpesos }}</td>
+                        {% endif %}
+                        {% if form_values.valordolares_value %}
                         <td>{{ dato.valordolares }}</td>
+                        {% endif %}
+                        {% if form_values.orden_value %}
                         <td>{{ dato.orden }}</td>
+                        {% endif %}
                         <td>{{ dato.actividadvehiculo }}</td>
                     </tr>
                 {% endfor %}

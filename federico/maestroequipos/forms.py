@@ -32,3 +32,37 @@ class internosforms(forms.ModelForm):
         fields = ['interno', 'marca', 'modelo', 'tipovehiculo','chasis', 'motor','dominio', 'anio', 'aseguradora', 'seguro', 'seguro_pdf', 'itv',
                   'itv_pdf', 'titulo_pdf', 'tarjeta', 'tarjeta_pdf', 'propietario', 'chofer', 'alquilado', 'valorpesos',
                   'valordolares', 'orden', 'actividadvehiculo', 'up']
+
+
+class TableVariable(forms.Form):
+    interno_value = forms.BooleanField(required=False, label='Interno', initial=True)
+    up_value = forms.BooleanField(required=False, label='Unidad de Produccion', initial=True)
+    marca_value = forms.BooleanField(required=False, label='Marca', initial=True)
+    modelo_value = forms.BooleanField(required=False, label='Modelo', initial=True)
+    tipovehiculo_value = forms.BooleanField(required=False, label='Tipo de Vehiculo', initial=True)
+    chasis_value = forms.BooleanField(required=False, label='Chasis', initial=False)
+    motor_value = forms.BooleanField(required=False, label='Motor', initial=False)
+    dominio_value = forms.BooleanField(required=False, label='Dominio', initial=True)
+    anio_value = forms.BooleanField(required=False, label='Año', initial=True)
+    aseguradora_value = forms.BooleanField(required=False, label='Aseguradora', initial=False)
+    seguro_value = forms.BooleanField(required=False, label='Seguro', initial=False)
+    seguro_pdf_value = forms.BooleanField(required=False, label='Seguro PDF', initial=False)
+    itv_value = forms.BooleanField(required=False, label='ITV', initial=False)
+    itv_pdf_value = forms.BooleanField(required=False, label='ITV PDF', initial=False)
+    titulo_pdf_value = forms.BooleanField(required=False, label='Titulo PDF', initial=False)
+    tarjeta_value = forms.BooleanField(required=False, label='Tarjeta', initial=False)
+    tarjeta_pdf_value = forms.BooleanField(required=False, label='Tarjeta PDF', initial=False)
+    propietario_value = forms.BooleanField(required=False, label='Propietario', initial=True)
+    chofer_value = forms.BooleanField(required=False, label='Chofer', initial=True)
+    alquilado_value = forms.BooleanField(required=False, label='Alquilado', initial=False)
+    valorpesos_value = forms.BooleanField(required=False, label='Valor Pesos', initial=False)
+    valordolares_value = forms.BooleanField(required=False, label='Valor Dolares', initial=False)
+    orden_value = forms.BooleanField(required=False, label='Orden', initial=True)
+
+
+    class Meta:
+        fields = ['interno_value', 'marca_value', 'modelo_value', 'tipovehiculo_value', 'chasis_value', 'motor_value',
+                  'dominio_value', 'anio_value', 'aseguradora_value', 'seguro_value', 'seguro_pdf_value', 'itv_value',
+                  'itv_pdf_value', 'titulo_pdf_value', 'tarjeta_value', 'tarjeta_pdf_value', 'propietario_value',
+                  'chofer_value', 'alquilado_value', 'valorpesos_value', 'valordolares_value', 'orden_value',
+                  'up_value']

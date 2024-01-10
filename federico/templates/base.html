@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PABLO FEDERICO</title>
-
+  <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="{% static 'assets/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback' %}">
   <!-- Font Awesome -->
@@ -36,7 +36,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{% static 'assets/dist/img/AdminLTELogo.png' %}" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="{% static 'assets/dist/img/logo.png' %}" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -50,7 +50,7 @@
         <a href="{% url 'pablofederico'%}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">logout</a>
+        <a href="{% url 'logout'%}" class="nav-link">logout</a>
       </li>
     </ul>
 
@@ -181,8 +181,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{% static 'assets/dist/img/AdminLTELogo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="#" class="brand-link">
+      <img src="{% static 'assets/dist/img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">FedeManager</span>
     </a>
 

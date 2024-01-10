@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.mixins import PermissionRequiredMixin
 
+
 # Create your models here.
 class UnidadesProduccionTabla(PermissionRequiredMixin, models.Model):
     id = models.IntegerField(primary_key=True, serialize=True)
