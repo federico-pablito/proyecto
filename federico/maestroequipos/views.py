@@ -7,7 +7,6 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
-from django.contrib.auth.mixins import PermissionRequiredMixin
 
 
 def mainmaestroequipos(request):
@@ -212,7 +211,7 @@ def internos_pdf(template_src, context_dict={}):
     return None
 
 
-class internos_pd_view(PermissionRequiredMixin, View):
+class internos_pd_view(View):
     def get(self, request, *args, **kwargs):
         internos = Internos.objects.all()
         context = {
