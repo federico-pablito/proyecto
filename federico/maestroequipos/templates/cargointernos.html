@@ -28,7 +28,30 @@
     <h1>Cargo Interno</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.interno.label_tag }} {{ form.interno }}
+        {{ form.marca.label_tag }} {{ form.marca }}
+        {{ form.modelo.label_tag }} {{ form.modelo }}
+        {{ form.chasis.label_tag }} {{ form.chasis }}
+        {{ form.motor.label_tag }} {{ form.motor }}
+        {{ form.anio.label_tag }} {{ form.anio }}
+        {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
+        {{ form.seguro.label_tag }} {{ form.seguro }}
+        {{ form.seguro_pdf.label_tag }} {{ form.seguro_pdf }}
+        {{ form.itv.label_tag }}{{ form.itv }}
+        {{ form.itv_pdf.label_tag }}{{ form.itv_pdf }}
+        {{ form.titulo_pdf.label_tag }}{{ form.titulo_pdf }}
+        {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
+        {{ form.tarjeta_pdf.label_tag }}{{ form.tarjeta_pdf }}
+        {{ form.propietario.label_tag }}{{ form.propietario }}
+        {{ form.chofer.label_tag }}{{ form.chofer }}
+        {{ form.alquilado.label_tag }}{{ form.alquilado }}
+        {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
+        {{ form.valordolares.label_tag }}{{ form.valordolares }}
+        {{ form.orden.label_tag }}{{ form.orden }}
+        {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
+        {{ form.up.label_tag }}{{ form.up }}
+        {{ form.dominio.label_tag }}{{ form.dominio }}
+        {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
         <button type="submit">Enviar</button>
     </form>
 

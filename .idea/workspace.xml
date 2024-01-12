@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7dd2ebd6-a628-4bfb-a78e-87cf9979e82d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/disponibilidadequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/disponibilidadequipos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/disponibilidadequipos/templates/crear_disponibilidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/federico/disponibilidadequipos/templates/crear_disponibilidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/disponibilidadequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/disponibilidadequipos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/federico/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/federico/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/maestroequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/maestroequipos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/maestroequipos/templates/MainMaestro.html" beforeDir="false" afterPath="$PROJECT_DIR$/federico/maestroequipos/templates/MainMaestro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/maestroequipos/templates/cargointernos.html" beforeDir="false" afterPath="$PROJECT_DIR$/federico/maestroequipos/templates/cargointernos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/maestroequipos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/maestroequipos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/maestroequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/tablamadre/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -37,22 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/gaspa/Desktop/PabloFederico/proyecto/federico",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gaspa/Desktop/PabloFederico/proyecto/federico&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gaspa\Desktop\PabloFederico\proyecto\federico" />
@@ -80,7 +92,8 @@
       <workItem from="1700666764851" duration="826000" />
       <workItem from="1701102264647" duration="254000" />
       <workItem from="1701102576791" duration="12281000" />
-      <workItem from="1704887884246" duration="91000" />
+      <workItem from="1704887884246" duration="8794000" />
+      <workItem from="1704905642444" duration="34756000" />
     </task>
     <servers />
   </component>
@@ -90,5 +103,15 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/federico/disponibilidadequipos/forms.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
