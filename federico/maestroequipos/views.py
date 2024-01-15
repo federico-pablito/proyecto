@@ -1,14 +1,12 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Internos, TablaMadre, Reparaciones
-from .forms import internosforms, TableVariable
+from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos
+from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm
 from .filters import internosfilter
 from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
-from django.contrib.auth.mixins import PermissionRequiredMixin
-
 
 
 def mainmaestroequipos(request):
@@ -98,7 +96,7 @@ def alquileresinternos(request):
                                    'itv_pdf_value': False, 'titulo_pdf_value': False, 'tarjeta_value': False,
                                    'tarjeta_pdf_value': False, 'propietario_value': True, 'chofer_value': True,
                                    'alquilado_value': False, 'valorpesos_value': False, 'valordolares_value': False,
-                                   'orden_value': True}})
+                                   'orden_value': True, 'actividad_value': True}})
 
 
 # Create your views here.
@@ -145,6 +143,63 @@ def editar_interno(request, id=None):
     return render(request, 'editar_interno.html',
                   {'internos': internos, 'form': form})
 
+def alquilerequipo(request, id=None):
+    if request.method == 'POST':
+        form = AlquilerEquiposForm(request.POST)
+        if form.is_valid():
+            nuevo_alquiler = form.save()
+            return redirect('main-maestroequipos')
+    else:
+        form = AlquilerEquiposForm()
+    return render(request, 'formulario_alquileres.html',
+                  {'form': form})
+
+
+def info_interno(request, id):
+    internos = Internos.objects.all().get(id=id)
+    if request.method == 'POST':
+        form = CertificadosEquiposAlquiladosForm(request.POST)
+        if form.is_valid():
+            mesanio = form.cleaned_data.pop('fecha', None)
+            return redirect('certificado_equipoalquilado', id=id, mesanio=mesanio)
+    else:
+        form = CertificadosEquiposAlquiladosForm()
+    return render(request, 'info_interno.html', {'interno': internos, 'form': form})
+
+
+def certificado_equipoalquilado(request, id, mesanio):
+    mes, anio = mesanio.split(' ')
+    interno = Internos.objects.all().get(id=id)
+    certificado = AlquilerEquipos.objects.all().get(tipo_vehiculo=interno.tipovehiculo, modelo=interno.modelo,
+                                                    marca=interno.marca)
+    try:
+        certificado_existente = CertificadosEquiposAlquilados.objects.get(
+            equipo_alquilado=f'{certificado.tipo_vehiculo} {certificado.modelo} {certificado.marca}',
+            mes=mes, anio=anio)
+        return render(request, 'certificado_equipoalquilado.html',
+                      {'interno': interno, 'certificado': certificado_existente})
+    except CertificadosEquiposAlquilados.DoesNotExist:
+        dias_contados = contador_dias_certificado(mes, certificado.up.id, anio, certificado.dominio, interno.id)
+        CertificadosEquiposAlquilados.objects.create(
+            contratista=certificado.proveedor,
+            mes=mes,
+            anio=anio,
+            obra=certificado.up,
+            periodo_certificado=dias_contados,
+            equipo_alquilado=f'{certificado.tipo_vehiculo} {certificado.modelo} {certificado.marca}',
+            unidad='Mes',
+            certificado_en_mes=round(dias_contados / 30, 2),
+            acumulado = round(dias_contados / 30, 2),
+            precio_unitario=certificado.monto_contratacion,
+            importe=certificado.monto_contratacion*(dias_contados/30),
+            total_neto_deducciones=certificado.monto_contratacion*(dias_contados/30),
+            total_con_iva=certificado.monto_contratacion*(dias_contados/30)*1.21,)
+        certificado_existente = CertificadosEquiposAlquilados.objects.get(
+            equipo_alquilado=f'{certificado.tipo_vehiculo} {certificado.modelo} {certificado.marca}',
+            mes=mes, anio=anio)
+        return render(request, 'certificado_equipoalquilado.html',
+                      {'interno': interno, 'certificado': certificado_existente})
+
 
 def internos_pdf(template_src, context_dict={}):
     template = get_template(template_src)
@@ -156,8 +211,7 @@ def internos_pdf(template_src, context_dict={}):
     return None
 
 
-
-class internos_pd_view(PermissionRequiredMixin, View):
+class internos_pd_view(View):
     def get(self, request, *args, **kwargs):
         internos = Internos.objects.all()
         context = {
@@ -165,3 +219,25 @@ class internos_pd_view(PermissionRequiredMixin, View):
         }
         pdf = internos_pdf('maestroequipos_pdf.html', context)
         return HttpResponse(pdf, content_type='application/pdf')
+
+def contador_dias_certificado(mes, up, anio, dominio, interno_id):
+    interno = Internos.objects.get(id=interno_id)
+    tabla = DisponibilidadEquipos.objects.filter(mes=mes, anio=anio, up=up, interno=interno)
+    actividad = []
+    for item in range(1, 32):
+        if item in tabla.filter(interno=interno).values_list('dia', flat=True):
+            act = tabla.filter(dia=item).values_list('actividad', flat=True)
+            a = DisponibilidadEquipos.objects.get(id=act[0])
+            actividad.append(a.actividad.categoria)
+        else:
+            actividad.append(' ')
+    # Contador de dias trabajados
+    dias_trabajados = 0
+    for item in actividad:
+        if item == 'd':
+            dias_trabajados += 1
+        elif item == '2':
+            dias_trabajados += 0.5
+        else:
+            dias_trabajados += 0
+    return dias_trabajados

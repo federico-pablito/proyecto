@@ -105,6 +105,7 @@
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button">Filtro Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'internos_pd_view' %}" role="button">Internos PDF</a></p>
+        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">alquilerequipo</a></p>
     </div>
     </div>
     <div class="divCheck">
@@ -220,13 +221,14 @@
                         <th scope="col" class="align-middle">Valor D</th>
                     {% endif %}
                     <th scope="col" class="align-middle">Orden</th>
-                    <th scope="col" class="align-middle">Actividad Vehiculo</th>
+
+                    <th scope="col" class="align-middle">Actividad</th>
                 </tr>
             </thead>
             <tbody>
                 {% for dato in internos %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a></td>
+                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btn btn-primary" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
                         <td>{{ dato.id }}</td>
                         {% if form_values.interno_value %}
                             <td>{{ dato.interno }}</td>

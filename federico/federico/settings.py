@@ -28,7 +28,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')"""
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-"""ALLOWED_HOSTS = ['fedemanager.com', 'www.fedemanager.com', 'https://fedemanager.com', 'https://www.fedemanager.com']"""
+# ALLOWED_HOSTS = ['fedemanager.com',
+#                    'www.fedemanager.com',
+#                    'https://fedemanager.com',
+#                    'https://www.fedemanager.com']
 
 ALLOWED_HOSTS = ["*"]
 

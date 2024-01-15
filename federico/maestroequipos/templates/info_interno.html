@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ interno.interno }}</h1>
+    <div>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+        </form>
+        <p>UP: {{ interno.up }}</p>
+        <p>Marca: {{ interno.marca }}</p>
+        <p>Modelo: {{ interno.modelo }}</p>
+        <p>Tipo Vehiculo: {{ interno.tipovehiculo }}</p>
+        <p>Chasis: {{ interno.chasis }}</p>
+        <p>Motor: {{ interno.motor }}</p>
+        <p>Dominio: {{ interno.dominio }}</p>
+        <p>Año: {{ interno.anio }}</p>
+        <p>Aseguradora: {{ interno.aseguradora }}</p>
+        <p>Seguro: {{ interno.seguro }}</p>
+        <p>Seg. PDF: {{ interno.seguro_pdf }}</p>
+        <p>ITV: {{ interno.itv }}</p>
+        <p>ITV PDF: {{ interno.itv_pdf }}</p>
+        <p>Tarjeta: {{ interno.tarjeta }}</p>
+        <p>Tarj. PDF: {{ interno.tarjeta_pdf }}</p>
+        <p>Propietario: {{ interno.propietario }}</p>
+        <p>Chofer: {{ interno.chofer }}</p>
+        <p>Valor Pesos: {{ interno.valorpesos }}</p>
+        <p>Valor Dolares: {{ interno.valordolares }}</p>
+        <p>Orden: {{ interno.orden }}</p>
+        <p>Actividad Vehiculo: {{ interno.actividadvehiculo }}</p>
+    </div>
+
+</body>
+</html>

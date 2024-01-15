@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>{{ interno.proveedor }}</p>
+    <p>{{ interno.up.ubicacion }}</p>
+    <p>Certificado n°: {{ certificado.id }}</p>
+    <p>Periodo Certificado: {{ certificado.mes }} {{ certificado.anio }}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Equipo Alquilado</th>
+                <th>Unidad</th>
+                <th>N° Orden Compra</th>
+                <th>Certificado Anterior</th>
+                <th>Certificado en el mes</th>
+                <th>Acumulado</th>
+                <th>Precio Unitario</th>
+                <th>Importe</th>
+                <th>Total</th>
+                <th>Total con IVA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ certificado.equipo_alquilado }}</td>
+                <td>{{ certificado.unidad }}</td>
+                <td>Orden de Compra</td>
+                <td> </td>
+                <td>{{ certificado.certificado_en_mes }}</td>
+                <td>{{ certificado.certificado_en_mes }}</td>
+                <td>{{ certificado.precio_unitario }}</td>
+                <td>{{ certificado.importe }}</td>
+                <td>{{ certificado.total_neto_deducciones }}</td>
+                <td>{{ certificado.total_con_iva }}</td>
+            </tr>
+        </tbody>
+</body>
+</html>
