@@ -8,7 +8,77 @@
     <title>Mi Vista</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <style>
+      nav{
+        background-color: white;
+      }
+      body {
+          font-family: 'Be Vietnam Pro', sans-serif;
+          background-color: rgb(229, 222, 222);
+      }
+  
+      h1 {
+          font-weight: bold;
+          text-align: center;   
+      }
+  
+      .divForm {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #6e6c6c48; 
+          padding: 20px 0px; 
+          margin: 0px 20%;
+          border-radius: 8px; 
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
+          justify-content: space-between;
+      }
+  
+      input {
+          width: 150px;
+          height: 35px;
+          padding: 5px;
+          margin-bottom: 10px;
+      }
+  
+      input#id_alquilado {
+          width: auto;
+          height: auto;
+      }
+  
+      label {
+          margin: 1rem;
+      }
+  
+      label#id_valorpesos {
+          margin-left: 20px;
+      }
+  
+      .submitBtn {
+          display: block; 
+          padding: 0px 20px;
+          outline: 0;
+          cursor: pointer;
+          font-weight: 600;
+          background: #fff;
+          font-size: 13px;
+          border-radius: 4px;
+          color: rgb(29, 28, 29);
+          height: 36px;
+          transition: all 80ms linear;
+          transition: background-color 0.3s ease;
+          margin: auto;
+      }
+  
+      .submitBtn:active {
+          background-color: rgba(141, 71, 71, 0.8);
+          border: 0.5px solid;
+      }
 
+      button{
+        margin-top: 3rem;
+      }
+  </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -28,10 +98,47 @@
     <h1>Cargo Interno</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enviar</button>
-    </form>
-
-
+        <div class="divForm">
+        <div>
+        {{ form.interno.label_tag }} {{ form.interno }}
+        {{ form.marca.label_tag }} {{ form.marca }}
+        <br>
+        {{ form.modelo.label_tag }} {{ form.modelo }}
+        {{ form.chasis.label_tag }} {{ form.chasis }}
+        <br>
+        {{ form.motor.label_tag }} {{ form.motor }}
+        {{ form.anio.label_tag }} {{ form.anio }}
+        <br>
+        {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
+        {{ form.seguro.label_tag }} {{ form.seguro }}
+        <br>
+        {{ form.seguro_pdf.label_tag }} {{ form.seguro_pdf }}
+        {{ form.itv.label_tag }}{{ form.itv }}
+        <br>
+        {{ form.itv_pdf.label_tag }}{{ form.itv_pdf }}
+        {{ form.titulo_pdf.label_tag }}{{ form.titulo_pdf }}
+        </div>
+        <div>
+        {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
+        {{ form.tarjeta_pdf.label_tag }}{{ form.tarjeta_pdf }}
+        <br>
+        {{ form.propietario.label_tag }}{{ form.propietario }}
+        {{ form.chofer.label_tag }}{{ form.chofer }}
+        <br>
+        {{ form.alquilado.label_tag }}{{ form.alquilado }}
+        {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
+        <br>
+        {{ form.valordolares.label_tag }}{{ form.valordolares }}
+        {{ form.orden.label_tag }}{{ form.orden }}
+        <br>
+        {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
+        {{ form.up.label_tag }}{{ form.up }}
+        <br>
+        {{ form.dominio.label_tag }}{{ form.dominio }}
+        {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
+        </div>
+        <button type="submit" class="submitBtn">Enviar</button>    
+        </div>    
+      </form>
 </body>
 </html>
