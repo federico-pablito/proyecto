@@ -8,30 +8,98 @@
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
 
     <style>
-        .button-container {
-          display: flex;
+        .header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Be Vietnam Pro', sans-serif;
         }
+        .header p a{
+            background-color:  #a11616;
+            border: black;
+        }
+        .header p a:hover{
+            background-color:  floralwhite;
+            color: black;
+            border: 1px;
+            border-color: black;
+        }
+        .formCheck {
+        display: flex;
+        flex-direction: column; 
+        font-family: 'Be Vietnam Pro', sans-serif;
+        align-items: center; 
+        background-color: #908d8d48; 
+        padding: 20px 4rem; 
+        margin: 0px 20%;
+        border-radius: 8px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.489);
+        
+    }
 
+        .form-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between; 
+    }
+
+        .formCheck div {
+    padding: 5px 8px; 
+    font-size: medium;
+    }
+
+        .filtrarBtn {
+    width: 100%; 
+    display: block; 
+    position: relative;
+    align-items: center;
+    padding: 0px 20px;
+    outline: 0;
+    cursor: pointer;
+    border: 2px solid #1d1c1d4d;
+    font-weight: 600;
+    background: #fff;
+    font-size: 13px;
+    border-radius: 4px;
+    color: rgb(29, 28, 29);
+    height: 36px;
+    transition: all 80ms linear;
+    margin-top: 10px; 
+    transition: background-color 0.3s ease;
+    }
+
+        .filtrarBtn:active {
+    background-color: rgba(141, 71, 71, 0.8);
+    border: 1.5px solid;
+    }
+        .divCheck{
+            justify-content: center;
+    }
+        .button-container {
+        display: flex;
+    }
         .button-container p {
-          margin-right: 10px; /* Optional margin between buttons */
-        }
+        margin-right: 10px; 
+    }
     </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'pablofederico'%}" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
         <a href="{% url 'pablofederico'%}" class="nav-link">logout</a>
-      </li>
+    </li>
     </ul>
 </nav>
 <body>
+    <div class="header">
     <h1>Maestro Equipos Alquileres</h1>
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
@@ -39,35 +107,48 @@
         <p><a class="btn btn-primary" href="{% url 'internos_pd_view' %}" role="button">Internos PDF</a></p>
         <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">alquilerequipo</a></p>
     </div>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.interno_value.label_tag }}{{ form.interno_value }}
-            {{ form.up_value.label_tag }}{{ form.up_value }}
-            {{ form.marca_value.label_tag }}{{ form.marca_value }}
-            {{ form.modelo_value.label_tag }}{{ form.modelo_value }}
-            {{ form.tipovehiculo_value.label_tag }}{{ form.tipovehiculo_value }}
-            {{ form.chasis_value.label_tag }}{{ form.chasis_value }}
-            {{ form.motor_value.label_tag }}{{ form.motor_value }}
-            {{ form.dominio_value.label_tag }}{{ form.dominio_value }}
-            {{ form.anio_value.label_tag }}{{ form.anio_value }}
-            {{ form.aseguradora_value.label_tag }}{{ form.aseguradora_value }}
-            {{ form.seguro_value.label_tag }}{{ form.seguro_value }}
-            {{ form.seguro_pdf_value.label_tag }}{{ form.seguro_pdf_value }}
-            {{ form.itv_value.label_tag }}{{ form.itv_value }}
-            {{ form.itv_pdf_value.label_tag }}{{ form.itv_pdf_value }}
-            {{ form.titulo_pdf_value.label_tag }}{{ form.titulo_pdf_value }}
-            {{ form.tarjeta_value.label_tag }}{{ form.tarjeta_value }}
-            {{ form.tarjeta_pdf_value.label_tag }}{{ form.tarjeta_pdf_value }}
-            {{ form.propietario_value.label_tag }}{{ form.propietario_value }}
-            {{ form.chofer_value.label_tag }}{{ form.chofer_value }}
-            {{ form.alquilado_value.label_tag }}{{ form.alquilado_value }}
-            {{ form.valorpesos_value.label_tag }}{{ form.valorpesos_value }}
-            {{ form.valordolares_value.label_tag }}{{ form.valordolares_value }}
-            <input type="submit" value="Filtrar">
+    </div>
+    <div class="divCheck">
+        <form method="post" class="formCheck">
+            <div class="form-row">
+                <div class="form-group">
+                    {% csrf_token %}
+                    {{ form.interno_value.label_tag }}{{ form.interno_value }}
+                    {{ form.up_value.label_tag }}{{ form.up_value }}
+                    {{ form.marca_value.label_tag }}{{ form.marca_value }}
+                    <br>
+                    {{ form.modelo_value.label_tag }}{{ form.modelo_value }}
+                    {{ form.tipovehiculo_value.label_tag }}{{ form.tipovehiculo_value }}
+                    {{ form.chasis_value.label_tag }}{{ form.chasis_value }}
+                    <br>
+                    {{ form.motor_value.label_tag }}{{ form.motor_value }}
+                    {{ form.dominio_value.label_tag }}{{ form.dominio_value }}
+                    {{ form.anio_value.label_tag }}{{ form.anio_value }}
+                    {{ form.aseguradora_value.label_tag }}{{ form.aseguradora_value }}
+                    {{ form.seguro_value.label_tag }}{{ form.seguro_value }}
+                </div>
+                <div class="form-group">
+                    {{ form.seguro_pdf_value.label_tag }}{{ form.seguro_pdf_value }}
+                    {{ form.itv_value.label_tag }}{{ form.itv_value }}
+                    {{ form.itv_pdf_value.label_tag }}{{ form.itv_pdf_value }}
+                    <br>
+                    {{ form.titulo_pdf_value.label_tag }}{{ form.titulo_pdf_value }}
+                    {{ form.tarjeta_value.label_tag }}{{ form.tarjeta_value }}
+                    {{ form.tarjeta_pdf_value.label_tag }}{{ form.tarjeta_pdf_value }}
+                    <br>
+                    {{ form.propietario_value.label_tag }}{{ form.propietario_value }}
+                    {{ form.chofer_value.label_tag }}{{ form.chofer_value }}
+                    {{ form.alquilado_value.label_tag }}{{ form.alquilado_value }}
+                    {{ form.valorpesos_value.label_tag }}{{ form.valorpesos_value }}
+                    {{ form.valordolares_value.label_tag }}{{ form.valordolares_value }}
+                </div>
+            </div>
+            <div class="divBtn">
+                <input type="submit" value="Filtrar" class="filtrarBtn">
+            </div>
         </form>
     </div>
-    <div class="container d-inline-flex p-2">
+    <div class="container d-inline-flex p-2" style="width: 100%; font-size: small;font-weight: 200;">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -86,7 +167,7 @@
                         <th scope="col" class="align-middle">Modelo</th>
                     {% endif %}
                     {% if form_values.tipovehiculo_value %}
-                        <th scope="col" class="align-middle">Tipo Vehiculo</th>
+                        <th scope="col" class="align-middle">TipoV</th>
                     {% endif %}
                     {% if form_values.chasis_value %}
                         <th scope="col" class="align-middle">Chasis</th>
@@ -107,7 +188,7 @@
                         <th scope="col" class="align-middle">Seguro</th>
                     {% endif %}
                     {% if form_values.seguro_pdf_value %}
-                        <th scope="col" class="align-middle">Seguro PDF</th>
+                        <th scope="col" class="align-middle">Seg PDF</th>
                     {% endif %}
                     {% if form_values.itv_value %}
                         <th scope="col" class="align-middle">ITV</th>
@@ -116,16 +197,16 @@
                         <th scope="col" class="align-middle">ITV PDF</th>
                     {% endif %}
                     {% if form_values.titulo_pdf_value %}
-                        <th scope="col" class="align-middle">Titulo PDF</th>
+                        <th scope="col" class="align-middle">T PDF</th>
                     {% endif %}
                     {% if form_values.tarjeta_value %}
                         <th scope="col" class="align-middle">Tarjeta</th>
                     {% endif %}
                     {% if form_values.tarjeta_pdf_value %}
-                        <th scope="col" class="align-middle">Tarjeta PDF</th>
+                        <th scope="col" class="align-middle">T PDF</th>
                     {% endif %}
                     {% if form_values.propietario_value %}
-                        <th scope="col" class="align-middle">Propietario</th>
+                        <th scope="col" class="align-middle">Dueño</th>
                     {% endif %}
                     {% if form_values.chofer_value %}
                         <th scope="col" class="align-middle">Chofer</th>
@@ -134,12 +215,13 @@
                         <th scope="col" class="align-middle">Alquilado</th>
                     {% endif %}
                     {% if form_values.valorpesos_value %}
-                        <th scope="col" class="align-middle">Valor Pesos</th>
+                        <th scope="col" class="align-middle">Valor P</th>
                     {% endif %}
                     {% if form_values.valordolares_value %}
-                        <th scope="col" class="align-middle">Valor Dolares</th>
+                        <th scope="col" class="align-middle">Valor D</th>
                     {% endif %}
                     <th scope="col" class="align-middle">Orden</th>
+
                     <th scope="col" class="align-middle">Actividad</th>
                 </tr>
             </thead>
