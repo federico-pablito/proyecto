@@ -187,6 +187,7 @@ class Talleres(models.Model):
 	def __str__(self):
 		return ', '.join([self.nombre, self.ubicacion])
 
+
 class MecanicosEncargados(models.Model):
 	id = models.AutoField(primary_key=True)
 	codigo = models.CharField(max_length=512)
@@ -194,3 +195,65 @@ class MecanicosEncargados(models.Model):
 	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
 	def __str__(self):
 		return ', '.join([self.nombre, self.taller])
+
+
+class AlquilerEquipos(models.Model):
+	id = models.AutoField(primary_key=True)
+	solicitante = models.CharField(max_length=512)
+	revision = models.CharField(max_length=11, default='REVISIÓN 1')
+	r_comp = models.CharField(max_length=10, default='R-COMP-07')
+	fecha = models.DateTimeField()
+	monto_contratacion = models.IntegerField()
+	plazo_pago = models.CharField(max_length=512)
+	observaciones_contratacion = models.CharField(max_length=512)
+	fecha_inicio_tarea = models.DateTimeField()
+	periodo_contratacion = models.CharField(max_length=512)
+	periodo_finalizacion = models.CharField(max_length=512)
+	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
+	combustible_incluido = models.BooleanField(default=False)
+	operario_incluido = models.BooleanField(default=False)
+	carnet_operario_vigente = models.BooleanField(default=False)
+	carnet_operario_fecha_vencimiento = models.DateTimeField()
+	art_operario = models.BooleanField(default=False)
+	observaciones_equipo = models.CharField(max_length=512)
+	tipo_vehiculo = models.CharField(max_length=512)
+	modelo = models.CharField(max_length=512)
+	marca = models.CharField(max_length=512)
+	dominio = models.CharField(max_length=512)
+	titulo_tarjeta_verde = models.CharField(max_length=512)
+	kms = models.IntegerField()
+	estado = models.CharField(max_length=7)
+	seguro_equipo = models.BooleanField(default=False)
+	inspeccion_equipo = models.BooleanField(default=False)
+	inspeccion_equipo_responsable = models.CharField(max_length=512)
+	forma_pago = models.CharField(max_length=512)
+	condicion_pago = models.CharField(max_length=512)
+	proveedor = models.CharField(max_length=512)
+	razon_social = models.CharField(max_length=512)
+	cbu = models.CharField(max_length=512)
+	telefono = models.CharField(max_length=512)
+	autorizado = models.BooleanField(default=False)
+
+	def __str__(self):
+		return ', '.join([str(self.id), str(self.tipo_vehiculo), str(self.dominio)])
+
+
+class CertificadosEquiposAlquilados(models.Model):
+	id = models.AutoField(primary_key=True)
+	contratista = models.CharField(max_length=512)
+	obra = models.CharField(max_length=512)
+	periodo_certificado = models.CharField(max_length=512)
+	equipo_alquilado = models.CharField(max_length=512)
+	unidad = models.CharField(max_length=3, default='Mes')
+	certificado_en_mes = models.FloatField()
+	acumulado = models.FloatField()
+	precio_unitario = models.FloatField()
+	importe = models.FloatField()
+	total_neto_deducciones = models.FloatField()
+	total_con_iva = models.FloatField()
+	fecha = models.DateTimeField(auto_now_add=True)
+	mes = models.CharField(max_length=15, default='enero')
+	anio = models.IntegerField(default=2024)
+
+	def __str__(self):
+		return ', '.join([f'certificado n°{self.id}', str(self.contratista), str(self.equipo_alquilado)])

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import disponibilidad_form
-from tablamadre.models import DisponibilidadEquipos
+from tablamadre.models import DisponibilidadEquipos, Internos
 
 
 # Create your views here.
@@ -9,6 +9,7 @@ def cargo_disponibilidad(request):
         form = disponibilidad_form(request.POST)
         if form.is_valid():
             new_disponibilidad = form.save()
+            return render(request, 'main_disponibilidad.html')
     else:
         form = disponibilidad_form()
     return render(request, 'crear_disponibilidad.html', {'form': form})
@@ -37,10 +38,10 @@ def transpose_disponibilidad(mes, anio):
         internos = tabla.values_list('interno', flat=True).distinct()
         for dato in internos:
             row = []
-            row.append(tabla.get(interno=dato).interno.interno)
-            row.append(tabla.get(interno=dato).interno.propietario)
-            row.append(tabla.get(interno=dato).chofer)
-            row.append(tabla.get(interno=dato).fecha_ingreso_de_obra)
+            row.append(Internos.objects.get(id=dato).interno)
+            row.append(Internos.objects.get(id=dato).propietario)
+            row.append(tabla.filter(interno=dato).last().chofer)
+            row.append(tabla.filter(interno=dato).last())
             row.append(tabla.filter(interno=dato).last().cantidad_de_dias_en_obra)
             actividad = []
             # Listador de Dias Trabajados
@@ -49,7 +50,7 @@ def transpose_disponibilidad(mes, anio):
                     act = tabla.filter(dia=item).values_list('actividad', flat=True)
                     a = DisponibilidadEquipos.objects.get(id=act[0])
                     row.append(a.actividad.categoria.upper())
-                    actividad.append(act[0])
+                    actividad.append(a.actividad.categoria)
                 else:
                     row.append(' ')
                     actividad.append(' ')

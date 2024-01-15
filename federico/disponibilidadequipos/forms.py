@@ -1,5 +1,5 @@
 from django import forms
-from tablamadre.models import Internos, UnidadesdeProduccion, TipoActividad, Choferes
+from tablamadre.models import Internos, UnidadesdeProduccion, TipoActividad, Choferes, DisponibilidadEquipos
 
 class disponibilidad_form(forms.ModelForm):
     MESES_OPCIONES=(('enero', 'Enero'),
@@ -26,9 +26,8 @@ class disponibilidad_form(forms.ModelForm):
     mes = forms.ChoiceField(choices=MESES_OPCIONES, widget=forms.Select, label='Mes')
     dia = forms.IntegerField(required=True, label='Dia')
     actividad = forms.ModelChoiceField(queryset=TipoActividad.objects.all(), empty_label=None, required=False, label='Actividad')
+    cantidad_de_dias_en_obra = forms.IntegerField(required=True, label='Cantidad de Dias en Obra')
 
     class Meta:
-        model = Internos
-        fields = ['interno', 'marca', 'modelo', 'tipovehiculo','chasis', 'motor','dominio', 'anio', 'aseguradora', 'seguro', 'seguro_pdf', 'itv',
-                  'itv_pdf', 'titulo_pdf', 'tarjeta', 'tarjeta_pdf', 'propietario', 'chofer', 'alquilado', 'valorpesos',
-                  'valordolares', 'orden', 'actividadvehiculo', 'up']
+        model = DisponibilidadEquipos
+        fields = ['interno', 'chofer', 'up', 'fecha_ingreso_de_obra', 'anio', 'mes', 'dia', 'actividad', 'cantidad_de_dias_en_obra']

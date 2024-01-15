@@ -1,9 +1,11 @@
 from django import forms
-from tablamadre.models import Internos, UnidadesdeProduccion
+from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, CertificadosEquiposAlquilados
+
 
 class internosforms(forms.ModelForm):
     interno = forms.CharField(required=True)
-    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='Unidad de Produccion')
+    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
+                                label='Unidad de Produccion')
     marca = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
     tipovehiculo = forms.CharField(required=True)
@@ -27,9 +29,11 @@ class internosforms(forms.ModelForm):
     orden = forms.CharField(required=True)
     actividadvehiculo = forms.CharField(required=True)
     descripcion = forms.CharField(required=False)
+
     class Meta:
         model = Internos
-        fields = ['interno', 'marca', 'modelo', 'tipovehiculo','chasis', 'motor','dominio', 'anio', 'aseguradora', 'seguro', 'seguro_pdf', 'itv',
+        fields = ['interno', 'marca', 'modelo', 'tipovehiculo', 'chasis', 'motor', 'dominio', 'anio', 'aseguradora',
+                  'seguro', 'seguro_pdf', 'itv',
                   'itv_pdf', 'titulo_pdf', 'tarjeta', 'tarjeta_pdf', 'propietario', 'chofer', 'alquilado', 'valorpesos',
                   'valordolares', 'orden', 'actividadvehiculo', 'up']
 
@@ -59,10 +63,71 @@ class TableVariable(forms.Form):
     valordolares_value = forms.BooleanField(required=False, label='Valor Dolares', initial=False)
     orden_value = forms.BooleanField(required=False, label='Orden', initial=True)
 
-
     class Meta:
         fields = ['interno_value', 'marca_value', 'modelo_value', 'tipovehiculo_value', 'chasis_value', 'motor_value',
                   'dominio_value', 'anio_value', 'aseguradora_value', 'seguro_value', 'seguro_pdf_value', 'itv_value',
                   'itv_pdf_value', 'titulo_pdf_value', 'tarjeta_value', 'tarjeta_pdf_value', 'propietario_value',
                   'chofer_value', 'alquilado_value', 'valorpesos_value', 'valordolares_value', 'orden_value',
                   'up_value']
+
+
+class AlquilerEquiposForm(forms.ModelForm):
+    solicitante = forms.CharField(required=True)
+    fecha = forms.DateField(required=True,
+                            widget=forms.DateInput(attrs={'type': 'date'}),
+                            label='Fecha')
+    monto_contratacion = forms.IntegerField(required=True)
+    plazo_pago = forms.CharField(required=True)
+    observaciones_contratacion = forms.CharField(required=False)
+    fecha_inicio_tarea = forms.DateField(required=True,
+                                         widget=forms.DateInput(attrs={'type': 'date'}),
+                                         label='Fecha')
+    periodo_contratacion = forms.CharField(required=True)
+    periodo_finalizacion = forms.CharField(required=True)
+    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
+                                label='Unidad de Produccion')
+    combustible_incluido = forms.BooleanField(required=False, initial=False)
+    operario_incuido = forms.BooleanField(required=False, initial=False)
+    carnet_operario_vigente = forms.BooleanField(required=False, initial=False)
+    carnet_operario_fecha_vencimiento = forms.DateField(required=True,
+                                                        widget=forms.DateInput(attrs={'type': 'date'}),
+                                                        label='Fecha')
+    art_operario = forms.BooleanField(required=False, initial=False)
+    observaciones_equipo = forms.CharField(required=False)
+    tipo_vehiculo = forms.CharField(required=True)
+    modelo = forms.CharField(required=True)
+    marca = forms.CharField(required=True)
+    dominio = forms.CharField(required=True)
+    titulo_tarjeta_verde = forms.CharField(required=True)
+    kms = forms.IntegerField(required=True)
+    estado = forms.CharField(required=True)
+    seguro_equipo = forms.BooleanField(required=True)
+    inspeccion_equipo = forms.BooleanField(required=True)
+    inspeccion_equipo_responsable = forms.CharField(required=True)
+    forma_pago = forms.CharField(required=True)
+    condicion_pago = forms.CharField(required=True)
+    proveedor = forms.CharField(required=True)
+    razon_social = forms.CharField(required=True)
+    cbu = forms.CharField(required=True)
+    telefono = forms.CharField(required=True)
+    autorizado = forms.BooleanField(required=True)
+
+    class Meta:
+        model = AlquilerEquipos
+        fields = ['solicitante', 'fecha', 'monto_contratacion', 'plazo_pago', 'observaciones_contratacion',
+                  'fecha_inicio_tarea', 'periodo_contratacion', 'periodo_finalizacion', 'up', 'combustible_incluido',
+                  'operario_incuido', 'carnet_operario_vigente', 'carnet_operario_fecha_vencimiento', 'art_operario',
+                  'observaciones_equipo', 'tipo_vehiculo', 'modelo', 'marca', 'dominio', 'titulo_tarjeta_verde', 'kms',
+                  'estado', 'seguro_equipo', 'inspeccion_equipo', 'inspeccion_equipo_responsable', 'forma_pago',
+                  'condicion_pago', 'proveedor', 'razon_social', 'cbu', 'telefono', 'autorizado']
+
+
+class CertificadosEquiposAlquiladosForm(forms.Form):
+    meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
+             'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+    anios = ['2023', '2024', '2025', '2026', '2027']
+    OPCIONES = []
+    for anio in anios:
+        for mes in meses:
+            OPCIONES.append((mes + ' ' + anio, mes + ' ' + anio))
+    fecha = forms.ChoiceField(choices=OPCIONES, widget=forms.Select, label='Fecha')
