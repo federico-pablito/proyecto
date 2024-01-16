@@ -15,6 +15,7 @@ def mainmaestroequipos(request):
         form = TableVariable(request.POST)
         if form.is_valid():
             form_values = {
+                'id_value': form.cleaned_data['id_value'],
                 'interno_value': form.cleaned_data['interno_value'],
                 'marca_value': form.cleaned_data['marca_value'],
                 'modelo_value': form.cleaned_data['modelo_value'],
@@ -36,22 +37,27 @@ def mainmaestroequipos(request):
                 'alquilado_value': form.cleaned_data['alquilado_value'],
                 'valorpesos_value': form.cleaned_data['valorpesos_value'],
                 'valordolares_value': form.cleaned_data['valordolares_value'],
-                'orden_value': form.cleaned_data['orden_value']
-            }
-            return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                        'form_values': form_values})
+                'orden_value': form.cleaned_data['orden_value'],
+                'actividad_value': form.cleaned_data['actividad_value']}
+            crear_pdf = request.POST.get('Crear_PDF', None)
+            if 'columna' in request.POST:
+                return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
+                                                            'form_values': form_values})
+            elif 'crear_pdf' in request.POST:
+                form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
+                return redirect('generate_pdf_view', form_values=form_values_str)
     else:
         form = TableVariable()
     return render(request, 'MainMaestro.html',
-                  {'internos': internos,'form': form,
-                   'form_values': {'interno_value': True, 'marca_value': True, 'modelo_value': True,
+                  {'internos': internos, 'form': form,
+                   'form_values': {'id_value':True, 'interno_value': True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
                                    'seguro_value': False, 'seguro_pdf_value': False, 'itv_value': False,
                                    'itv_pdf_value': False, 'titulo_pdf_value': False, 'tarjeta_value': False,
                                    'tarjeta_pdf_value': False, 'propietario_value': True, 'chofer_value': True,
                                    'alquilado_value': False, 'valorpesos_value': False, 'valordolares_value': False,
-                                   'orden_value': True}})
+                                   'orden_value': True, 'actividad_value': True}})
 
 
 def alquileresinternos(request):
@@ -60,6 +66,7 @@ def alquileresinternos(request):
         form = TableVariable(request.POST)
         if form.is_valid():
             form_values = {
+                'id_value': form.cleaned_data['id_value'],
                 'interno_value': form.cleaned_data['interno_value'],
                 'marca_value': form.cleaned_data['marca_value'],
                 'modelo_value': form.cleaned_data['modelo_value'],
@@ -81,15 +88,20 @@ def alquileresinternos(request):
                 'alquilado_value': form.cleaned_data['alquilado_value'],
                 'valorpesos_value': form.cleaned_data['valorpesos_value'],
                 'valordolares_value': form.cleaned_data['valordolares_value'],
-                'orden_value': form.cleaned_data['orden_value']
-            }
-            return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                        'form_values': form_values})
+                'orden_value': form.cleaned_data['orden_value'],
+                'actividad_value': form.cleaned_data['actividad_value']}
+            crear_pdf = request.POST.get('Crear_PDF', None)
+            if 'columna' in request.POST:
+                return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
+                                                            'form_values': form_values})
+            elif 'crear_pdf' in request.POST:
+                form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
+                return redirect('generate_pdf_view', form_values=form_values_str)
     else:
         form = TableVariable()
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'form': form,
-                   'form_values': {'interno_value': True, 'marca_value': True, 'modelo_value': True,
+                   'form_values': {'id_value': True, 'interno_value': True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
                                    'seguro_value': False, 'seguro_pdf_value': False, 'itv_value': False,
@@ -201,24 +213,26 @@ def certificado_equipoalquilado(request, id, mesanio):
                       {'interno': interno, 'certificado': certificado_existente})
 
 
-def internos_pdf(template_src, context_dict={}):
-    template = get_template(template_src)
-    html = template.render(context_dict)
-    result = BytesIO()
-    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
-    if not pdf.err:
-        return HttpResponse(result.getvalue(), content_type='application/pdf')
-    return None
 
+def generate_pdf_view(request, form_values):
+    internos = Internos.objects.all()
+    key_value_pairs = [pair.split('=') for pair in form_values.split('&')]
 
-class internos_pd_view(View):
-    def get(self, request, *args, **kwargs):
-        internos = Internos.objects.all()
-        context = {
-            'internos': internos,
-        }
-        pdf = internos_pdf('maestroequipos_pdf.html', context)
-        return HttpResponse(pdf, content_type='application/pdf')
+    # Convert the key-value pairs into a dictionary
+    form_values_dict = {key: (value == 'True' if 'True' in value or 'False' in value else value) for key, value in
+                        key_value_pairs}
+
+    template_path = 'maestroequipos_pdf.html'
+    template = get_template(template_path)
+    html_content = template.render({'form_values': form_values_dict, 'internos': internos})
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="output.pdf"'
+    pisa_status = pisa.CreatePDF(html_content, dest=response)
+
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
+    return response
+
 
 def contador_dias_certificado(mes, up, anio, dominio, interno_id):
     interno = Internos.objects.get(id=interno_id)
