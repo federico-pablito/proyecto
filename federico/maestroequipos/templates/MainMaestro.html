@@ -22,8 +22,16 @@
         .header p a:hover{
             background-color:  floralwhite;
             color: black;
-            border: 1px;
-            border-color: black;
+            border: 1px solid black;
+            box-shadow: none !important;
+            background: linear-gradient(none);
+        }
+        .header p a:active{
+            background-color:  floralwhite;
+            color: black;
+            border: 1px solid black;
+            box-shadow: none !important;
+            background: linear-gradient(none);
         }
         .formCheck {
         display: flex;
@@ -47,6 +55,38 @@
         .formCheck div {
     padding: 5px 8px; 
     font-size: medium;
+    }
+        .btnEdit{
+    width: auto;
+    padding: 3px 10px 3px 10px;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid #1d1c1d4d;
+    font-weight: 600;
+    background: #fff;
+    font-size: 13px;
+    border-radius: 4px;
+    color: rgb(29, 28, 29);
+    height: 36px;
+    transition: all 80ms linear;
+    margin-top: 10px; 
+    transition: background-color 0.3s ease;
+    }
+    .btnEdit:hover{
+    background-color: rgba(141, 71, 71, 0.8);
+    border: 1.5px solid black;
+    color: black;
+    text-decoration: none
+    }
+    .btnEdit:active{
+    background-color: rgba(233, 112, 112, 0.8);
+    border: 1.5px solid black;
+    color: black;
+    text-decoration: none
+    }
+    .edit{
+    width: 135px;
+    height: 45px;
     }
 
         .filtrarBtn {
@@ -82,6 +122,9 @@
         .button-container p {
         margin-right: 10px; 
     }
+    td a .btn-primary{
+    margin: 10px;
+    }
     </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -105,7 +148,7 @@
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button">Filtro Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'internos_pd_view' %}" role="button">Internos PDF</a></p>
-        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">alquilerequipo</a></p>
+        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">Alquiler Equipo</a></p>
     </div>
     </div>
     <div class="divCheck">
@@ -152,7 +195,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col" class="align-middle">Editar</th>
+                    <th scope="col" class="align-middle">Info</th>
                     <th scope="col" class="align-middle">Id</th>
                     {% if form_values.interno_value %}
                         <th scope="col" class="align-middle">Interno</th>
@@ -228,7 +271,7 @@
             <tbody>
                 {% for dato in internos %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btn btn-primary" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
+                        <td class="edit"><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a>  <a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">Info</a></td>
                         <td>{{ dato.id }}</td>
                         {% if form_values.interno_value %}
                             <td>{{ dato.interno }}</td>

@@ -5,14 +5,14 @@ from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, C
 class internosforms(forms.ModelForm):
     interno = forms.CharField(required=True)
     up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
-                                label='Unidad de Produccion')
+                                label='UP')
     marca = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
     tipovehiculo = forms.CharField(required=True)
     chasis = forms.CharField(required=True)
     motor = forms.CharField(required=True)
     dominio = forms.CharField(required=True)
-    anio = forms.IntegerField(required=True)
+    anio = forms.IntegerField(required=True, label='Año')
     aseguradora = forms.CharField(required=True)
     seguro = forms.CharField(required=True)
     seguro_pdf = forms.CharField(required=True)
@@ -24,10 +24,10 @@ class internosforms(forms.ModelForm):
     propietario = forms.CharField(required=True)
     chofer = forms.CharField(required=True)
     alquilado = forms.BooleanField(required=False, initial=False)
-    valorpesos = forms.IntegerField(required=True)
-    valordolares = forms.IntegerField(required=True)
+    valorpesos = forms.IntegerField(required=True, label='Valor Ars')
+    valordolares = forms.IntegerField(required=True, label='Valor Usd')
     orden = forms.CharField(required=True)
-    actividadvehiculo = forms.CharField(required=True)
+    actividadvehiculo = forms.CharField(required=True, label='Act Vehiculo')
     descripcion = forms.CharField(required=False)
 
     class Meta:
