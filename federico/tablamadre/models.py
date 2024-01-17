@@ -132,7 +132,7 @@ class PartesDiarios(models.Model):
 	tipo_de_falla = models.CharField(max_length=512, default='No hay falla')
 	reparado = models.BooleanField(default=False)
 	def __str__(self):
-		return ', '.join([str(self.interno), str(self.cantidadequipos), str(self.tipodefalla), str(self.reparado)])
+		return ', '.join([str(self.interno), str(self.cantida_de_quipos), str(self.tipo_de_falla), str(self.reparado)])
 class Novedades(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)

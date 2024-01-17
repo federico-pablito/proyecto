@@ -39,6 +39,7 @@ class internosforms(forms.ModelForm):
 
 
 class TableVariable(forms.Form):
+    id_value = forms.BooleanField(required=False, label='ID', initial=True)
     interno_value = forms.BooleanField(required=False, label='Interno', initial=True)
     up_value = forms.BooleanField(required=False, label='UP', initial=True)
     marca_value = forms.BooleanField(required=False, label='Marca', initial=True)
@@ -62,13 +63,14 @@ class TableVariable(forms.Form):
     valorpesos_value = forms.BooleanField(required=False, label='Valor P', initial=False)
     valordolares_value = forms.BooleanField(required=False, label='Valor D', initial=False)
     orden_value = forms.BooleanField(required=False, label='Orden', initial=True)
+    actividad_value = forms.BooleanField(required=False, label='Actividad', initial=True)
 
     class Meta:
-        fields = ['interno_value', 'marca_value', 'modelo_value', 'tipovehiculo_value', 'chasis_value', 'motor_value',
+        fields = ['id_value', 'interno_value', 'marca_value', 'modelo_value', 'tipovehiculo_value', 'chasis_value', 'motor_value',
                   'dominio_value', 'anio_value', 'aseguradora_value', 'seguro_value', 'seguro_pdf_value', 'itv_value',
                   'itv_pdf_value', 'titulo_pdf_value', 'tarjeta_value', 'tarjeta_pdf_value', 'propietario_value',
                   'chofer_value', 'alquilado_value', 'valorpesos_value', 'valordolares_value', 'orden_value',
-                  'up_value']
+                  'up_value', 'actividad_value', 'orden_value']
 
 
 class AlquilerEquiposForm(forms.ModelForm):

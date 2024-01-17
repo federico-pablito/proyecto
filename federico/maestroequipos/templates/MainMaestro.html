@@ -125,6 +125,7 @@
     td a .btn-primary{
     margin: 10px;
     }
+
     </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -147,8 +148,8 @@
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button">Filtro Equipos</a></p>
-        <p><a class="btn btn-primary" href="{% url 'internos_pd_view' %}" role="button">Internos PDF</a></p>
-        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">Alquiler Equipo</a></p>
+
+        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">alquilerequipo</a></p>
     </div>
     </div>
     <div class="divCheck">
@@ -156,6 +157,7 @@
             <div class="form-row">
                 <div class="form-group">
                     {% csrf_token %}
+                    {{ form.id_value.label_tag }}{{ form.id_value }}
                     {{ form.interno_value.label_tag }}{{ form.interno_value }}
                     {{ form.up_value.label_tag }}{{ form.up_value }}
                     {{ form.marca_value.label_tag }}{{ form.marca_value }}
@@ -184,10 +186,13 @@
                     {{ form.alquilado_value.label_tag }}{{ form.alquilado_value }}
                     {{ form.valorpesos_value.label_tag }}{{ form.valorpesos_value }}
                     {{ form.valordolares_value.label_tag }}{{ form.valordolares_value }}
+                    {{ form.orden_value.label_tag }}{{ form.orden_value }}
+                    {{ form.actividad_value.label_tag }}{{ form.actividad_value }}
                 </div>
             </div>
             <div class="divBtn">
-                <input type="submit" value="Filtrar" class="filtrarBtn">
+                <input type="submit" name= "columna" value="Elegir Columna" class="filtrarBtn">
+                <input type="submit" name="crear_pdf" value="Crear PDF" class="filtrarBtn">
             </div>
         </form>
     </div>
@@ -196,7 +201,10 @@
             <thead>
                 <tr>
                     <th scope="col" class="align-middle">Info</th>
-                    <th scope="col" class="align-middle">Id</th>
+
+                    {% if form_values.id_value %}
+                        <th scope="col" class="align-middle">Id</th>
+                    {% endif %}
                     {% if form_values.interno_value %}
                         <th scope="col" class="align-middle">Interno</th>
                     {% endif %}
@@ -263,86 +271,93 @@
                     {% if form_values.valordolares_value %}
                         <th scope="col" class="align-middle">Valor D</th>
                     {% endif %}
-                    <th scope="col" class="align-middle">Orden</th>
-
-                    <th scope="col" class="align-middle">Actividad</th>
+                    {% if form_values.orden_value %}
+                        <th scope="col" class="align-middle">Orden</th>
+                    {% endif %}
+                    {% if form_values.actividad_value %}
+                        <th scope="col" class="align-middle">Actividad</th>
+                    {% endif %}
                 </tr>
             </thead>
             <tbody>
                 {% for dato in internos %}
                     <tr>
-                        <td class="edit"><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a>  <a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">Info</a></td>
-                        <td>{{ dato.id }}</td>
+                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btn btn-primary" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
+                        {% if form_values.id_value %}
+                            <td>{{ dato.id }}</td>
+                        {% endif %}
                         {% if form_values.interno_value %}
                             <td>{{ dato.interno }}</td>
                         {% endif %}
                         {% if form_values.up_value %}
-                        <td>{{ dato.up }}</td>
+                            <td>{{ dato.up }}</td>
                         {% endif %}
                         {% if form_values.marca_value %}
-                        <td>{{ dato.marca }}</td>
+                            <td>{{ dato.marca }}</td>
                         {% endif %}
                         {% if form_values.modelo_value %}
-                        <td>{{ dato.modelo }}</td>
+                            <td>{{ dato.modelo }}</td>
                         {% endif %}
                         {% if form_values.tipovehiculo_value %}
-                        <td>{{ dato.tipovehiculo }}</td>
+                            <td>{{ dato.tipovehiculo }}</td>
                         {% endif %}
                         {% if form_values.chasis_value %}
-                        <td>{{ dato.chasis }}</td>
+                            <td>{{ dato.chasis }}</td>
                         {% endif %}
                         {% if form_values.motor_value %}
-                        <td>{{ dato.motor }}</td>
+                            <td>{{ dato.motor }}</td>
                         {% endif %}
                         {% if form_values.dominio_value %}
-                        <td>{{ dato.dominio }}</td>
+                            <td>{{ dato.dominio }}</td>
                         {% endif %}
                         {% if form_values.anio_value %}
-                        <td>{{ dato.anio }}</td>
+                            <td>{{ dato.anio }}</td>
                         {% endif %}
                         {% if form_values.aseguradora_value %}
-                        <td>{{ dato.aseguradora }}</td>
+                            <td>{{ dato.aseguradora }}</td>
                         {% endif %}
                         {% if form_values.seguro_value %}
-                        <td>{{ dato.seguro }}</td>
+                            <td>{{ dato.seguro }}</td>
                         {% endif %}
                         {% if form_values.seguro_pdf_value %}
-                        <td>{{ dato.seguro_pdf }}</td>
+                            <td>{{ dato.seguro_pdf }}</td>
                         {% endif %}
                         {% if form_values.itv_value %}
-                        <td>{{ dato.itv }}</td>
+                            <td>{{ dato.itv }}</td>
                         {% endif %}
                         {% if form_values.itv_pdf_value %}
-                        <td>{{ dato.itv_pdf }}</td>
+                            <td>{{ dato.itv_pdf }}</td>
                         {% endif %}
                         {% if form_values.titulo_pdf_value %}
-                        <td>{{ dato.titulo_pdf }}</td>
+                            <td>{{ dato.titulo_pdf }}</td>
                         {% endif %}
                         {% if form_values.tarjeta_value %}
-                        <td>{{ dato.tarjeta }}</td>
+                            <td>{{ dato.tarjeta }}</td>
                         {% endif %}
                         {% if form_values.tarjeta_pdf_value %}
-                        <td>{{ dato.tarjeta_pdf }}</td>
+                            <td>{{ dato.tarjeta_pdf }}</td>
                         {% endif %}
                         {% if form_values.propietario_value %}
-                        <td>{{ dato.propietario }}</td>
+                            <td>{{ dato.propietario }}</td>
                         {% endif %}
                         {% if form_values.chofer_value %}
-                        <td>{{ dato.chofer }}</td>
+                            <td>{{ dato.chofer }}</td>
                         {% endif %}
                         {% if form_values.alquilado_value %}
-                        <td>{{ dato.alquilado }}</td>
+                            <td>{{ dato.alquilado }}</td>
                         {% endif %}
                         {% if form_values.valorpesos_value %}
-                        <td>{{ dato.valorpesos }}</td>
+                            <td>{{ dato.valorpesos }}</td>
                         {% endif %}
                         {% if form_values.valordolares_value %}
-                        <td>{{ dato.valordolares }}</td>
+                            <td>{{ dato.valordolares }}</td>
                         {% endif %}
                         {% if form_values.orden_value %}
-                        <td>{{ dato.orden }}</td>
+                            <td>{{ dato.orden }}</td>
                         {% endif %}
-                        <td>{{ dato.actividadvehiculo }}</td>
+                        {% if form_values.actividad_value %}
+                            <td>{{ dato.actividadvehiculo }}</td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </tbody>
