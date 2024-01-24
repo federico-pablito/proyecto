@@ -8,12 +8,12 @@ class internosforms(forms.ModelForm):
                                 label='UP')
     marca = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
-    tipovehiculo = forms.CharField(required=True)
+    tipovehiculo = forms.CharField(required=True, label='Tipo V')
     chasis = forms.CharField(required=True)
     motor = forms.CharField(required=True)
     dominio = forms.CharField(required=True)
     anio = forms.IntegerField(required=True, label='Año')
-    aseguradora = forms.CharField(required=True)
+    aseguradora = forms.CharField(required=True, label='Aseguradora')
     seguro = forms.CharField(required=True)
     seguro_pdf = forms.CharField(required=True)
     itv = forms.CharField(required=False)
@@ -83,11 +83,11 @@ class AlquilerEquiposForm(forms.ModelForm):
     observaciones_contratacion = forms.CharField(required=False)
     fecha_inicio_tarea = forms.DateField(required=True,
                                          widget=forms.DateInput(attrs={'type': 'date'}),
-                                         label='Fecha')
+                                         label='Inicio Act')
     periodo_contratacion = forms.CharField(required=True)
     periodo_finalizacion = forms.CharField(required=True)
     up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
-                                label='Unidad de Produccion')
+                                label='Unidad de Prod')
     combustible_incluido = forms.BooleanField(required=False, initial=False)
     operario_incuido = forms.BooleanField(required=False, initial=False)
     carnet_operario_vigente = forms.BooleanField(required=False, initial=False)
