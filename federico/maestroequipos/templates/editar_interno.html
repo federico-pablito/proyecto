@@ -10,45 +10,8 @@
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
   <style>
     body{
-      /* text-align: center; */
+      text-align: center;
       font-family: 'Be Vietnam Pro', sans-serif;
-    }
-    form{
-      text-align: left;
-      margin-bottom: 2.5rem;
-      margin-left: 1rem;
-      font-size: small;
-    }
-    form input{
-      font-size: small;
-      height: 20px;
-      width: 100px;
-    }
-    h1 {
-    font-weight: bold;
-    text-align: center;   
-    }
-
-    .formContainer {
-        width: 100%;
-        text-align: center; 
-    }
-
-    .divForm {
-    display: flex;
-    justify-content: space-between;
-    background-color: #6e6c6c48; 
-    padding: 20px 20px; 
-    margin: 0px 20%;
-    border-radius: 8px 8px 0px 0px; 
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
-    flex-wrap: wrap;
-    }
-    .column{
-      flex: 0 0 48%;
-    }
-    .column:first-child{
-      margin-right: 4%;
     }
     .btnGuardar{
     display: inline-block;
@@ -57,7 +20,6 @@
     border: 2px solid #1d1c1d4d;
     font-weight: 600;
     background: #fff;
-    padding: 0 12px 1px;
     font-size: 13px;
     border-radius: 4px;
     color: rgb(29, 28, 29);
@@ -65,17 +27,52 @@
     transition: all 80ms linear;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 10%;
+    margin-left: 45%;
     }
     .btnGuardar:hover{
     background-color:  floralwhite;
     color: black;
     border: 1px solid black;
-    box-shadow: none !important;
-    background: linear-gradient(none);
+    background-color: rgba(186, 66, 66, 0.9);
+    transform: scale(1.1);
     }
     .btnGuardar:active{
     background-color: rgba(141, 71, 71, 0.8);
     border: 1.5px solid;
+    }
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 0 auto;
+      text-align: left;
+      background-color: gray;
+      border-radius: 5px;
+      padding: 20px 15px 10px 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.789);
+    }
+    .divForm{
+      display: flex;
+      justify-content: space-between;
+    }
+    .column{
+      flex: 1;
+      margin-bottom: 0.5rem;
+    }
+    label{
+      font-weight: bold;
+    }
+    input{
+      width: 110px;
+      height: 25px;
+      font-size: small;
+      padding-left: 5px;
+      margin-left: 5px;
+    }
+    input#id_alquilado{
+      width: 70px;
+      height: 15px;
     }
   </style>
 </head>
@@ -101,46 +98,57 @@
       <div class="divForm">
           <div class="column">
               {{ form.interno.label_tag }} {{ form.interno }}
+              <br>
               {{ form.marca.label_tag }} {{ form.marca }}
               <br>
               {{ form.modelo.label_tag }} {{ form.modelo }}
+              <br>
               {{ form.chasis.label_tag }} {{ form.chasis }}
               <br>
               {{ form.motor.label_tag }} {{ form.motor }}
+              <br>
               {{ form.anio.label_tag }} {{ form.anio }}
               <br>
               {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
+              <br>
               {{ form.seguro.label_tag }} {{ form.seguro }}
               <br>
               {{ form.seguro_pdf.label_tag }} {{ form.seguro_pdf }}
+              <br>
               {{ form.itv.label_tag }}{{ form.itv }}
               <br>
               {{ form.itv_pdf.label_tag }}{{ form.itv_pdf }}
+              <br>
               {{ form.titulo_pdf.label_tag }}{{ form.titulo_pdf }}
           </div>
           <div class="column">
               {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
+              <br>
               {{ form.tarjeta_pdf.label_tag }}{{ form.tarjeta_pdf }}
               <br>
               {{ form.propietario.label_tag }}{{ form.propietario }}
+              <br>
               {{ form.chofer.label_tag }}{{ form.chofer }}
               <br>
               {{ form.alquilado.label_tag }}{{ form.alquilado }}
+              <br>
               {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
               <br>
               {{ form.valordolares.label_tag }}{{ form.valordolares }}
+              <br>
               {{ form.orden.label_tag }}{{ form.orden }}
               <br>
               {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
+              <br>
               {{ form.up.label_tag }}{{ form.up }}
               <br>
               {{ form.dominio.label_tag }}{{ form.dominio }}
+              <br>
               {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
           </div>
-        </div>
-        <button type="submit" class="btnGuardar">Guardar</button>
       </div>
-  </form>
-
+      <button type="submit" class="btnGuardar">Guardar</button>
+      </div>
+      </form>
 </body>
 </html>

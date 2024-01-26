@@ -16,7 +16,7 @@
         font-family: 'Be Vietnam Pro', sans-serif;
         }
         .header p a{
-            background-color:  #a11616;
+            background-color:   rgba(149, 24, 24, 0.9);
             border: black;
         }
         .header p a:hover{
@@ -34,16 +34,17 @@
             background: linear-gradient(none);
         }
         .formCheck {
-        display: flex;
-        flex-direction: column; 
+            display: flex;
+            flex-direction: column;
         font-family: 'Be Vietnam Pro', sans-serif;
-        align-items: center; 
-        background-color: #908d8d48; 
-        padding: 20px 4rem; 
+        align-items: center;
+        background-color: #908d8d48;
+        padding: 20px 4rem;
         margin: 0px 20%;
-        border-radius: 8px; 
+        border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.489);
-        
+        width: 820px;
+        justify-content: center;
     }
 
         .form-row {
@@ -71,15 +72,16 @@
     transition: all 80ms linear;
     margin-top: 10px; 
     transition: background-color 0.3s ease;
+    margin-left: 3px;
     }
     .btnEdit:hover{
-    background-color: rgba(141, 71, 71, 0.8);
+    background-color: rgba(185, 34, 34, 0.9);
     border: 1.5px solid black;
     color: black;
     text-decoration: none
     }
     .btnEdit:active{
-    background-color: rgba(233, 112, 112, 0.8);
+    background-color: rgba(185, 34, 34, 0.9);
     border: 1.5px solid black;
     color: black;
     text-decoration: none
@@ -89,7 +91,7 @@
     height: 45px;
     }
 
-        .filtrarBtn {
+    .filtrarBtn {
     width: 100%; 
     display: block; 
     position: relative;
@@ -105,27 +107,41 @@
     color: rgb(29, 28, 29);
     height: 36px;
     transition: all 80ms linear;
-    margin-top: 10px; 
+    margin: 10px; 
     transition: background-color 0.3s ease;
     }
-
-        .filtrarBtn:active {
-    background-color: rgba(141, 71, 71, 0.8);
+    .filtrarBtn:hover{
+    background-color: rgba(185, 34, 34, 0.9);
+    border: 1.5px solid black;
+    color: black;
+    transform: scale(1.1);
+    }
+    .filtrarBtn:active {
+    background-color: rgba(185, 34, 34, 0.9);
     border: 1.5px solid;
     }
-        .divCheck{
-            justify-content: center;
+    .divCheck{
+    justify-content: center;
     }
-        .button-container {
-        display: flex;
+    .button-container {
+    display: flex;
     }
-        .button-container p {
-        margin-right: 10px; 
+    .button-container p {
+    margin-right: 10px; 
     }
     td a .btn-primary{
     margin: 10px;
     }
-
+    .table-bordered thead th{
+        background-color: rgba(185, 34, 34, 0.7);
+    }
+    .table-bordered td{
+        font-weight: bold;
+    }
+    .divBtn{
+        display: flex;
+        width: 310px;
+    }
     </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -148,11 +164,11 @@
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button">Cargo Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button">Filtro Equipos</a></p>
-
-        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">alquilerequipo</a></p>
+        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button">Alquiler Equipo</a></p>
     </div>
+    <p><button id="toggleFormBtn" class="filtrarBtn">Mostrar Formulario</button></p>
     </div>
-    <div class="divCheck">
+    <div  id="formContainer" class="divCheck" style="display: none;">
         <form method="post" class="formCheck">
             <div class="form-row">
                 <div class="form-group">
@@ -196,12 +212,11 @@
             </div>
         </form>
     </div>
-    <div class="container d-inline-flex p-2" style="width: 100%; font-size: small;font-weight: 200;">
-        <table class="table table-bordered">
+    <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;">
+        <table class="table table-bordered" style="width: 100%;margin-top: 20px;margin-left: 12rem;">
             <thead>
                 <tr>
                     <th scope="col" class="align-middle">Info</th>
-
                     {% if form_values.id_value %}
                         <th scope="col" class="align-middle">Id</th>
                     {% endif %}
@@ -282,7 +297,7 @@
             <tbody>
                 {% for dato in internos %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btn btn-primary" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
+                        <td><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
                         {% if form_values.id_value %}
                             <td>{{ dato.id }}</td>
                         {% endif %}
@@ -363,5 +378,18 @@
             </tbody>
         </table>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let formContainer = document.getElementById("formContainer");
+        let toggleFormBtn = document.getElementById("toggleFormBtn");
+        toggleFormBtn.addEventListener("click", function () {
+        if (formContainer.style.display === "none") {
+            formContainer.style.display = "block";
+            } else {
+            formContainer.style.display = "none";
+            }
+        });
+        });
+    </script>
 </body>
 </html>
