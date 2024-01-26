@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.min.css' %}">
   <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
   <style>
+    :root{
+            font-family: 'Helvetica', 'Arial', sans-serif;
+        }
     .inner{
       background-color: rgb(163, 39, 39);
       border-radius: 3px 3px 0px 0px;
@@ -36,6 +39,22 @@
     .small-box-footer{
       background-color: rgb(158, 84, 84) !important;
       border-radius: 0px 0px 3px 3px;
+    }
+    .navbar-white{
+      background-color: black;
+    }
+    .navbar-light .navbar-nav .nav-link{
+      color: white;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+      color: rgba(156, 155, 155, 0.8);
+    }
+    .navbar-light .navbar-nav .nav-link:active{
+      color: rgba(156, 155, 155, 0.8);
+    }
+    .nav-sidebar .nav-link p{
+      font-weight: 500;
+      color: black;
     }
   </style>
 
@@ -56,10 +75,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">Home</a>
+        <a href="{% url 'pablofederico'%}" class="nav-link"><i class="fa-solid fa-house" style="color: red;"></i>  Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'logout'%}" class="nav-link">logout</a>
+        <a href="{% url 'logout'%}" class="nav-link"><i class="fa-solid fa-power-off" style="color: red;"></i>  Logout</a>
       </li>
     </ul>
 
@@ -178,38 +197,21 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
     </ul>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: rgba(206, 208, 210, 0.867);">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
-      <img src="{% static 'assets/dist/img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="#" class="brand-link" style="background-color: black;">
+      <img src="../static/assets/dist/img/fedemanager1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">FedeManager</span>
     </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Taller Central</a>
-        </div>
-      </div>
-
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
+      <div class="form-inline" style="width: 80%;align-items: center;margin-left: 10%;margin-top: 10%;">
+        <div class="input-group" data-widget="sidebar-search" >
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
@@ -227,7 +229,7 @@
     <!-- Maestro -->
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-chart-pie"></i>
+        <i class="fa-solid fa-truck"></i>
         <p>
           Maestro
           <i class="right fas fa-angle-left"></i>
@@ -252,7 +254,7 @@
     <!-- Service -->
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-tree"></i>
+        <i class="fa-solid fa-bell"></i>
         <p>
           Service
           <i class="fas fa-angle-left right"></i>
@@ -283,7 +285,7 @@
     <!-- Logistica -->
     <li class="nav-item">
       <a href="{% url 'visualizar_ups'%}" class="nav-link">
-        <i class="nav-icon fas fa-edit"></i>
+        <i class="fa-solid fa-pen-to-square"></i>
         <p>
           Logistica
           <i class="fas fa-angle-left right"></i>
@@ -320,7 +322,7 @@
     <!-- Reparaciones -->
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-table"></i>
+        <i class="fa-solid fa-screwdriver-wrench"></i>
         <p>
           Reparaciones
           <i class="fas fa-angle-left right"></i>
@@ -346,7 +348,7 @@
     <!--
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-table"></i>
+        <i class="fa-solid fa-clipboard-list"></i>
         <p>
           Partes Diarios
           <i class="fas fa-angle-left right"></i>
@@ -380,7 +382,7 @@
         <!-- Partes Diarios -->
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="nav-icon fas fa-table"></i>
+        <i class="fa-solid fa-check-to-slot"></i>
         <p>
           Disponibilidad
           <i class="fas fa-angle-left right"></i>
@@ -406,9 +408,9 @@
     <!-- UPS -->
     <li class="nav-item">
       <a href="{% url 'visualizar_ups'%}" class="nav-link">
-        <i class="nav-icon fas fa-th"></i>
+        <i class="fa-solid fa-road-circle-check"></i>
         <p>
-          UPS
+          UP
           <span class="right badge badge-danger"></span>
         </p>
       </a>
@@ -429,12 +431,6 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">DOLAR HOY</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
