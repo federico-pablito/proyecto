@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'partesdiarios',
     'disponibilidadequipos',
     'login',
+    'novedades',
 ]
 
 MIDDLEWARE = [

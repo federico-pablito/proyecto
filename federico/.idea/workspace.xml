@@ -5,13 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/maestroequipos_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/maestroequipos_pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/info_interno.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/info_interno.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/editar_reparaciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/editar_reparaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/crean_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/crean_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/editar_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/editar_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/service_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/service_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +35,14 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -29,27 +51,36 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2azNzLZ6rEPKOL78rbgMTjq9u0M" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/fr33tr1st/Desktop/PabloFederico/proyecto/venv",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fr33tr1st/Desktop/PabloFederico/proyecto/venv&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templatetags" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="federico" type="Python.DjangoServer" factoryName="Django server">
       <module name="federico" />
@@ -93,6 +124,10 @@
       <updated>1705317708757</updated>
       <workItem from="1705317709821" duration="3054000" />
       <workItem from="1705332963382" duration="16187000" />
+      <workItem from="1705490678215" duration="25848000" />
+      <workItem from="1705694954114" duration="17394000" />
+      <workItem from="1706098507303" duration="18911000" />
+      <workItem from="1706200848111" duration="8446000" />
     </task>
     <servers />
   </component>

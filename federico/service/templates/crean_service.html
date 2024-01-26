@@ -28,38 +28,17 @@
     <h1>Crear Services</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.interno.label_tag }}{{ form.interno.label_tag }}
+        {{ form.fechaservicio.label_tag }}{{ form.fechaservicio }}
+        {{ form.fechaparte.label_tag }}{{ form.fechaparte }}
+        {{ form.ultimoservice.label_tag }}{{ form.ultimoservice }}
+        {{ form.planrealizado.label_tag }}{{ form.planrealizado }}
+        {{ form.planrealizado_hs.label_tag }}{{ form.planrealizado_hs }}
+        {{ form.proximoservice.label_tag }}{{ form.proximoservice }}
+        {{ form.hsxkmactuales.label_tag }}{{ form.hsxkmactuales }}
+        {{ form.operativo.label_tag }}{{ form.operativo }}
         <button type="submit">Enviar</button>
     </form>
-    <div class="container d-inline-flex p-2">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col" class="align-middle">Editar</th>
-                    {% for nombre in lista_nombres %}
-                        <th scope="col" class="align-middle">{{ nombre }}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for dato in services %}
-                    <tr>
-                        <td><a class="btn btn-primary" href="{% url 'service_editar' dato.id%}" role="button">Editar</a></td>
-                        <td class="align-middle">{{ dato.id }}</td>
-                        <td class="align-middle">{{ dato.interno }}</td>
-                        <td class="align-middle">{{ dato.fechaservicio }}</td>
-                        <td class="align-middle">{{ dato.fechaparte }}</td>
-                        <td class="align-middle">{{ dato.ultimoservice }}</td>
-                        <td class="align-middle">{{ dato.planrealizado_hs }}</td>
-                        <td class="align-middle">{{ dato.planrealizado }}</td>
-                        <td class="align-middle">{{ dato.proximoservice }}</td>
-                        <td class="align-middle">{{ dato.hsxkmactuales }}</td>
-                        <td class="align-middle">{{ dato.hsxkmrestantes }}</td>
-                        <td class="align-middle">{{ dato.necesidadservice }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
 </body>
 </html>

@@ -13,13 +13,15 @@ class service_form(forms.ModelForm):
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
     ultimoservice = forms.IntegerField(required=True)
-    planrealizado = forms.CharField(required=True, label='Plan Realizado (hs)')
-    planrealizado_hs = forms.IntegerField(required=True, label='Plan Realizado')
-    proximoservice = forms.IntegerField(required=True, label='Proximo Service')
+    planrealizado = forms.ChoiceField(choices=(('HS', 'HS'), ('KM', 'KM')), widget=forms.Select, label='Plan Realizado')
     hsxkmactuales = forms.IntegerField(required=True)
     operativo = forms.ChoiceField(choices=(('Operativo', 'Operativo'), ('Inoperativo', 'Inoperativo')),
                                   widget=forms.Select, label='Operativo')
     class Meta:
         model = Services
-        fields = ['interno', 'fechaservicio', 'fechaparte', 'ultimoservice', 'planrealizado_hs', 'planrealizado',
-                  'proximoservice', 'hsxkmactuales', 'operativo']
+        fields = ['interno', 'fechaservicio', 'fechaparte', 'ultimoservice', 'planrealizado',
+                  'hsxkmactuales', 'operativo']
+
+
+class desplegable_internos(forms.Form):
+    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Interno')

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {% if interno_val %}
+            <h1>{{ interno_val }}</h1>
+        {% else %}
+            {{ form.interno.label_tag }}{{ form.interno }}<br>
+        {% endif %}
+        {{ form.tipo_falla.label_tag }}{{ form.tipo_falla }}<br>
+        {{ form.fecha.label_tag }}{{ form.fecha }}<br>
+        {{ form.informacion.label_tag }}{{ form.informacion }}<br>
+        {{ form.ingreso_hs_km.label_tag }}{{ form.ingreso_hs_km }}<br>
+        {{ form.chofer.label_tag }}{{ form.chofer }}<br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

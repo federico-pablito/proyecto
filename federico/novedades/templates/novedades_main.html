@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Novedades</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+</head>
+<body>
+    <h1>Novedades</h1>
+    <div><a href="{% url "novedades_crear" %}">Cargar Falla</a></div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Info</th>
+                    <th scope="col" class="align-middle">Interno</th>
+                    <th scope="col" class="align-middle">Marca</th>
+                    <th scope="col" class="align-middle">Modelo</th>
+                    <th scope="col" class="align-middle">Tipo de Falla</th>
+                    <th scope="col" class="align-middle">Reparado</th>
+                    <th scope="col" class="align-middle">Info</th>
+                    <th scope="col" class="align-middle">fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in tabla %}
+                    <tr>
+                        <td><a class="btn btn-primary" href="{% url 'novedades_info' dato.interno %}" role="button">Info</a></td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.marca }}</td>
+                        <td>{{ dato.modelo }}</td>
+                        <td>{{ dato.tipo_falla|linebreaks}}</td>
+                        <td>{{ dato.reparado|linebreaks }}</td>
+                        <td>{{ dato.informacion|linebreaks }}</td>
+                        <td>{{ dato.fecha|linebreaks }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

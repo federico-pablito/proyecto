@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.db import models
+from django.core.exceptions import ObjectDoesNotExist
 from tablamadre.models import Reparaciones, Internos, TablaMadre
 from .forms import reparaciones_form
 from io import BytesIO
@@ -7,30 +9,85 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 
-# Create your views here.
+
+class ReparacionTemporal(models.Model):
+    interno = models.CharField(max_length=15, primary_key=True)
+    ubicacion = models.CharField(max_length=256, default="Generica")
+    mecanico_encargado = models.CharField(max_length=512)
+    falla_general = models.CharField(max_length=512, default="Generica")
+    fechareparacionestimada = models.CharField(default="Generica", max_length=512)
+    fechaentrada = models.CharField(max_length=512, default="Generica")
+    fechasalida = models.CharField(max_length=512, default="Generica")
+    estadoreparacion = models.CharField(max_length=512, default="Generica")
+    estadoequipo = models.CharField(max_length=512, default="Generica")
+    descripcion = models.CharField(max_length=512, default="Generica")
+
+
 def reparaciones_main(request):
     # EL FILTRO NO FUNCIONA, LO USO Y EXPLOTA
-    if request.method == 'POST':
-        form = reparaciones_form(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = reparaciones_form()
-    tabla = Reparaciones.objects.all()
+    tabla = Reparaciones.objects.filter(estadoreparacion="Pendiente")
+    tabla_temporal = ReparacionTemporal.objects.all()
+    tabla_temporal.delete()
+    for item in tabla:
+        try:
+            objeto = tabla_temporal.get(interno=item.interno.interno)
+            objeto.ubicacion = objeto.ubicacion + "\n" + str(item.taller.nombre)
+            objeto.mecanico_encargado = objeto.mecanico_encargado + "\n" + str(item.mecanico_encargado.nombre)
+            objeto.falla_general = objeto.falla_general + "\n" + item.falla_general
+            objeto.fechareparacionestimada = objeto.fechareparacionestimada + "\n" + str(item.fechareparacionestimada).split(" ")[0]
+            objeto.fechaentrada = objeto.fechaentrada + "\n" + str(item.fechaentrada).split(" ")[0]
+            objeto.fechasalida = objeto.fechasalida + "\n" + str(item.fechasalida).split(" ")[0]
+            objeto.estadoreparacion = objeto.estadoreparacion + "\n" + item.estadoreparacion
+            objeto.estadoequipo = objeto.estadoequipo + "\n" + item.estadoequipo
+            objeto.descripcion = objeto.descripcion + "\n" + item.descripcion
+            objeto.save()
+        except ObjectDoesNotExist:
+            tabla_temporal.create(
+                interno=item.interno.interno,
+                ubicacion=item.taller.nombre,
+                mecanico_encargado=item.mecanico_encargado.nombre,
+                falla_general=item.falla_general,
+                fechareparacionestimada=str(item.fechareparacionestimada).split(" ")[0],
+                fechaentrada=str(item.fechaentrada).split(" ")[0],
+                fechasalida=str(item.fechasalida).split(" ")[0],
+                estadoreparacion=item.estadoreparacion,
+                estadoequipo=item.estadoequipo,
+                descripcion=item.descripcion
+            )
     #filter = reparaciones_filter(request.GET, queryset=tabla)
-    lista_reparaciones, lista_nombres = listador(tabla)
     #ARREGLAR EL FILTRO
-    return render(request, 'reparaciones_main.html', {'form':form, 'lista_reparaciones':lista_reparaciones, 'lista_nombres': lista_nombres})
+    return render(request, 'reparaciones_main.html', {'reparaciones': tabla_temporal})
+
+
+def reparaciones_info(request, interno):
+    interno = Internos.objects.get(interno=interno)
+    tabla = Reparaciones.objects.filter(interno=interno)
+    return render(request, 'reparaciones_info.html', {'tabla': tabla, 'interno': interno})
+
+
 def reparaciones_crear(request):
     tabla = Reparaciones.objects.all()
     if request.method == 'POST':
         form = reparaciones_form(request.POST)
         if form.is_valid():
-            new_reparacion = form.save()
+            Reparaciones.objects.create(
+                interno=form.cleaned_data['interno'],
+                taller=form.cleaned_data['taller'],
+                mecanico_encargado=form.cleaned_data['mecanico_encargado'],
+                falla_general=form.cleaned_data['falla_general'],
+                fechareparacionestimada=form.cleaned_data['fechareparacionestimada'],
+                fechaentrada=form.cleaned_data['fechaentrada'],
+                fechasalida=form.cleaned_data['fechasalida'],
+                estadoreparacion=form.cleaned_data['estadoreparacion'],
+                estadoequipo=form.cleaned_data['estadoequipo'],
+                descripcion=form.cleaned_data['descripcion'],
+            )
+            return redirect('reparaciones-main')
     else:
         form = reparaciones_form()
-    lista_reparaciones, lista_nombres = listador(tabla)
-    return render(request, 'reparaciones_crear.html', {'tabla': tabla, 'form':form, 'lista_reparaciones':lista_reparaciones, 'lista_nombres': lista_nombres})
+    return render(request, 'reparaciones_crear.html', {'tabla': tabla, 'form': form})
+
+
 def reparaciones_editar(request, id=None):
     tabla = Reparaciones.objects.all()
     if id:
@@ -44,32 +101,18 @@ def reparaciones_editar(request, id=None):
             return redirect('reparaciones-main')  # Redirige a la página de mostrar alquileres
     else:
         form = reparaciones_form(instance=instancia)
-        lista_reparaciones, lista_nombres = listador(tabla)
-    return render(request, 'editar_reparaciones.html', {'tabla': tabla, 'form': form, 'lista_reparaciones':lista_reparaciones, 'lista_nombres': lista_nombres})
+    return render(request, 'editar_reparaciones.html', {'tabla': tabla, 'form': form})
 
-def reparaciones_pdf(template_src, context_dict={}):
-    template = get_template(template_src)
-    html = template.render(context_dict)
-    result = BytesIO()
-    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
-    if not pdf.err:
-        return HttpResponse(result.getvalue(), content_type='application/pdf')
-    return None
 
-def listador(datos):
-    lista_datos = [[dato.id, str(dato).split(', ')] for dato in datos]
-    lista_nombres = ['Id', 'Interno', 'Ubicacion', 'Falla', 'Porcentaje Avance', 'Fecha Reparacion Estimada',
-                     'Fecha entrada', 'Fecha Salida', 'Estado Reparacion', 'Estado Equipo']
+def reparaciones_pdf(request):
+    tabla_temporal = ReparacionTemporal.objects.all()
+    template_path = 'reparaciones_pdf.html'
+    template = get_template(template_path)
+    html_content = template.render({'tabla': tabla_temporal})
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="output.pdf"'
+    pisa_status = pisa.CreatePDF(html_content, dest=response)
 
-    return lista_datos, lista_nombres
-
-class reparaciones_pd_view(View):
-    def get(self, request, *args, **kwargs):
-        reparaciones = Reparaciones.objects.all()
-        lista_partes, lista_nombres = listador(reparaciones)
-        context = {
-            'reparaciones': reparaciones,
-            'lista_nombres': lista_nombres,
-        }
-        pdf = reparaciones_pdf('reparaciones_pdf.html', context)
-        return HttpResponse(pdf, content_type='application/pdf')
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
+    return response

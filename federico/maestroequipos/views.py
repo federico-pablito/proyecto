@@ -17,6 +17,7 @@ def mainmaestroequipos(request):
             form_values = {
                 'id_value': form.cleaned_data['id_value'],
                 'interno_value': form.cleaned_data['interno_value'],
+                'up_value': form.cleaned_data['up_value'],
                 'marca_value': form.cleaned_data['marca_value'],
                 'modelo_value': form.cleaned_data['modelo_value'],
                 'tipovehiculo_value': form.cleaned_data['tipovehiculo_value'],
@@ -50,7 +51,7 @@ def mainmaestroequipos(request):
         form = TableVariable()
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'form': form,
-                   'form_values': {'id_value':True, 'interno_value': True, 'marca_value': True, 'modelo_value': True,
+                   'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
                                    'seguro_value': False, 'seguro_pdf_value': False, 'itv_value': False,
@@ -68,6 +69,7 @@ def alquileresinternos(request):
             form_values = {
                 'id_value': form.cleaned_data['id_value'],
                 'interno_value': form.cleaned_data['interno_value'],
+                'up_value': form.cleaned_data['up_value'],
                 'marca_value': form.cleaned_data['marca_value'],
                 'modelo_value': form.cleaned_data['modelo_value'],
                 'tipovehiculo_value': form.cleaned_data['tipovehiculo_value'],
@@ -101,7 +103,7 @@ def alquileresinternos(request):
         form = TableVariable()
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'form': form,
-                   'form_values': {'id_value': True, 'interno_value': True, 'marca_value': True, 'modelo_value': True,
+                   'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
                                    'seguro_value': False, 'seguro_pdf_value': False, 'itv_value': False,
@@ -213,7 +215,6 @@ def certificado_equipoalquilado(request, id, mesanio):
                       {'interno': interno, 'certificado': certificado_existente})
 
 
-
 def generate_pdf_view(request, form_values):
     internos = Internos.objects.all()
     key_value_pairs = [pair.split('=') for pair in form_values.split('&')]
@@ -228,7 +229,6 @@ def generate_pdf_view(request, form_values):
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename="output.pdf"'
     pisa_status = pisa.CreatePDF(html_content, dest=response)
-
     if pisa_status.err:
         return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
     return response

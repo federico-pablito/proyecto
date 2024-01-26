@@ -12,6 +12,7 @@
         {{ form.as_p }}
         <button type="submit">Enviar</button>
         </form>
+        <a class="btn btn-primary" href="{% url 'novedades_info' interno.interno %}" role="button">Novedades de este Equipo</a>
         <p>UP: {{ interno.up }}</p>
         <p>Marca: {{ interno.marca }}</p>
         <p>Modelo: {{ interno.modelo }}</p>
