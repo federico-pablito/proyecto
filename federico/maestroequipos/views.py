@@ -49,8 +49,16 @@ def mainmaestroequipos(request):
                 return redirect('generate_pdf_view', form_values=form_values_str)
     else:
         form = TableVariable()
+    if request.method == 'get':
+        formulario = internosforms(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+    else:
+        # Si no se envió el formulario, crea una instancia del formulario
+        formulario = internosforms()
+    filter = internosfilter(request.GET, queryset=internos)
     return render(request, 'MainMaestro.html',
-                  {'internos': internos, 'form': form,
+                  {'internos': internos, 'form': form, 'filter': filter, 'alquiler': False, 'formulario': formulario,
                    'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
@@ -101,8 +109,16 @@ def alquileresinternos(request):
                 return redirect('generate_pdf_view', form_values=form_values_str)
     else:
         form = TableVariable()
+    if request.method == 'get':
+        formulario = internosforms(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+    else:
+        # Si no se envió el formulario, crea una instancia del formulario
+        formulario = internosforms()
+    filter = internosfilter(request.GET, queryset=internos)
     return render(request, 'MainMaestro.html',
-                  {'internos': internos, 'form': form,
+                  {'internos': internos, 'form': form, 'alquiler': True, 'filter': filter, 'formulario': formulario,
                    'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,
                                    'tipovehiculo_value': True, 'chasis_value': False, 'motor_value': False,
                                    'dominio_value': True, 'anio_value': True, 'aseguradora_value': False,
@@ -124,21 +140,6 @@ def cargointerno(request):
     else:
         form = internosforms()
     return render(request, 'cargointernos.html', {'internos': internos, 'form': form})
-
-
-def filtrointernos(request):
-    internos = Internos.objects.all()
-    if request.method == 'POST':
-        # Si se envió el formulario, procesa los datos
-        form = internosforms(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        # Si no se envió el formulario, crea una instancia del formulario
-        form = internosforms()
-    filter = internosfilter(request.GET, queryset=internos)
-    return render(request, 'filtrointernos.html', {'form': form, 'internos': internos,
-                                                   'filter': filter})
 
 
 def editar_interno(request, id=None):

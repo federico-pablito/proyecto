@@ -117,6 +117,11 @@ def crear_serv(request):
     return render(request, 'crean_service.html', {'services': partediario, 'form': form})
 
 
+def info_serv(request, interno=None):
+    interno = Internos.objects.get(interno=interno)
+    services = HistorialService.objects.filter(interno=interno)
+    return render(request, 'info_service.html', {'services': services, 'interno': interno})
+
 def service_pdf(template_src, context_dict={}):
     template = get_template(template_src)
     html = template.render(context_dict)

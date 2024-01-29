@@ -38,6 +38,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <td class="align-middle">Info</td>
                     <td class="align-middle">id</td>
                     <td class="align-middle">interno</td>
                     <td class="align-middle">fechaservicio</td>
@@ -55,10 +56,11 @@
             <tbody>
                 {% for dato in services %}
                     <tr>
+                        <td><a class="align-middle" href="{% url "info_serv" dato.interno %}">Info</a></td>
                         <td class="align-middle">{{ dato.id }}</td>
                         <td class="align-middle">{{ dato.interno }}</td>
-                        <td class="align-middle">{{ dato.fechaservicio }}</td>
-                        <td class="align-middle">{{ dato.fechaparte }}</td>
+                        <td class="align-middle">{{ dato.fechaservicio|date:"d/m/Y" }}</td>
+                        <td class="align-middle">{{ dato.fechaparte|date:"d/m/Y" }}</td>
                         <td class="align-middle">{{ dato.ultimoservice }}</td>
                         <td class="align-middle">{{ dato.planrealizado_hs }}</td>
                         <td class="align-middle">{{ dato.planrealizado }}</td>

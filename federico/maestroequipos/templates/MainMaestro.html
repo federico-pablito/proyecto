@@ -199,7 +199,6 @@
     <h1 style="font-family:'Helvetica', 'Arial', sans-serif;">Maestro Equipos Alquileres</h1>
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Cargo Equipos</a></p>
-        <p><a class="btn btn-primary" href="{% url 'filtrointernos' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Filtro Equipos</a></p>
         <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Alquiler Equipo</a></p>
     </div>
         <p>
@@ -245,6 +244,22 @@
                 <input type="submit" name= "columna" value="Elegir Columna" class="filtrarBtn">
                 <input type="submit" name="crear_pdf" value="Crear PDF" class="filtrarBtn">
             </div>
+        </form>
+    </div>
+    <div>
+        <form method="get">
+            <label>Interno: </label>{{ filter.form.interno }}
+            <label>UP: </label>{{ filter.form.up }}
+            <label>Marcha: </label>{{ filter.form.marca }}
+            <label>Modelo: </label>{{ filter.form.modelo }}
+            <label>Dominio: </label>{{ filter.form.dominio }}
+            <label>Actividad: </label>{{ filter.form.actividadvehiculo }}
+            <button type="submit">Filtrar</button>
+            {% if alquiler %}
+                <a href="{% url "alquileresinternos" %}">Limpiar Filtro</a>
+            {% else %}
+                <a href="{% url "main-maestroequipos" %}">Limpiar Filtro</a>
+            {% endif %}
         </form>
     </div>
     <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;">
@@ -330,7 +345,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato in internos %}
+                {% for dato in filter.qs %}
                     <tr>
                         <td><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
                         {% if form_values.id_value %}

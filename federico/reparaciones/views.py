@@ -34,9 +34,9 @@ def reparaciones_main(request):
             objeto.ubicacion = objeto.ubicacion + "\n" + str(item.taller.nombre)
             objeto.mecanico_encargado = objeto.mecanico_encargado + "\n" + str(item.mecanico_encargado.nombre)
             objeto.falla_general = objeto.falla_general + "\n" + item.falla_general
-            objeto.fechareparacionestimada = objeto.fechareparacionestimada + "\n" + str(item.fechareparacionestimada).split(" ")[0]
-            objeto.fechaentrada = objeto.fechaentrada + "\n" + str(item.fechaentrada).split(" ")[0]
-            objeto.fechasalida = objeto.fechasalida + "\n" + str(item.fechasalida).split(" ")[0]
+            objeto.fechareparacionestimada = objeto.fechareparacionestimada + "\n" + str(item.fechareparacionestimada.strftime('%d/%m/%Y'))
+            objeto.fechaentrada = objeto.fechaentrada + "\n" + str(item.fechaentrada.strftime('%d/%m/%Y'))
+            objeto.fechasalida = objeto.fechasalida + "\n" + str(item.fechasalida.strftime('%d/%m/%Y'))
             objeto.estadoreparacion = objeto.estadoreparacion + "\n" + item.estadoreparacion
             objeto.estadoequipo = objeto.estadoequipo + "\n" + item.estadoequipo
             objeto.descripcion = objeto.descripcion + "\n" + item.descripcion
@@ -47,9 +47,9 @@ def reparaciones_main(request):
                 ubicacion=item.taller.nombre,
                 mecanico_encargado=item.mecanico_encargado.nombre,
                 falla_general=item.falla_general,
-                fechareparacionestimada=str(item.fechareparacionestimada).split(" ")[0],
-                fechaentrada=str(item.fechaentrada).split(" ")[0],
-                fechasalida=str(item.fechasalida).split(" ")[0],
+                fechareparacionestimada=str(item.fechareparacionestimada.strftime('%d/%m/%Y')),
+                fechaentrada=str(item.fechaentrada.strftime('%d/%m/%Y')),
+                fechasalida=str(item.fechasalida.strftime('%d/%m/%Y')),
                 estadoreparacion=item.estadoreparacion,
                 estadoequipo=item.estadoequipo,
                 descripcion=item.descripcion
