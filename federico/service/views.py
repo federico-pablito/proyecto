@@ -122,23 +122,17 @@ def info_serv(request, interno=None):
     services = HistorialService.objects.filter(interno=interno)
     return render(request, 'info_service.html', {'services': services, 'interno': interno})
 
-def service_pdf(template_src, context_dict={}):
-    template = get_template(template_src)
-    html = template.render(context_dict)
-    result = BytesIO()
-    pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
-    if not pdf.err:
-        return HttpResponse(result.getvalue(), content_type='application/pdf')
-    return None
 
+def services_pdf(request):
+    tabla_temporal = Services.objects.all()
+    template_path = 'service_pdf.html'
+    template = get_template(template_path)
+    html_content = template.render({'services': tabla_temporal})
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename="output.pdf"'
+    pisa_status = pisa.CreatePDF(html_content, dest=response)
 
-class services_pd_view(View):
-    def get(self, request, *args, **kwargs):
-        services = Services.objects.all()
-        lista_services, lista_nombres = listador(services)
-        context = {
-            'lista_services': lista_services,
-            'lista_nombres': lista_nombres,
-        }
-        pdf = service_pdf('service_pdf.html', context)
-        return HttpResponse(pdf, content_type='application/pdf')
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
+    return response
+

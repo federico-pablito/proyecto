@@ -248,12 +248,12 @@
     </div>
     <div>
         <form method="get">
-            <label>Interno: </label>{{ filter.form.interno }}
-            <label>UP: </label>{{ filter.form.up }}
-            <label>Marcha: </label>{{ filter.form.marca }}
-            <label>Modelo: </label>{{ filter.form.modelo }}
-            <label>Dominio: </label>{{ filter.form.dominio }}
-            <label>Actividad: </label>{{ filter.form.actividadvehiculo }}
+            <label>Interno:</label> {{ filter.form.interno }}
+            <label>UP: </label> {{ filter.form.up }}
+            <label>Marcha: </label> {{ filter.form.marca }}
+            <label>Modelo: </label> {{ filter.form.modelo }}
+            <label>Dominio: </label> {{ filter.form.dominio }}
+            <label>Actividad: </label> {{ filter.form.actividadvehiculo }}
             <button type="submit">Filtrar</button>
             {% if alquiler %}
                 <a href="{% url "alquileresinternos" %}">Limpiar Filtro</a>
