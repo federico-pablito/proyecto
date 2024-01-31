@@ -8,137 +8,197 @@
     <title>Mi Vista</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
     <style>
-      nav{
-        background-color: white;
-      }
-      body {
-          background-color: rgb(229, 222, 222);
-      }
-  
-      h1 {
-          font-family: Arial, Helvetica, sans-serif;
-          font-weight: bold;
-          text-align: center;   
-      }
-  
-      .divForm {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          background-color: #6e6c6c48; 
-          padding: 20px 0px; 
-          margin: 0px 20%;
-          border-radius: 8px; 
-          box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
-          justify-content: space-between;
-      }
-  
-      input {
-          width: 150px;
-          height: 35px;
-          padding: 5px;
-          margin-bottom: 10px;
-      }
-  
-      input#id_alquilado {
-          width: auto;
-          height: auto;
-      }
-  
-      label {
-          margin: 1rem;
-      }
-  
-      label#id_valorpesos {
-          margin-left: 20px;
-      }
-  
-      .submitBtn {
-          display: block; 
-          padding: 0px 20px;
-          outline: 0;
-          cursor: pointer;
-          font-weight: 600;
-          background: #fff;
-          font-size: 13px;
-          border-radius: 4px;
-          color: rgb(29, 28, 29);
-          height: 36px;
-          transition: all 80ms linear;
-          transition: background-color 0.3s ease;
-          margin: auto;
-      }
-  
-      .submitBtn:active {
-          background-color: rgba(141, 71, 71, 0.8);
-          border: 0.5px solid black;
-      }
+    nav{
+    background-color: white;
+    }
+    body {
+    background-color: white;
+    text-align: center;
+    }
+    h1 {
+    font-weight: bold;
+    text-align: center;   
+    margin-top: 2rem;
+    }
+    form{
+    background-color: #6e6c6c48;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
+    margin: auto;
+    border-radius: 8px;
+    padding: 20px;
+    width: 65%;
+    }
+    .divForm {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+    }
+    .columnaCargo{
+    flex: 1;
+    margin-bottom: 0.5rem;
+    justify-content: space-between;
+    }
+    input{
+    width: 80px;
+    height: 20px;
+    font-size: small;
+    padding-left: 5px;
+    }
+    input#id_alquilado {
+    width: auto;
+    height: auto;
+    }
+    label{
+      margin-right: 5px;
+    }
+    label#id_valorpesos {
+    margin-left: 20px;
+    }
+    .submitBtn {
+    display: inline-block; 
+    padding: 0px 20px;
+    outline: 0;
+    cursor: pointer;
+    font-weight: 600;
+    background: rgba(245, 0, 7, 0.93);
+    font-size: 13px;
+    border-radius: 4px;
+    border: 0,5px solid black;
+    color: white;
+    height: 36px;
+    transition: all 80ms linear;
+    transition: background-color 0.3s ease;
+    margin: auto;
+    }
+    .submitBtn:hover{
+      background-color: white;
+      color: black;
+    }
+    .submitBtn:active {
+    background-color: rgba(245, 0, 7, 0.93) ;
+    border: 0.5px solid black;
+    }
+    button{
+    margin-top: 3rem;
+    }
+    .navbar{
+    color: white;
+    background-color: black;
+    }
+    .navbar-light .navbar-nav .nav-link{
+    color: white;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+    color: grey;
+    }
 
-      button{
-        margin-top: 3rem;
-      }
+    /* Valor de ajuste de los inputs */
+    #id_interno{
+      margin-left: 4px;
+    }
+    #id_marca{
+      margin-left: 12px;
+    }
+    #id_chasis, #id_motor{
+      margin-left: 11px;
+    }
+    #id_anio{
+      margin-left: 60px;
+    }
+    #id_seguro{
+      margin-left: 40px;
+    }
+    #id_itv{
+      margin-left: 76px;
+    }
+    #id_tarjeta{
+      margin-left: 47px;
+    }
+    #id_chofer{
+      margin-left: 31px;
+    }
+    #id_valorpesos{
+      margin-left: 14px;
+    } 
+    #id_valordolares{
+      margin-left: 10px;
+    }
+    #id_orden{
+      margin-left: 43px;
+    }
+    #id_up{
+      margin: 0px 0px 0px 68px;
+    }
+    #id_dominio{
+      margin-left: 26px;
+    }
+    #id_tipovehiculo{
+      margin-left: 42px;
+    }
   </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">logout</a>
-      </li>
-    </ul>
+  <!-- Left navbar links -->
+  <ul class="navbar-nav">
+  <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+  </li>
+  <li class="nav-item d-none d-sm-inline-block">
+      <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-house" style="color: red;"></i> Home</a>
+  </li>
+  <li class="nav-item d-none d-sm-inline-block">
+      <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-power-off" style="color: red;"></i>  Logout</a>
+  </li>
+  </ul>
 </nav>
 <body>
     <h1>Cargo Interno</h1>
     <form method="post">
         {% csrf_token %} 
         <div class="divForm">
-        <div>
+        <div class="columnaCargo">
         {{ form.interno.label_tag }} {{ form.interno }}
+        <br>
         {{ form.marca.label_tag }} {{ form.marca }}
         <br>
         {{ form.modelo.label_tag }} {{ form.modelo }}
+        <br>
         {{ form.chasis.label_tag }} {{ form.chasis }}
         <br>
         {{ form.motor.label_tag }} {{ form.motor }}
+        </div>
+        <div class="columnaCargo">
         {{ form.anio.label_tag }} {{ form.anio }}
-        <br>
         {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
         {{ form.seguro.label_tag }} {{ form.seguro }}
         <br>
-        {{ form.seguro_pdf.label_tag }} {{ form.seguro_pdf }}
         {{ form.itv.label_tag }}{{ form.itv }}
         <br>
-        {{ form.itv_pdf.label_tag }}{{ form.itv_pdf }}
-        {{ form.titulo_pdf.label_tag }}{{ form.titulo_pdf }}
-        </div>
-        <div>
         {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
-        {{ form.tarjeta_pdf.label_tag }}{{ form.tarjeta_pdf }}
-        <br>
+        </div>
+        <div class="columnaCargo">
         {{ form.propietario.label_tag }}{{ form.propietario }}
         {{ form.chofer.label_tag }}{{ form.chofer }}
-        <br>
         {{ form.alquilado.label_tag }}{{ form.alquilado }}
+        <br>
         {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
         <br>
         {{ form.valordolares.label_tag }}{{ form.valordolares }}
+        </div>
+        <div class="columnaCargo">
         {{ form.orden.label_tag }}{{ form.orden }}
-        <br>
         {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
+        <br>
         {{ form.up.label_tag }}{{ form.up }}
         <br>
         {{ form.dominio.label_tag }}{{ form.dominio }}
+        <br>
         {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
+        </div>  
         </div>
-        <button type="submit" class="submitBtn">Enviar</button>    
-        </div>    
+        <button type="submit" class="submitBtn">Enviar</button>      
       </form>
 </body>
 </html>

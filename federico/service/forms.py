@@ -16,10 +16,10 @@ class service_form(forms.ModelForm):
     planrealizado = forms.CharField(required=True, label='Plan Realizado (hs)')
     planrealizado_hs = forms.IntegerField(required=True, label='Plan Realizado')
     proximoservice = forms.IntegerField(required=True, label='Proximo Service')
-    hsxkmactuales = forms.IntegerField(required=True)
+    hsxkmactuales = forms.IntegerField(required=True, label='HrsXKm Actuales')
     operativo = forms.ChoiceField(choices=(('Operativo', 'Operativo'), ('Inoperativo', 'Inoperativo')),
-                                  widget=forms.Select, label='Operativo')
+                                widget=forms.Select, label='Operativo')
     class Meta:
         model = Services
         fields = ['interno', 'fechaservicio', 'fechaparte', 'ultimoservice', 'planrealizado_hs', 'planrealizado',
-                  'proximoservice', 'hsxkmactuales', 'operativo']
+                'proximoservice', 'hsxkmactuales', 'operativo']
