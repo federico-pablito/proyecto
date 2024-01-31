@@ -23,3 +23,6 @@ class service_form(forms.ModelForm):
         model = Services
         fields = ['interno', 'fechaservicio', 'fechaparte', 'ultimoservice', 'planrealizado_hs', 'planrealizado',
                 'proximoservice', 'hsxkmactuales', 'operativo']
+
+class desplegable_internos(form.Form):
+    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Interno')
