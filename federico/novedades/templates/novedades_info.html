@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ interno.interno }}</h1>
+    <div>
+        <p>Id: {{ interno.id }}</p>
+        <p>Tipo Vehiculo: {{ interno.tipovehiculo }}</p>
+        <p>Marca: {{ interno.marca }}</p>
+        <p>Modelo: {{ interno.modelo }}</p>
+        <p>Dominio: {{ interno.dominio }}</p>
+        <a href="{% url "novedades_specifica_crear" interno.interno %}">Agregar Falla</a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Opciones</th>
+                    <th scope="col" class="align-middle">Id</th>
+                    <th scope="col" class="align-middle">Tipo de Falla</th>
+                    <th scope="col" class="align-middle">Reparado</th>
+                    <th scope="col" class="align-middle">fecha</th>
+                    <th scope="col" class="align-middle">Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in novedades %}
+                    <tr>
+                        <td><a href="{% url 'novedades_detalle' dato.id %}">Ver</a> <a href="{% url 'cambiar_estado' dato.id %}">Cambiar Estado</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.tipo_falla }}</td>
+                        <td>{{ dato.reparado }}</td>
+                        <td>{{ dato.fecha }}</td>
+                        <td>{{ dato.informacion }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

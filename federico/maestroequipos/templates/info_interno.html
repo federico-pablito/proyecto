@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vista</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
 </head>
 <body>
     <h1>{{ interno.interno }}</h1>
@@ -12,6 +15,10 @@
         {{ form.as_p }}
         <button type="submit">Enviar</button>
         </form>
+        <a class="btn btn-primary" href="{% url 'novedades_info' interno.interno %}" role="button">Novedades de este Equipo</a>
+        <a class="btn btn-primary" href="{% url 'reparaciones_info' interno.interno %}" role="button">Reparaciones de este Equipo</a>
+        <a class="btn btn-primary" href="{% url "info_serv" interno.interno %}">Services de este Equipo</a>
+
         <p>UP: {{ interno.up }}</p>
         <p>Marca: {{ interno.marca }}</p>
         <p>Modelo: {{ interno.modelo }}</p>

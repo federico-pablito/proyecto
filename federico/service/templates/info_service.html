@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ interno.interno }}</h1>
+    <div>
+        <p>Id: {{ interno.id }}</p>
+        <p>Tipo Vehiculo: {{ interno.tipovehiculo }}</p>
+        <p>Marca: {{ interno.marca }}</p>
+        <p>Modelo: {{ interno.modelo }}</p>
+        <p>Dominio: {{ interno.dominio }}</p>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td class="align-middle">id</td>
+                <td class="align-middle">interno</td>
+                <td class="align-middle">fechaservicio</td>
+                <td class="align-middle">fechaparte</td>
+                <td class="align-middle">ultimoservice</td>
+                <td class="align-middle">planrealizado_hs</td>
+                <td class="align-middle">planrealizado</td>
+                <td class="align-middle">proximoservice</td>
+                <td class="align-middle">hsxkmactuales</td>
+                <td class="align-middle">hsxkmrestantes</td>
+                <td class="align-middle">necesidadservice</td>
+                <td class="align-middle">operativo</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in services %}
+                <tr>
+                    <td class="align-middle">{{ dato.id }}</td>
+                    <td class="align-middle">{{ dato.interno }}</td>
+                    <td class="align-middle">{{ dato.fechaservicio|date:"d/m/Y" }}</td>
+                    <td class="align-middle">{{ dato.fechaparte|date:"d/m/Y" }}</td>
+                    <td class="align-middle">{{ dato.ultimoservice }}</td>
+                    <td class="align-middle">{{ dato.planrealizado_hs }}</td>
+                    <td class="align-middle">{{ dato.planrealizado }}</td>
+                    <td class="align-middle">{{ dato.proximoservice }}</td>
+                    <td class="align-middle">{{ dato.hsxkmactuales }}</td>
+                    <td class="align-middle">{{ dato.hsxkmrestantes }}</td>
+                    <td class="align-middle">{{ dato.necesidadservice }}</td>
+                    <td class="align-middle">{{ dato.operativo }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

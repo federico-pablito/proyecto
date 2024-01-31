@@ -29,24 +29,31 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    {% for nombre in lista_nombres %}
-                        <th scope="col">{{ nombre }}</th>
-                    {% endfor %}
+                    <th scope="col" class="align-middle">Interno</th>
+                    <th scope="col" class="align-middle">Ubicacion</th>
+                    <th scope="col" class="align-middle">Falla</th>
+                    <th scope="col" class="align-middle">Estado Reparacion</th>
+                    <th scope="col" class="align-middle">Fecha Reparacion Estimada</th>
+                    <th scope="col" class="align-middle">Mecanico Encargado</th>
+                    <th scope="col" class="align-middle">Fecha Entrada</th>
+                    <th scope="col" class="align-middle">Fecha Salida</th>
+                    <th scope="col" class="align-middle">Estado Equipo</th>
+                    <th scope="col" class="align-middle">Descripcion</th>
                 </tr>
             </thead>
             <tbody>
-                {% for dato in parte %}
+                {% for dato in tabla %}
                     <tr>
-                        <td>{{ dato.id }}</td>
                         <td>{{ dato.interno }}</td>
-                        <td>{{ dato.ubicacion }}</td>
-                        <td>{{ dato.falla }}</td>
-                        <td>{{ dato.porcentajeavance }}</td>
-                        <td>{{ dato.fechareparacionestimada }}</td>
-                        <td>{{ dato.fechaentrada }}</td>
-                        <td>{{ dato.fechasalida }}</td>
-                        <td>{{ dato.estadoreparacion }}</td>
-                        <td>{{ dato.estadoequipo }}</td>
+                        <td>{{ dato.ubicacion|linebreaks }}</td>
+                        <td>{{ dato.falla_general|linebreaks }}</td>
+                        <td>{{ dato.estadoreparacion|linebreaks }}</td>
+                        <td>{{ dato.fechareparacionestimada|linebreaks }}</td>
+                        <td>{{ dato.mecanico_encargado|linebreaks }}</td>
+                        <td>{{ dato.fechaentrada|linebreaks }}</td>
+                        <td>{{ dato.fechasalida|linebreaks }}</td>
+                        <td>{{ dato.estadoequipo|linebreaks }}</td>
+                        <td>{{ dato.descripcion|linebreaks }}</td>
                     </tr>
                 {% endfor %}
             </tbody>

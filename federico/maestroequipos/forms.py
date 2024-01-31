@@ -36,6 +36,10 @@ class internosforms(forms.ModelForm):
                   'seguro', 'seguro_pdf', 'itv',
                   'itv_pdf', 'titulo_pdf', 'tarjeta', 'tarjeta_pdf', 'propietario', 'chofer', 'alquilado', 'valorpesos',
                   'valordolares', 'orden', 'actividadvehiculo', 'up']
+        widgets = {
+            'interno': forms.TextInput(attrs={'class': 'mi_clase', 'placeholder': 'Mi placeholder'}),
+            # add your other fields with their widgets here
+        }
 
 
 class TableVariable(forms.Form):
@@ -122,6 +126,7 @@ class AlquilerEquiposForm(forms.ModelForm):
                   'observaciones_equipo', 'tipo_vehiculo', 'modelo', 'marca', 'dominio', 'titulo_tarjeta_verde', 'kms',
                   'estado', 'seguro_equipo', 'inspeccion_equipo', 'inspeccion_equipo_responsable', 'forma_pago',
                   'condicion_pago', 'proveedor', 'razon_social', 'cbu', 'telefono', 'autorizado']
+
 
 
 class CertificadosEquiposAlquiladosForm(forms.Form):

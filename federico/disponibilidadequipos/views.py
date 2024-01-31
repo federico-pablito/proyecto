@@ -41,7 +41,7 @@ def transpose_disponibilidad(mes, anio):
             row.append(Internos.objects.get(id=dato).interno)
             row.append(Internos.objects.get(id=dato).propietario)
             row.append(tabla.filter(interno=dato).last().chofer)
-            row.append(tabla.filter(interno=dato).last())
+            row.append(tabla.filter(interno=dato).last().fecha_ingreso_de_obra.strftime('%d/%m/%Y'))
             row.append(tabla.filter(interno=dato).last().cantidad_de_dias_en_obra)
             actividad = []
             # Listador de Dias Trabajados

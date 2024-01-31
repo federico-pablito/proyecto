@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class TablaMadre(models.Model):
@@ -61,6 +62,7 @@ class Services(models.Model):
 	hsxkmactuales = models.IntegerField()
 	hsxkmrestantes = models.IntegerField()
 	necesidadservice = models.CharField(max_length=512)
+	operativo = models.CharField(max_length=512, default='Operativo')
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
 
@@ -87,7 +89,7 @@ class Reparaciones(models.Model):
 	estadoequipo = models.CharField(max_length=512)
 	descripcion = models.CharField(max_length=512)
 	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.ubicacion), str(self.falla),
+		return ', '.join([str(self.interno), str(self.taller), str(self.falla_general),
 						  str(self.mecanico_encargado)])
 
 
@@ -133,12 +135,21 @@ class PartesDiarios(models.Model):
 	reparado = models.BooleanField(default=False)
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.cantida_de_quipos), str(self.tipo_de_falla), str(self.reparado)])
+
+
 class Novedades(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	reparado = models.BooleanField(default=False)
+	tipo_falla = models.CharField(max_length=512, default="Generica")
+	fecha = models.DateTimeField(default=timezone.now)
+	informacion = models.CharField(max_length=512, default="No hay informacion")
+	ingreso_hs_km = models.IntegerField(default=1)
+	chofer = models.CharField(max_length=512, default="No tiene chofer")
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.reparado), str(self.id)])
+
 
 class Choferes(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -173,6 +184,7 @@ class DisponibilidadEquipos(models.Model):
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.up), str(self.interno)])
 
+
 class TipoActividad(models.Model):
 	id = models.AutoField(primary_key=True)
 	categoria = models.CharField(max_length=1)
@@ -180,12 +192,15 @@ class TipoActividad(models.Model):
 	def __str__(self):
 		return ', '.join([self.categoria, self.descripcion])
 
+
 class Talleres(models.Model):
 	id = models.AutoField(primary_key=True)
 	nombre = models.CharField(max_length=512)
 	ubicacion = models.CharField(max_length=512)
+
 	def __str__(self):
-		return ', '.join([self.nombre, self.ubicacion])
+		return ', '.join([str(self.nombre), str(self.ubicacion)])
+
 
 
 class MecanicosEncargados(models.Model):
@@ -193,8 +208,9 @@ class MecanicosEncargados(models.Model):
 	codigo = models.CharField(max_length=512)
 	nombre = models.CharField(max_length=512)
 	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
+
 	def __str__(self):
-		return ', '.join([self.nombre, self.taller])
+		return ', '.join([str(self.codigo), str(self.nombre), str(self.taller)])
 
 
 class AlquilerEquipos(models.Model):
@@ -257,3 +273,22 @@ class CertificadosEquiposAlquilados(models.Model):
 
 	def __str__(self):
 		return ', '.join([f'certificado n°{self.id}', str(self.contratista), str(self.equipo_alquilado)])
+
+
+class HistorialService(models.Model):
+	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	fechaservicio = models.DateTimeField()
+	fechaparte = models.DateTimeField()
+	ultimoservice = models.IntegerField()
+	planrealizado_hs = models.IntegerField()
+	planrealizado = models.CharField(max_length=512)
+	proximoservice = models.IntegerField()
+	hsxkmactuales = models.IntegerField()
+	hsxkmrestantes = models.IntegerField()
+	necesidadservice = models.CharField(max_length=512)
+	operativo = models.CharField(max_length=512, default='Operativo')
+
+	def __str__(self):
+		return ', '.join(
+			[str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])

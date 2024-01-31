@@ -26,16 +26,25 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">Editar</th>
-                    {% for nombre in lista_nombres %}
-                        <th scope="col">{{ nombre }}</th>
-                    {% endfor %}
+                    <th scope="col" class="align-middle">Editar</th>
+                    <th scope="col" class="align-middle">Id</th>
+                    <th scope="col" class="align-middle">Interno</th>
+                    <th scope="col" class="align-middle">Carreton</th>
+                    <th scope="col" class="align-middle">Chofer</th>
+                    <th scope="col" class="align-middle">Remito</th>
+                    <th scope="col" class="align-middle">Proveedor</th>
+                    <th scope="col" class="align-middle">Origen</th>
+                    <th scope="col" class="align-middle">Destino</th>
+                    <th scope="col" class="align-middle">Km entre destinos</th>
+                    <th scope="col" class="align-middle">Transporte</th>
+                    <th scope="col" class="align-middle">Consumo km x litros</th>
+                    <th scope="col" class="align-middle">Valor viaje</th>
                 </tr>
             </thead>
             <tbody>
                 {% for dato in tabla_logistica %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a></td>
+                        <td><a class="btn btn-primary" href="{% url 'logistica_editar' dato.id%}" role="button">Editar</a></td>
                         <td>{{ dato.id }}</td>
                         <td>{{ dato.interno }}</td>
                         <td>{{ dato.carreton }}</td>

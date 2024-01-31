@@ -26,31 +26,41 @@
 </nav>
 <body>
     <h1>Services</h1>
-    <!--
-    <form method="get">
-        {{ filter.form.as_p }}
-        <button type="submit">Filtrar</button>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.interno.label_tag }}{{ form.interno }}
+        <button type="submit">Cargar Service</button>
     </form>
-    -->
+
     <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col" class="align-middle">Editar</th>
-                    {% for nombre in lista_nombres %}
-                        <th scope="col" class="align-middle">{{ nombre }}</th>
-                    {% endfor %}
+                    <td class="align-middle">Info</td>
+                    <td class="align-middle">id</td>
+                    <td class="align-middle">interno</td>
+                    <td class="align-middle">fechaservicio</td>
+                    <td class="align-middle">fechaparte</td>
+                    <td class="align-middle">ultimoservice</td>
+                    <td class="align-middle">planrealizado_hs</td>
+                    <td class="align-middle">planrealizado</td>
+                    <td class="align-middle">proximoservice</td>
+                    <td class="align-middle">hsxkmactuales</td>
+                    <td class="align-middle">hsxkmrestantes</td>
+                    <td class="align-middle">necesidadservice</td>
+                    <td class="align-middle">operativo</td>
                 </tr>
             </thead>
             <tbody>
                 {% for dato in services %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'service_editar' dato.id%}" role="button">Editar</a></td>
+                        <td><a class="align-middle" href="{% url "info_serv" dato.interno %}">Info</a></td>
                         <td class="align-middle">{{ dato.id }}</td>
                         <td class="align-middle">{{ dato.interno }}</td>
-                        <td class="align-middle">{{ dato.fechaservicio }}</td>
-                        <td class="align-middle">{{ dato.fechaparte }}</td>
+                        <td class="align-middle">{{ dato.fechaservicio|date:"d/m/Y" }}</td>
+                        <td class="align-middle">{{ dato.fechaparte|date:"d/m/Y" }}</td>
                         <td class="align-middle">{{ dato.ultimoservice }}</td>
                         <td class="align-middle">{{ dato.planrealizado_hs }}</td>
                         <td class="align-middle">{{ dato.planrealizado }}</td>
@@ -58,6 +68,7 @@
                         <td class="align-middle">{{ dato.hsxkmactuales }}</td>
                         <td class="align-middle">{{ dato.hsxkmrestantes }}</td>
                         <td class="align-middle">{{ dato.necesidadservice }}</td>
+                        <td class="align-middle">{{ dato.operativo }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
