@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'requerimiento_equipo_crear' %}">Crear Requerimiento</a>
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Info</th>
+                    <th scope="col" class="align-middle">Id</th>
+                    <th scope="col" class="align-middle">Tipo Equipo</th>
+                    <th scope="col" class="align-middle">UP</th>
+                    <th scope="col" class="align-middle">Fecha Inicial</th>
+                    <th scope="col" class="align-middle">Fecha Final</th>
+                    <th scope="col" class="align-middle">Solicitante</th>
+                    <th scope="col" class="align-middle">Urgencia</th>
+                    <th scope="col" class="align-middle">Aprobado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in requerimientos %}
+                    <tr>
+                        <td><a href="{% url "requerimiento_equipo_info" dato.id %}">Info</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.tipo_equipo }}</td>
+                        <td>{{ dato.up }}</td>
+                        <td>{{ dato.fecha_inicial|date:"d/m/Y" }}</td>
+                        <td>{{ dato.fecha_final|date:"d/m/Y" }}</td>
+                        <td>{{ dato.solicitante }}</td>
+                        <td>{{ dato.urgencia }}</td>
+                        <td>{{ dato.aprobado }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

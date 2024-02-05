@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from tablamadre.models import Services, TablaMadre, Internos, Reparaciones, HistorialService
 from .forms import service_form, desplegable_internos
 from django.forms.models import model_to_dict
-from .filters import service_filter
+from .filters import servicefilter
 from django.core.paginator import Paginator
 from io import BytesIO
 from django.http import HttpResponse
@@ -26,14 +26,12 @@ def service_main(request):
     else:
         # Si no se envió el formulario, crea una instancia del formulario
         form = desplegable_internos()
-    partediario = Services.objects.all()
-    #parte_filter = service_filter(request.GET, queryset=partediario)
-    #if parte_filter.is_valid():
-    #    partediario = parte_filter.qs
-    order_by = request.GET.get('order_by', 'fechaservicio')
-    partediario = partediario.order_by(order_by)
+    service = Services.objects.all()
+    service_filter = servicefilter(request.GET, queryset=service)
+    if service_filter.is_valid():
+        service = service_filter.qs
     # ARREGLAR EL FILTRO
-    return render(request, 'service_main.html', {'form': form, 'services': partediario})
+    return render(request, 'service_main.html', {'form': form, 'services': service, 'filter': service_filter})
 
 
 def editar_serv(request, interno=None):

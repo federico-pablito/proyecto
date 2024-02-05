@@ -57,10 +57,8 @@ def transpose_disponibilidad(mes, anio):
             # Contador de dias trabajados
             dias_trabajados = 0
             for item in actividad:
-                if item == 'd':
+                if item.lower() == 'n':
                     dias_trabajados += 1
-                elif item == 'r':
-                    dias_trabajados += 0.5
                 else:
                     dias_trabajados += 0
             row.append(dias_trabajados)

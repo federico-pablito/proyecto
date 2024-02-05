@@ -12,6 +12,7 @@ class TablaMadre(models.Model):
 	logistica = models.ForeignKey('Logistica', on_delete=models.CASCADE, default=1)
 	dolardia = models.IntegerField()
 	partesdiarions = models.ForeignKey('PartesDiarios', on_delete=models.CASCADE, default=1)
+
 	def __str__(self):
 		return ', '.join([str(self.internos), str(self.services), str(self.unidadesdeproduccion),
 						  str(self.reparaciones), str(self.logistica), str(self.dolardia), str(self.partesdiarions),
@@ -45,11 +46,11 @@ class Internos(models.Model):
 	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
 	dominio = models.CharField(max_length=255, default='default_value')
 	tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
-	
 
-	def __str__(self):		
+	def __str__(self):
 		return str(self.interno)
-		
+
+
 class Services(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -63,6 +64,7 @@ class Services(models.Model):
 	hsxkmrestantes = models.IntegerField()
 	necesidadservice = models.CharField(max_length=512)
 	operativo = models.CharField(max_length=512, default='Operativo')
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
 
@@ -73,6 +75,7 @@ class UnidadesdeProduccion(models.Model):
 	ubicacion = models.CharField(max_length=512)
 	permission_required = 'unidadesproduccion.views_mostrartablamadre'
 	permission_denied_message = 'no perro'
+
 	def __str__(self):
 		return str(self.unidadproduccion)
 
@@ -88,6 +91,7 @@ class Reparaciones(models.Model):
 	estadoreparacion = models.CharField(max_length=512)
 	estadoequipo = models.CharField(max_length=512)
 	descripcion = models.CharField(max_length=512)
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.taller), str(self.falla_general),
 						  str(self.mecanico_encargado)])
@@ -133,6 +137,7 @@ class PartesDiarios(models.Model):
 	kmsxhs = models.IntegerField()
 	tipo_de_falla = models.CharField(max_length=512, default='No hay falla')
 	reparado = models.BooleanField(default=False)
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.cantida_de_quipos), str(self.tipo_de_falla), str(self.reparado)])
 
@@ -157,6 +162,7 @@ class Choferes(models.Model):
 	anioIngreso = models.DateTimeField()
 	dni = models.IntegerField()
 	licencia = models.CharField(max_length=512)
+
 	def __str__(self):
 		return ' '.join([str(self.nombre), str(self.dni)])
 
@@ -167,8 +173,9 @@ class Consumos(models.Model):
 	fecha = models.DateTimeField()
 	hsKm = models.IntegerField()
 	choferes = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
+
 	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKM), str(self.choferes)])
+		return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKm), str(self.choferes)])
 
 class DisponibilidadEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -292,3 +299,56 @@ class HistorialService(models.Model):
 	def __str__(self):
 		return ', '.join(
 			[str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
+
+
+class RequerimientoEquipo(models.Model):
+	id = models.AutoField(primary_key=True)
+	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
+	tipo_equipo = models.CharField(max_length=512)
+	fecha_inicial = models.DateTimeField()
+	fecha_final = models.DateTimeField()
+	solicitante	= models.CharField(max_length=512)
+	urgencia = models.CharField(max_length=512)
+	aprobado = models.BooleanField(default=False)
+
+	def __str__(self):
+		return ', '.join([str(self.id), str(self.tipo_equipo), str(self.up), str(self.aprobado)])
+
+
+class RequerimientoTraslado(models.Model):
+	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	origen = models.CharField(max_length=512)
+	destino = models.CharField(max_length=512)
+	fecha = models.DateTimeField()
+	aprobado = models.BooleanField(default=False)
+
+	def __str__(self):
+		return ', '.join([str(self.id), str(self.interno), str(self.origen), str(self.fecha), str(self.aprobado)])
+
+
+class Cronogroma(models.Model):
+	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
+	fecha = models.DateTimeField()
+	motivo_atraso = models.CharField(max_length=512, default='No hay motivo')
+
+	def __str__(self):
+		return ', '.join([str(self.id), str(self.interno), str(self.up), str(self.fecha)])
+
+
+class TipoVehiculo(models.Model):
+	id = models.AutoField(primary_key=True)
+	tipo = models.CharField(max_length=512)
+
+	def __str__(self):
+		return str(self.tipo)
+
+
+class Urgencia(models.Model):
+	id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=512)
+
+	def __str__(self):
+		return str(self.nombre)

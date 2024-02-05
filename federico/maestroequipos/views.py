@@ -11,6 +11,14 @@ from xhtml2pdf import pisa
 
 def mainmaestroequipos(request):
     internos = Internos.objects.filter(alquilado=False)
+    if request.method == 'get':
+        formulario = internosforms(request.POST)
+        if formulario.is_valid():
+            formulario.save()
+    else:
+        # Si no se envió el formulario, crea una instancia del formulario
+        formulario = internosforms()
+    filter = internosfilter(request.GET, queryset=internos)
     if request.method == 'POST':
         form = TableVariable(request.POST)
         if form.is_valid():
@@ -43,20 +51,12 @@ def mainmaestroequipos(request):
             crear_pdf = request.POST.get('Crear_PDF', None)
             if 'columna' in request.POST:
                 return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                            'form_values': form_values})
+                                                            'form_values': form_values, 'filter': filter})
             elif 'crear_pdf' in request.POST:
                 form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
                 return redirect('generate_pdf_view', form_values=form_values_str)
     else:
         form = TableVariable()
-    if request.method == 'get':
-        formulario = internosforms(request.POST)
-        if formulario.is_valid():
-            formulario.save()
-    else:
-        # Si no se envió el formulario, crea una instancia del formulario
-        formulario = internosforms()
-    filter = internosfilter(request.GET, queryset=internos)
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'form': form, 'filter': filter, 'alquiler': False, 'formulario': formulario,
                    'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,

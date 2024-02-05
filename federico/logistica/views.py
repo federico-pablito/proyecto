@@ -1,17 +1,19 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Logistica, Internos, Reparaciones, TablaMadre
-from .forms import logistica_form
+from tablamadre.models import Logistica, Internos, Reparaciones, TablaMadre, RequerimientoEquipo, RequerimientoTraslado, Cronogroma
+from .forms import logistica_form, requerimiento_equipo_form, requerimiento_traslado_form, cronograma_form
 from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 
+
 # Create your views here.
 def logistica_main(request):
     logistica = Logistica.objects.all()
     # HACER EL FILTRO
     return render(request, 'logisticatabla.html', {'logisticas': logistica})
+
 
 def logistica_crear(request):
     if request.method == 'POST':
@@ -22,7 +24,8 @@ def logistica_crear(request):
             return redirect('logistica_main')
     else:
         form = logistica_form()
-    return render(request, 'partediario_crear.html', {'form': form})
+    return render(request, 'logistica_crear.html', {'form': form})
+
 
 def logistica_editar(request, id=None):
     if id:
@@ -36,8 +39,90 @@ def logistica_editar(request, id=None):
             return redirect('logistica_main')
     else:
         form = logistica_form(instance=instancia)
-    return render(request, 'partediario_editar.html',
+    return render(request, 'logistica_editar.html',
                   {'form': form})
+
+
+def requerimiento_equipo_crear(request):
+    if request.method == 'POST':
+        form = requerimiento_equipo_form(request.POST)
+        if form.is_valid():
+            new_requerimiento = form.save()
+            return redirect('requerimiento_equipo_mostrar')
+    else:
+        form = requerimiento_equipo_form()
+    return render(request, 'requerimiento_equipo_crear.html', {'form': form})
+
+
+def requerimiento_equipo_mostrar(request):
+    requerimiento = RequerimientoEquipo.objects.all()
+    return render(request, 'requerimiento_equipo_mostrar.html', {'requerimientos': requerimiento})
+
+
+def requerimiento_equipo_info(request, id=None):
+    requerimiento = RequerimientoEquipo.objects.get(pk=id)
+    return render(request, 'requerimiento_equipo_info.html',
+                  {'requerimiento': requerimiento})
+
+
+def requerimiento_equipo_aprobar(request, id=None):
+    requerimiento = RequerimientoEquipo.objects.get(pk=id)
+    if requerimiento.aprobado:
+        requerimiento.aprobado = False
+    else:
+        requerimiento.aprobado = True
+    requerimiento.save()
+    return render(request, 'requerimiento_equipo_info.html',
+                  {'requerimiento': requerimiento})
+
+
+def requerimiento_traslado_crear(request):
+    if request.method == 'POST':
+        form = requerimiento_traslado_form(request.POST)
+        if form.is_valid():
+            new_requerimiento = form.save()
+            return redirect('requerimiento_traslado_mostrar')
+    else:
+        form = requerimiento_traslado_form()
+    return render(request, 'requerimiento_traslado_crear.html', {'form': form})
+
+
+def requerimiento_traslado_mostrar(request):
+    requerimiento = RequerimientoTraslado.objects.all()
+    return render(request, 'requerimiento_traslado_mostrar.html', {'requerimientos': requerimiento})
+
+
+def requerimiento_traslado_info(request, id=None):
+    requerimiento = RequerimientoTraslado.objects.get(pk=id)
+    return render(request, 'requerimiento_traslado_info.html',
+                  {'requerimiento': requerimiento})
+
+
+def requerimiento_traslado_aprobar(request, id=None):
+    requerimiento = RequerimientoTraslado.objects.get(pk=id)
+    if requerimiento.aprobado:
+        requerimiento.aprobado = False
+    else :
+        requerimiento.aprobado = True
+    requerimiento.save()
+    return render(request, 'requerimiento_traslado_info.html',
+                  {'requerimiento': requerimiento})
+
+
+def cronograma_crear(request):
+    if request.method == 'POST':
+        form = cronograma_form(request.POST)
+        if form.is_valid():
+            new_cronograma = form.save()
+            return redirect('cronograma_mostrar')
+    else:
+        form = cronograma_form()
+    return render(request, 'cronograma_crear.html', {'form': form})
+
+
+def cronograma_mostrar(request):
+    cronograma = Cronogroma.objects.all()
+    return render(request, 'cronograma_mostrar.html', {'cronogramas': cronograma})
 
 
 def logistica_pdf(request):

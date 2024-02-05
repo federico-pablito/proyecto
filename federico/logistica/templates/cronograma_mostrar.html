@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'cronograma_crear' %}">Crear Cronograma</a>
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Id</th>
+                    <th scope="col" class="align-middle">Interno</th>
+                    <th scope="col" class="align-middle">UP</th>
+                    <th scope="col" class="align-middle">Fecha</th>
+                    <th scope="col" class="align-middle">Motivo Atraso</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in cronogramas %}
+                    <tr>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.up }}</td>
+                        <td>{{ dato.fecha|date:"d/m/Y" }}</td>
+                        <td>{{ dato.motivo_atraso }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

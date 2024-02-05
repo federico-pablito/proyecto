@@ -1,5 +1,5 @@
 from django import forms
-from tablamadre.models import Services, Internos
+from tablamadre.models import Services, Internos, UnidadesdeProduccion
 
 class service_form(forms.ModelForm):
     model = Services
@@ -27,3 +27,4 @@ class service_form(forms.ModelForm):
 
 class desplegable_internos(forms.Form):
     interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Interno')
+
