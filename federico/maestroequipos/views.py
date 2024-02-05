@@ -137,6 +137,7 @@ def cargointerno(request):
         if form.is_valid():
             descripcion = form.cleaned_data.pop('descripcion', None)
             new_interno = form.save()
+            return redirect('main-maestroequipos')
     else:
         form = internosforms()
     return render(request, 'cargointernos.html', {'internos': internos, 'form': form})
@@ -171,7 +172,7 @@ def alquilerequipo(request, id=None):
 
 
 def info_interno(request, id):
-    internos = Internos.objects.all().get(id=id)
+    internos = Internos.objects.get(id=id)
     if request.method == 'POST':
         form = CertificadosEquiposAlquiladosForm(request.POST)
         if form.is_valid():
@@ -179,7 +180,13 @@ def info_interno(request, id):
             return redirect('certificado_equipoalquilado', id=id, mesanio=mesanio)
     else:
         form = CertificadosEquiposAlquiladosForm()
-    return render(request, 'info_interno.html', {'interno': internos, 'form': form})
+    try:
+        certificado = AlquilerEquipos.objects.get(tipo_vehiculo=internos.tipovehiculo, modelo=internos.modelo,
+                                                  marca=internos.marca)
+        valor = True
+    except AlquilerEquipos.DoesNotExist:
+        valor = False
+    return render(request, 'info_interno.html', {'interno': internos, 'form': form, 'formulario': valor})
 
 
 def certificado_equipoalquilado(request, id, mesanio):

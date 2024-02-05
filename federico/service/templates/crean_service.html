@@ -106,15 +106,14 @@
 </nav>
 <body>
     <h1>Crear Services</h1>
+    <h2>{{ interno.interno }}</h2>
     <form method="post">
         {% csrf_token %}
         <div class="contenedor">
-        {{ form.interno.label_tag }}{{ form.interno.label_tag }}
         {{ form.fechaservicio.label_tag }}{{ form.fechaservicio }}
         {{ form.fechaparte.label_tag }}{{ form.fechaparte }}
         {{ form.ultimoservice.label_tag }}{{ form.ultimoservice }}
         {{ form.planrealizado.label_tag }}{{ form.planrealizado }}
-        {{ form.planrealizado_hs.label_tag }}{{ form.planrealizado_hs }}
         {{ form.proximoservice.label_tag }}{{ form.proximoservice }}
         {{ form.hsxkmactuales.label_tag }}{{ form.hsxkmactuales }}
         {{ form.operativo.label_tag }}{{ form.operativo }}

@@ -8,13 +8,14 @@ class service_form(forms.ModelForm):
         required=True,
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
+
     fechaparte = forms.DateField(
         required=True,
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
     ultimoservice = forms.IntegerField(required=True)
 
-    planrealizado_hs = forms.IntegerField(required=True, label='Plan Realizado')
+    planrealizado = forms.ChoiceField(choices=(('HS', 'HS'), ('KM', 'KM')))
     hsxkmactuales = forms.IntegerField(required=True, label='HrsXKm Actuales')
     operativo = forms.ChoiceField(choices=(('Operativo', 'Operativo'), ('Inoperativo', 'Inoperativo')),
                                 widget=forms.Select, label='Operativo')

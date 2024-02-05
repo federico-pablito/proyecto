@@ -22,7 +22,7 @@ def service_main(request):
                 service = Services.objects.get(interno=interno)
                 return redirect('editar_serv', interno=interno)
             except Services.DoesNotExist:
-                return redirect('create-serv')
+                return redirect('create-serv', interno=interno)
     else:
         # Si no se envió el formulario, crea una instancia del formulario
         form = desplegable_internos()
@@ -77,12 +77,13 @@ def editar_serv(request, interno=None):
     return render(request, 'editar_service.html', {'partediario': partediario, 'form': form, 'interno': interno})
 
 
-def crear_serv(request):
-    partediario = Services.objects.all()
+def crear_serv(request, interno=None):
+    interno = Internos.objects.get(interno=interno)
     if request.method == 'POST':
         form = service_form(request.POST)
         if form.is_valid():
             new_service = form.save(commit=False)
+            new_service.interno = interno
             if new_service.planrealizado == 'HS':
                 new_service.planrealizado_hs = 250
             elif new_service.planrealizado == 'KM':
@@ -112,7 +113,7 @@ def crear_serv(request):
             return redirect('serviceprin')  # Redirige a la página de mostrar alquileres
     else:
         form = service_form()
-    return render(request, 'crean_service.html', {'services': partediario, 'form': form})
+    return render(request, 'crean_service.html', {'form': form, 'interno': interno})
 
 
 def info_serv(request, interno=None):

@@ -4,7 +4,7 @@ from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, C
 
 class internosforms(forms.ModelForm):
     interno = forms.CharField(required=True)
-    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
+    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=True,
                                 label='UP')
     marca = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
@@ -15,10 +15,10 @@ class internosforms(forms.ModelForm):
     anio = forms.IntegerField(required=True, label='Año')
     aseguradora = forms.CharField(required=True, label='Aseguradora')
     seguro = forms.CharField(required=True)
-    seguro_pdf = forms.CharField(required=True)
+    seguro_pdf = forms.CharField(required=False)
     itv = forms.CharField(required=False)
     itv_pdf = forms.CharField(required=False)
-    titulo_pdf = forms.CharField(required=True)
+    titulo_pdf = forms.CharField(required=False)
     tarjeta = forms.CharField(required=False)
     tarjeta_pdf = forms.CharField(required=False)
     propietario = forms.CharField(required=True)
@@ -34,7 +34,7 @@ class internosforms(forms.ModelForm):
         model = Internos
         fields = ['interno', 'marca', 'modelo', 'tipovehiculo', 'chasis', 'motor', 'dominio', 'anio', 'aseguradora',
                   'seguro', 'seguro_pdf', 'itv',
-                  'itv_pdf', 'titulo_pdf', 'tarjeta', 'tarjeta_pdf', 'propietario', 'chofer', 'alquilado', 'valorpesos',
+                  'tarjeta', 'propietario', 'chofer', 'alquilado', 'valorpesos',
                   'valordolares', 'orden', 'actividadvehiculo', 'up']
         widgets = {
             'interno': forms.TextInput(attrs={'class': 'mi_clase', 'placeholder': 'Mi placeholder'}),
