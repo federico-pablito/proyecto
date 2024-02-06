@@ -184,7 +184,6 @@
         {{ form.interno.label_tag }}{{ form.interno }}
             <button type="submit" class="bntCargar">Cargar Service</button>
         <div class="formBtns">
-
         <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button" class="bntCargar">Services PDF</a></p>
         </div>
         </div>
@@ -193,7 +192,7 @@
         <form method="get">
             <label>UP: </label> {{ filter.form.up }}
             <button type="submit">Filtrar</button>
-            <a href="{% url "serviceprin" %}">Limpiar Filtro</a>
+            <a href="{% url "serviceprin" %}"><i class="fa-solid fa-xmark" style="margin: 10px;color: black;width: 15px;height: 18px;"></i></a>
         </form>
     </div>
     <div class="container d-inline-flex p-2">
