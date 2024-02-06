@@ -104,6 +104,16 @@ def reparaciones_editar(request, id=None):
     return render(request, 'editar_reparaciones.html', {'tabla': tabla, 'form': form})
 
 
+def cambiar_estado(request, id=None):
+    reparacion = Reparaciones.objects.get(pk=id)
+    if reparacion.estadoreparacion == "Pendiente":
+        reparacion.estadoreparacion = "Finalizado"
+    else:
+        reparacion.estadoreparacion = "Pendiente"
+    reparacion.save()
+    return redirect('reparaciones_info', reparacion.interno.interno)
+
+
 def reparaciones_pdf(request):
     tabla_temporal = ReparacionTemporal.objects.all()
     template_path = 'reparaciones_pdf.html'
