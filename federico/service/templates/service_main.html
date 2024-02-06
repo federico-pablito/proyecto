@@ -1,5 +1,3 @@
-<!-- templates/mi_template.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,22 +25,20 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 24%;
+    width: 22%;
     background-color: #6e6c6c48;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
     margin: auto;
     border-radius: 8px;
     padding: 20px;
-    flex-grow: 1;
+    margin-bottom: 1rem;
     }
     .formContent{
         align-items: center;
         flex-wrap: nowrap;
     }
     .formBtns{
-        display: flex;
         width: auto;
-        padding-left: 10px;
     }
     .bntCargar{
     width: auto;
@@ -56,7 +52,7 @@
     color: white;
     height: 36px;
     transition: all 80ms linear;
-    margin: 15px; 
+    margin: 15px;
     transition: background-color 0.3s ease;
     }
     .bntCargar:hover{
@@ -84,7 +80,7 @@
     color: white;
     height: 36px;
     transition: all 80ms linear;
-    margin: 15px; 
+    margin: 15px;
     transition: background-color 0.3s ease;
     }
     .btn-primary:hover{
@@ -100,6 +96,37 @@
     color: white;
     text-decoration: none;
     }
+    /* Info */
+    .btnEdit{
+        width: auto;
+        padding: 3px 10px 3px 10px;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #1d1c1d4d;
+        font-weight: 600;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        height: 36px;
+        transition: all 80ms linear;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        margin-left: 3px;
+        font-family:'Helvetica', 'Arial', sans-serif;
+    }
+        .btnEdit:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none
+    }
+    .btnEdit:active{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none;
+    }
     /* Navbar */
     .navbar{
     color: white;
@@ -114,20 +141,23 @@
     /* Label + Input */
     #id_interno{
         margin-left: 15px;
-    }   
+    }
     /* Table */
     table{
         margin-top: 2rem;
     }
-    td{
-        background-color: gray;
-        color: black;
+    td {
+    background-color: gray;
+    color: black;
     }
-    table tr:nth-child(odd){
-    background-color: white;
+    thead tr:first-child td {
+    background-color: rgb(98, 98, 98);
     }
-    table tr:nth-child(even){
+    tbody tr:nth-child(even) td {
     background-color: rgba(163, 152, 152, 0.801);
+    }
+    tbody tr:nth-child(odd) td {
+    background-color: white;
     }
     </style>
 </head>
@@ -152,20 +182,17 @@
         <div class="formContent">
         {% csrf_token %}
         {{ form.interno.label_tag }}{{ form.interno }}
+            <button type="submit" class="bntCargar">Cargar Service</button>
         <div class="formBtns">
-        <button type="submit" class="bntCargar">Cargar Service</button>
         <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button" class="bntCargar">Services PDF</a></p>
         </div>
         </div>
     </form>
-
-
-    <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
     <div>
         <form method="get">
             <label>UP: </label> {{ filter.form.up }}
             <button type="submit">Filtrar</button>
-            <a href="{% url "serviceprin" %}">Limpiar Filtro</a>
+            <a href="{% url "serviceprin" %}"><i class="fa-solid fa-xmark" style="margin: 10px;color: black;width: 15px;height: 18px;"></i></a>
         </form>
     </div>
     <div class="container d-inline-flex p-2">
@@ -190,7 +217,7 @@
             <tbody>
                 {% for dato in filter.qs %}
                     <tr>
-                        <td><a class="align-middle" href="{% url "info_serv" dato.interno %}">Info</a></td>
+                        <td><a class="btnEdit" href="{% url "info_serv" dato.interno %}">Info</a></td>
                         <td class="align-middle">{{ dato.id }}</td>
                         <td class="align-middle">{{ dato.interno }}</td>
                         <td class="align-middle">{{ dato.fechaservicio|date:"d/m/Y" }}</td>
