@@ -92,6 +92,16 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
+        'USER': 'PabloFederico',
+        'PASSWORD': '8d3A{0ViK!G!>@?FTp',
+        'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host
+        'PORT': '3306',
+    }
+}
+"""DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pablofederico_k71m',
         'USER': 'pablofederico_k71m_user',
@@ -99,8 +109,7 @@ DATABASES = {
         'HOST': 'dpg-cmepnpmd3nmc739blnq0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
-}
-
+}"""
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

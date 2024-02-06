@@ -21,7 +21,7 @@ def main_disponibilidad(request):
 
 def mostrar_disponibilidad(request, anio=None, mes=None):
     dataset_mes = transpose_disponibilidad(mes, anio)
-    columns = ['Interno', 'Dueño', 'Operador', 'Ingreso', 'DiasObra']
+    columns = ['Int', 'Dueño', 'Operador', 'Ingreso Obra', 'Dias Obra']
     for item in range(1, 32):
         columns.append(item)
     columns.append('Dias Trabajados')

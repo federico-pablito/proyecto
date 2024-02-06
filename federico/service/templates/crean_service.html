@@ -107,18 +107,16 @@
 <body>
     <h1>Crear Services</h1>
     <h2>{{ interno.interno }}</h2>
-    <form method="post">
+    <form method="post" style="text-align: left">
         {% csrf_token %}
-        <div class="contenedor">
-        {{ form.fechaservicio.label_tag }}{{ form.fechaservicio }}
-        {{ form.fechaparte.label_tag }}{{ form.fechaparte }}
-        {{ form.ultimoservice.label_tag }}{{ form.ultimoservice }}
-        {{ form.planrealizado.label_tag }}{{ form.planrealizado }}
-        {{ form.proximoservice.label_tag }}{{ form.proximoservice }}
-        {{ form.hsxkmactuales.label_tag }}{{ form.hsxkmactuales }}
-        {{ form.operativo.label_tag }}{{ form.operativo }}
-        </div>
-        <button type="submit" class="sendBtn">Enviar</button>
+        {{ form.fechaservicio.label_tag }}{{ form.fechaservicio }}<br>
+        {{ form.fechaparte.label_tag }}{{ form.fechaparte }}<br>
+        {{ form.ultimoservice.label_tag }}{{ form.ultimoservice }}<br>
+        {{ form.planrealizado.label_tag }}{{ form.planrealizado }}<br>
+        {{ form.proximoservice.label_tag }}{{ form.proximoservice }}<br>
+        {{ form.hsxkmactuales.label_tag }}{{ form.hsxkmactuales }}<br>
+        {{ form.operativo.label_tag }}{{ form.operativo }}<br>
+        <button type="submit">Guardar</button>
     </form>
 
 </body>

@@ -6,4 +6,5 @@ urlpatterns = [
     path('editar/<int:id>', views.reparaciones_editar, name='reparaciones_editar'),
     path('pdf', views.reparaciones_pdf, name='reparaciones_pd_view'),
     path('<str:interno>', views.reparaciones_info, name='reparaciones_info'),
+    path('cambiar_estado/<int:id>', views.cambiar_estado, name='cambiar_estado_rep')
 ]
