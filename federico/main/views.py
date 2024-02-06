@@ -4,7 +4,9 @@ import requests
 
 # Create your views here.
 def principal(request):
+    user = request.user.username
     official = requests.get("https://dolarapi.com/v1/dolares/oficial").json()
     blue = requests.get("https://dolarapi.com/v1/dolares/blue").json()
     return render(request, 'base.html', {'official_compra': official['compra'], 'official_venta': official['venta'],
-                                         'blue_compra': blue['compra'], 'blue_venta': blue['venta']})
+                                         'blue_compra': blue['compra'], 'blue_venta': blue['venta'],
+                                         'user': user})

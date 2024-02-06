@@ -8,27 +8,37 @@
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
     <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
     <style>
-        .header{
+    .header{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         font-family: Arial, Helvetica, sans-serif;
-        }
-        body{
-        /* background: rgba(255, 255, 255, 0.5);
-        background-image: url('../../static/assets/dist/img/fedemanager1.jpg');
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: url('../../static/assets/dist/img/fondochiquito.jpg');
         background-size: cover;
-        background-repeat: no-repeat; */
+        background-repeat: no-repeat;
         align-items: center;
-        }
-        h1{
+    }
+    h1{
         margin-top: 1rem;
-        }
-        .header p{
+    }
+    form{
+        background-color: #6e6c6c48;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
+        margin: auto;
+        border-radius: 8px;
+        padding: 20px;
+        width: 70%;
+        margin-top: 1rem;
+        align-items: center;
+    }
+    .header p{
         margin-top: 1.5rem;
-        }
-        .header p a{
+    }
+    .header p a{
         background-color: rgba(245, 0, 7, 0.93);
         border: black;
         font-family: Arial, Helvetica, sans-serif;
@@ -36,22 +46,22 @@
         font-size: large;
         border-radius: 10px;
         padding: 8px 5px 8px 5px;
-        }
+    }
         .header p a:hover{
         background-color:  floralwhite;
         color: black;
         border: 1px solid black;
         box-shadow: none !important;
         background: linear-gradient(none);
-        }
-        .header p a:active{
+    }
+    .header p a:active{
         background-color:  floralwhite;
         color: black;
         border: 1px solid black;
         box-shadow: none !important;
         background: linear-gradient(none);
-        }
-        .formCheck {
+    }
+    .formCheck {
         display: flex;
         flex-direction: column;
         font-family: 'Be Vietnam Pro', sans-serif;
@@ -64,30 +74,30 @@
         width: 820px;
         justify-content: center;
     }
-        .navbar{
+    .navbar{
         color: white;
         background-color: black;
-        }
-        .navbar-light .navbar-nav .nav-link{
+    }
+    .navbar-light .navbar-nav .nav-link{
         color: white;
-        }
-        .navbar-light .navbar-nav .nav-link:hover{
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
         color: grey;
-        }
-        .form-row {
+    }
+    .form-row {
         display: flex;
         flex-wrap: nowrap;   
     }
-        .form-group{
+    .form-group{
         width: 100%;
         margin-bottom: 10px;
         box-sizing: border-box;
-        }
-        .formCheck div {
+    }
+    .formCheck div {
         padding: 5px 8px; 
         font-size: medium;
     }
-        .btnEdit{
+    .btnEdit{
         width: auto;
         padding: 3px 10px 3px 10px;
         outline: 0;
@@ -97,7 +107,7 @@
         background: #fff;
         font-size: 13px;
         border-radius: 4px;
-        color: rgb(29, 28, 29);
+        color: rgb(0, 0, 0);
         height: 36px;
         transition: all 80ms linear;
         margin-top: 10px; 
@@ -108,25 +118,21 @@
         .btnEdit:hover{
         background-color: rgba(245, 0, 7, 0.93);
         border: 1.5px solid black;
-        color: black;
+        color: white;
         text-decoration: none
     }
-        .btnEdit:active{
+    .btnEdit:active{
         background-color: rgba(245, 0, 7, 0.93);
         border: 1.5px solid black;
-        color: black;
-        text-decoration: none
+        color: white;
+        text-decoration: none;
     }
-        .edit{
-        width: 135px;
-        height: 45px;
-    }
-        .filtrarBtn {
-        width: 100%; 
-        display: block; 
+    form a{
+        width: auto; 
+        display: inline-block; 
         position: relative;
         align-items: center;
-        padding: 0px 20px;
+        padding: 5px 5px;
         outline: 0;
         cursor: pointer;
         border: 2px solid #1d1c1d4d;
@@ -140,44 +146,76 @@
         margin: 5px; 
         transition: background-color 0.3s ease;
     }
-        .filtrarBtn:hover{
+    form a:hover{
         background-color: rgba(245, 0, 7, 0.93);
         border: 1.5px solid black;
         color: black;
-        transform: scale(1.1);
+        text-decoration: none;
     }
-        .filtrarBtn:active {
+    form a:active{
         background-color: rgba(245, 0, 7, 0.93);
         border: 1.5px solid;
     }
-        .divCheck{
+    .edit{
+        width: 135px;
+        height: 45px;
+    }
+    .filtrarBtn {
+        width: auto; 
+        display: inline-block; 
+        position: relative;
+        align-items: center;
+        padding: 5px 5px;
+        outline: 0;
+        cursor: pointer;
+        border: 2px solid #1d1c1d4d;
+        font-weight: 600;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 4px;
+        color: rgb(29, 28, 29);
+        height: 36px;
+        transition: all 80ms linear;
+        margin: 5px; 
+        transition: background-color 0.3s ease;
+    }
+    .filtrarBtn:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: black;
+    }
+    .filtrarBtn:active {
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid;
+    }
+    .divCheck{
         justify-content: center;
     }
-        .button-container {
+    .button-container {
         display: flex;
     }
-        .button-container p {
+    .button-container p {
         margin-right: 10px; 
     }
-        td a .btn-primary{
+    td a .btn-primary{
         margin: 10px;
     }
-        .table-bordered thead th{
+    .table-bordered thead th{
         background-color: rgba(97, 96, 96, 0.93);
     }
-        .table-bordered td{
+    .table-bordered td{
         font-weight: bold;
     }
-        .divBtn{
+    .divBtn{
         display: flex;
         width: auto;
         align-items: center;
         flex-direction: row;
     }
-        .table-bordered thead th{
+    .table-bordered thead th{
         font-family:'Helvetica', 'Arial', sans-serif;
     }
-        .table-bordered td{
+    .table-bordered td{
         font-family:'Helvetica', 'Arial', sans-serif;
     }
     input{
@@ -190,6 +228,10 @@
     }
     table tr:nth-child(even){
         background-color: rgba(163, 152, 152, 0.801);
+    }
+    #id_interno, #id_marca, #id_modelo, #id_dominio, #id_actividadvehiculo{
+        width: 5rem;
+        height: 1.5rem;
     }
     </style>
 </head>
@@ -215,7 +257,7 @@
         <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Alquiler Equipo</a></p>
     </div>
         <p>
-            <button id="toggleFormBtn" class="filtrarBtn" style="font-family:'Helvetica', 'Arial', sans-serif; background-color: rgba(38, 38, 38, 0.93);color: white;border-color: rgba(0, 0, 0, 0.93);">Mostrar Formulario</button>
+            <button id="toggleFormBtn" class="filtrarBtn" style="font-family:'Helvetica', 'Arial', sans-serif; background-color: rgba(38, 38, 38, 0.93);color: white;border-color: rgba(0, 0, 0, 0.93);margin-bottom: 1rem;">Seleccionar Columnas</button>
         </p>
     </div>
     <div  id="formContainer" class="divCheck" style="display: none;">
@@ -282,12 +324,14 @@
             <label>Modelo: </label> {{ filter.form.modelo }}
             <label>Dominio: </label> {{ filter.form.dominio }}
             <label>Actividad: </label> {{ filter.form.actividadvehiculo }}
-            <button type="submit">Filtrar</button>
+            <div>
+            <button type="submit" class="filtrarBtn">Filtrar</button>
             {% if alquiler %}
                 <a href="{% url "alquileresinternos" %}">Limpiar Filtro</a>
             {% else %}
                 <a href="{% url "main-maestroequipos" %}">Limpiar Filtro</a>
             {% endif %}
+            </div>
         </form>
     </div>
     <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;">

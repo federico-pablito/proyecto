@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Vista</title>
+    <title>FedeManager</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
     <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
@@ -109,17 +109,9 @@
     <form method="post">
         {% csrf_token %}
         <div class="contenedor">
-        {{ form.interno.label_tag }}{{ form.interno.label_tag }}
-        {{ form.fechaservicio.label_tag }}{{ form.fechaservicio }}
-        {{ form.fechaparte.label_tag }}{{ form.fechaparte }}
-        {{ form.ultimoservice.label_tag }}{{ form.ultimoservice }}
-        {{ form.planrealizado.label_tag }}{{ form.planrealizado }}
-        {{ form.planrealizado_hs.label_tag }}{{ form.planrealizado_hs }}
-        {{ form.proximoservice.label_tag }}{{ form.proximoservice }}
-        {{ form.hsxkmactuales.label_tag }}{{ form.hsxkmactuales }}
-        {{ form.operativo.label_tag }}{{ form.operativo }}
+        {{ form.as_p }}
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="sendBtn">Enviar</button>
     </form>
 
 </body>

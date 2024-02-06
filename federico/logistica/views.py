@@ -22,7 +22,7 @@ def logistica_crear(request):
             return redirect('logistica_main')
     else:
         form = logistica_form()
-    return render(request, 'partediario_crear.html', {'form': form})
+    return render(request, 'logistica_crear.html', {'form': form})
 
 def logistica_editar(request, id=None):
     if id:
@@ -36,7 +36,7 @@ def logistica_editar(request, id=None):
             return redirect('logistica_main')
     else:
         form = logistica_form(instance=instancia)
-    return render(request, 'partediario_editar.html',
+    return render(request, 'logistica_editar.html',
                   {'form': form})
 
 

@@ -8,49 +8,173 @@
     <title>Mi Vista</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
-
+    <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
+    <style>
+    :root{
+        font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+    body{
+        text-align: center;
+        background: url('../../static/assets/dist/img/');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    h1{
+        margin-top: 1rem;
+    }
+    /* Form */
+    form{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 24%;
+    background-color: #6e6c6c48;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
+    margin: auto;
+    border-radius: 8px;
+    padding: 20px;
+    flex-grow: 1;
+    }
+    .formContent{
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    .formBtns{
+        display: flex;
+        width: auto;
+        padding-left: 10px;
+    }
+    .bntCargar{
+    width: auto;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid black;
+    font-weight: 600;
+    background: rgba(245, 0, 7, 0.93);
+    font-size: 13px;
+    border-radius: 4px;
+    color: white;
+    height: 36px;
+    transition: all 80ms linear;
+    margin: 15px; 
+    transition: background-color 0.3s ease;
+    }
+    .bntCargar:hover{
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    text-decoration: none;
+    transform: scale(0,7.0,7);
+    }
+    .bntCargar:active{
+    background-color: rgba(245, 0, 7, 0.93);
+    border: 1.5px solid black;
+    color: white;
+    text-decoration: none;
+    }
+    .btn-primary{
+    width: auto;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid black;
+    font-weight: 600;
+    background: rgba(245, 0, 7, 0.93);
+    font-size: 13px;
+    border-radius: 4px;
+    color: white;
+    height: 36px;
+    transition: all 80ms linear;
+    margin: 15px; 
+    transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover{
+    background-color: white;
+    color: black;
+    border: 1.5px solid black;
+    text-decoration: none;
+    transform: scale(0,7.0,7);
+    }
+    .btn-primary:active{
+    background-color: rgba(245, 0, 7, 0.93);
+    border: 1.5px solid black;
+    color: white;
+    text-decoration: none;
+    }
+    /* Navbar */
+    .navbar{
+    color: white;
+    background-color: black;
+    }
+    .navbar-light .navbar-nav .nav-link{
+    color: white;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+    color: grey;
+    }
+    /* Label + Input */
+    #id_interno{
+        margin-left: 15px;
+    }   
+    /* Table */
+    table{
+        margin-top: 2rem;
+    }
+    td{
+        background-color: gray;
+        color: black;
+    }
+    table tr:nth-child(odd){
+    background-color: white;
+    }
+    table tr:nth-child(even){
+    background-color: rgba(163, 152, 152, 0.801);
+    }
+    </style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
-      <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link">login</a>
-      </li>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-house" style="color: red;"></i> Home</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-power-off" style="color: red;"></i>  Logout</a>
+    </li>
     </ul>
 </nav>
 <body>
     <h1>Services</h1>
 
     <form method="post">
+        <div class="formContent">
         {% csrf_token %}
         {{ form.interno.label_tag }}{{ form.interno }}
-        <button type="submit">Cargar Service</button>
+        <div class="formBtns">
+        <button type="submit" class="bntCargar">Cargar Service</button>
+        <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button" class="bntCargar">Services PDF</a></p>
+        </div>
+        </div>
     </form>
-
-    <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <td class="align-middle">Info</td>
-                    <td class="align-middle">id</td>
-                    <td class="align-middle">interno</td>
-                    <td class="align-middle">fechaservicio</td>
-                    <td class="align-middle">fechaparte</td>
-                    <td class="align-middle">ultimoservice</td>
-                    <td class="align-middle">planrealizado_hs</td>
-                    <td class="align-middle">planrealizado</td>
-                    <td class="align-middle">proximoservice</td>
-                    <td class="align-middle">hsxkmactuales</td>
-                    <td class="align-middle">hsxkmrestantes</td>
-                    <td class="align-middle">necesidadservice</td>
-                    <td class="align-middle">operativo</td>
+                    <td class="align-middle">Id</td>
+                    <td class="align-middle">Interno</td>
+                    <td class="align-middle">F.Service</td>
+                    <td class="align-middle">F.Parte</td>
+                    <td class="align-middle">Ult.Service</td>
+                    <td class="align-middle">PlanRealizado</td>
+                    <td class="align-middle">P.Realizadoxhs</td>
+                    <td class="align-middle">Prox.Service</td>
+                    <td class="align-middle">HsxKm Act</td>
+                    <td class="align-middle">HsxKm Res</td>
+                    <td class="align-middle">Estado</td>
+                    <td class="align-middle">Operativo</td>
                 </tr>
             </thead>
             <tbody>
