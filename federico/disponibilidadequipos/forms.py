@@ -16,17 +16,17 @@ class disponibilidad_form(forms.ModelForm):
                     ('diciembre', 'Diciembre'))
     interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=True, label='Internos')
     chofer = forms.ModelChoiceField(queryset=Choferes.objects.all(), empty_label=None, required=True, label='Choferes')
-    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='Unidad de Produccion')
+    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='UP')
     fecha_ingreso_de_obra = forms.DateField(
         required=True,
         widget=forms.DateInput(attrs={'type': 'date'}),
-        label='Fecha de Ingreso de Obra'
+        label='Fecha de Ingreso'
     )
     anio = forms.IntegerField(required=True, label='Año')
     mes = forms.ChoiceField(choices=MESES_OPCIONES, widget=forms.Select, label='Mes')
     dia = forms.IntegerField(required=True, label='Dia')
     actividad = forms.ModelChoiceField(queryset=TipoActividad.objects.all(), empty_label=None, required=False, label='Actividad')
-    cantidad_de_dias_en_obra = forms.IntegerField(required=True, label='Cantidad de Dias en Obra')
+    cantidad_de_dias_en_obra = forms.IntegerField(required=True, label='Dias en Obra')
 
     class Meta:
         model = DisponibilidadEquipos

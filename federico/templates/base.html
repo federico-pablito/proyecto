@@ -36,6 +36,9 @@
       background-color: rgb(163, 39, 39);
       border-radius: 3px 3px 0px 0px;
     }
+    .sidebar a{
+      color: black;
+    }
     .small-box-footer{
       background-color: rgb(158, 84, 84) !important;
       border-radius: 0px 0px 3px 3px;
@@ -224,7 +227,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">Taller Central</a>
+          <a href="#" class="d-block" style="color: black;">Taller Central, </a>{{ user }}
         </div>
       </div>
       <!-- SidebarSearch Form -->
@@ -310,6 +313,7 @@
             <p>Visualizar</p>
           </a>
         </li>
+
         <li class="nav-item">
           <a href="{% url 'cronograma_mostrar' %}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
@@ -356,65 +360,39 @@
       </ul>
     </li>
 
-    <!-- Partes Diarios -->
-    <!--
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="fa-solid fa-clipboard-list"></i>
-        <p>
-          Partes Diarios
-          <i class="fas fa-angle-left right"></i>
-        </p>
-      </a>
-      <ul class="nav nav-treeview">
+        <!-- Disponibilidad -->
         <li class="nav-item">
-          <a href="{% url 'partesdiario_main'%}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Lista de Partes</p>
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-check-to-slot"></i>
+            <p>
+              Disponibilidad
+              <i class="fas fa-angle-left right"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'main_disponibilidad'%}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Mostrar Disponibilidad</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'cargo_disponibilidad'%}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cargo Disponibilidad</p>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a href="{% url 'partediario_crear'%}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Nuevo Parte</p>
-          </a>
-        </li>
-      </ul>
-    </li>
-    -->
+        <!-- Novedades -->
     <li class="nav-item">
       <a href="{% url 'novedades_main'%}" class="nav-link">
-        <i class="nav-icon fas fa-th"></i>
+        <i class="fa-solid fa-newspaper"></i>
         <p>
           Novedades
           <span class="right badge badge-danger"></span>
         </p>
       </a>
-    </li>
-        <!-- Partes Diarios -->
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="fa-solid fa-check-to-slot"></i>
-        <p>
-          Disponibilidad
-          <i class="fas fa-angle-left right"></i>
-        </p>
-      </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{% url 'main_disponibilidad'%}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Mostrar Disponibilidad</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'cargo_disponibilidad'%}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Cargo Disponibilidad</p>
-          </a>
-        </li>
-      </ul>
-
     </li>
 
     <!-- UPS -->
