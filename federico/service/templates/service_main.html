@@ -158,6 +158,16 @@
         </div>
         </div>
     </form>
+
+
+    <p><a class="btn btn-primary" href="{% url 'services_pd_view' %}" role="button">Services PDF</a></p>
+    <div>
+        <form method="get">
+            <label>UP: </label> {{ filter.form.up }}
+            <button type="submit">Filtrar</button>
+            <a href="{% url "serviceprin" %}">Limpiar Filtro</a>
+        </form>
+    </div>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>
@@ -178,7 +188,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for dato in services %}
+                {% for dato in filter.qs %}
                     <tr>
                         <td><a class="align-middle" href="{% url "info_serv" dato.interno %}">Info</a></td>
                         <td class="align-middle">{{ dato.id }}</td>

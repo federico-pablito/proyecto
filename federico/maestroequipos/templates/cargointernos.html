@@ -156,50 +156,50 @@
 </nav>
 <body>
     <h1>Cargo Interno</h1>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %} 
         <div class="divForm">
-        <div class="columnaCargo">
-        {{ form.interno.label_tag }} {{ form.interno }}
-        <br>
-        {{ form.marca.label_tag }} {{ form.marca }}
-        <br>
-        {{ form.modelo.label_tag }} {{ form.modelo }}
-        <br>
-        {{ form.chasis.label_tag }} {{ form.chasis }}
-        <br>
-        {{ form.motor.label_tag }} {{ form.motor }}
+            <div class="columnaCargo">
+                {{ form.interno.label_tag }} {{ form.interno }}
+                <br>
+                {{ form.marca.label_tag }} {{ form.marca }}
+                <br>
+                {{ form.modelo.label_tag }} {{ form.modelo }}
+                <br>
+                {{ form.chasis.label_tag }} {{ form.chasis }}
+                <br>
+                {{ form.motor.label_tag }} {{ form.motor }}
+            </div>
+            <div class="columnaCargo">
+                {{ form.anio.label_tag }} {{ form.anio }}
+                {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
+                {{ form.seguro.label_tag }} {{ form.seguro }}
+                <br>
+                {{ form.itv.label_tag }}{{ form.itv }}
+                <br>
+                {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
+            </div>
+            <div class="columnaCargo">
+                {{ form.propietario.label_tag }}{{ form.propietario }}
+                {{ form.chofer.label_tag }}{{ form.chofer }}
+                {{ form.alquilado.label_tag }}{{ form.alquilado }}
+                <br>
+                {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
+                <br>
+                {{ form.valordolares.label_tag }}{{ form.valordolares }}
+            </div>
+            <div class="columnaCargo">
+                {{ form.orden.label_tag }}{{ form.orden }}
+                {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
+                <br>
+                {{ form.up.label_tag }}{{ form.up }}
+                <br>
+                {{ form.dominio.label_tag }}{{ form.dominio }}
+                <br>
+                {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
+            </div>
         </div>
-        <div class="columnaCargo">
-        {{ form.anio.label_tag }} {{ form.anio }}
-        {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
-        {{ form.seguro.label_tag }} {{ form.seguro }}
-        <br>
-        {{ form.itv.label_tag }}{{ form.itv }}
-        <br>
-        {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
-        </div>
-        <div class="columnaCargo">
-        {{ form.propietario.label_tag }}{{ form.propietario }}
-        {{ form.chofer.label_tag }}{{ form.chofer }}
-        {{ form.alquilado.label_tag }}{{ form.alquilado }}
-        <br>
-        {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
-        <br>
-        {{ form.valordolares.label_tag }}{{ form.valordolares }}
-        </div>
-        <div class="columnaCargo">
-        {{ form.orden.label_tag }}{{ form.orden }}
-        {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
-        <br>
-        {{ form.up.label_tag }}{{ form.up }}
-        <br>
-        {{ form.dominio.label_tag }}{{ form.dominio }}
-        <br>
-        {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
-        </div>  
-        </div>
-        <button type="submit" class="submitBtn">Enviar</button>      
+        <button type="submit" class="submitBtn">Enviar</button>
       </form>
 </body>
 </html>

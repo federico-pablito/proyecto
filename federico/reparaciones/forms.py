@@ -21,7 +21,7 @@ class reparaciones_form(forms.ModelForm):
     )
     estadoreparacion = forms.ChoiceField(choices=(('Pendiente', 'Pendiente'), ('Completo', 'Completo')),
                                          widget=forms.Select, label='Estado de Reparacion')
-    estadoequipo = forms.ChoiceField(choices=(('Pendiente', 'Pendiente'), ('Completo', 'Completo')))
+    estadoequipo = forms.ChoiceField(choices=(('No Operativo', 'No Operativo'), ('Operativo', 'Operativo')))
     descripcion = forms.CharField(required=True)
 
     class Meta:

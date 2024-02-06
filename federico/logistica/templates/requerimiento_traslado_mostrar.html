@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'requerimiento_traslado_crear' %}">Crear Requerimiento</a>
+    <div class="container d-inline-flex p-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="align-middle">Info</th>
+                    <th scope="col" class="align-middle">Id</th>
+                    <th scope="col" class="align-middle">Interno</th>
+                    <th scope="col" class="align-middle">Origen</th>
+                    <th scope="col" class="align-middle">Destino</th>
+                    <th scope="col" class="align-middle">Fecha Final</th>
+                    <th scope="col" class="align-middle">Aprobado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in requerimientos %}
+                    <tr>
+                       <td><a href="{% url "requerimiento_traslado_info" dato.id %}">Info</a></td>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.interno }}</td>
+                        <td>{{ dato.origen }}</td>
+                        <td>{{ dato.destino }}</td>
+                        <td>{{ dato.fecha|date:"d/m/Y" }}</td>
+                        <td>{{ dato.aprobado }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
