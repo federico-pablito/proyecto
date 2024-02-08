@@ -58,9 +58,40 @@
     .navbar-light .navbar-nav .nav-link:hover{
     color: grey;
     }   
+    /* Info */
+    .btnEdit{
+        width: auto;
+        padding: 3px 10px 3px 10px;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #1d1c1d4d;
+        font-weight: 600;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        height: 36px;
+        transition: all 80ms linear;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        margin-left: 3px;
+        font-family:'Helvetica', 'Arial', sans-serif;
+    }
+        .btnEdit:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none
+    }
+    .btnEdit:active{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none;
+    }
     /* table */
     th{
-    background-color: rgba(156, 155, 155, 0.8);
+    background-color: rgba(117, 116, 116, 0.8);
     }
     table tr:nth-child(odd){
         background-color: white;
@@ -107,7 +138,7 @@
             <tbody>
                 {% for dato in reparaciones %}
                     <tr>
-                        <td><a href="{% url 'reparaciones_info' dato.interno %}">Info</a></td>
+                        <td><a href="{% url 'reparaciones_info' dato.interno %}" class="btnEdit">Info</a></td>
                         <td>{{ dato.interno }}</td>
                         <td>{{ dato.ubicacion|linebreaks }}</td>
                         <td>{{ dato.falla_general|linebreaks }}</td>
