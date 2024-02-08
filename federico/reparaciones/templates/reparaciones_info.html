@@ -3,6 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <Style>
+    :root{
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    h1{
+    margin-top: 1rem;
+    }
+    body{
+        text-align: center;
+    }
+    /* Table */
+    .table-bordered{
+        width: 90%;
+        border: 1px solid black;
+        font-size: small;
+    }
+    .table thead th{
+        border: 1px solid black;
+    }
+    .table-bordered td{
+        border: 1px solid black;
+    }
+    .btnEdit{
+        width: auto;
+        padding: 3px 10px 3px 10px;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #1d1c1d4d;
+        font-weight: 300;
+        font-size: small;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        height: 36px;
+        transition: all 80ms linear;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        margin-left: 3px;
+        margin-bottom: 5px;
+        font-family:'Helvetica', 'Arial', sans-serif;
+    }
+        .btnEdit:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none
+    }
+    .btnEdit:active{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none;
+    }
+    .changeState{
+        margin-top: 5px;
+        text-decoration: none;
+        color: rgba(245, 0, 7, 0.93);
+        width: auto;
+    }
+    .changeState:hover{
+        text-decoration-color: rgba(245, 0, 7, 0.93);
+        color: rgba(245, 0, 7, 0.93);
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    tr > *:nth-child(even) {
+        background-color: #ddd;
+    }
+    /* Navbar */
+    .navbar{
+    color: white;
+    background-color: black;
+    }
+    .navbar-light .navbar-nav .nav-link{
+    color: white;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+    color: grey;
+    }
+    </Style>
 </head>
 <body>
     <h1>{{ interno.interno }}</h1>
@@ -32,7 +122,7 @@
             <tbody>
                 {% for dato in tabla %}
                     <tr>
-                        <td><a class="btn btn-primary" href="{% url 'reparaciones_editar' dato.id %}" role="button">Editar</a> <a href="{% url 'cambiar_estado_rep' dato.id %}">Cambiar Estado</a></td>
+                        <td><a class="btnEdit" href="{% url 'reparaciones_editar' dato.id %}" role="button">Editar</a> <a href="{% url 'cambiar_estado_rep' dato.id %}" class="btnEdit">Cambiar Estado</a></td>
                         <td>{{ dato.interno }}</td>
                         <td>{{ dato.ubicacion }}</td>
                         <td>{{ dato.falla_general }}</td>
