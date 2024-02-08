@@ -70,11 +70,11 @@ class cronograma_form(forms.ModelForm):
         required=True,
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
-    motivo_retraso = forms.CharField(required=True)
+    motivo_atraso = forms.CharField(required=True)
 
     class Meta:
         model = Cronogroma
-        fields = ['interno', 'up', 'fecha', 'motivo_retraso']
+        fields = ['interno', 'up', 'fecha', 'motivo_atraso']
         widgets = {
             'fecha': forms.DateInput(attrs={'type': 'date'}),
         }
