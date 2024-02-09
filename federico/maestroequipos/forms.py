@@ -1,5 +1,5 @@
 from django import forms
-from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, CertificadosEquiposAlquilados
+from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, CertificadosEquiposAlquilados, FiltrosInternos
 
 
 class internosforms(forms.ModelForm):
@@ -138,3 +138,12 @@ class CertificadosEquiposAlquiladosForm(forms.Form):
         for mes in meses:
             OPCIONES.append((mes + ' ' + anio, mes + ' ' + anio))
     fecha = forms.ChoiceField(choices=OPCIONES, widget=forms.Select, label='Fecha')
+
+class FiltroForm(forms.Form):
+    filtro = forms.CharField(required=True, label='Filtro')
+    marca = forms.CharField(required=True, label='Marca')
+    codigo = forms.CharField(required=True, label='Codigo')
+
+    class Meta:
+        model = FiltrosInternos
+        fields = ['filtro', 'marca', 'codigo']

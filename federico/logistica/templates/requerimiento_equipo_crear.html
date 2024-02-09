@@ -7,7 +7,12 @@
 <body>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.up }}
+        {{ form.tipo_equipo }}
+        {{ form.fecha_inicial }}
+        {{ form.fecha_final }}
+        {{ form.solicitante }}
+        {{ form.urgencia }}
         <button type="submit">Enviar</button>
     </form>
 </body>

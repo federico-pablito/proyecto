@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            background-color: #dc3545; /* Red */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #dc3545; /* Red */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .btn:hover {
+            background-color: #c82333; /* Darker Red */
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+    <div class="flex items-center">
+      <button class="text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a href="{% url 'pablofederico' %}" class="text-red-500 ml-4">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="{% url 'logout' %}" class="text-red-500 ml-4">
+        <i class="fas fa-power-off"></i> Logout
+      </a>
+    </div>
+    </nav>
+    <h1>Filtros {{ interno }}</h1>
+    <a class="btn" href="{% url 'cargo_filtros' interno %}" role="button">Cargar Filtro</a>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Filtro</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Codigo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dato in filtros %}
+                    <tr>
+                        <td>{{ dato.id }}</td>
+                        <td>{{ dato.filtro }}</td>
+                        <td>{{ dato.marca }}</td>
+                        <td>{{ dato.codigo }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

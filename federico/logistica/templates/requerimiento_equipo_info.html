@@ -13,6 +13,7 @@
     <p>{{ requerimiento.fecha_final|date:"d/m/Y" }}</p>
     <p>{{ requerimiento.solicitante }}</p>
     <p>{{ requerimiento.urgencia }}</p>
-    <a href="{% utl "requerimiento_equipo_aprobar" requerimiento.id %}">Aprobar</a>
+    <p>{{ requerimiento.aprobado }}</p>
+    <a href="{% url "requerimiento_equipo_aprobar" requerimiento.id %}">Aprobar</a>
 </body>
 </html>

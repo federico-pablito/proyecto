@@ -352,3 +352,14 @@ class Urgencia(models.Model):
 
 	def __str__(self):
 		return str(self.nombre)
+
+
+class FiltrosInternos(models.Model):
+	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	filtro = models.CharField(max_length=512)
+	marca = models.CharField(max_length=512)
+	codigo = models.CharField(max_length=512)
+
+	def __str__(self):
+		return ', '.join([str(self.interno), str(self.filtro), str(self.marca), str(self.codigo)])

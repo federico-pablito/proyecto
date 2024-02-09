@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'disponibilidadequipos',
     'login',
     'novedades',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'federico.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
@@ -99,8 +100,8 @@ WSGI_APPLICATION = 'federico.wsgi.application'
         'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host
         'PORT': '3306',
     }
-}"""
-DATABASES = {
+}
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pablofederico_k71m',
@@ -109,7 +110,7 @@ DATABASES = {
         'HOST': 'dpg-cmepnpmd3nmc739blnq0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
-}
+}"""
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

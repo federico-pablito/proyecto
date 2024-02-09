@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos
-from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm
+from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos
+from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm, FiltroForm
 from .filters import internosfilter
 from io import BytesIO
 from django.http import HttpResponse
@@ -221,6 +221,29 @@ def certificado_equipoalquilado(request, id, mesanio):
             mes=mes, anio=anio)
         return render(request, 'certificado_equipoalquilado.html',
                       {'interno': interno, 'certificado': certificado_existente})
+
+
+def cargo_filtros(request, interno=None):
+    if request.method == 'POST':
+        form = FiltroForm(request.POST)
+        if form.is_valid():
+            FiltrosInternos.objects.create(
+                interno=Internos.objects.get(interno=Internos.objects.get(interno=interno)),
+                filtro=form.cleaned_data['filtro'],
+                marca=form.cleaned_data['marca'],
+                codigo=form.cleaned_data['codigo']
+            )
+            return redirect('mostrar_filtros', interno=interno)
+    else:
+        form = FiltroForm()
+    return render(request, 'cargofiltros.html',
+                  {'form': form, 'interno':interno})
+
+
+def mostrar_filtros(request, interno=None):
+    filtros = FiltrosInternos.objects.filter(interno=Internos.objects.get(interno=interno))
+    return render(request, 'filtros.html',
+                  {'filtros': filtros, 'interno':interno})
 
 
 def generate_pdf_view(request, form_values):
