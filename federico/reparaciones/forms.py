@@ -16,15 +16,16 @@ class reparaciones_form(forms.ModelForm):
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
     fechasalida = forms.DateField(
-        required=True,
+        required=False,
         widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
     )
     estadoreparacion = forms.ChoiceField(choices=(('Pendiente', 'Pendiente'), ('Completo', 'Completo')),
                                          widget=forms.Select, label='Estado de Reparacion')
     estadoequipo = forms.ChoiceField(choices=(('No Operativo', 'No Operativo'), ('Operativo', 'Operativo')))
+    apto_traslado = forms.BooleanField(required=False)
     descripcion = forms.CharField(required=True)
 
     class Meta:
         model = Reparaciones
         fields = ['interno', 'taller', 'mecanico_encargado', 'falla_general', 'fechareparacionestimada', 'fechaentrada',
-                  'fechasalida', 'estadoreparacion', 'descripcion', 'estadoequipo']
+                  'fechasalida', 'estadoreparacion', 'descripcion', 'estadoequipo', 'apto_traslado']

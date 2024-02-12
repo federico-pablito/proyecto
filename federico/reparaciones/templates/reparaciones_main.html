@@ -132,6 +132,7 @@
                     <th scope="col" class="align-middle">Fecha Entrada</th>
                     <th scope="col" class="align-middle">Fecha Salida</th>
                     <th scope="col" class="align-middle">Estado Equipo</th>
+                    <th scope="col" class="align-middle">Apto Traslado</th>
                     <th scope="col" class="align-middle">Descripcion</th>
                 </tr>
             </thead>
@@ -148,6 +149,7 @@
                         <td>{{ dato.fechaentrada|linebreaks }}</td>
                         <td>{{ dato.fechasalida|linebreaks }}</td>
                         <td>{{ dato.estadoequipo|linebreaks }}</td>
+                        <td>{{ dato.apto_traslado|linebreaks }}</td>
                         <td>{{ dato.descripcion|linebreaks }}</td>
                     </tr>
                 {% endfor %}

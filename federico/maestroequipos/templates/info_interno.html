@@ -8,7 +8,6 @@
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 <body class="bg-gray-100">
     <nav class="bg-black p-4 text-white flex justify-between items-center">
@@ -37,11 +36,12 @@
                     <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
                 </form>
             {% endif %}
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'novedades_info' interno.interno %}" role="button">Novedades de este Equipo</a>
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'reparaciones_info' interno.interno %}" role="button">Reparaciones de este Equipo</a>
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url "info_serv" interno.interno %}">Services de este Equipo</a>
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'mostrar_filtros' interno.interno %}" role="button">Filtros</a>
+                <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'mostrar_neumaticos' interno.interno %}" role="button">Neumaticos</a>
 
             </div>
             <div class="text-gray-700 text-base">

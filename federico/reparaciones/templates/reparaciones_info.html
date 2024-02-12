@@ -142,9 +142,9 @@
                 {% for dato in tabla %}
                     <tr>
                         <td><a class="btnEdit" href="{% url 'reparaciones_editar' dato.id %}" role="button">Editar</a> 
-                            <a class="changeState" href="{% url 'cambiar_estado_rep' dato.id %}">Cambiar Estado</a></td>
+                            <a class="btnEdit" href="{% url 'cambiar_estado_rep' dato.id %}">Cambiar Estado</a></td>
                         <td>{{ dato.interno }}</td>
-                        <td>{{ dato.ubicacion }}</td>
+                        <td>{{ dato.taller.nombre }}</td>
                         <td>{{ dato.falla_general }}</td>
                         <td>{{ dato.estadoreparacion }}</td>
                         <td>{{ dato.fechareparacionestimada }}</td>

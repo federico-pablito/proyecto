@@ -139,6 +139,7 @@ class CertificadosEquiposAlquiladosForm(forms.Form):
             OPCIONES.append((mes + ' ' + anio, mes + ' ' + anio))
     fecha = forms.ChoiceField(choices=OPCIONES, widget=forms.Select, label='Fecha')
 
+
 class FiltroForm(forms.Form):
     filtro = forms.CharField(required=True, label='Filtro')
     marca = forms.CharField(required=True, label='Marca')
@@ -147,3 +148,13 @@ class FiltroForm(forms.Form):
     class Meta:
         model = FiltrosInternos
         fields = ['filtro', 'marca', 'codigo']
+
+
+class NeumaticoForm(forms.Form):
+    marca = forms.CharField(required=True, label='Marca')
+    medida = forms.CharField(required=True, label='Filtro')
+    codigo = forms.CharField(required=True, label='Codigo')
+
+    class Meta:
+        model = FiltrosInternos
+        fields = ['marca', 'medida', 'codigo']

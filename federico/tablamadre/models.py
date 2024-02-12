@@ -87,9 +87,10 @@ class Reparaciones(models.Model):
 	falla_general = models.CharField(max_length=512)
 	fechareparacionestimada = models.DateTimeField()
 	fechaentrada = models.DateTimeField()
-	fechasalida = models.DateTimeField()
+	fechasalida = models.DateTimeField(default=timezone.now)
 	estadoreparacion = models.CharField(max_length=512)
 	estadoequipo = models.CharField(max_length=512)
+	apto_traslado = models.BooleanField(default=False)
 	descripcion = models.CharField(max_length=512)
 
 	def __str__(self):
@@ -108,8 +109,8 @@ class Logistica(models.Model):
 	destino = models.CharField(max_length=512)
 	kmentredestinos = models.IntegerField()
 	transporte = models.CharField(max_length=512)
-	consumokmxlitros = models.IntegerField()
-	valorviaje = models.IntegerField()
+	consumokmxlitros = models.FloatField(default=0)
+	valorviaje = models.IntegerField(default=0)
 
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
@@ -363,3 +364,14 @@ class FiltrosInternos(models.Model):
 
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.filtro), str(self.marca), str(self.codigo)])
+
+
+class NeumaticosInternos(models.Model):
+	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	marca = models.CharField(max_length=512)
+	medida = models.CharField(max_length=512)
+	codigo = models.CharField(max_length=512)
+
+	def __str__(self):
+		return ', '.join([str(self.interno), str(self.marca), str(self.codigo)])

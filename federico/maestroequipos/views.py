@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos
-from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm, FiltroForm
+from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos, NeumaticosInternos
+from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm, FiltroForm, NeumaticoForm
 from .filters import internosfilter
 from io import BytesIO
 from django.http import HttpResponse
@@ -244,6 +244,29 @@ def mostrar_filtros(request, interno=None):
     filtros = FiltrosInternos.objects.filter(interno=Internos.objects.get(interno=interno))
     return render(request, 'filtros.html',
                   {'filtros': filtros, 'interno':interno})
+
+
+def cargo_neumaticos(request, interno=None):
+    if request.method == 'POST':
+        form = NeumaticoForm(request.POST)
+        if form.is_valid():
+            NeumaticosInternos.objects.create(
+                interno=Internos.objects.get(interno=Internos.objects.get(interno=interno)),
+                marca=form.cleaned_data['marca'],
+                medida=form.cleaned_data['medida'],
+                codigo=form.cleaned_data['codigo']
+            )
+            return redirect('mostrar_neumaticos', interno=interno)
+    else:
+        form = NeumaticoForm()
+    return render(request, 'cargoneumaticos.html',
+                  {'form': form, 'interno': interno})
+
+
+def mostrar_neumaticos(request, interno=None):
+    neumaticos = NeumaticosInternos.objects.filter(interno=Internos.objects.get(interno=interno))
+    return render(request, 'neumaticos.html',
+                  {'neumaticos': neumaticos, 'interno': interno})
 
 
 def generate_pdf_view(request, form_values):

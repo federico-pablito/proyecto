@@ -14,8 +14,8 @@ class logistica_form(forms.ModelForm):
     destino = forms.CharField(required=True)
     kmentredestinos = forms.IntegerField(required=True)
     transporte = forms.CharField(required=True)
-    consumokmxlitros = forms.IntegerField(required=True)
-    valorviaje = forms.IntegerField(required=True)
+    consumokmxlitros = forms.FloatField(required=False)
+    valorviaje = forms.IntegerField(required=False)
     descripcion = forms.CharField(required=False)
     class Meta:
         model = Logistica

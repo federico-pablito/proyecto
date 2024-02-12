@@ -20,6 +20,7 @@ class ReparacionTemporal(models.Model):
     fechasalida = models.CharField(max_length=512, default="Generica")
     estadoreparacion = models.CharField(max_length=512, default="Generica")
     estadoequipo = models.CharField(max_length=512, default="Generica")
+    apto_traslado = models.CharField(max_length=512, default="X")
     descripcion = models.CharField(max_length=512, default="Generica")
 
 
@@ -39,6 +40,7 @@ def reparaciones_main(request):
             objeto.fechasalida = objeto.fechasalida + "\n" + str(item.fechasalida.strftime('%d/%m/%Y'))
             objeto.estadoreparacion = objeto.estadoreparacion + "\n" + item.estadoreparacion
             objeto.estadoequipo = objeto.estadoequipo + "\n" + item.estadoequipo
+            objeto.apto_traslado = objeto.apto_traslado + "\n" + str(item.apto_traslado)
             objeto.descripcion = objeto.descripcion + "\n" + item.descripcion
             objeto.save()
         except ObjectDoesNotExist:
@@ -52,6 +54,7 @@ def reparaciones_main(request):
                 fechasalida=str(item.fechasalida.strftime('%d/%m/%Y')),
                 estadoreparacion=item.estadoreparacion,
                 estadoequipo=item.estadoequipo,
+                apto_traslado=str(item.apto_traslado),
                 descripcion=item.descripcion
             )
     #filter = reparaciones_filter(request.GET, queryset=tabla)
@@ -80,6 +83,7 @@ def reparaciones_crear(request):
                 fechasalida=form.cleaned_data['fechasalida'],
                 estadoreparacion=form.cleaned_data['estadoreparacion'],
                 estadoequipo=form.cleaned_data['estadoequipo'],
+                apto_traslado=form.cleaned_data['apto_traslado'],
                 descripcion=form.cleaned_data['descripcion'],
             )
             return redirect('reparaciones-main')
