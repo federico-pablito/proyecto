@@ -18,6 +18,8 @@ urlpatterns = [
     path('maininicio/', include('login.urls')),
     path('disponibilidadequipos/', include('disponibilidadequipos.urls')),
     path('novedades/', include('novedades.urls')),
+    path('combustible/', include('combustible.urls')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

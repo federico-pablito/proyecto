@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from .models import TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica, PartesDiarios, Novedades, Choferes, Consumos
+from .models import TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica, PartesDiarios, Novedades, Choferes
 
 # Create your views here.
 def mostrartablamadre(permission_required, request):

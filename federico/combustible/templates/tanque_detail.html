@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado de Tanques</title>
+    {% load static %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Enlace a jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- aca entras al java wacho -->
+    <script src="{% static 'assets/js/tanques.js' %}"></script>
+    <style>
+        /* Estilo para el contenedor de tanques */
+        #tanques-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Estilo para cada tanque */
+        .tanque {
+            border: 3px solid #007bff; /* Borde azul */
+            border-radius: 20px;
+            padding: 30px;
+            width: 400px; /* Ancho del tanque */
+            background-color: #f9f9f9; /* Fondo blanco */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            text-align: center; /* Centrar texto */
+        }
+
+        /* Estilo para el nombre del tanque */
+        .nombre {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff; /* Texto azul */
+            font-family: 'Arial Black', sans-serif; /* Fuente negrita */
+        }
+
+        /* Estilo para la cantidad de combustible */
+        .cantidad {
+            font-size: 24px;
+            color: #666; /* Texto gris */
+            margin-bottom: 30px;
+            font-family: 'Comic Sans MS', cursive; /* Fuente cursiva */
+        }
+
+        /* Estilo para la barra de progreso */
+        .barra-progreso {
+            width: 100%;
+            height: 30px;
+            background-color: #ddd; /* Fondo gris claro */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        /* Estilo para la barra de progreso llena */
+        .barra-progreso-fill {
+            height: 100%;
+            background-color: #28a745; /* Barra de progreso verde */
+            transition: width 0.5s; /* Animación de transición */
+        }
+
+        /* Estilo para los botones */
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Estilo para el desplegable */
+        .desplegable {
+            margin-top: 10px;
+        }
+
+        .desplegable select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <button class="text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="{% url 'pablofederico' %}" class="text-red-500 ml-4">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class="text-red-500 ml-4">
+            <i class="fas fa-power-off"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 36px;">Estado de Tanques</h1>
+    <div id="tanques-container">
+        <!-- Aquí se cargará dinámicamente el contenido de los tanques -->
+    </div>
+
+    <!-- Contenedor de botones -->
+    <div class="btn-container">
+        <!-- Botón para registrar consumo -->
+        <a href="{% url 'registrarConsumo' %}" class="btn">Registrar Consumo</a>
+        <!-- Botón para registrar repostaje -->
+        <a href="{% url 'repostaje' %}" class="btn">Registrar Repostaje</a>
+        <!-- Desplegable para seleccionar historial -->
+        <div class="desplegable">
+            <select onchange="window.location.href=this.value;">
+                <option value="#">Historiales</option>
+                <option value="{% url 'registrarCarga' %}">Historial de Consumos</option>
+                <option value="{% url 'registarRepostaje' %}">Historial de Repostajes</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        function fetchTanques() {
+            $.ajax({
+                url: '/api/tanques/', // Replace with the URL to your API endpoint
+                type: 'GET',
+                dataType: 'json',
+                success: function(tanques) {
+                    $('#tanques-container').empty(); // Clear existing tanks
+                    tanques.forEach(function(tanque) {
+                        var percentage = (tanque.cantidad_combustible / tanque.capacidad) * 100;
+                        $('#tanques-container').append(
+                            '<div class="tanque">' +
+                                '<div class="nombre">' + tanque.nombre + '</div>' +
+                                '<div class="cantidad">' + tanque.cantidad_combustible.toFixed(2) + ' / ' + tanque.capacidad.toFixed(2) + '</div>' +
+                                '<div class="barra-progreso">' +
+                                    '<div class="barra-progreso-fill" style="width: ' + percentage + '%;"></div>' +
+                                '</div>' +
+                            '</div>'
+                        );
+                    });
+                },
+                error: function(error) {
+                    console.log('Error fetching tank data:', error);
+                }
+            });
+        }
+
+        // Call fetchTanques immediately to populate tanks
+        fetchTanques();
+
+        // Set the fetchTanques function to be called every 5 seconds
+        setInterval(fetchTanques, 2000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

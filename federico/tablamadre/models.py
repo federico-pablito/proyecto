@@ -168,16 +168,6 @@ class Choferes(models.Model):
 		return ' '.join([str(self.nombre), str(self.dni)])
 
 
-class Consumos(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	fecha = models.DateTimeField()
-	hsKm = models.IntegerField()
-	choferes = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
-
-	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.fecha), str(self.hsKm), str(self.choferes)])
-
 class DisponibilidadEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
 	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
@@ -375,3 +365,29 @@ class NeumaticosInternos(models.Model):
 
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.marca), str(self.codigo)])
+
+
+class Tanque(models.Model):
+	nombre = models.CharField(primary_key=True, max_length=255)
+	capacidad = models.DecimalField(max_digits=10, decimal_places=2)
+	cantidad_combustible = models.DecimalField(max_digits=10, decimal_places=2)
+
+
+class Consumo(models.Model):
+	id = models.AutoField(primary_key=True)
+	tanque = models.ForeignKey('Tanque', on_delete=models.CASCADE, default=1)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
+	consumo_litros = models.DecimalField(max_digits=10, decimal_places=2)
+	fecha_consumo = models.DateTimeField()
+	hskmactuales = models.IntegerField()
+	precinto_entrada = models.IntegerField()
+	precinto_salida = models.IntegerField()
+	observaciones = models.CharField(max_length=600)
+
+
+class Repostaje(models.Model):
+	id = models.AutoField(primary_key=True)
+	tanque = models.ForeignKey('Tanque', on_delete=models.CASCADE, default=1)
+	cantidad_litros = models.DecimalField(max_digits=10, decimal_places=2)
+	fecha = models.DateTimeField(default=timezone.now)

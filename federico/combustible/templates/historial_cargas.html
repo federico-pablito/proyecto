@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Cargas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Historial de Cargas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tanque</th>
+                <th>Interno</th>
+                <th>Chofer</th>
+                <th>Litros</th>
+                <th>Fecha de Consumo</th>
+                <th>HS/KM Actuales</th>
+                <th>Precinto de Entrada</th>
+                <th>Precinto de Salida</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for consumo in cargas %}
+            <tr>
+                <td>{{ consumo.id }}</td>
+                <td>{{ consumo.tanque }}</td>
+                <td>{{ consumo.interno }}</td>
+                <td>{{ consumo.chofer }}</td>
+                <td>{{ consumo.consumo_litros }}</td>
+                <td>{{ consumo.fecha_consumo }}</td>
+                <td>{{ consumo.hskmactuales }}</td>
+                <td>{{ consumo.precinto_entrada }}</td>
+                <td>{{ consumo.precinto_salida }}</td>
+                <td>{{ consumo.observaciones }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+

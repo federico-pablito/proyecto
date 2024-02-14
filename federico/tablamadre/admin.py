@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import (Choferes, Consumos, TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica,
+from .models import (Choferes, TablaMadre, Internos, Services, UnidadesdeProduccion, Reparaciones, Logistica,
                      PartesDiarios, Novedades, DisponibilidadEquipos, TipoActividad, MecanicosEncargados, AlquilerEquipos,
                      CertificadosEquiposAlquilados, HistorialService, Talleres, Cronogroma, Urgencia, RequerimientoEquipo,
-                     RequerimientoTraslado, TipoVehiculo, FiltrosInternos, NeumaticosInternos)
+                     RequerimientoTraslado, TipoVehiculo, FiltrosInternos, NeumaticosInternos, Tanque, Consumo,
+                     Repostaje)
 
 
 # Register your models here.
@@ -13,7 +14,6 @@ admin.site.register(Reparaciones)
 admin.site.register(Logistica)
 admin.site.register(Novedades)
 admin.site.register(Choferes)
-admin.site.register(Consumos)
 admin.site.register(DisponibilidadEquipos)
 admin.site.register(TipoActividad)
 admin.site.register(Talleres)
@@ -28,3 +28,6 @@ admin.site.register(TipoVehiculo)
 admin.site.register(Urgencia)
 admin.site.register(FiltrosInternos)
 admin.site.register(NeumaticosInternos)
+admin.site.register(Tanque)
+admin.site.register(Consumo)
+admin.site.register(Repostaje)
