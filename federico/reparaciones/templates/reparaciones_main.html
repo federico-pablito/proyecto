@@ -116,8 +116,16 @@
     </ul>
 </nav>
 <body>
-    <h1>Reparaciones</h1>
+    <h1>Reparaciones Activas</h1>
     <p><a class="btn btn-primary" href="{% url 'reparaciones_pd_view' %}" role="button">Reparaciones PDF</a></p>
+    <div>
+        <form method="get">
+            <label>UP: </label> {{ filter.form.up }}
+            <button type="submit">Filtrar</button>
+            <a href="{% url "reparaciones-main" %}"><i class="fa-solid fa-xmark" style="margin: 10px;color: black;width: 15px;height: 18px;"></i></a>
+        </form>
+    </div>
+
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>

@@ -228,8 +228,12 @@
                         <td class="align-middle">{{ dato.proximoservice }}</td>
                         <td class="align-middle">{{ dato.hsxkmactuales }}</td>
                         <td class="align-middle">{{ dato.hsxkmrestantes }}</td>
-                        <td class="align-middle">{{ dato.necesidadservice }}</td>
-                        <td class="align-middle">{{ dato.operativo }}</td>
+                        <td class="align-middle" style="{% if dato.necesidadservice == 'Normal' %}background-color: green;{% elif dato.necesidadservice == 'Proximo' %}background-color: yellow;{% elif dato.necesidadservice == 'Necesita Service' %}background-color: red;{% endif %}color: white;">
+                            {{ dato.necesidadservice }}
+                        </td>
+                        <td class="align-middle" style="{% if dato.operativo == 'Operativo' %}background-color: green;{% elif dato.operativo == 'No Operativo' %}background-color: red;{% endif %}color: white;">
+                            {{ dato.operativo }}
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>

@@ -21,20 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
-"""CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')"""
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['fedemanager.com',
-#                    'www.fedemanager.com',
-#                    'https://fedemanager.com',
-#                    'https://www.fedemanager.com']
+ALLOWED_HOSTS = ['fedemanager.com',
+                 'www.fedemanager.com',
+                 'https://fedemanager.com',
+                 'https://www.fedemanager.com']
 
-ALLOWED_HOSTS = ["*"]
+#ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

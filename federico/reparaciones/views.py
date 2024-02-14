@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 from tablamadre.models import Reparaciones, Internos, TablaMadre
+from .filters import reparaciones_filter
 from .forms import reparaciones_form
 from io import BytesIO
 from django.http import HttpResponse
@@ -27,9 +28,12 @@ class ReparacionTemporal(models.Model):
 def reparaciones_main(request):
     # EL FILTRO NO FUNCIONA, LO USO Y EXPLOTA
     tabla = Reparaciones.objects.filter(estadoreparacion="Pendiente")
+    filter = reparaciones_filter(request.GET, queryset=tabla)
+    if filter.is_valid():
+        reparaciones = filter.qs
     tabla_temporal = ReparacionTemporal.objects.all()
     tabla_temporal.delete()
-    for item in tabla:
+    for item in reparaciones:
         try:
             objeto = tabla_temporal.get(interno=item.interno.interno)
             objeto.ubicacion = objeto.ubicacion + "\n" + str(item.taller.nombre)
@@ -57,9 +61,8 @@ def reparaciones_main(request):
                 apto_traslado=str(item.apto_traslado),
                 descripcion=item.descripcion
             )
-    #filter = reparaciones_filter(request.GET, queryset=tabla)
-    #ARREGLAR EL FILTRO
-    return render(request, 'reparaciones_main.html', {'reparaciones': tabla_temporal})
+
+    return render(request, 'reparaciones_main.html', {'reparaciones': tabla_temporal, 'filter': filter})
 
 
 def reparaciones_info(request, interno):

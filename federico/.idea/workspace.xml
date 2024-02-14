@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../federico.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/service_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/service_main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -135,7 +140,7 @@
       <workItem from="1707356592223" duration="10584000" />
       <workItem from="1707432413370" duration="12000" />
       <workItem from="1707482081804" duration="11229000" />
-      <workItem from="1707915183339" duration="3674000" />
+      <workItem from="1707915183339" duration="11857000" />
     </task>
     <servers />
   </component>

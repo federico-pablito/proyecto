@@ -65,7 +65,7 @@
                 <td>{{ repostaje.id }}</td>
                 <td>{{ repostaje.tanque }}</td>
                 <td>{{ repostaje.cantidad_litros }}</td>
-                <td>{{ repostaje.fecha }}</td>
+                <td>{{ repostaje.fecha|date:"d/m/Y" }}</td>
             </tr>
             {% endfor %}
         </tbody>

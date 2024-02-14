@@ -3,6 +3,7 @@ from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 from tablamadre.models import Internos, Novedades
 from .forms import novedadesforms
+from .filters import novedades_filter
 from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
@@ -26,6 +27,9 @@ class NovedadTemporal(models.Model):
 
 def novedades_main(request):
     tabla = Novedades.objects.filter(reparado=False)
+    filter = novedades_filter(request.GET, queryset=tabla)
+    if filter.is_valid():
+        tabla = filter.qs
     tabla_temporal = NovedadTemporal.objects.all()
     tabla_temporal.delete()
     for item in tabla:
@@ -48,7 +52,7 @@ def novedades_main(request):
                 ingreso_hs_km=item.ingreso_hs_km,
                 chofer=item.chofer
             )
-    return render(request, 'novedades_main.html', {'tabla': tabla_temporal})
+    return render(request, 'novedades_main.html', {'tabla': tabla_temporal, 'filter': filter})
 
 
 def novedades_crear(request):
