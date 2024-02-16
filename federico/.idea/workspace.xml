@@ -5,18 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../federico.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/templates/crear_disponibilidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/templates/crear_disponibilidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/cronograma_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/cronograma_crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/logistica_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/logistica_crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_mostrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_mostrar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/cargofiltros.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/cargofiltros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/cargointernos.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/cargointernos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/cargoneumaticos.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/cargoneumaticos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/editar_interno.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/editar_interno.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_crear.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/novedades/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/partesdiarios/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_crear.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/templates/service_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/service_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/crean_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/crean_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/editar_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/editar_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unidadesproduccion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/unidadesproduccion/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +158,8 @@
       <workItem from="1707356592223" duration="10584000" />
       <workItem from="1707432413370" duration="12000" />
       <workItem from="1707482081804" duration="11229000" />
-      <workItem from="1707915183339" duration="11857000" />
+      <workItem from="1707915183339" duration="29203000" />
+      <workItem from="1708100244420" duration="2390000" />
     </task>
     <servers />
   </component>

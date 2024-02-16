@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos, NeumaticosInternos
 from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm, FiltroForm, NeumaticoForm
-from .filters import internosfilter
+from .filters import internosfilter, alquilerfilter
 from io import BytesIO
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def mainmaestroequipos(request):
     internos = Internos.objects.filter(alquilado=False)
     if request.method == 'get':
@@ -19,6 +21,8 @@ def mainmaestroequipos(request):
         # Si no se envió el formulario, crea una instancia del formulario
         formulario = internosforms()
     filter = internosfilter(request.GET, queryset=internos)
+    if filter.is_valid():
+        internos = filter.qs
     if request.method == 'POST':
         form = TableVariable(request.POST)
         if form.is_valid():
@@ -69,8 +73,12 @@ def mainmaestroequipos(request):
                                    'orden_value': True, 'actividad_value': True}})
 
 
+@login_required
 def alquileresinternos(request):
     internos = Internos.objects.filter(alquilado=True)
+    filter = alquilerfilter(request.GET, queryset=internos)
+    if filter.is_valid():
+        internos = filter.qs
     if request.method == 'POST':
         form = TableVariable(request.POST)
         if form.is_valid():
@@ -103,7 +111,7 @@ def alquileresinternos(request):
             crear_pdf = request.POST.get('Crear_PDF', None)
             if 'columna' in request.POST:
                 return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                            'form_values': form_values})
+                                                            'form_values': form_values, 'filter': filter})
             elif 'crear_pdf' in request.POST:
                 form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
                 return redirect('generate_pdf_view', form_values=form_values_str)
@@ -116,7 +124,7 @@ def alquileresinternos(request):
     else:
         # Si no se envió el formulario, crea una instancia del formulario
         formulario = internosforms()
-    filter = internosfilter(request.GET, queryset=internos)
+
     return render(request, 'MainMaestro.html',
                   {'internos': internos, 'form': form, 'alquiler': True, 'filter': filter, 'formulario': formulario,
                    'form_values': {'id_value': True, 'interno_value': True, 'up_value':True, 'marca_value': True, 'modelo_value': True,
@@ -130,6 +138,7 @@ def alquileresinternos(request):
 
 
 # Create your views here.
+@login_required
 def cargointerno(request):
     internos = Internos.objects.all()
     if request.method == 'POST':
@@ -143,6 +152,7 @@ def cargointerno(request):
     return render(request, 'cargointernos.html', {'internos': internos, 'form': form})
 
 
+@login_required
 def editar_interno(request, id=None):
     internos = Internos.objects.all()
     if id:
@@ -159,6 +169,7 @@ def editar_interno(request, id=None):
     return render(request, 'editar_interno.html',
                   {'internos': internos, 'form': form})
 
+@login_required
 def alquilerequipo(request, id=None):
     if request.method == 'POST':
         form = AlquilerEquiposForm(request.POST)
@@ -171,6 +182,7 @@ def alquilerequipo(request, id=None):
                   {'form': form})
 
 
+@login_required
 def info_interno(request, id):
     internos = Internos.objects.get(id=id)
     if request.method == 'POST':
@@ -189,6 +201,7 @@ def info_interno(request, id):
     return render(request, 'info_interno.html', {'interno': internos, 'form': form, 'formulario': valor})
 
 
+@login_required
 def certificado_equipoalquilado(request, id, mesanio):
     mes, anio = mesanio.split(' ')
     interno = Internos.objects.all().get(id=id)
@@ -223,6 +236,7 @@ def certificado_equipoalquilado(request, id, mesanio):
                       {'interno': interno, 'certificado': certificado_existente})
 
 
+@login_required
 def cargo_filtros(request, interno=None):
     if request.method == 'POST':
         form = FiltroForm(request.POST)
@@ -240,12 +254,14 @@ def cargo_filtros(request, interno=None):
                   {'form': form, 'interno':interno})
 
 
+@login_required
 def mostrar_filtros(request, interno=None):
     filtros = FiltrosInternos.objects.filter(interno=Internos.objects.get(interno=interno))
     return render(request, 'filtros.html',
                   {'filtros': filtros, 'interno':interno})
 
 
+@login_required
 def cargo_neumaticos(request, interno=None):
     if request.method == 'POST':
         form = NeumaticoForm(request.POST)
@@ -263,6 +279,7 @@ def cargo_neumaticos(request, interno=None):
                   {'form': form, 'interno': interno})
 
 
+@login_required
 def mostrar_neumaticos(request, interno=None):
     neumaticos = NeumaticosInternos.objects.filter(interno=Internos.objects.get(interno=interno))
     return render(request, 'neumaticos.html',

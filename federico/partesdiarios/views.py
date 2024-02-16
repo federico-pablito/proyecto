@@ -6,9 +6,11 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def partesdiario_main(request):
     partediario = PartesDiarios.objects.all()
     lista_partediario, lista_nombres = listador(partediario)
@@ -17,6 +19,7 @@ def partesdiario_main(request):
                   {'lista_partediario': lista_partediario, 'lista_nombres': lista_nombres, 'parte': partediario})
 
 
+@login_required
 def partediario_crear(request):
     if request.method == 'POST':
         form = partediario_form(request.POST)
@@ -28,6 +31,7 @@ def partediario_crear(request):
     return render(request, 'partediario_crear.html', {'form': form})
 
 
+@login_required
 def partediario_editar(request):
     if id:
         instancia = PartesDiarios.objects.get(pk=id)

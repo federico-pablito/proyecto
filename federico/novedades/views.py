@@ -11,6 +11,8 @@ from django.views import View
 from xhtml2pdf import pisa
 from django.utils import timezone
 from django import template
+from django.contrib.auth.decorators import login_required
+
 
 
 class NovedadTemporal(models.Model):
@@ -25,6 +27,7 @@ class NovedadTemporal(models.Model):
     chofer = models.CharField(max_length=512, default="No tiene chofer")
 
 
+@login_required
 def novedades_main(request):
     tabla = Novedades.objects.filter(reparado=False)
     filter = novedades_filter(request.GET, queryset=tabla)
@@ -55,6 +58,7 @@ def novedades_main(request):
     return render(request, 'novedades_main.html', {'tabla': tabla_temporal, 'filter': filter})
 
 
+@login_required
 def novedades_crear(request):
     if request.method == 'POST':
         form = novedadesforms(request.POST)
@@ -69,12 +73,14 @@ def novedades_crear(request):
     return render(request, 'novedades_crear.html', {'form': form})
 
 
+@login_required
 def novedades_info(request, interno):
     interno = Internos.objects.get(interno=interno)
     novedades = Novedades.objects.filter(interno=interno)
     return render(request, 'novedades_info.html', {'novedades': novedades, 'interno': interno})
 
 
+@login_required
 def novedades_specifica_crear(request, interno):
     if request.method == 'POST':
         form = novedadesforms(request.POST)
@@ -97,6 +103,7 @@ def cambiar_estado(request, id):
     return redirect('novedades_info', novedad.interno.interno)
 
 
+@login_required
 def novedades_detalle(request, id):
     novedad = Novedades.objects.get(id=id)
     return render(request, 'novedad_detalle.html', {'novedad': novedad})

@@ -23,7 +23,7 @@ class internosforms(forms.ModelForm):
     tarjeta_pdf = forms.CharField(required=False)
     propietario = forms.CharField(required=True)
     chofer = forms.CharField(required=True)
-    alquilado = forms.BooleanField(required=False, initial=False)
+    alquilado = forms.ChoiceField(choices=[(False, 'No'), (True, 'Si')], required=False, label='Alquilado')
     valorpesos = forms.IntegerField(required=True, label='Valor Ars')
     valordolares = forms.IntegerField(required=True, label='Valor Usd')
     orden = forms.CharField(required=True)

@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .forms import disponibilidad_form
 from tablamadre.models import DisponibilidadEquipos, Internos
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def cargo_disponibilidad(request):
     if request.method == 'POST':
         form = disponibilidad_form(request.POST)
@@ -15,10 +17,12 @@ def cargo_disponibilidad(request):
     return render(request, 'crear_disponibilidad.html', {'form': form})
 
 
+@login_required
 def main_disponibilidad(request):
     return render(request, 'main_disponibilidad.html')
 
 
+@login_required
 def mostrar_disponibilidad(request, anio=None, mes=None):
     dataset_mes = transpose_disponibilidad(mes, anio)
     columns = ['Int', 'Dueño', 'Operador', 'Ingreso Obra', 'Dias Obra']

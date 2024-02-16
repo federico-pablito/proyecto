@@ -5,8 +5,11 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+@login_required
 def verunidadproduccion(request):
     meta_clase = UnidadesdeProduccion._meta
     nombres = [campo.name for campo in meta_clase.fields]

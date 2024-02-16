@@ -9,9 +9,11 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def service_main(request):
     if request.method == 'POST':
         # Si se envió el formulario, procesa los datos
@@ -34,6 +36,7 @@ def service_main(request):
     return render(request, 'service_main.html', {'form': form, 'services': service, 'filter': service_filter})
 
 
+@login_required
 def editar_serv(request, interno=None):
     interno = Internos.objects.get(interno=interno)
     partediario = Services.objects.all()
@@ -77,6 +80,7 @@ def editar_serv(request, interno=None):
     return render(request, 'editar_service.html', {'partediario': partediario, 'form': form, 'interno': interno})
 
 
+@login_required
 def crear_serv(request, interno=None):
     interno = Internos.objects.get(interno=interno)
     if request.method == 'POST':
@@ -116,12 +120,14 @@ def crear_serv(request, interno=None):
     return render(request, 'crean_service.html', {'form': form, 'interno': interno})
 
 
+@login_required
 def info_serv(request, interno=None):
     interno = Internos.objects.get(interno=interno)
     services = HistorialService.objects.filter(interno=interno)
     return render(request, 'info_service.html', {'services': services, 'interno': interno})
 
 
+@login_required
 def services_pdf(request):
     tabla_temporal = Services.objects.all()
     template_path = 'service_pdf.html'

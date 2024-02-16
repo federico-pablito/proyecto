@@ -6,15 +6,18 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def logistica_main(request):
     logistica = Logistica.objects.all()
     # HACER EL FILTRO
     return render(request, 'logisticatabla.html', {'logisticas': logistica})
 
 
+@login_required
 def logistica_crear(request):
     if request.method == 'POST':
         form = logistica_form(request.POST)
@@ -27,6 +30,7 @@ def logistica_crear(request):
     return render(request, 'logistica_crear.html', {'form': form})
 
 
+@login_required
 def logistica_editar(request, id=None):
     if id:
         instancia = Logistica.objects.get(pk=id)
@@ -43,6 +47,7 @@ def logistica_editar(request, id=None):
                   {'form': form})
 
 
+@login_required
 def requerimiento_equipo_crear(request):
     if request.method == 'POST':
         form = requerimiento_equipo_form(request.POST)
@@ -54,15 +59,18 @@ def requerimiento_equipo_crear(request):
     return render(request, 'requerimiento_equipo_crear.html', {'form': form})
 
 
+@login_required
 def requerimiento_equipo_mostrar(request):
     requerimiento = RequerimientoEquipo.objects.all()
     return render(request, 'requerimiento_equipo_mostrar.html', {'requerimientos': requerimiento})
 
 
+@login_required
 def requerimiento_equipo_info(request, id=None):
     requerimiento = RequerimientoEquipo.objects.get(pk=id)
     return render(request, 'requerimiento_equipo_info.html',
                   {'requerimiento': requerimiento})
+
 
 
 def requerimiento_equipo_aprobar(request, id=None):
@@ -75,6 +83,7 @@ def requerimiento_equipo_aprobar(request, id=None):
     return redirect('requerimiento_equipo_info', id=id)
 
 
+@login_required
 def requerimiento_traslado_crear(request):
     if request.method == 'POST':
         form = requerimiento_traslado_form(request.POST)
@@ -86,11 +95,13 @@ def requerimiento_traslado_crear(request):
     return render(request, 'requerimiento_traslado_crear.html', {'form': form})
 
 
+@login_required
 def requerimiento_traslado_mostrar(request):
     requerimiento = RequerimientoTraslado.objects.all()
     return render(request, 'requerimiento_traslado_mostrar.html', {'requerimientos': requerimiento})
 
 
+@login_required
 def requerimiento_traslado_info(request, id=None):
     requerimiento = RequerimientoTraslado.objects.get(pk=id)
     return render(request, 'requerimiento_traslado_info.html',
@@ -108,6 +119,7 @@ def requerimiento_traslado_aprobar(request, id=None):
                   {'requerimiento': requerimiento})
 
 
+@login_required
 def cronograma_crear(request):
     if request.method == 'POST':
         form = cronograma_form(request.POST)
@@ -119,6 +131,7 @@ def cronograma_crear(request):
     return render(request, 'cronograma_crear.html', {'form': form})
 
 
+@login_required
 def cronograma_mostrar(request):
     cronograma = Cronogroma.objects.all()
     return render(request, 'cronograma_mostrar.html', {'cronogramas': cronograma})

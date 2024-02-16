@@ -9,6 +9,7 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
+from django.contrib.auth.decorators import login_required
 
 
 class ReparacionTemporal(models.Model):
@@ -25,6 +26,7 @@ class ReparacionTemporal(models.Model):
     descripcion = models.CharField(max_length=512, default="Generica")
 
 
+@login_required
 def reparaciones_main(request):
     # EL FILTRO NO FUNCIONA, LO USO Y EXPLOTA
     tabla = Reparaciones.objects.filter(estadoreparacion="Pendiente")
@@ -65,12 +67,14 @@ def reparaciones_main(request):
     return render(request, 'reparaciones_main.html', {'reparaciones': tabla_temporal, 'filter': filter})
 
 
+@login_required
 def reparaciones_info(request, interno):
     interno = Internos.objects.get(interno=interno)
     tabla = Reparaciones.objects.filter(interno=interno)
     return render(request, 'reparaciones_info.html', {'tabla': tabla, 'interno': interno})
 
 
+@login_required
 def reparaciones_crear(request):
     tabla = Reparaciones.objects.all()
     if request.method == 'POST':
@@ -95,6 +99,7 @@ def reparaciones_crear(request):
     return render(request, 'reparaciones_crear.html', {'tabla': tabla, 'form': form})
 
 
+@login_required
 def reparaciones_editar(request, id=None):
     tabla = Reparaciones.objects.all()
     if id:
@@ -121,6 +126,7 @@ def cambiar_estado(request, id=None):
     return redirect('reparaciones_info', reparacion.interno.interno)
 
 
+@login_required
 def reparaciones_pdf(request):
     tabla_temporal = ReparacionTemporal.objects.all()
     template_path = 'reparaciones_pdf.html'

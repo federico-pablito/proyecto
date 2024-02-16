@@ -21,19 +21,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
-CSRF_COOKIE_SECURE = True
+"""CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')"""
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fedemanager.com',
+"""ALLOWED_HOSTS = ['fedemanager.com',
                  'www.fedemanager.com',
                  'https://fedemanager.com',
                  'https://www.fedemanager.com']
-
-#ALLOWED_HOSTS = ["*"]
+"""
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -67,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'federico.middleware.RequestLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'federico.urls'
@@ -89,6 +91,32 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'federico.wsgi.application'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'custom_log_filter': {
+            '()': 'federico.filters.CustomLogFilter',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/debug.log',
+            'filters': ['custom_log_filter'],
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -98,7 +126,7 @@ DATABASES = {
         'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
         'USER': 'PabloFederico',
         'PASSWORD': '8d3A{0ViK!G!>@?FTp',
-        'HOST': 'localhost',  # Puedes cambiarlo si tu base de datos está en un host
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
@@ -145,9 +173,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+
 STATIC_URL = 'static/'
 MEDIA_URL = 'images/'
 STATICFILES_DIRS = [

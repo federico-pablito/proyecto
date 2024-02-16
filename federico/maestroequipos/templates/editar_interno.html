@@ -1,212 +1,139 @@
-<!-- templates/mi_template.html -->
-
 <!DOCTYPE html>
-<html lang="es">
+{% load widget_tweaks %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Vista</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <title>Fedemanager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
-  <style>
-    body{
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    h1{
-      margin-top: 2rem;
-    }
-    .btnGuardar{
-    display: inline-block;
-    outline: 0;
-    cursor: pointer;
-    border: 2px solid #1d1c1d4d;
-    font-weight: 600;
-    background-color: rgba(245, 0, 7, 0.93);
-    color: white;
-    font-size: 13px;
-    border-radius: 4px;
-    height: 36px;
-    transition: all 80ms linear;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 10%;
-    margin-left: 45%;
-    }
-    .btnGuardar:hover{
-    background-color:  floralwhite;
-    color: black;
-    border: 1px solid black;
-    transform: scale(1.1);
-    }
-    .btnGuardar:active{
-    background-color: rgba(245, 0, 7, 0.93);
-    border: 1.5px solid;
-    }
-    .navbar{
-    color: white;
-    background-color: black;
-    }
-    .navbar-light .navbar-nav .nav-link{
-    color: white;
-    }
-    .navbar-light .navbar-nav .nav-link:hover{
-    color: grey;
-    }
-    .formContainer {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 0 auto;
-    text-align: left;
-    background-color: rgba(161, 159, 159, 0.819);
-    border-radius: 5px;
-    padding: 20px 15px 10px 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.789);
-    }
-    .divForm{
-    display: flex;
-    justify-content: space-between;
-    }
-    .column{
-    flex: 1;
-    margin-bottom: 0.5rem;
-    justify-content: space-between;
-    }
-    label{
-    font-weight: bold;
-    }
-    input{
-    width: 110px;
-    height: 25px;
-    font-size: small;
-    padding-left: 5px;
-    margin-left: 15px;
-    }
-    input#id_interno{
-      margin-left: 50px;
-    }
-    input#id_marca{
-      margin-left: 58px;
-    }
-    input#id_alquilado{
-    width: 70px;
-    height: 15px;
-    }
-    input#id_modelo,input#id_seguro{
-      margin-left: 48px;
-    }
-    input#id_chasis{
-      margin-left: 52px;
-    }
-    input#id_motor{
-      margin-left: 59px;
-    }
-    input#id_anio{
-      margin-left: 72px;
-    }
-    input#id_aseguradora{
-      margin: 0px 0px 0px 5px;
-    }
-    input#id_itv{
-      margin-left: 84px;
-    }
-    input#id_tarjeta{
-      margin-left: 51px;
-    }
-    input#id_propietario{
-      margin-left: 18px;
-    }
-    input#id_chofer{
-      margin-left: 51px;
-    }
-    input#id_valorpesos{
-      margin-left: 32px;
-    }
-    input#id_valordolares{
-      margin-left: 28px;
-    }
-    input#id_orden{
-      margin-left: 54px;
-    }
-    #id_up{
-      margin-left: 88px;
-    }
-    input#id_dominio{
-      margin-left: 46px;
-    }
-    input#id_tipovehiculo{
-      margin-left: 62px;
-    }
-  </style>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        #form-container {
+            height: calc(100vh - 64px);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .checkbox-lg {
+            transform: scale(1.5);
+            margin-right: 0.5rem;
+            margin-left: 1.6rem;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-  <!-- Left navbar links -->
-  <ul class="navbar-nav">
-  <li class="nav-item">
-      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-  </li>
-  <li class="nav-item d-none d-sm-inline-block">
-      <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-house" style="color: red;"></i> Home</a>
-  </li>
-  <li class="nav-item d-none d-sm-inline-block">
-      <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-power-off" style="color: red;"></i>  Logout</a>
-  </li>
-  </ul>
-</nav>
-<body>
-    <h1>Editar Interno</h1>
-    <form method="post">
-      {% csrf_token %}
-      <div class="formContainer">
-      <div class="divForm">
-          <div class="column">
-              {{ form.interno.label_tag }} {{ form.interno }}
-              <br>
-              {{ form.marca.label_tag }} {{ form.marca }}
-              <br>
-              {{ form.modelo.label_tag }} {{ form.modelo }}
-              <br>
-              {{ form.chasis.label_tag }} {{ form.chasis }}
-              <br>
-              {{ form.motor.label_tag }} {{ form.motor }}
-              <br>
-              {{ form.anio.label_tag }} {{ form.anio }}
-              <br>
-              {{ form.aseguradora.label_tag }} {{ form.aseguradora }}
-              <br>
-              {{ form.seguro.label_tag }} {{ form.seguro }}
-              </div>
-              <div class="column">
-              {{ form.itv.label_tag }}{{ form.itv }}
-              <br>
-              {{ form.tarjeta.label_tag }}{{ form.tarjeta }}
-              <br>
-              {{ form.propietario.label_tag }}{{ form.propietario }}
-              <br>
-              {{ form.chofer.label_tag }}{{ form.chofer }}
-              <br>
-              {{ form.alquilado.label_tag }}{{ form.alquilado }}
-              <br>
-              {{ form.valorpesos.label_tag }}{{ form.valorpesos }}
-              <br>
-              {{ form.valordolares.label_tag }}{{ form.valordolares }}
-              <br>
-              {{ form.orden.label_tag }}{{ form.orden }}
-              </div>
-              <div class="column">
-              {{ form.actividadvehiculo.label_tag }}{{ form.actividadvehiculo }}
-              <br>
-              {{ form.up.label_tag }}{{ form.up }}
-              <br>
-              {{ form.dominio.label_tag }}{{ form.dominio }}
-              <br>
-              {{ form.tipovehiculo.label_tag }}{{ form.tipovehiculo }}
-          </div>
-      </div>
-      <button type="submit" class="btnGuardar">Guardar</button>
-      </div>
-      </form>
+<body class="bg-gray-100">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="{% url 'pablofederico' %}" class=" ml-4">
+            <i class="fa-solid fa-house text-red-500"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class=" ml-4">
+            <i class="fa-solid fa-power-off text-red-500"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <div id="form-container" class="py-20">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl mx-4">
+            <h1 class="text-xl mb-4 font-semibold text-gray-700">Editar Interno</h1>
+            <form method="post" class="space-y-4">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.interno.label }}</label>
+                        {{ form.interno|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.marca.label }}</label>
+                        {{ form.marca|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.modelo.label }}</label>
+                        {{ form.modelo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.chasis.label }}</label>
+                        {{ form.chasis|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.motor.label }}</label>
+                        {{ form.motor|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Año</label>
+                        {{ form.anio|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.aseguradora.label }}</label>
+                        {{ form.aseguradora|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.seguro.label }}</label>
+                        {{ form.seguro|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.itv.label }}</label>
+                        {{ form.itv_pdf|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.tarjeta.label }}</label>
+                        {{ form.tarjeta|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.propietario.label }}</label>
+                        {{ form.propietario|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.chofer.label }}</label>
+                        {{ form.chofer|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.alquilado.label }}</label>
+                        {{ form.alquilado|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Valor Ars</label>
+                        {{ form.valorpesos|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Valor USD</label>
+                        {{ form.valordolares|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.orden.label }}</label>
+                        {{ form.orden|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.actividadvehiculo.label }}</label>
+                        {{ form.actividadvehiculo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.up.label }}</label>
+                        {{ form.up|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                </div>
+                <div class="flex item-center justify-center">
+                    <div class="pr-8">
+                        <label class="block text-sm font-medium text-gray-700">{{ form.dominio.label }}</label>
+                        {{ form.dominio|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.tipovehiculo.label }}</label>
+                        {{ form.tipovehiculo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
