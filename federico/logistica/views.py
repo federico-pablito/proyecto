@@ -72,8 +72,7 @@ def requerimiento_equipo_aprobar(request, id=None):
     else:
         requerimiento.aprobado = True
     requerimiento.save()
-    return render(request, 'requerimiento_equipo_info.html',
-                  {'requerimiento': requerimiento})
+    return redirect('requerimiento_equipo_info', id=id)
 
 
 def requerimiento_traslado_crear(request):

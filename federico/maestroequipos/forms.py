@@ -82,16 +82,16 @@ class AlquilerEquiposForm(forms.ModelForm):
     fecha = forms.DateField(required=True,
                             widget=forms.DateInput(attrs={'type': 'date'}),
                             label='Fecha')
-    monto_contratacion = forms.IntegerField(required=True)
+    monto_contratacion = forms.IntegerField(required=True, label='Monto')
     plazo_pago = forms.CharField(required=True)
-    observaciones_contratacion = forms.CharField(required=False)
+    observaciones_contratacion = forms.CharField(required=False, label='Observaciones')
     fecha_inicio_tarea = forms.DateField(required=True,
                                          widget=forms.DateInput(attrs={'type': 'date'}),
                                          label='Inicio Act')
-    periodo_contratacion = forms.CharField(required=True)
-    periodo_finalizacion = forms.CharField(required=True)
+    periodo_contratacion = forms.CharField(required=True, label='P Contratación')
+    periodo_finalizacion = forms.CharField(required=True, label='P Finalización')
     up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False,
-                                label='Unidad de Prod')
+                                label='UP')
     combustible_incluido = forms.BooleanField(required=False, initial=False)
     operario_incuido = forms.BooleanField(required=False, initial=False)
     carnet_operario_vigente = forms.BooleanField(required=False, initial=False)
@@ -99,7 +99,7 @@ class AlquilerEquiposForm(forms.ModelForm):
                                                         widget=forms.DateInput(attrs={'type': 'date'}),
                                                         label='Fecha')
     art_operario = forms.BooleanField(required=False, initial=False)
-    observaciones_equipo = forms.CharField(required=False)
+    observaciones_equipo = forms.CharField(required=False, label='Observaciones')
     tipo_vehiculo = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
     marca = forms.CharField(required=True)
@@ -109,7 +109,7 @@ class AlquilerEquiposForm(forms.ModelForm):
     estado = forms.CharField(required=True)
     seguro_equipo = forms.BooleanField(required=True)
     inspeccion_equipo = forms.BooleanField(required=True)
-    inspeccion_equipo_responsable = forms.CharField(required=True)
+    inspeccion_equipo_responsable = forms.CharField(required=True, label='Inspección')
     forma_pago = forms.CharField(required=True)
     condicion_pago = forms.CharField(required=True)
     proveedor = forms.CharField(required=True)

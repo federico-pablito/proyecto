@@ -20,6 +20,36 @@
     h1{
         margin-top: 1rem;
     }
+    .filtrarBtn{
+        width: auto;
+        padding: 3px 5px;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #1d1c1d4d;
+        font-weight: 600;
+        background: #fff;
+        font-size: small;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        height: 36px;
+        transition: all 80ms linear;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        margin-left: 3px;
+        font-family:'Helvetica', 'Arial', sans-serif;
+    }
+    .filtrarBtn:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none
+    }
+    .filtrarBtn:active{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none;
+    }
     /* Form */
     form{
     flex-direction: row;
@@ -191,7 +221,7 @@
     <div>
         <form method="get">
             <label>UP: </label> {{ filter.form.up }}
-            <button type="submit">Filtrar</button>
+            <button type="submit" class="filtrarBtn">Filtrar</button>
             <a href="{% url "serviceprin" %}"><i class="fa-solid fa-xmark" style="margin: 10px;color: black;width: 15px;height: 18px;"></i></a>
         </form>
     </div>

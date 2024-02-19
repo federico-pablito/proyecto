@@ -62,6 +62,36 @@
     tr:nth-child(odd) {
     background-color: #ffffff;
     }
+    .btnEdit{
+        width: auto;
+        padding: 3px 10px 3px 10px;
+        outline: 0;
+        cursor: pointer;
+        border: 1px solid #1d1c1d4d;
+        font-weight: 600;
+        background: #fff;
+        font-size: 13px;
+        border-radius: 4px;
+        color: rgb(0, 0, 0);
+        height: 36px;
+        transition: all 80ms linear;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        margin-left: 3px;
+        font-family:'Helvetica', 'Arial', sans-serif;
+    }
+        .btnEdit:hover{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none
+    }
+    .btnEdit:active{
+        background-color: rgba(245, 0, 7, 0.93);
+        border: 1.5px solid black;
+        color: white;
+        text-decoration: none;
+    }
 </Style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -81,7 +111,7 @@
 <body>
     <h1>Requerimiento de traslado</h1>
     <div class="container">
-        <a href="{% url 'cronograma_crear' %}" class="button">Crear Cronograma</a>
+        <a href="{% url 'requerimiento_traslado_crear' %}" class="button">Crear Cronograma</a>
     </div>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
@@ -100,7 +130,7 @@
             <tbody>
                 {% for dato in requerimientos %}
                     <tr>
-                        <td><a href="{% url "requerimiento_traslado_info" dato.id %}">Info</a></td>
+                        <td><a class="btnEdit" href="{% url "requerimiento_traslado_info" dato.id %}">Info</a></td>
                         <td>{{ dato.id }}</td>
                         <td>{{ dato.interno }}</td>
                         <td>{{ dato.origen }}</td>

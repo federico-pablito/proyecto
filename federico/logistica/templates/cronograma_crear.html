@@ -31,7 +31,6 @@
     /* Form */
     form{
         width: 40%;
-        background-color: rgba(156, 155, 155, 0.8);
         border-radius: 5px;
         text-align: left;
         padding: 15px;
@@ -68,7 +67,28 @@
         color: white;
         text-decoration: none;
     }
-    
+    /* Form */
+    .form-container {
+        width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        background-color: #c8c8c8;
+    }
+    .form-container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-container input, 
+    .form-container select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
 </Style>
 </head>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -88,10 +108,12 @@
 <body>
     <h1>Creación de Cronograma</h1>
     <form method="post">
+        <div class="form-container">
         {% csrf_token %}
         {{ form.as_p }}
         <div class="sendBtnContainer" style="text-align: center;">
             <button type="submit" class="sendBtn">Enviar</button>
+        </div>
         </div>
     </form>
 </body>

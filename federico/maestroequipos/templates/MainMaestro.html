@@ -28,8 +28,6 @@
         margin-top: 1rem;
     }
     form{
-        background-color: #6e6c6c48;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
         margin: auto;
         border-radius: 8px;
         padding: 20px;
@@ -68,6 +66,7 @@
         flex-direction: column;
         font-family: 'Be Vietnam Pro', sans-serif;
         align-items: center;
+        text-align: left;
         background-color: #908d8d48;
         padding: 10px 2rem;
         margin: 0px 20%;
@@ -128,6 +127,28 @@
         border: 1.5px solid black;
         color: white;
         text-decoration: none;
+    }
+    /* forms */
+    .form-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-container input, 
+    .form-container select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
     }
     form a{
         width: auto; 
@@ -214,6 +235,14 @@
         align-items: center;
         flex-direction: row;
     }
+    .table-bordered{
+        width: 100%;
+        margin: 2rem auto;
+    }
+    .table-container {
+    display: flex;
+    justify-content: center;
+    }
     .table-bordered thead th{
         font-family:'Helvetica', 'Arial', sans-serif;
     }
@@ -232,7 +261,6 @@
         background-color: rgba(163, 152, 152, 0.801);
     }
     #id_interno, #id_marca, #id_modelo, #id_dominio, #id_actividadvehiculo{
-        width: 5rem;
         height: 1.5rem;
     }
     </style>
@@ -325,6 +353,7 @@
     </div>
     <div>
         <form method="get">
+            <div class="form-container">
             <label>Interno:</label> {{ filter.form.interno }}
             <label>UP: </label> {{ filter.form.up }}
             <label>Marca: </label> {{ filter.form.marca }}
@@ -339,10 +368,12 @@
                 <a href="{% url "main-maestroequipos" %}">Limpiar Filtro</a>
             {% endif %}
             </div>
+            </div>
         </form>
     </div>
-    <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;margin-right: 12rem;">
-        <table class="table table-bordered" style="width: 100%;margin-top: 20px;margin-left: 12rem;">
+    <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;">
+        <div class="table-container">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col" class="align-middle">Info</th>
@@ -426,7 +457,7 @@
             <tbody>
                 {% for dato in filter.qs %}
                     <tr>
-                        <td><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
+                        <td><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">Info</a></td>
                         {% if form_values.id_value %}
                             <td>{{ dato.id }}</td>
                         {% endif %}
@@ -506,6 +537,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
