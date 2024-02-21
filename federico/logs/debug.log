@@ -1,30 +1,2097 @@
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /admin/tablamadre/tanque/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 852, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[anio]' from 'meses_por_anio[anio]'
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 1389, in url
+    args.append(parser.compile_filter(value))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '()' from 'anio.Title()'
+Request to /disponibilidadequipos/
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'mostrar_disponibilidad' with arguments '('', 'diciembre')' not found. 1 pattern(s) tried: ['disponibilidadequipos/(?P<anio>[0-9]+)/(?P<mes>[^/]+)\\Z']
+Request to /disponibilidadequipos/
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '()' from 'mes.Title()'
+Request to /disponibilidadequipos/
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'mes.title()'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 94: 'mes.title()', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+Request to /disponibilidadequipos/
+Internal Server Error: /disponibilidadequipos/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'mes.title()'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 27, in main_disponibilidad
+    return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 94: 'mes.title()', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/cargar
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 14, in cargo_disponibilidad
+    return redirect(request, 'main_disponibilidad.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' not found. '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' is not a valid view function or pattern name.
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/cargar
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 14, in cargo_disponibilidad
+    return redirect(request, 'main_disponibilidad')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' not found. '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' is not a valid view function or pattern name.
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/cargar
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 14, in cargo_disponibilidad
+    return redirect(request, 'main_disponibilidad')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' not found. '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' is not a valid view function or pattern name.
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /favicon.ico
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/cargar
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 14, in cargo_disponibilidad
+    return redirect(request, 'main_disponibilidad')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' not found. '<WSGIRequest: POST '/disponibilidadequipos/cargar'>' is not a valid view function or pattern name.
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/mayo
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /reparaciones/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /reparaciones/cargar
+Request to /favicon.ico
+Request to /logistica/requerimiento/traslado
+Request to /logistica/requerimiento/traslado/cargar
+Request to /logistica/requerimiento/equipo
+Request to /logistica/requerimiento/equipo/cargar
+Request to /logistica/cronograma
+Request to /logistica/cronograma/crear
+Request to /logistica/
+Request to /logistica/cargar
 Request to /service/
 Request to /service/
+Request to /service/editar/CAM 1
+Request to /maestroequipo/
+Request to /maestroequipo/cargar
+Request to /maestroequipo/alquilerequipo
+Request to /maestroequipo/cargar
+Request to /maestroequipo/alquilerequipo
+Request to /maestroequipo/cargar
+Request to /maestroequipo/info/1/
+Request to /maestroequipo/info/1/
+Request to /maestroequipo/certificado/1/diciembre 2023
+Request to /favicon.ico
+Request to /maestroequipo/neumatico/CAM 1/
+Request to /favicon.ico
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /combustible/
+Request to /api/tanques/
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialRepostaje
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialCargas
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /maestroequipo/
+Request to /maestroequipo/info/1/
+Request to /maestroequipo/info/1/
+Request to /maestroequipo/certificado/1/diciembre 2023
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /reparaciones/
+Request to /reparaciones/cargar
+Request to /reparaciones/cargar
+Request to /reparaciones/cargar
+Request to /favicon.ico
+Request to /reparaciones/cargar
+Request to /reparaciones/cargar
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /maestroequipo/alquileres
 Request to /service/
+Request to /reparaciones/
+Request to /admin/tablamadre/
+Request to /admin/tablamadre/
+Request to /admin/tablamadre/proveedorescombustibles/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/proveedorescombustibles/add/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/proveedorescombustibles/add/
+Request to /admin/tablamadre/proveedorescombustibles/
+Request to /admin/jsi18n/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /combustible/
+Request to /api/tanques/
+Request to /combustible/registrar_consumo/
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/registrar_repostaje/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /maestroequipo/
+Request to /maestroequipo/cargar
+Request to /maestroequipo/alquilerequipo
 Request to /service/
+Request to /service/CAM 2/
+Request to /logistica/
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/mayo
+Request to /disponibilidadequipos/2024/enero
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /novedades/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Internal Server Error: /disponibilidadequipos/2023/diciembre
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 35, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 57, in transpose_disponibilidad
+    row.append(tabla.filter(interno=dato).last().unidad_de_produccion)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DisponibilidadEquipos' object has no attribute 'unidad_de_produccion'
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2023/diciembre
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /maestroequipo/
+Request to /logout/
+Request to /admin/
+Request to /admin/login/
+Request to /admin/login/
+Request to /admin/
+Request to /admin/
+Request to /admin/auth/permission/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/add/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/add/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/1/change/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/1/delete/
+Request to /admin/auth/user/1/delete/
+Request to /admin/auth/user/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/auth/user/add/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/add/
+Request to /admin/auth/user/4/change/
+Request to /admin/jsi18n/
+Request to /admin/auth/user/4/change/
+Request to /admin/auth/user/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/logout/
+Request to /admin/
+Request to /admin/login/
+Request to /a
+Not Found: /a
+Request to /
+Request to /
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /maestroequipo/
+Request to /maestroequipo/cargar
+Request to /maestroequipo/alquilerequipo
+Forbidden: /maestroequipo/alquilerequipo
+Request to /maestroequipo/alquileres
+Forbidden: /maestroequipo/alquileres
 Request to /service/
+Forbidden: /service/
+Request to /logistica/cargar
+Forbidden: /logistica/cargar
+Request to /logistica/cronograma
+Forbidden: /logistica/cronograma
+Request to /reparaciones/
+Request to /reparaciones/cargar
+Request to /disponibilidadequipos/cargar
+Request to /favicon.ico
+Request to /novedades/
+Forbidden: /novedades/
+Request to /novedades/
+Forbidden: /novedades/
+Request to /unidadesproduccion/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /admin/
+Request to /admin/login/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /maininicio/logout/
+Request to /admin/
+Request to /admin/login/
+Request to /admin/login/
+Request to /admin/
+Request to /admin/tablamadre/tanque/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/tanque/add/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/tanque/add/
+Request to /admin/tablamadre/tanque/
+Request to /admin/jsi18n/
+Request to /logistica/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /maininicio/logout/
+Request to /
+Request to /
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /combustible/historialCargas
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /combustible/historialRepostaje
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /favicon.ico
+Request to /api/tanques/
+Internal Server Error: /combustible/actualizartanques/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in actualizar_tanques
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 31, in <listcomp>
+    data = [{'nombre': tanque.nombre, 'capacidad': tanque.capacidad, 'cantidadCombustible': tanque.cantidadCombustible} for tanque in tanques]
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tanque' object has no attribute 'cantidadCombustible'
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialCargas
+Request to /combustible/registrar_repostaje/
+Forbidden: /combustible/registrar_repostaje/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/registrar_consumo/
+Forbidden: /combustible/registrar_consumo/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialRepostaje
+Forbidden: /combustible/historialRepostaje
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialCargas
+Forbidden: /combustible/historialCargas
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /admin/tablamadre/proveedorescombustibles/
+Request to /admin/login/
+Request to /
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Request to /service/
-Not Found: /main/dist/img/user3-128x128.jpg
+Request to /maestroequipo/
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/cargar
+Request to /favicon.ico
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/2024/enero
+Request to /admin/
+Request to /admin/login/
+Request to /main/
+Request to /admin/login/
+Request to /admin/
+Request to /admin/tablamadre/tipoactividad/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/tipoactividad/add/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/tipoactividad/add/
+Request to /admin/tablamadre/tipoactividad/
+Request to /admin/jsi18n/
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/enero
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user1-128x128.jpg
-Not Found: /main/dist/img/user3-128x128.jpg
-Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /combustible/
+Request to /api/tanques/
+Internal Server Error: /combustible/registrar_consumo/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/combustible/views.py", line 53, in registrar_consumo
+    return render(request, 'registrarConsumo.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registrarConsumo.html
+Request to /combustible/registrar_consumo/
+Request to /combustible/registrar_consumo/
+Request to /favicon.ico
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialCargas
+Request to /combustible/registrar_repostaje/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/historialRepostaje
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/historialRepostaje
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/

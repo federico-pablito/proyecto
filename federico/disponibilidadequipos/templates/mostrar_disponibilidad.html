@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+{% load widget_tweaks %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
         text-align: left;
         font-size: smaller;
         font-weight: bold;
-        margin-left: 2rem;
+        margin-left: 0.25rem;
     }
     /* Navbar */
     .navbar{
@@ -56,6 +56,13 @@
 </nav>
 <body>
     <h1 style="text-align: center">Disponibilidad Equipos</h1>
+    <div>
+        <form method="get">
+            {% csrf_token %}
+            <label class="p-2 pl-5" style="font-size: large">Unidad de Produccion: </label>{{ filter.form.up|add_class:"p-2 m-2" }}
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>

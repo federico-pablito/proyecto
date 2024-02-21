@@ -88,8 +88,13 @@
 </nav>
 <body>
     <h1>Disponibilidad Equipos</h1>
-    <div class="button-container">
-        <p><a class="btn btn-primary" href="{% url 'mostrar_disponibilidad' 2023 'diciembre'%}" role="button">Diciembre 2023</a></p>
-    </div>
+    {% for anio, meses in meses_por_anio.items %}
+        <h2>{{ anio }}</h2>
+        {% for mes in meses %}
+            <div class="button-container">
+                <p><a class="btn btn-primary" href="{% url 'mostrar_disponibilidad' anio mes%}" role="button">{{ mes }} {{anio}}</a></p>
+            </div>
+        {% endfor %}
+    {% endfor %}
 </body>
 </html>

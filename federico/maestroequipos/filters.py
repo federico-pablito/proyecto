@@ -30,7 +30,7 @@ class alquilerfilter(django_filters.FilterSet):
     actividadvehiculo = django_filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
-        model = Internos.objects.filter(alquilado=True)
+        model = Internos
         fields = {
             'interno': ['exact', 'icontains'],
             'up': ['exact'],

@@ -19,4 +19,4 @@ class CargarTanqueForm(forms.ModelForm):
 class RepostajeForm(forms.ModelForm):
     class Meta:
         model = Repostaje
-        fields = ['tanque', 'cantidad_litros']
+        fields = ['tanque', 'cantidad_litros', 'fecha', 'remito', 'proveedor']

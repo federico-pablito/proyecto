@@ -47,6 +47,12 @@ class Internos(models.Model):
 	dominio = models.CharField(max_length=255, default='default_value')
 	tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
 
+	class Meta:
+		permissions = [
+			("puede_ver_internos", "Puede ver los internos"),
+
+		]
+
 	def __str__(self):
 		return str(self.interno)
 
@@ -64,6 +70,12 @@ class Services(models.Model):
 	hsxkmrestantes = models.IntegerField()
 	necesidadservice = models.CharField(max_length=512)
 	operativo = models.CharField(max_length=512, default='Operativo')
+
+	class Meta:
+		permissions = [
+			("puede_ver_services", "Puede ver los services"),
+
+		]
 
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
@@ -93,6 +105,12 @@ class Reparaciones(models.Model):
 	apto_traslado = models.BooleanField(default=False)
 	descripcion = models.CharField(max_length=512)
 
+	class Meta:
+		permissions = [
+			("puede_ver_reparaciones", "Puede ver las reparaciones"),
+
+		]
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.taller), str(self.falla_general),
 						  str(self.mecanico_encargado)])
@@ -111,6 +129,12 @@ class Logistica(models.Model):
 	transporte = models.CharField(max_length=512)
 	consumokmxlitros = models.FloatField(default=0)
 	valorviaje = models.IntegerField(default=0)
+
+	class Meta:
+		permissions = [
+			("puede_ver_logistica", "Puede ver la logistica"),
+
+		]
 
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
@@ -153,6 +177,12 @@ class Novedades(models.Model):
 	ingreso_hs_km = models.IntegerField(default=1)
 	chofer = models.CharField(max_length=512, default="No tiene chofer")
 
+	class Meta:
+		permissions = [
+			("puede_ver_novedades", "Puede ver la novedades"),
+
+		]
+
 	def __str__(self):
 		return ', '.join([str(self.interno), str(self.reparado), str(self.id)])
 
@@ -179,6 +209,13 @@ class DisponibilidadEquipos(models.Model):
 	mes = models.CharField(max_length=15)
 	dia = models.IntegerField()
 	actividad = models.ForeignKey('TipoActividad', on_delete=models.CASCADE, default=1)
+
+	class Meta:
+		permissions = [
+			("puede_ver_disponibilidad", "Puede ver la disponibilidad"),
+
+		]
+
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.up), str(self.interno)])
 
@@ -187,6 +224,7 @@ class TipoActividad(models.Model):
 	id = models.AutoField(primary_key=True)
 	categoria = models.CharField(max_length=1)
 	descripcion = models.CharField(max_length=125)
+
 	def __str__(self):
 		return ', '.join([self.categoria, self.descripcion])
 
@@ -198,7 +236,6 @@ class Talleres(models.Model):
 
 	def __str__(self):
 		return ', '.join([str(self.nombre), str(self.ubicacion)])
-
 
 
 class MecanicosEncargados(models.Model):
@@ -248,6 +285,12 @@ class AlquilerEquipos(models.Model):
 	telefono = models.CharField(max_length=512)
 	autorizado = models.BooleanField(default=False)
 
+	class Meta:
+		permissions = [
+			("puede_ver_alquilados", "Puede ver los alquilados"),
+
+		]
+
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.tipo_vehiculo), str(self.dominio)])
 
@@ -287,6 +330,12 @@ class HistorialService(models.Model):
 	necesidadservice = models.CharField(max_length=512)
 	operativo = models.CharField(max_length=512, default='Operativo')
 
+	class Meta:
+		permissions = [
+			("puede_ver_historial_service", "Puede ver los services"),
+
+		]
+
 	def __str__(self):
 		return ', '.join(
 			[str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
@@ -313,6 +362,12 @@ class RequerimientoTraslado(models.Model):
 	destino = models.CharField(max_length=512)
 	fecha = models.DateTimeField()
 	aprobado = models.BooleanField(default=False)
+
+	class Meta:
+		permissions = [
+			("puede_ver_requerimientos", "Puede ver los requerimientos"),
+
+		]
 
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.interno), str(self.origen), str(self.fecha), str(self.aprobado)])
@@ -372,6 +427,15 @@ class Tanque(models.Model):
 	capacidad = models.DecimalField(max_digits=10, decimal_places=2)
 	cantidad_combustible = models.DecimalField(max_digits=10, decimal_places=2)
 
+	class Meta:
+		permissions = [
+			("puede_ver_tanques", "Puede ver los tanques"),
+
+		]
+
+	def __str__(self):
+		return ', '.join([str(self.nombre), str(self.capacidad), str(self.cantidad_combustible)])
+
 
 class Consumo(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -385,9 +449,29 @@ class Consumo(models.Model):
 	precinto_salida = models.IntegerField()
 	observaciones = models.CharField(max_length=600)
 
+	class Meta:
+		permissions = [
+			("puede_ver_consumo", "Puede ver los consumos"),
+
+		]
+
+	def __str__(self):
+		return ', '.join([str(self.tanque), str(self.interno), str(self.chofer), str(self.consumo_litros), str(self.fecha_consumo)])
+
 
 class Repostaje(models.Model):
 	id = models.AutoField(primary_key=True)
 	tanque = models.ForeignKey('Tanque', on_delete=models.CASCADE, default=1)
 	cantidad_litros = models.DecimalField(max_digits=10, decimal_places=2)
 	fecha = models.DateTimeField(default=timezone.now)
+	remito = models.IntegerField(default=00000)
+	proveedor = models.CharField(max_length=512, default="PabloFederico")
+
+	class Meta:
+		permissions = [
+			("puede_ver_repostaje", "Puede ver los repostajes"),
+
+		]
+
+	def __str__(self):
+		return ', '.join([str(self.tanque), str(self.cantidad_litros), str(self.fecha), str(self.remito), str(self.proveedor)])
