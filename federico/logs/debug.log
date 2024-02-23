@@ -2095,3 +2095,223 @@ Request to /api/tanques/
 Request to /combustible/actualizartanques/
 Request to /api/tanques/
 Request to /combustible/actualizartanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /disponibilidadequipos/cargar
+Request to /favicon.ico
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/2023/diciembre
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 44, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 76, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 3!
+Request to /disponibilidadequipos/2023/diciembre
+Internal Server Error: /disponibilidadequipos/2023/diciembre
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 44, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 76, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 3!
+Request to /disponibilidadequipos/2023/diciembre
+Internal Server Error: /disponibilidadequipos/2023/diciembre
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 44, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 76, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 3!
+Request to /disponibilidadequipos/2023/diciembre
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Internal Server Error: /disponibilidadequipos/2024/enero
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 44, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 76, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 2!
+Request to /disponibilidadequipos/2024/enero
+Request to /disponibilidadequipos/cargar
+Request to /favicon.ico
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /admin/
+Request to /favicon.ico
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/14/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/14/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/15/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/15/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/16/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/16/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/1/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/2/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/2/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/3/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/3/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/4/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/4/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Internal Server Error: /disponibilidadequipos/2023/diciembre
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 44, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 76, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 2!
+Request to /disponibilidadequipos/2023/diciembre
+Request to /admin/tablamadre/disponibilidadequipos/4/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/4/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/5/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/5/change/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/cargar
+Internal Server Error: /disponibilidadequipos/cargar
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 21, in cargo_disponibilidad
+    dia=form.cleaned_data['dia']).exists():
+                                  ^^^^^^
+AttributeError: 'DisponibilidadEquipos' object has no attribute 'exists'
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /disponibilidadequipos/cargar
+Request to /admin/
+Request to /admin/auth/user/
+Request to /admin/jsi18n/

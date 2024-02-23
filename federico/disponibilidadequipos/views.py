@@ -13,7 +13,15 @@ def cargo_disponibilidad(request):
         if request.method == 'POST':
             form = disponibilidad_form(request.POST)
             if form.is_valid():
-                new_disponibilidad = form.save()
+                new_disponibilidad = form.save(commit=False)
+                if DisponibilidadEquipos.objects.filter(interno=new_disponibilidad.interno,
+                                                        up=new_disponibilidad.up,
+                                                        anio=new_disponibilidad.anio,
+                                                        mes=new_disponibilidad.mes,
+                                                        dia=new_disponibilidad.dia).exists():
+                    return render(request, 'crear_disponibilidad.html', {'form': form, 'error': 'Ya hay una disponibilidad cargada de ese dia'})
+                else:
+                    new_disponibilidad = form.save()
                 return redirect('main_disponibilidad')
         else:
             form = disponibilidad_form()
@@ -73,7 +81,7 @@ def transpose_disponibilidad(mes, anio, tabla=None):
             # Listador de Dias Trabajados
             for item in range(1, 32):
                 if item in tabla1.filter(interno=dato, up=UnidadesdeProduccion.objects.get(id=up)).values_list('dia', flat=True):
-                    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item).actividad.categoria
+                    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
                     row.append(act)
                     actividad.append(act)
                 else:
