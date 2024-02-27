@@ -10,12 +10,14 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
+import pandas as pd
 
 
 # Create your views here.
 @login_required
 def service_main(request):
     if request.user.has_perm('tablamadre.puede_ver_services'):
+        print(actualizacion_warrior())
         if request.method == 'POST':
             # Si se envió el formulario, procesa los datos
             form = desplegable_internos(request.POST)
@@ -39,6 +41,32 @@ def service_main(request):
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
 
+def actualizacion_warrior():
+    services = Services.objects.all()
+    a = "No hay servicios para actualizar"
+    for service in services:
+        dataframe = pd.read_csv('service/vehicle_data.csv', sep=',', header=0)
+        names = dataframe['vehLabel'].tolist()
+        for item in Services.objects.all().values_list('interno', flat=True):
+            if Internos.objects.get(id=item).interno in names:
+                a = "Se actualizaron los servicios"
+                if (dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0] >=
+                        dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]):
+                    service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0]
+                else:
+                    service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]
+                service.proximoservice = service.ultimoservice + service.planrealizado_hs
+                service.hsxkmrestantes = service.proximoservice - service.hsxkmactuales
+                if service.hsxkmrestantes > 50:
+                    service.necesidadservice = 'Normal'
+                elif 50 >= service.hsxkmrestantes >= 1:
+                    service.necesidadservice = 'Proximo'
+                elif service.hsxkmrestantes <= 0:
+                    service.necesidadservice = 'Necesita Service'
+                service.save()
+    return a
+
+
 @login_required
 def editar_serv(request, interno=None):
     if request.user.has_perm('tablamadre.puede_ver_services'):
@@ -60,9 +88,9 @@ def editar_serv(request, interno=None):
                 service_edit.hsxkmrestantes = service_edit.proximoservice - service_edit.hsxkmactuales
                 if service_edit.hsxkmrestantes > 50:
                     service_edit.necesidadservice = 'Normal'
-                elif service_edit.hsxkmrestantes <= 50:
+                elif 50 >= service_edit.hsxkmrestantes >= 1:
                     service_edit.necesidadservice = 'Proximo'
-                elif service_edit.hsxkmrestantes < 0:
+                elif service_edit.hsxkmrestantes <= 0:
                     service_edit.necesidadservice = 'Necesita Service'
                 service_edit.save()
                 HistorialService.objects.create(
@@ -102,9 +130,9 @@ def crear_serv(request, interno=None):
                 new_service.hsxkmrestantes = new_service.proximoservice - new_service.hsxkmactuales
                 if new_service.hsxkmrestantes > 50:
                     new_service.necesidadservice = 'Normal'
-                elif new_service.hsxkmrestantes <= 50:
+                elif 50 >= new_service.hsxkmrestantes >= 1:
                     new_service.necesidadservice = 'Proximo'
-                elif new_service.hsxkmrestantes < 0:
+                elif new_service.hsxkmrestantes <= 0:
                     new_service.necesidadservice = 'Necesita Service'
                 new_service.save()
                 HistorialService.objects.create(

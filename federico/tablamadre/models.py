@@ -475,3 +475,47 @@ class Repostaje(models.Model):
 
 	def __str__(self):
 		return ', '.join([str(self.tanque), str(self.cantidad_litros), str(self.fecha), str(self.remito), str(self.proveedor)])
+
+
+class TanqueAceite(models.Model):
+	nombre = models.CharField(primary_key=True, max_length=100)
+	tipo_aceite = models.CharField(max_length=100)
+	capacidad_aceite = models.DecimalField(max_digits=10, decimal_places=2)
+	cantidad_aceite = models.DecimalField(max_digits=10, decimal_places=2)
+
+	class Meta:
+		permissions = [
+			("puede_ver_aceites", "Puede ver los aceites"),
+
+		]
+
+
+class ConsumoAceite(models.Model):
+	id = models.AutoField(primary_key=True)
+	tanque_aceite = models.ForeignKey('TanqueAceite', on_delete=models.CASCADE, default=1)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
+	cantidad_consumida = models.DecimalField(max_digits=10, decimal_places=2)
+	fecha_consumo = models.DateTimeField()
+	hskmactuales = models.IntegerField()
+	observaciones = models.CharField(max_length=500)
+
+	class Meta:
+		permissions = [
+			("puede_ver_consumoaceite", "Puede ver los consumos de aceite"),
+
+		]
+
+
+class RepostajeAceite(models.Model):
+	remito = models.IntegerField(primary_key=True)
+	reservorio_aceite = models.ForeignKey('TanqueAceite', on_delete=models.CASCADE, default=1)
+	fecha_repostaje = models.DateTimeField()
+	cantidad_repostada = models.DecimalField(max_digits=10, decimal_places=2)
+	observaciones = models.CharField(max_length=500)
+
+	class Meta:
+		permissions = [
+			("puede_ver_cargarrepostaje", "Puede ver los repostajes de aceites"),
+
+		]

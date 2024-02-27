@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'novedades',
     'widget_tweaks',
     'combustible',
+    'aceites',
 ]
 
 MIDDLEWARE = [

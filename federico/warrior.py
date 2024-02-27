@@ -56,14 +56,14 @@ async def main():
                         distance_data = await fetch_vehicle_distance(session, veh_id)
                         if distance_data:
                             # Update the DataFrame with new data, including vehPatente and vehLabel
-                            new_row = [veh_id, veh_patente, veh_label, distance_data['vehOdometro'],
+                            new_row = [veh_id, veh_patente, veh_label, int(str(distance_data['vehOdometro']).split('.')[0]),
                                        distance_data['vehHorometro']]
                             # Merge vehicle data with distance data
                             new_row_df = pd.DataFrame([new_row], columns=['vehId', 'vehPatente', 'vehLabel',
                                                                           'vehOdometro', 'vehHorometro'])
                             df = pd.concat([df, new_row_df], ignore_index=True)
                 print(df)
-                df.to_csv('vehicle_data.csv', index=False)
+                df.to_csv('service/vehicle_data.csv', index=False)
             await asyncio.sleep(10)
 
 if __name__ == "__main__":

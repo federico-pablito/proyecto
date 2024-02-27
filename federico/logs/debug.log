@@ -2315,3 +2315,485 @@ Request to /disponibilidadequipos/cargar
 Request to /admin/
 Request to /admin/auth/user/
 Request to /admin/jsi18n/
+Request to /combustible/
+Request to /api/tanques/
+Request to /favicon.ico
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/registrar_repostaje/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /combustible/registrar_consumo/
+Request to /favicon.ico
+Request to /combustible/registrar_repostaje/
+Request to /combustible/registrar_repostaje/
+Request to /api/tanques/
+Request to /combustible/actualizartanques/
+Request to /disponibilidadequipos/
+Request to /disponibilidadequipos/2023/diciembre
+Request to /disponibilidadequipos/2024/enero
+Internal Server Error: /disponibilidadequipos/2024/mayo
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 52, in mostrar_disponibilidad
+    dataset_mes = transpose_disponibilidad(mes, anio, tabla=filter.qs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/disponibilidadequipos/views.py", line 84, in transpose_disponibilidad
+    act = tabla1.get(interno=dato, up=UnidadesdeProduccion.objects.get(id=up), dia=item, mes=mes, anio=anio).actividad.categoria
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 640, in get
+    raise self.model.MultipleObjectsReturned(
+tablamadre.models.DisponibilidadEquipos.MultipleObjectsReturned: get() returned more than one DisponibilidadEquipos -- it returned 5!
+Request to /disponibilidadequipos/2024/mayo
+Request to /admin/
+Request to /favicon.ico
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/16/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /favicon.ico
+Request to /admin/tablamadre/disponibilidadequipos/2/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/3/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/4/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/5/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/6/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/6/change/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /admin/jsi18n/
+Request to /disponibilidadequipos/2024/mayo
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 20, in service_main
+    actualizacion_warrior()
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 47, in actualizacion_warrior
+    dataframe = pd.read_csv('vehicle_data.csv', delimiter=',', header=0)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1024, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 618, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1618, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1878, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'vehicle_data.csv'
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /maestroequipo/
+Request to /maestroequipo/cargar
+Request to /favicon.ico
+Request to /maestroequipo/cargar
+Request to /maestroequipo/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /service/
+Request to /service/
+Request to /service/cargar/CAM 26
+Request to /service/cargar/CAM 26
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 20, in service_main
+    print(actualizacion_warrior())
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 65, in actualizacion_warrior
+    return a
+           ^
+UnboundLocalError: cannot access local variable 'a' where it is not associated with a value
+Request to /service/
+Request to /service/
+Request to /service/
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 20, in service_main
+    print(actualizacion_warrior())
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 54, in actualizacion_warrior
+    if (dataframe.loc[dataframe['vehLabel'] == service.interno, 'vehOdometro'].iloc[0] >=
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Request to /service/
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 20, in service_main
+    print(actualizacion_warrior())
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 54, in actualizacion_warrior
+    if (dataframe.loc[dataframe['vehLabel'] == service.interno, 'vehOdometro'].iloc[0] >=
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Request to /service/
+Internal Server Error: /service/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 20, in service_main
+    print(actualizacion_warrior())
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/service/views.py", line 54, in actualizacion_warrior
+    if (dataframe.loc[dataframe['vehLabel'] == service.interno, 'vehOdometro'].iloc[0] >=
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1192, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1753, in _getitem_axis
+    self._validate_integer(key, axis)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/pandas/core/indexing.py", line 1686, in _validate_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /service/
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /aceites
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Internal Server Error: /aceites/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites/views.py", line 17, in aceite_detail
+    return render(request, 'mostrar_tanques_aceite.html', {'aceite': aceites})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: mostrar_tanques_aceite.html
+Request to /aceites/
+Request to /aceites/
+Request to /aceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /admin/tablamadre/disponibilidadequipos/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /admin/tablamadre/tanqueaceite/
+Request to /admin/jsi18n/
+Request to /aceites/actualizaaceites/
+Request to /admin/tablamadre/tanqueaceite/add/
+Request to /admin/jsi18n/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /admin/tablamadre/tanqueaceite/add/
+Request to /admin/tablamadre/tanqueaceite/
+Request to /admin/jsi18n/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/cargaaceite/
+Request to /aceites/registrarrepostaje/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/
+Request to /aceites/cargaaceite/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /aceites/actualizaaceites/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg

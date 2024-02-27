@@ -75,13 +75,13 @@ def registrar_repostaje(request):
                 tanque = repostaje.tanque
 
                 # Más lógica anti-monos
-                if tanque.cantidadCombustible + repostaje.cantidadLitros > tanque.capacidad:
+                if tanque.cantidad_combustible + repostaje.cantidad_litros > tanque.capacidad:
                     messages.error(request, 'El repostaje excede la capacidad del tanque.')
                     return redirect('repostaje')  # Redirigir de nuevo al formulario de repostaje
 
                 # Si el mono hizo bien el trabajo se guarda
                 repostaje.save()
-                tanque.cantidadCombustible += repostaje.cantidadLitros
+                tanque.cantidad_combustible += repostaje.cantidad_litros
                 tanque.save()
 
                 messages.success(request, 'Repostaje registrado correctamente.')

@@ -19,7 +19,7 @@ urlpatterns = [
     path('disponibilidadequipos/', include('disponibilidadequipos.urls')),
     path('novedades/', include('novedades.urls')),
     path('combustible/', include('combustible.urls')),
-
+    path('aceites/', include('aceites.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

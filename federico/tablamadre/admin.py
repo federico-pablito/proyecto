@@ -4,7 +4,7 @@ from .models import (Choferes, TablaMadre, Internos, Services, UnidadesdeProducc
                      PartesDiarios, Novedades, DisponibilidadEquipos, TipoActividad, MecanicosEncargados, AlquilerEquipos,
                      CertificadosEquiposAlquilados, HistorialService, Talleres, Cronogroma, Urgencia, RequerimientoEquipo,
                      RequerimientoTraslado, TipoVehiculo, FiltrosInternos, NeumaticosInternos, Tanque, Consumo,
-                     Repostaje)
+                     Repostaje, TanqueAceite, ConsumoAceite, RepostajeAceite)
 
 
 # Register your models here.
@@ -33,3 +33,6 @@ admin.site.register(Tanque)
 admin.site.register(Consumo)
 admin.site.register(Repostaje)
 admin.site.register(Permission)
+admin.site.register(TanqueAceite)
+admin.site.register(ConsumoAceite)
+admin.site.register(RepostajeAceite)

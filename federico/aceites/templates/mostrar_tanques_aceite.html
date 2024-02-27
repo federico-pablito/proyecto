@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barriles De Aceite</title>
+    {% load static %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Enlace a jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Enlace a tu archivo JavaScript para manejar la carga de datos -->
+    <script src="{% static 'assets/js/tanqueAceite.js' %}"></script>
+    <style>
+        /* Estilos para el contenedor de tanques */
+        #aceites-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Estilos para cada tanque */
+        .tanque {
+            border: 3px solid #007bff;
+            border-radius: 30px;
+            padding: 40px;
+            width: 600px;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Estilos para el nombre del tanque */
+        .nombre {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #007bff;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        /* Estilos para la cantidad de aceite */
+        .cantidad {
+            font-size: 30px;
+            color: #070303;
+            margin-bottom: 30px;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        /* Estilos para la barra de progreso */
+        .barra-progreso {
+            width: 100%;
+            height: 40px;
+            background-color: #380808;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(173, 5, 5, 0.1);
+        }
+
+        /* Estilos para la barra de progreso llena */
+        .barra-progreso-fill {
+            height: 100%;
+            background-color: #28a745;
+            transition: width 0.5s;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para los botones */
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            text-decoration: none;
+            background-color: #010305;
+            color: rgb(143, 58, 58);
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Estilos para el desplegable */
+        .desplegable {
+            margin-top: 10px;
+        }
+
+        .desplegable select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <button class="text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="{% url 'pablofederico' %}" class="text-red-500 ml-4">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class="text-red-500 ml-4">
+            <i class="fas fa-power-off"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 36px;">Estado de Tanques de Aceite</h1>
+    <div id="aceites-container">
+        <!-- Aquí se cargarán dinámicamente los tanques de aceite -->
+    </div>
+    <!-- Contenedor de botones -->
+    <div class="btn-container">
+        <!-- Botón para registrar consumo -->
+        <a href="{% url 'realizarcarga' %}" class="btn">Registrar Consumo</a>
+        <!-- Botón para registrar repostaje -->
+        <a href="{% url 'realizarrepostaje' %}" class="btn">Registrar Repostaje</a>
+        <!-- Desplegable para seleccionar historial -->
+        <div class="desplegable">
+            <select onchange="window.location.href=this.value;">
+                <option value="#">Historiales</option>
+                <option value="{% url 'historialconsumoaceite' %}">Historial de Consumos</option>
+                <option value="{% url 'historialaceite' %}">Historial de Repostajes</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>
