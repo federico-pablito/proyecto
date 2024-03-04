@@ -8,5 +8,4 @@ urlpatterns = [
     path('registrarrepostaje/', views.registrar_repostaje_aceite, name='realizarrepostaje'),
     path('aceiterepostado/', views.historial_repostaje_aceite, name='historialaceite'),
     path('historialconsumoaceites/', views.historial_consumos_aceite, name='historialconsumoaceite'),
-
 ]

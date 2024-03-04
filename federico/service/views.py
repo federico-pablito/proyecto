@@ -44,26 +44,29 @@ def service_main(request):
 def actualizacion_warrior():
     services = Services.objects.all()
     a = "No hay servicios para actualizar"
+    dataframe = pd.read_csv('service/vehicle_data.csv', sep=',', header=0)
+    names = dataframe['vehLabel'].tolist()
     for service in services:
-        dataframe = pd.read_csv('service/vehicle_data.csv', sep=',', header=0)
-        names = dataframe['vehLabel'].tolist()
         for item in Services.objects.all().values_list('interno', flat=True):
             if Internos.objects.get(id=item).interno in names:
                 a = "Se actualizaron los servicios"
-                if (dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0] >=
-                        dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]):
-                    service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0]
-                else:
-                    service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]
-                service.proximoservice = service.ultimoservice + service.planrealizado_hs
-                service.hsxkmrestantes = service.proximoservice - service.hsxkmactuales
-                if service.hsxkmrestantes > 50:
-                    service.necesidadservice = 'Normal'
-                elif 50 >= service.hsxkmrestantes >= 1:
-                    service.necesidadservice = 'Proximo'
-                elif service.hsxkmrestantes <= 0:
-                    service.necesidadservice = 'Necesita Service'
-                service.save()
+                try:
+                    if (dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0] >=
+                            dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]):
+                        service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehOdometro'].iloc[0]
+                    else:
+                        service.hsxkmactuales = dataframe.loc[dataframe['vehLabel'] == service.interno.interno, 'vehHorometro'].iloc[0]
+                    service.proximoservice = service.ultimoservice + service.planrealizado_hs
+                    service.hsxkmrestantes = service.proximoservice - service.hsxkmactuales
+                    if service.hsxkmrestantes > 50:
+                        service.necesidadservice = 'Normal'
+                    elif 50 >= service.hsxkmrestantes >= 1:
+                        service.necesidadservice = 'Proximo'
+                    elif service.hsxkmrestantes <= 0:
+                        service.necesidadservice = 'Necesita Service'
+                    service.save()
+                except IndexError:
+                    a = "No se encontró el vehículo"
     return a
 
 
