@@ -15,8 +15,8 @@
 - [x] Django
 - [x] PostgreSQL
 - [x] Bootstrap
-- [x] APIS de Tracking
-- [x] APIS de Almacen
+- [x] APIS de Tracking (Warrior)
+- [x] APIS de Almacen (SAP)
 
 ## Implicados en el desarrollo
 - **Agustin Ceballos** - *Desarrollador*
