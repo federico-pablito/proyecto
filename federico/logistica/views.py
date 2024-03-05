@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Logistica, Internos, Reparaciones, TablaMadre, RequerimientoEquipo, RequerimientoTraslado, Cronogroma
+from tablamadre.models import Logistica, Internos, RequerimientoEquipo, RequerimientoTraslado, Cronogroma
 from .forms import logistica_form, requerimiento_equipo_form, requerimiento_traslado_form, cronograma_form
 from io import BytesIO
 from django.http import HttpResponse, HttpResponseForbidden

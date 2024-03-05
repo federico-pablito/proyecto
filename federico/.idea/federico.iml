@@ -9,6 +9,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/disponibilidadequipos/templates" />
+        <option value="$MODULE_DIR$/reparaciones/templates" />
       </list>
     </option>
   </component>

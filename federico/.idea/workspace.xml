@@ -5,11 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/federico.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/federico.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceites/templates/mostrar_tanques_aceite.html" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/templates/mostrar_tanques_aceite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aceites/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/templates/partediario_crear.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/templates/partediario_editar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/templates/partediario_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/templates/partediario_pdf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/partesdiarios/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/filters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0002_remove_reparaciontemporal_taller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0003_alter_reparaciontemporal_fechasalida.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0004_reparaciontemporal_apto_traslado.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/editar_reparaciones.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_crear.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_pdf.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +64,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -43,27 +87,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.warrior.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.federico.executor": "Run",
+    "Python.warrior.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/aceites" />
@@ -106,6 +151,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="federico.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -174,6 +220,8 @@
       <workItem from="1709029875592" duration="3113000" />
       <workItem from="1709132950635" duration="3766000" />
       <workItem from="1709205849753" duration="1677000" />
+      <workItem from="1709553693433" duration="11553000" />
+      <workItem from="1709575335572" duration="12892000" />
     </task>
     <servers />
   </component>

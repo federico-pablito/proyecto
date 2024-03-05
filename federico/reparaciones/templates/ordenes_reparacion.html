@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Orden de Reparación</title>
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crear Orden de Reparación</h1>
+    <form method="post" id="orden-form">
+        {% csrf_token %}
+        <div id="items-container">
+            <!-- Los ítems dinámicos se insertarán aquí -->
+        </div>
+        <button type="button" id="add-item" style="margin: 0.3rem; padding: 0.4rem;">Agregar Ítem</button>
+        <input type="submit" value="Guardar Orden de Reparación" style="margin: 0.3rem; padding: 0.4rem;">
+    </form>
+
+    <script>
+        var addedItems = []; // Lista para llevar un registro de los ítems añadidos
+
+        document.getElementById('add-item').addEventListener('click', function() {
+            const container = document.getElementById('items-container');
+            const uniqueId = Date.now();
+
+            const selectHtml = `
+                <select name="item_code[]" class="item-select" id="select-${uniqueId}">
+                    <option value="">Seleccione un ítem</option>
+                    {% for item in items %}
+                        <option value="{{ item.ItemCode }}" data-stock="{{ item.QuantityOnStock }}">
+                            {{ item.ItemCode }} - {{ item.ItemName }} - Stock: {{ item.QuantityOnStock }}
+                        </option>
+                    {% endfor %}
+                </select>
+            `;
+
+            const itemHtml = `
+                <div class="item" id="item-${uniqueId}" style="padding: 0.5rem">
+                    ${selectHtml}
+                    <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" class="quantity-input" id="quantity-${uniqueId}">
+
+                    <button type="button" class="remove-item" data-id="${uniqueId}">Eliminar</button>
+                    <div class="error-message" id="error-${uniqueId}"></div>
+                </div>
+            `;
+
+            container.insertAdjacentHTML('beforeend', itemHtml);
+        });
+
+        document.getElementById('items-container').addEventListener('click', function(event) {
+            if (event.target.classList.contains('remove-item')) {
+                const itemId = event.target.getAttribute('data-id');
+                document.getElementById('item-' + itemId).remove();
+                updateAddedItemsList();
+            }
+        });
+
+        document.getElementById('items-container').addEventListener('change', function(event) {
+            if (event.target.classList.contains('item-select')) {
+                const selectedOption = event.target.options[event.target.selectedIndex];
+                const maxStock = selectedOption.getAttribute('data-stock');
+                const uniqueId = event.target.id.split('-')[1];
+                const quantityInput = document.getElementById('quantity-' + uniqueId);
+                const errorMessageDiv = document.getElementById('error-' + uniqueId);
+
+                quantityInput.max = maxStock;
+                quantityInput.addEventListener('input', function() {
+                    if (parseInt(quantityInput.value, 10) > parseInt(maxStock, 10)) {
+                        errorMessageDiv.style.display = 'block';
+                        errorMessageDiv.textContent = 'La cantidad seleccionada supera el stock disponible.';
+                        quantityInput.value = 0.0; // Opcional: establecer el valor al máximo permitido
+                    } else {
+                        errorMessageDiv.style.display = 'none';
+                    }
+                });
+
+                const itemCode = selectedOption.value;
+                if (!validateBeforeAdd(itemCode)) {
+                    event.target.value = ""; // Reset select si el ítem ya está añadido
+                    quantityInput.value = ""; // Reset cantidad
+                    errorMessageDiv.style.display = 'none';
+                } else {
+                    addedItems.push(itemCode); // Añadir el ítem al array de control
+                }
+            }
+        });
+
+        function updateAddedItemsList() {
+            addedItems = Array.from(document.querySelectorAll('.item-select'))
+                              .map(select => select.value)
+                              .filter(value => value !== "");
+        }
+
+        function validateBeforeAdd(itemCode) {
+            return !addedItems.includes(itemCode);
+        }
+    </script>
+</body>
+</html>

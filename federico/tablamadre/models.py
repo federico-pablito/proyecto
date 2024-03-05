@@ -2,21 +2,6 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class TablaMadre(models.Model):
-	id = models.AutoField(primary_key=True, serialize=True, auto_created=True)
-	fecha_registro = models.DateTimeField(auto_now_add=True)
-	internos = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	services = models.ForeignKey('Services', on_delete=models.CASCADE, default=1)
-	unidadesdeproduccion = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
-	reparaciones = models.ForeignKey('Reparaciones', on_delete=models.CASCADE, default=1)
-	logistica = models.ForeignKey('Logistica', on_delete=models.CASCADE, default=1)
-	dolardia = models.IntegerField()
-	partesdiarions = models.ForeignKey('PartesDiarios', on_delete=models.CASCADE, default=1)
-
-	def __str__(self):
-		return ', '.join([str(self.internos), str(self.services), str(self.unidadesdeproduccion),
-						  str(self.reparaciones), str(self.logistica), str(self.dolardia), str(self.partesdiarions),
-						  str(self.novedades), str(self.observaciones), str(self.id)])
 
 
 class Internos(models.Model):
@@ -91,30 +76,6 @@ class UnidadesdeProduccion(models.Model):
 	def __str__(self):
 		return str(self.unidadproduccion)
 
-class Reparaciones(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
-	mecanico_encargado = models.ForeignKey('MecanicosEncargados', on_delete=models.CASCADE, default=1)
-	falla_general = models.CharField(max_length=512)
-	fechareparacionestimada = models.DateTimeField()
-	fechaentrada = models.DateTimeField()
-	fechasalida = models.DateTimeField(default=timezone.now)
-	estadoreparacion = models.CharField(max_length=512)
-	estadoequipo = models.CharField(max_length=512)
-	apto_traslado = models.BooleanField(default=False)
-	descripcion = models.CharField(max_length=512)
-
-	class Meta:
-		permissions = [
-			("puede_ver_reparaciones", "Puede ver las reparaciones"),
-
-		]
-
-	def __str__(self):
-		return ', '.join([str(self.interno), str(self.taller), str(self.falla_general),
-						  str(self.mecanico_encargado)])
-
 
 class Logistica(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -138,33 +99,6 @@ class Logistica(models.Model):
 
 	def __str__(self):
 		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
-
-
-class PartesDiarios(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	proveedores = models.CharField(max_length=512)
-	razon_social = models.CharField(max_length=512)
-	cantida_de_quipos = models.IntegerField()
-	kilometraje_inicial = models.IntegerField()
-	kilometraje_final = models.IntegerField()
-	turno_reparacion = models.CharField(max_length=512)
-	horometro = models.IntegerField()
-	hsxkmcarga = models.IntegerField()
-	tipo_combustible = models.CharField(max_length=512)
-	tipo_gasoil = models.CharField(max_length=512)
-	tipo_nafta = models.CharField(max_length=512)
-	litros_gasoil = models.IntegerField()
-	litros_nafta = models.IntegerField()
-	tipo_aceite = models.CharField(max_length=512)
-	litros_aceite = models.IntegerField()
-	maquinista = models.CharField(max_length=512)
-	kmsxhs = models.IntegerField()
-	tipo_de_falla = models.CharField(max_length=512, default='No hay falla')
-	reparado = models.BooleanField(default=False)
-
-	def __str__(self):
-		return ', '.join([str(self.interno), str(self.cantida_de_quipos), str(self.tipo_de_falla), str(self.reparado)])
 
 
 class Novedades(models.Model):

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if procesado %}
+        <h1>Su peticion ha sido realizada con exito a excepcion de los siguientes items</h1>
+    {% else %}
+        <h1>Ha ocurrido un error en su peticion</h1>
+        <h1>Su pedido fue:</h1>
+    {% endif %}
+    <h1>Informe de este faltante al area pertinente</h1>
+    {% for item in items_not_disc %}
+        <p>{{ item.item_code }} - {{ item.item_name }}</p>
+    {% endfor %}
+</body>
+</html>

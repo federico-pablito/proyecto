@@ -11,16 +11,14 @@ urlpatterns = [
     path('maestroequipo/', include('maestroequipos.urls')),
     path('service/', include('service.urls')),
     path('unidadesproduccion/', include('unidadesproduccion.urls')),
-    path('tablamadre/', include('tablamadre.urls')),
-    path('reparaciones/', include('reparaciones.urls')),
     path('logistica/', include('logistica.urls')),
-    path('partesdiarios/', include('partesdiarios.urls')),
     path('maininicio/', include('login.urls')),
     path('disponibilidadequipos/', include('disponibilidadequipos.urls')),
     path('novedades/', include('novedades.urls')),
     path('combustible/', include('combustible.urls')),
     path('aceites/', include('aceites.urls')),
+    path('reparaciones/', include('reparaciones.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

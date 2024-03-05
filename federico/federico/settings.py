@@ -50,15 +50,14 @@ INSTALLED_APPS = [
     'service',
     'unidadesproduccion',
     'tablamadre',
-    'reparaciones',
     'logistica',
-    'partesdiarios',
     'disponibilidadequipos',
     'login',
     'novedades',
     'widget_tweaks',
     'combustible',
     'aceites',
+    'reparaciones',
 ]
 
 MIDDLEWARE = [

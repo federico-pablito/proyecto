@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Internos, TablaMadre, Reparaciones, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos, NeumaticosInternos
+from tablamadre.models import Internos, CertificadosEquiposAlquilados, DisponibilidadEquipos, AlquilerEquipos, FiltrosInternos, NeumaticosInternos
 from .forms import internosforms, TableVariable, AlquilerEquiposForm, CertificadosEquiposAlquiladosForm, FiltroForm, NeumaticoForm
 from .filters import internosfilter, alquilerfilter
 from io import BytesIO

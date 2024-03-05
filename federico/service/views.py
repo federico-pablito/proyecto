@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Services, TablaMadre, Internos, Reparaciones, HistorialService
+from tablamadre.models import Services, Internos, HistorialService
 from .forms import service_form, desplegable_internos
 from django.forms.models import model_to_dict
 from .filters import servicefilter

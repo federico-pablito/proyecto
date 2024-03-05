@@ -2946,3 +2946,1208 @@ Request to /api/tanques/
 Request to /combustible/actualizartanques/
 Request to /api/tanques/
 Request to /combustible/actualizartanques/
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6.reparaciones_ordendereparacion' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 9, in crear_orden
+    orden = OrdenDeReparacion.objects.create()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+django.db.utils.ProgrammingError: (1146, "Table '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6.reparaciones_ordendereparacion' doesn't exist")
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 20, in crear_orden
+    return redirect('alguna_url_para_redireccionar')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/tablamadre/tanqueaceite/
+Request to /admin/tablamadre/tanqueaceite/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/1/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Internal Server Error: /admin/reparaciones/item/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+Request to /admin/reparaciones/item/
+Internal Server Error: /admin/reparaciones/item/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+Request to /admin/reparaciones/item/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Internal Server Error: /admin/reparaciones/item/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+                                                           ^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/backends/mysql/base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/MySQLdb/connections.py", line 257, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (1054, "Unknown column 'reparaciones_item.id' in 'field list'")
+Request to /admin/reparaciones/item/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 20, in crear_orden
+    return redirect('alguna_url_para_redireccionar')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/
+Request to /admin/login/
+Request to /admin/login/
+Request to /admin/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/1/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/1/history/
+Request to /admin/reparaciones/ordendereparacion/1/change/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 21, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Asegúrate de reemplazar esto con una URL válida en tu aplicación
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/2/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/1/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/item/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /favicon.ico
+Request to /admin/reparaciones/item/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 15, in crear_orden
+    item, created = Item.objects.get_or_create(ItemCode=item_code)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ItemCode' into field. Choices are: descripcion, id, item_id, nombre, ordendereparacion, ordendereparacionitem
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 15, in crear_orden
+    item, created = Item.objects.get_or_create(ItemCode=item_code)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ItemCode' into field. Choices are: descripcion, id, item_id, nombre, ordendereparacion, ordendereparacionitem
+Request to /reparaciones/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 15, in crear_orden
+    item, created = Item.objects.get_or_create(ItemCode=item_code)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'ItemCode' into field. Choices are: descripcion, id, item_id, nombre, ordendereparacion, ordendereparacionitem
+Request to /reparaciones/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/item/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/add/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 17, in crear_orden
+    OrdenDeReparacionItem.objects.create(
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/query.py", line 656, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: OrdenDeReparacionItem() got unexpected keyword arguments: 'descripcion'
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 27, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/2/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacion/7/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/2/change/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 27, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /favicon.ico
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/4/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /favicon.ico
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 27, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/7/change/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacion/
+Request to /favicon.ico
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 28, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacion/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 28, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /main/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /favicon.ico
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/7/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/7/change/
+Request to /admin/jsi18n/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/reparaciones/ordendereparacionitem/4/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/3/change/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /favicon.ico
+Request to /admin/reparaciones/ordendereparacionitem/2/change/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 19, in crear_orden
+    if restar_stock_de_api(item_code, cantidad) == True:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 112, in restar_stock_de_api
+    inventory_exit_response = session.post(inventory_exit_url, json=inventory_exit_payload,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 19, in crear_orden
+    api_response = restar_stock_de_api(item_code, cantidad)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 113, in restar_stock_de_api
+    inventory_exit_response = session.post(inventory_exit_url, json=inventory_exit_payload,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 19, in crear_orden
+    api_response = restar_stock_de_api(item_code, cantidad)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 111, in restar_stock_de_api
+    inventory_exit_response = session.post(inventory_exit_url, json=inventory_exit_payload,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 637, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/requests/models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 35, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 35, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Request to /admin/reparaciones/ordendereparacionitem/
+Request to /admin/jsi18n/
+Request to /admin/reparaciones/ordendereparacion/
+Request to /admin/jsi18n/
+Request to /reparaciones/
+Request to /favicon.ico
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 22, in crear_orden
+    orden_de_reparacion=orden,
+                        ^^^^^
+NameError: name 'orden' is not defined
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 17, in crear_orden
+    api_response = restar_stock_de_api(item_code, cantidad)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 116, in restar_stock_de_api
+    "Quantity": float(cantidad),
+                ^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: ''
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 44, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
+Internal Server Error: /reparaciones/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 44, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /reparaciones/
+Request to /reparaciones/
