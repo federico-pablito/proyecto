@@ -22,7 +22,7 @@ class Internos(models.Model):
 	tarjeta_pdf = models.CharField(max_length=512, default="No")
 	# es propietario o proveedor, posibilidad de cambiar eso
 	propietario = models.CharField(max_length=512)
-	chofer = models.CharField(max_length=512)
+	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
 	alquilado = models.BooleanField(default=False)
 	valorpesos = models.IntegerField()
 	valordolares = models.IntegerField()
@@ -30,7 +30,7 @@ class Internos(models.Model):
 	actividadvehiculo = models.CharField(max_length=512)
 	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
 	dominio = models.CharField(max_length=255, default='default_value')
-	tipovehiculo = models.CharField(max_length=255, default='valor_predeterminado')
+	tipovehiculo = models.ForeignKey('TipoVehiculo', on_delete=models.CASCADE, default=1)
 
 	class Meta:
 		permissions = [
@@ -177,6 +177,7 @@ class MecanicosEncargados(models.Model):
 	codigo = models.CharField(max_length=512)
 	nombre = models.CharField(max_length=512)
 	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
+	precio_hora = models.PositiveIntegerField()
 
 	def __str__(self):
 		return ', '.join([str(self.codigo), str(self.nombre), str(self.taller)])
@@ -184,6 +185,7 @@ class MecanicosEncargados(models.Model):
 
 class AlquilerEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	solicitante = models.CharField(max_length=512)
 	revision = models.CharField(max_length=11, default='REVISIÓN 1')
 	r_comp = models.CharField(max_length=10, default='R-COMP-07')
@@ -201,14 +203,9 @@ class AlquilerEquipos(models.Model):
 	carnet_operario_fecha_vencimiento = models.DateTimeField()
 	art_operario = models.BooleanField(default=False)
 	observaciones_equipo = models.CharField(max_length=512)
-	tipo_vehiculo = models.CharField(max_length=512)
-	modelo = models.CharField(max_length=512)
-	marca = models.CharField(max_length=512)
-	dominio = models.CharField(max_length=512)
 	titulo_tarjeta_verde = models.CharField(max_length=512)
 	kms = models.IntegerField()
 	estado = models.CharField(max_length=7)
-	seguro_equipo = models.BooleanField(default=False)
 	inspeccion_equipo = models.BooleanField(default=False)
 	inspeccion_equipo_responsable = models.CharField(max_length=512)
 	forma_pago = models.CharField(max_length=512)
@@ -226,7 +223,7 @@ class AlquilerEquipos(models.Model):
 		]
 
 	def __str__(self):
-		return ', '.join([str(self.id), str(self.tipo_vehiculo), str(self.dominio)])
+		return ', '.join([str(self.id), str(self.interno), str(self.solicitante), str(self.fecha)])
 
 
 class CertificadosEquiposAlquilados(models.Model):

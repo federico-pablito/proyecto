@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+import reparaciones
+
 
 
 urlpatterns = [
@@ -18,6 +20,9 @@ urlpatterns = [
     path('combustible/', include('combustible.urls')),
     path('aceites/', include('aceites.urls')),
     path('reparaciones/', include('reparaciones.urls')),
+    path('cargar_orden', reparaciones.views.crear_orden, name='crear_orden'),
+    path('ordenes', reparaciones.views.main_ordenes, name='ordenes'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

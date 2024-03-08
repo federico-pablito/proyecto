@@ -1,5 +1,5 @@
 from django import forms
-from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, CertificadosEquiposAlquilados, FiltrosInternos
+from tablamadre.models import Internos, UnidadesdeProduccion, AlquilerEquipos, CertificadosEquiposAlquilados, FiltrosInternos, TipoVehiculo, Choferes
 
 
 class internosforms(forms.ModelForm):
@@ -8,7 +8,7 @@ class internosforms(forms.ModelForm):
                                 label='UP')
     marca = forms.CharField(required=True)
     modelo = forms.CharField(required=True)
-    tipovehiculo = forms.CharField(required=True, label='Tipo V')
+    tipovehiculo = forms.ModelChoiceField(queryset=TipoVehiculo.objects.all(), empty_label=None, required=True)
     chasis = forms.CharField(required=True)
     motor = forms.CharField(required=True)
     dominio = forms.CharField(required=True)
@@ -22,7 +22,7 @@ class internosforms(forms.ModelForm):
     tarjeta = forms.CharField(required=False)
     tarjeta_pdf = forms.CharField(required=False)
     propietario = forms.CharField(required=True)
-    chofer = forms.CharField(required=True)
+    chofer = forms.ModelChoiceField(queryset=Choferes.objects.all(), empty_label=None, required=True)
     alquilado = forms.ChoiceField(choices=[(False, 'No'), (True, 'Si')], required=False, label='Alquilado')
     valorpesos = forms.IntegerField(required=True, label='Valor Ars')
     valordolares = forms.IntegerField(required=True, label='Valor Usd')
@@ -78,6 +78,7 @@ class TableVariable(forms.Form):
 
 
 class AlquilerEquiposForm(forms.ModelForm):
+    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label='Seleccione un interno', required=True)
     solicitante = forms.CharField(required=True)
     fecha = forms.DateField(required=True,
                             widget=forms.DateInput(attrs={'type': 'date'}),
@@ -100,10 +101,6 @@ class AlquilerEquiposForm(forms.ModelForm):
                                                         label='Fecha')
     art_operario = forms.BooleanField(required=False, initial=False)
     observaciones_equipo = forms.CharField(required=False)
-    tipo_vehiculo = forms.CharField(required=True)
-    modelo = forms.CharField(required=True)
-    marca = forms.CharField(required=True)
-    dominio = forms.CharField(required=True)
     titulo_tarjeta_verde = forms.CharField(required=True)
     kms = forms.IntegerField(required=True)
     estado = forms.CharField(required=True)
@@ -120,10 +117,10 @@ class AlquilerEquiposForm(forms.ModelForm):
 
     class Meta:
         model = AlquilerEquipos
-        fields = ['solicitante', 'fecha', 'monto_contratacion', 'plazo_pago', 'observaciones_contratacion',
+        fields = ['interno', 'solicitante', 'fecha', 'monto_contratacion', 'plazo_pago', 'observaciones_contratacion',
                   'fecha_inicio_tarea', 'periodo_contratacion', 'periodo_finalizacion', 'up', 'combustible_incluido',
                   'operario_incuido', 'carnet_operario_vigente', 'carnet_operario_fecha_vencimiento', 'art_operario',
-                  'observaciones_equipo', 'tipo_vehiculo', 'modelo', 'marca', 'dominio', 'titulo_tarjeta_verde', 'kms',
+                  'observaciones_equipo', 'titulo_tarjeta_verde', 'kms',
                   'estado', 'seguro_equipo', 'inspeccion_equipo', 'inspeccion_equipo_responsable', 'forma_pago',
                   'condicion_pago', 'proveedor', 'razon_social', 'cbu', 'telefono', 'autorizado']
 

@@ -115,6 +115,8 @@
         {% csrf_token %}
             <div class="conteiner">
             <div class="columna">
+            {{ form.interno.label_tag }}{{ form.interno }}
+            <br>
             {{ form.solicitante.label_tag }}{{ form.solicitante }}
             <br>
             {{ form.fecha.label_tag }}{{ form.fecha }}
@@ -145,16 +147,8 @@
             {{ form.art_operario.label_tag }}{{ form.art_operario }}
             <br>
             {{ form.observaciones_equipo.label_tag }}{{ form.observaciones_equipo }}    
-            <br>
-            {{ form.tipo_vehiculo.label_tag }}{{ form.tipo_vehiculo }}
             </div>
             <div class="columna">
-            {{ form.modelo.label_tag }}{{ form.modelo }}
-            <br>
-            {{ form.marca.label_tag }}{{ form.marca }}
-            <br>
-            {{ form.dominio.label_tag }}{{ form.dominio }}
-            <br>
             {{ form.titulo_tarjeta_verde.label_tag }}{{ form.titulo_tarjeta_verde }}
             <br>
             {{ form.kms.label_tag }}{{ form.kms }}

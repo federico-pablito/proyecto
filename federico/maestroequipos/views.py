@@ -24,6 +24,7 @@ def mainmaestroequipos(request):
         filter = internosfilter(request.GET, queryset=internos)
         if filter.is_valid():
             internos = filter.qs
+        valor_total_pesos, valor_total_dolares = get_valores_totales(internos)
         if request.method == 'POST':
             form = TableVariable(request.POST)
             if form.is_valid():
@@ -56,7 +57,9 @@ def mainmaestroequipos(request):
                 crear_pdf = request.POST.get('Crear_PDF', None)
                 if 'columna' in request.POST:
                     return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                                'form_values': form_values, 'filter': filter})
+                                                                'form_values': form_values, 'filter': filter,
+                                                                'alquiler': False, 'formulario': formulario,
+                                                                'valor_total_pesos': valor_total_pesos, 'valor_total_dolares': valor_total_dolares})
                 elif 'crear_pdf' in request.POST:
                     form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
                     return redirect('generate_pdf_view', form_values=form_values_str)
@@ -71,18 +74,36 @@ def mainmaestroequipos(request):
                                        'itv_pdf_value': False, 'titulo_pdf_value': False, 'tarjeta_value': False,
                                        'tarjeta_pdf_value': False, 'propietario_value': True, 'chofer_value': True,
                                        'alquilado_value': False, 'valorpesos_value': False, 'valordolares_value': False,
-                                       'orden_value': True, 'actividad_value': True}})
+                                       'orden_value': True, 'actividad_value': True},
+                       'valor_total_pesos': valor_total_pesos, 'valor_total_dolares': valor_total_dolares})
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def get_valores_totales(internos):
+    valor_total_pesos = 0
+    valor_total_dolares = 0
+    for interno in internos:
+        valor_total_pesos += interno.valorpesos
+        valor_total_dolares += interno.valordolares
+    return valor_total_pesos, valor_total_dolares
 
 
 @login_required
 def alquileresinternos(request):
     if request.user.has_perm('tablamadre.puede_ver_alquilados'):
         internos = Internos.objects.filter(alquilado=True)
+        if request.method == 'get':
+            formulario = internosforms(request.POST)
+            if formulario.is_valid():
+                formulario.save()
+        else:
+            # Si no se envió el formulario, crea una instancia del formulario
+            formulario = internosforms()
         filter = alquilerfilter(request.GET, queryset=internos)
         if filter.is_valid():
             internos = filter.qs
+        valor_total_pesos, valor_total_dolares = get_valores_totales(internos)
         if request.method == 'POST':
             form = TableVariable(request.POST)
             if form.is_valid():
@@ -115,7 +136,9 @@ def alquileresinternos(request):
                 crear_pdf = request.POST.get('Crear_PDF', None)
                 if 'columna' in request.POST:
                     return render(request, 'MainMaestro.html', {'internos': internos, 'form': form,
-                                                                'form_values': form_values, 'filter': filter})
+                                                                'form_values': form_values, 'filter': filter,
+                                                                'alquiler': True, 'valor_total_pesos': valor_total_pesos,
+                                                                'valor_total_dolares': valor_total_dolares, 'formulario': formulario})
                 elif 'crear_pdf' in request.POST:
                     form_values_str = '&'.join([f"{key}={value}" for key, value in form_values.items()])
                     return redirect('generate_pdf_view', form_values=form_values_str)
@@ -138,7 +161,8 @@ def alquileresinternos(request):
                                        'itv_pdf_value': False, 'titulo_pdf_value': False, 'tarjeta_value': False,
                                        'tarjeta_pdf_value': False, 'propietario_value': True, 'chofer_value': True,
                                        'alquilado_value': False, 'valorpesos_value': False, 'valordolares_value': False,
-                                       'orden_value': True, 'actividad_value': True}})
+                                       'orden_value': True, 'actividad_value': True},
+                       'valor_total_pesos': valor_total_pesos, 'valor_total_dolares': valor_total_dolares})
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 

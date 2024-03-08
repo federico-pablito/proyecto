@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Crear Orden de Reparación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .error-message {
             color: red;
@@ -10,15 +11,15 @@
         }
     </style>
 </head>
-<body>
-    <h1>Crear Orden de Reparación</h1>
-    <form method="post" id="orden-form">
+<body class="bg-gray-50 p-60 py-16">
+    <h1 class="text-2xl font-bold mb-6">Crear Orden de Reparación</h1>
+    <form method="post" id="orden-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {% csrf_token %}
-        <div id="items-container">
+        <div id="items-container" class="mb-4">
             <!-- Los ítems dinámicos se insertarán aquí -->
         </div>
-        <button type="button" id="add-item" style="margin: 0.3rem; padding: 0.4rem;">Agregar Ítem</button>
-        <input type="submit" value="Guardar Orden de Reparación" style="margin: 0.3rem; padding: 0.4rem;">
+        <button type="button" id="add-item" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Agregar Ítem</button>
+        <input type="submit" value="Guardar Orden de Reparación" class="ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
     </form>
 
     <script>
@@ -29,7 +30,7 @@
             const uniqueId = Date.now();
 
             const selectHtml = `
-                <select name="item_code[]" class="item-select" id="select-${uniqueId}">
+                <select name="item_code[]" class="item-select form-select appearance-none block w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="select-${uniqueId}">
                     <option value="">Seleccione un ítem</option>
                     {% for item in items %}
                         <option value="{{ item.ItemCode }}" data-stock="{{ item.QuantityOnStock }}">
@@ -40,12 +41,12 @@
             `;
 
             const itemHtml = `
-                <div class="item" id="item-${uniqueId}" style="padding: 0.5rem">
+                <div class="item flex flex-col md:flex-row items-center md:space-x-3 py-2" id="item-${uniqueId}" style="padding: 0.5rem">
                     ${selectHtml}
-                    <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" class="quantity-input" id="quantity-${uniqueId}">
+                    <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" class="quantity-input form-input appearance-none block w-auto px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="quantity-${uniqueId}">
 
-                    <button type="button" class="remove-item" data-id="${uniqueId}">Eliminar</button>
-                    <div class="error-message" id="error-${uniqueId}"></div>
+                    <button type="button" class="remove-item bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 md:mt-0" data-id="${uniqueId}">Eliminar</button>
+                    <div class="error-message text-red-500 text-sm mt-2" id="error-${uniqueId}"></div>
                 </div>
             `;
 

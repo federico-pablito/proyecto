@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'combustible',
     'aceites',
     'reparaciones',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

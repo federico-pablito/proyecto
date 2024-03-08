@@ -346,15 +346,27 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{% url 'reparaciones-main' %}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Lista de Reparaciones</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{% url 'cargar_reparacion' %}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Nueva Reparacion</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'crear_orden' %}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Cargar Orden</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'ordenes' %}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Ordenes</p>
           </a>
         </li>
       </ul>

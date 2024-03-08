@@ -341,6 +341,17 @@
             </div>
         </form>
     </div>
+    {% if alquiler %}
+        <div style="text-align: center; align-items: center;">
+            <h1 style="font-size: x-large;">Cantidad Pesos en alquileres ${{ valor_total_pesos }}</h1>
+            <h1 style="font-size: x-large;">Cantidad Dolares en alquileres ${{ valor_total_dolares }}</h1>
+        </div>
+    {% else %}
+        <div style="text-align: center; align-items: center;">
+            <h1 style="font-size: x-large;">Cantidad Pesos ${{ valor_total_pesos }}</h1>
+            <h1 style="font-size: x-large;">Cantidad Dolares ${{ valor_total_dolares }}</h1>
+        </div>
+    {% endif %}
     <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;margin-right: 12rem;">
         <table class="table table-bordered" style="width: 100%;margin-top: 20px;margin-left: 12rem;">
             <thead>
