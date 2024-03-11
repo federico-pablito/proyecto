@@ -5,34 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../federico.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/federico/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maestroequipos/templates/formulario_alquileres.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/formulario_alquileres.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_crear.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0002_alter_ordendereparacion_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0003_remove_ordendereparacion_items_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/templates/error_discount.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/error_discount.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/templates/ordenes_reparacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/ordenes_reparacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0001_initial_squashed_0015_consumo_repostaje_tanque_delete_consumos_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0016_alter_alquilerequipos_options_alter_consumo_options_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0017_tanqueaceite_repostajeaceite_consumoaceite.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0018_remove_reparaciones_interno_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +183,7 @@
       <workItem from="1709734367619" duration="88000" />
       <workItem from="1709734789370" duration="3864000" />
       <workItem from="1709766064458" duration="24594000" />
-      <workItem from="1709914513217" duration="1429000" />
+      <workItem from="1709914513217" duration="5276000" />
     </task>
     <servers />
   </component>
