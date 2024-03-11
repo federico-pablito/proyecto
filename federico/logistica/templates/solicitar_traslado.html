@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Traslado</title>
+    <!-- Enlace al archivo CSS de Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-sans">
+    <div class="container mx-auto py-12 px-4">
+        <h1 class="text-3xl font-semibold text-center text-red-600 mb-8">Solicitar Traslado</h1>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <button onclick="openPopup('form_one')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar Solicitud (Solo Producción y Equipos)</button>
+            <button onclick="openPopup('form_two')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar Solicitud (Solo Producción)</button>
+            <button onclick="openPopup('form_combination')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar Solicitud (Producción y Equipos)</button>
+        </div>
+
+        <!-- Formularios ocultos -->
+        <div id="form_one" class="mt-8 hidden">
+            <form method="post">
+                {% csrf_token %}
+                {{ form_one.as_p }}
+                <input type="submit" name="FormUno" value="Enviar Solicitud" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+            </form>
+        </div>
+        <div id="form_two" class="mt-8 hidden">
+            <form method="post">
+                {% csrf_token %}
+                {{ form_two.as_p }}
+                <input type="submit" name="FormDos" value="Enviar Solicitud" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+            </form>
+        </div>
+        <div id="form_combination" class="mt-8 hidden">
+            <form method="post">
+                {% csrf_token %}
+                {{ form_combination.as_p }}
+                <input type="submit" name="FormCombinacion" value="Enviar Solicitud" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript para controlar la apertura de los formularios -->
+    <script>
+        function openPopup(formType) {
+            // Oculta todos los formularios
+            document.querySelectorAll('.container > div').forEach(function(form) {
+                form.classList.add('hidden');
+            });
+            // Muestra el formulario correspondiente
+            document.getElementById(formType).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.models import Permission, User
-from .models import (Choferes, Internos, Services, UnidadesdeProduccion, Logistica,
+from .models import (Choferes, Internos, Services, UnidadesdeProduccion,
                      Novedades, DisponibilidadEquipos, TipoActividad, MecanicosEncargados, AlquilerEquipos,
-                     CertificadosEquiposAlquilados, HistorialService, Talleres, Cronogroma, Urgencia, RequerimientoEquipo,
-                     RequerimientoTraslado, TipoVehiculo, FiltrosInternos, NeumaticosInternos, Tanque, Consumo,
+                     CertificadosEquiposAlquilados, HistorialService, Talleres, Urgencia,
+                     TipoVehiculo, FiltrosInternos, NeumaticosInternos, Tanque, Consumo,
                      Repostaje, TanqueAceite, ConsumoAceite, RepostajeAceite)
 
 
@@ -11,7 +11,6 @@ from .models import (Choferes, Internos, Services, UnidadesdeProduccion, Logisti
 admin.site.register(Internos)
 admin.site.register(Services)
 admin.site.register(UnidadesdeProduccion)
-admin.site.register(Logistica)
 admin.site.register(Novedades)
 admin.site.register(Choferes)
 admin.site.register(DisponibilidadEquipos)
@@ -21,9 +20,7 @@ admin.site.register(MecanicosEncargados)
 admin.site.register(AlquilerEquipos)
 admin.site.register(CertificadosEquiposAlquilados)
 admin.site.register(HistorialService)
-admin.site.register(RequerimientoEquipo)
-admin.site.register(RequerimientoTraslado)
-admin.site.register(Cronogroma)
+
 admin.site.register(TipoVehiculo)
 admin.site.register(Urgencia)
 admin.site.register(FiltrosInternos)

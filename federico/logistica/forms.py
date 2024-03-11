@@ -1,80 +1,37 @@
 from django import forms
-from tablamadre.models import (Logistica, Internos, UnidadesdeProduccion, TipoVehiculo, Urgencia, RequerimientoEquipo,
-                               RequerimientoTraslado, Cronogroma)
+from .models import FormOne, FormTwo, FormCombination
 
 
-class logistica_form(forms.ModelForm):
-    model = Logistica
-    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Internos')
-    carreton = forms.CharField(required=True)
-    choferlogistica = forms.CharField(required=True)
-    numeroremito = forms.CharField(required=True)
-    proveedor = forms.CharField(required=True)
-    origen = forms.CharField(required=True)
-    destino = forms.CharField(required=True)
-    kmentredestinos = forms.IntegerField(required=True)
-    transporte = forms.CharField(required=True)
-    consumokmxlitros = forms.FloatField(required=False)
-    valorviaje = forms.IntegerField(required=False)
-    descripcion = forms.CharField(required=False)
-    class Meta:
-        model = Logistica
-        fields = ['interno', 'carreton', 'choferlogistica', 'numeroremito', 'proveedor', 'origen', 'destino',
-                  'kmentredestinos', 'transporte', 'consumokmxlitros', 'valorviaje']
-
-
-class requerimiento_equipo_form(forms.ModelForm):
-    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='UP')
-    tipo_equipo = forms.ModelChoiceField(queryset=TipoVehiculo.objects.all(), empty_label=None, required=False, label='Tipo de Equipo')
-    fecha_inicial = forms.DateField(
-        required=True,
-        widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
-    )
-    fecha_final = forms.DateField(
-        required=True,
-        widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
-    )
-    solicitante = forms.CharField(required=True)
-    urgencia = forms.ModelChoiceField(queryset=Urgencia.objects.all(), empty_label=None, required=False, label='Urgencia')
+class FormUno(forms.ModelForm):
+    fecha_requeridoobra = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'date'}))
+    tope_requerimiento = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'date'}))
 
     class Meta:
-        model = RequerimientoEquipo
-        fields = ['up', 'tipo_equipo', 'fecha_inicial', 'fecha_final', 'solicitante', 'urgencia']
-        widgets = {
-            'fecha_inicial': forms.DateInput(attrs={'type': 'date'}),
-            'fecha_final': forms.DateInput(attrs={'type': 'date'}),
-        }
+        model = FormOne
+        exclude = ['fecha_pedido']  # Excluye el campo no editable del formulario
+        fields = ['id', 'up_solicita', 'fecha_requeridoobra', 'nivel_urgencia',
+                  'repuesto', 'tipo_equipo', 'descripcion_equipo', 'motivo_requerimiento', 'tope_requerimiento']
 
 
-class requerimiento_traslado_form(forms.ModelForm):
-    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Internos')
-    origen = forms.CharField(required=True)
-    destino = forms.CharField(required=True)
-    fecha = forms.DateField(
-        required=True,
-        widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
-    )
+class FormDos(forms.ModelForm):
+    fecha_requeridoobra = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'date'}))
 
     class Meta:
-        model = RequerimientoTraslado
-        fields = ['interno', 'origen', 'destino', 'fecha']
-        widgets = {
-            'fecha': forms.DateInput(attrs={'type': 'date'}),
-        }
+        model = FormTwo
+        exclude = ['fecha_pedido']
+        fields = ['id', 'up_solicita', 'fecha_pedido', 'fecha_requeridoobra', 'nivel_urgencia',
+                  'solicitante', 'materiales', 'descripcion']
 
 
-class cronograma_form(forms.ModelForm):
-    interno = forms.ModelChoiceField(queryset=Internos.objects.all(), empty_label=None, required=False, label='Internos')
-    up = forms.ModelChoiceField(queryset=UnidadesdeProduccion.objects.all(), empty_label=None, required=False, label='UP')
-    fecha = forms.DateField(
-        required=True,
-        widget=forms.DateInput(attrs={'type': 'date'}),  # Use the 'date' input type
-    )
-    motivo_atraso = forms.CharField(required=True)
+class FormCombinacion(forms.ModelForm):
+    fecha_requeridoobra = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'date'}))
 
     class Meta:
-        model = Cronogroma
-        fields = ['interno', 'up', 'fecha', 'motivo_atraso']
-        widgets = {
-            'fecha': forms.DateInput(attrs={'type': 'date'}),
-        }
+        model = FormCombination
+        exclude = ['fecha_pedido']
+        fields = ['id', 'up_solicita', 'fecha_pedido', 'fecha_requeridoobra', 'nivel_urgencia',
+                  'materiales', 'repuesto', 'descripcion']
+
+
+class MotivoRechazoForm(forms.Form):
+    motivo = forms.CharField(label='Motivo de rechazo', widget=forms.Textarea(attrs={'rows': 3, 'cols': 40}))

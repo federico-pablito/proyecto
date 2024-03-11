@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprobar o Rechazar Traslado</title>
+    <!-- Enlace al archivo CSS de Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-sans">
+    <div class="container mx-auto py-12 px-4">
+        <h1 class="text-3xl font-semibold text-center text-red-600 mb-8">Aprobar o Rechazar Traslado</h1>
+
+        <!-- Mostrar el formulario de traslado -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-red-600 mb-4">Detalles del Traslado</h2>
+            <p>ID: {{ traslado.id }}</p>
+            <!-- Aquí puedes mostrar más detalles del traslado según sea necesario -->
+        </div>
+
+        <!-- Formulario de motivo de rechazo -->
+        <div class="mt-8">
+            <h2 class="text-xl font-semibold text-red-600 mb-4">Motivo de Rechazo</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ motivo_form.as_p }}
+                <input type="submit" value="Rechazar Traslado" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

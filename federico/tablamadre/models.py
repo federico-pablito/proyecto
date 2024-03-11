@@ -77,30 +77,6 @@ class UnidadesdeProduccion(models.Model):
 		return str(self.unidadproduccion)
 
 
-class Logistica(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	carreton = models.CharField(max_length=512)
-	choferlogistica = models.CharField(max_length=512)
-	numeroremito = models.CharField(max_length=512)
-	proveedor = models.CharField(max_length=512)
-	origen = models.CharField(max_length=512)
-	destino = models.CharField(max_length=512)
-	kmentredestinos = models.IntegerField()
-	transporte = models.CharField(max_length=512)
-	consumokmxlitros = models.FloatField(default=0)
-	valorviaje = models.IntegerField(default=0)
-
-	class Meta:
-		permissions = [
-			("puede_ver_logistica", "Puede ver la logistica"),
-
-		]
-
-	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.numeroremito), str(self.origen), str(self.destino)])
-
-
 class Novedades(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -271,48 +247,6 @@ class HistorialService(models.Model):
 		return ', '.join(
 			[str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
 
-
-class RequerimientoEquipo(models.Model):
-	id = models.AutoField(primary_key=True)
-	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
-	tipo_equipo = models.CharField(max_length=512)
-	fecha_inicial = models.DateTimeField()
-	fecha_final = models.DateTimeField()
-	solicitante	= models.CharField(max_length=512)
-	urgencia = models.CharField(max_length=512)
-	aprobado = models.BooleanField(default=False)
-
-	def __str__(self):
-		return ', '.join([str(self.id), str(self.tipo_equipo), str(self.up), str(self.aprobado)])
-
-
-class RequerimientoTraslado(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	origen = models.CharField(max_length=512)
-	destino = models.CharField(max_length=512)
-	fecha = models.DateTimeField()
-	aprobado = models.BooleanField(default=False)
-
-	class Meta:
-		permissions = [
-			("puede_ver_requerimientos", "Puede ver los requerimientos"),
-
-		]
-
-	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.origen), str(self.fecha), str(self.aprobado)])
-
-
-class Cronogroma(models.Model):
-	id = models.AutoField(primary_key=True)
-	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
-	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
-	fecha = models.DateTimeField()
-	motivo_atraso = models.CharField(max_length=512, default='No hay motivo')
-
-	def __str__(self):
-		return ', '.join([str(self.id), str(self.interno), str(self.up), str(self.fecha)])
 
 
 class TipoVehiculo(models.Model):

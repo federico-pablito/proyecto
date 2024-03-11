@@ -1,213 +1,92 @@
 from django.shortcuts import render, redirect
-from tablamadre.models import Logistica, Internos, RequerimientoEquipo, RequerimientoTraslado, Cronogroma
-from .forms import logistica_form, requerimiento_equipo_form, requerimiento_traslado_form, cronograma_form
-from io import BytesIO
-from django.http import HttpResponse, HttpResponseForbidden
-from django.template.loader import get_template
-from django.views import View
-from xhtml2pdf import pisa
-from django.contrib.auth.decorators import login_required
-from utils.modelo_a_excel import model_to_excel
-
-# Create your views here.
-@login_required
-def logistica_main(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        logistica = Logistica.objects.all()
-        # HACER EL FILTRO
-        return render(request, 'logisticatabla.html', {'logisticas': logistica})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+from .forms import FormUno, FormDos, FormCombinacion, MotivoRechazoForm
+from .models import FormOne, FormTwo, FormCombination
+from django.shortcuts import get_object_or_404
+from django.http import Http404
 
 
+def solicitar_traslado(request):
+    form_one = FormUno()
+    form_two = FormDos()
+    form_combination = FormCombinacion()
+    form = None  # Inicializar la variable form fuera del bloque condicional
 
-@login_required
-def logistica_crear(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        if request.method == 'POST':
-            form = logistica_form(request.POST)
+    if request.method == 'POST':
+        if 'FormUno' in request.POST:
+            form = FormUno(request.POST)
+            model = FormOne
             if form.is_valid():
-                descripcion = form.cleaned_data.pop('descripcion', None)
-                new_logistica = form.save()
-                return redirect('logistica_main')
-        else:
-            form = logistica_form()
-        return render(request, 'logistica_crear.html', {'form': form})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-
-@login_required
-def logistica_editar(request, id=None):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        if id:
-            instancia = Logistica.objects.get(pk=id)
-        else:
-            instancia = Logistica()  # Asigna una instancia de alquiler
-        if request.method == 'POST':
-            form = logistica_form(request.POST, instance=instancia)
+                traslado = form.save(commit=False)
+                traslado.solicitante = request.user.username
+                traslado.save()
+                return redirect('aprobar_traslado', traslado_id=traslado.id)
+            # Verificar si el formulario se ha creado y es válido
+        elif 'FormDos' in request.POST:
+            form = FormDos(request.POST)
+            model = FormTwo
             if form.is_valid():
-                form.save()
-                return redirect('logistica_main')
-        else:
-            form = logistica_form(instance=instancia)
-        return render(request, 'logistica_editar.html',
-                      {'form': form})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+                traslado = form.save(commit=False)
+                traslado.solicitante = request.user.username
+                traslado.save()
+                return redirect('aprobar_traslado', traslado_id=traslado.id)
+            # Verificar si el formulario se ha creado y es válido
 
-
-
-@login_required
-def requerimiento_equipo_crear(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        if request.method == 'POST':
-            form = requerimiento_equipo_form(request.POST)
+        elif 'FormCombinacion' in request.POST:
+            form = FormCombinacion(request.POST)
+            model = FormCombination
             if form.is_valid():
-                new_requerimiento = form.save()
-                return redirect('requerimiento_equipo_mostrar')
-        else:
-            form = requerimiento_equipo_form()
-        return render(request, 'requerimiento_equipo_crear.html', {'form': form})
+                traslado = form.save(commit=False)
+                traslado.solicitante = request.user.username
+                traslado.save()
+                return redirect('aprobar_traslado', traslado_id=traslado.id)
+            # Verificar si el formulario se ha creado y es válido
+
+    return render(request, 'solicitar_traslado.html',
+                  {'form_one': form_one, 'form_two': form_two, 'form_combination': form_combination, 'form': form})
+
+
+def aprobar_traslado(request, traslado_id):
+    # Obtener el traslado según su ID
+    traslado = None
+
+    try:
+        # Intentar obtener el traslado de FormOne
+        form_one = get_object_or_404(FormOne, id=traslado_id)
+        if form_one:
+            traslado = form_one
+    except:
+        pass
+
+    # Intentar obtener el traslado de FormTwo
+    try:
+        form_two = FormTwo.objects.get(id=traslado_id)
+        if form_two:
+            traslado = form_two
+    except:
+        pass
+
+    try:
+        # Intentar obtener el traslado de FormCombination
+        form_combination = get_object_or_404(FormCombination, id=traslado_id)
+        if form_combination:
+            traslado = form_combination
+    except:
+        pass
+
+    # Verificar si el traslado existe
+    if not traslado:
+        raise Http404("El traslado solicitado no existe")
+
+    # Si el método es POST, se está enviando el formulario de aprobación/rechazo
+    if request.method == 'POST':
+        motivo_form = MotivoRechazoForm(request.POST)
+        if motivo_form.is_valid():
+            motivo = motivo_form.cleaned_data['motivo']
+            # Aquí puedes manejar el rechazo del traslado y guardar el motivo
+            # Por ejemplo:
+            traslado.rechazar(motivo)
+            return redirect('solicitudtraslado')  # Redirigir a la página de solicitud de traslado
     else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+        motivo_form = MotivoRechazoForm()  # Crear un formulario vacío para el motivo de rechazo
 
-
-@login_required
-def requerimiento_equipo_mostrar(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoEquipo.objects.all()
-        return render(request, 'requerimiento_equipo_mostrar.html', {'requerimientos': requerimiento})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-
-@login_required
-def requerimiento_equipo_info(request, id=None):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoEquipo.objects.get(pk=id)
-        return render(request, 'requerimiento_equipo_info.html',
-                      {'requerimiento': requerimiento})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-def requerimiento_equipo_aprobar(request, id=None):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoEquipo.objects.get(pk=id)
-        if requerimiento.aprobado:
-            requerimiento.aprobado = False
-        else:
-            requerimiento.aprobado = True
-        requerimiento.save()
-        return redirect('requerimiento_equipo_info', id=id)
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-@login_required
-def requerimiento_traslado_crear(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        if request.method == 'POST':
-            form = requerimiento_traslado_form(request.POST)
-            if form.is_valid():
-                new_requerimiento = form.save()
-                return redirect('requerimiento_traslado_mostrar')
-        else:
-            form = requerimiento_traslado_form()
-        return render(request, 'requerimiento_traslado_crear.html', {'form': form})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-@login_required
-def requerimiento_traslado_mostrar(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoTraslado.objects.all()
-        return render(request, 'requerimiento_traslado_mostrar.html', {'requerimientos': requerimiento})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-@login_required
-def requerimiento_traslado_info(request, id=None):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoTraslado.objects.get(pk=id)
-        return render(request, 'requerimiento_traslado_info.html',
-                      {'requerimiento': requerimiento})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-def requerimiento_traslado_aprobar(request, id=None):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        requerimiento = RequerimientoTraslado.objects.get(pk=id)
-        if requerimiento.aprobado:
-            requerimiento.aprobado = False
-        else :
-            requerimiento.aprobado = True
-        requerimiento.save()
-        return render(request, 'requerimiento_traslado_info.html',
-                      {'requerimiento': requerimiento})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-@login_required
-def cronograma_crear(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        if request.method == 'POST':
-            form = cronograma_form(request.POST)
-            if form.is_valid():
-                new_cronograma = form.save()
-                return redirect('cronograma_mostrar')
-        else:
-            form = cronograma_form()
-        return render(request, 'cronograma_crear.html', {'form': form})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-@login_required
-def cronograma_mostrar(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        cronograma = Cronogroma.objects.all()
-        return render(request, 'cronograma_mostrar.html', {'cronogramas': cronograma})
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-def logistica_pdf(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        tabla_temporal = Logistica.objects.all()
-        template_path = 'logistica_pdf.html'
-        template = get_template(template_path)
-        html_content = template.render({'logisticas': tabla_temporal})
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'filename="output.pdf"'
-        pisa_status = pisa.CreatePDF(html_content, dest=response)
-
-        if pisa_status.err:
-            return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
-        return response
-    else:
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
-
-
-def exportar_logistica(request):
-    if request.user.has_perm('tablamadre.puede_ver_logistica'):
-        queryset = Logistica.objects.all()
-
-        # No need to manually specify column headers now
-        excel_file = model_to_excel(Logistica, queryset)
-
-        response = HttpResponse(excel_file,
-                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-        response['Content-Disposition'] = 'attachment; filename="HistorialConsumosCombustible.xlsx"'
-
-        return response
-    else:
-        # Acción a realizar si el usuario no tiene permiso
-        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+    return render(request, 'aprobar_traslado.html', {'traslado': traslado, 'motivo_form': motivo_form})

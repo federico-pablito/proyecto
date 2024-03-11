@@ -117,7 +117,7 @@ def crear_orden(request):
                 # Find the item details from the API response
                 item_details = next((item for item in items if item['ItemCode'] == item_code), None)
                 if item_details:
-                    api_response = restar_stock_de_api(item_code, cantidad, warehouse=item_details['WarehouseCode'])
+                    api_response = restar_stock_de_api(item_code, cantidad)
                     if api_response and api_response != "Item not Discounted":
                         try:
                             OrdenDeReparacionItem.objects.create(
@@ -143,7 +143,7 @@ def crear_orden(request):
                     # Handle the case where the item is not found
                     print(f"Item with code {item_code} not found.")
             if len(items_not_disc) == 0:
-                return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+                return redirect('ordenes')  # Replace with the correct URL
             else:
                 if len(items_codes) == len(items_not_disc):
                     procesado = False
@@ -238,7 +238,7 @@ def obtener_items_de_api():
     return sap_values
 
 
-def restar_stock_de_api(item_code, cantidad, warehouse):
+def restar_stock_de_api(item_code, cantidad):
     # Your server details
     server_url = "https://pablofederico-hanadb.seidor.com.ar:50000"
     login_url = f"{server_url}/b1s/v1/Login"

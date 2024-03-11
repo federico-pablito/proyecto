@@ -7209,3 +7209,269 @@ Request to /main/dist/img/user3-128x128.jpg
 Request to /main/dist/img/user3-128x128.jpg
 Request to /main/dist/img/user1-128x128.jpg
 Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /cargar_orden
+Request to /favicon.ico
+Internal Server Error: /cargar_orden
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 120, in crear_orden
+    api_response = restar_stock_de_api(item_code, cantidad, warehouse=item_details['WarehouseCode'])
+                                                                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'WarehouseCode'
+Request to /cargar_orden
+Internal Server Error: /cargar_orden
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/reparaciones/views.py", line 146, in crear_orden
+    return redirect('alguna_url_para_redireccionar')  # Replace with the correct URL
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'alguna_url_para_redireccionar' not found. 'alguna_url_para_redireccionar' is not a valid view function or pattern name.
+Request to /cargar_orden
+Request to /cargar_orden
+Request to /ordenes
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /maestroequipo/
+Request to /maestroequipo/exportar_internos
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Request to /main/dist/img/user3-128x128.jpg
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 34, in solicitar_traslado
+    return render(request, 'solicitar_traslado.html',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: solicitar_traslado.html
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /admin/
+Request to /admin/tablamadre/urgencia/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/urgencia/add/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/urgencia/add/
+Request to /admin/tablamadre/urgencia/
+Request to /admin/jsi18n/
+Request to /admin/tablamadre/urgencia/add/
+Request to /admin/tablamadre/urgencia/
+Request to /admin/
+Request to /logistica/
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 28, in solicitar_traslado
+    if form.is_valid():
+       ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'is_valid'
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /admin/
+Request to /admin/logistica/formone/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formtwo/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formcombination/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formcombination/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formtwo/
+Request to /admin/logistica/formone/
+Request to /admin/
+Request to /logistica/
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 25, in solicitar_traslado
+    if form.is_valid():
+       ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'is_valid'
+Request to /logistica/
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 25, in solicitar_traslado
+    if form.is_valid():
+       ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'is_valid'
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/
+Request to /
+Request to /
+Request to /main/
+Request to /main/dist/img/user3-128x128.jpg
+Request to /main/dist/img/user1-128x128.jpg
+Not Found: /main/dist/img/user1-128x128.jpg
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view logistica.views.solicitar_traslado didn't return an HttpResponse object. It returned None instead.
+Request to /logistica/
+Request to /logistica/
+Internal Server Error: /logistica/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 22, in solicitar_traslado
+    return redirect('aprobar_traslado', traslado_id=traslado.id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'aprobar_traslado' not found. 'aprobar_traslado' is not a valid view function or pattern name.
+Request to /logistica/
+Request to /logistica/
+Request to /logistica/aprobar/4/
+Not Found: /logistica/aprobar/4/
+Request to /ladmin
+Not Found: /ladmin
+Request to /admin/
+Request to /admin/logistica/formcombination/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formone/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formtwo/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formone/
+Request to /admin/jsi18n/
+Request to /admin/logistica/formtwo/
+Request to /admin/logistica/formone/
+Request to /admin/logistica/formcombination/
+Request to /admin/
+Internal Server Error: /logistica/aprobar/4/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 53, in aprobar_traslado
+    form_one = get_object_or_404(FormUno, id=traslado_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 80, in get_object_or_404
+    raise ValueError(
+ValueError: First argument to get_object_or_404() must be a Model, Manager, or QuerySet, not 'FormUno'.
+Request to /logistica/aprobar/4/
+Request to /logistica/aprobar/4/
+Not Found: /logistica/aprobar/4/
+Request to /logistica/aprobar/4/
+Not Found: /logistica/aprobar/4/
+Request to /logistica/aprobar/4/
+Not Found: /logistica/aprobar/4/
+Request to /logistica/aprobar/4/
+Not Found: /logistica/aprobar/4/
+Internal Server Error: /logistica/aprobar/4/
+Traceback (most recent call last):
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/logistica/views.py", line 92, in aprobar_traslado
+    return render(request, 'aprobar_traslado.html', {'traslado': traslado, 'motivo_form': motivo_form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fr33tr1st/Desktop/PabloFederico/proyecto/env/lib/python3.11/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: aprobar_traslado.html
+Request to /logistica/aprobar/4/
+Request to /logistica/aprobar/4/
