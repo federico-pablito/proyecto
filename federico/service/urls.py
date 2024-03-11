@@ -7,4 +7,5 @@ urlpatterns = [
     path('cargar/<str:interno>', views.crear_serv, name='create-serv'),
     path('pdf', views.services_pdf, name='services_pd_view'),
     path('<str:interno>/', views.info_serv, name='info_serv'),
+    path('exportar', views.exportar_services, name='exportar_services'),
 ]

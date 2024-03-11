@@ -18,7 +18,7 @@ class CargarTanqueForm(forms.ModelForm):
 
 class RepostajeForm(forms.ModelForm):
     fecha = forms.DateTimeField(widget=forms.DateInput(attrs={'type': 'date'}))
-
+    remito = forms.IntegerField()
     class Meta:
         model = Repostaje
         fields = ['tanque', 'cantidad_litros', 'fecha', 'remito', 'proveedor']

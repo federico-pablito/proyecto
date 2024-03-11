@@ -122,6 +122,7 @@
         <p>Modelo: {{ interno.modelo }}</p>
         <p>Dominio: {{ interno.dominio }}</p>
     </div>
+    <a href="{% url "exportar_reparacion" interno.interno %}" class="btnEdit">Descargar Reparaciones</a>
     <table class="table table-bordered" style="margin: 0 auto;">
             <thead>
                 <tr>

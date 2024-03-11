@@ -11,6 +11,7 @@ from django.views import View
 from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
 import pandas as pd
+from utils.modelo_a_excel import model_to_excel
 
 
 # Create your views here.
@@ -186,3 +187,19 @@ def services_pdf(request):
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
+
+def exportar_services(request):
+    if request.user.has_perm('tablamadre.puede_ver_services'):
+        queryset = Services.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Services, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Services.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

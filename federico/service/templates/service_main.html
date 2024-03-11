@@ -177,6 +177,7 @@
 </nav>
 <body>
     <h1>Services</h1>
+    <a href="{% url "exportar_services" %}" class="btn btn-primary">Descargar Services</a>
 
     <form method="post">
         <div class="formContent">
@@ -195,6 +196,7 @@
             <a href="{% url "serviceprin" %}"><i class="fa-solid fa-xmark" style="margin: 10px;color: black;width: 15px;height: 18px;"></i></a>
         </form>
     </div>
+
     <div class="container d-inline-flex p-2">
         <table class="table table-bordered">
             <thead>

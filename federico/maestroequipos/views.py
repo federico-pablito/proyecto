@@ -8,6 +8,7 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
+from utils.modelo_a_excel import model_to_excel
 
 
 @login_required
@@ -388,3 +389,19 @@ def contador_dias_certificado(mes, up, anio, dominio, interno_id):
         else:
             dias_trabajados += 0
     return dias_trabajados
+
+
+def exportar_internos(request):
+    if request.user.has_perm('tablamadre.puede_ver_internos'):
+        queryset = Internos.objects.all()
+
+        excel_file = model_to_excel(Internos, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Internos.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

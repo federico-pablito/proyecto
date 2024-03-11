@@ -12,7 +12,7 @@ from xhtml2pdf import pisa
 from django.utils import timezone
 from django import template
 from django.contrib.auth.decorators import login_required
-
+from utils.modelo_a_excel import model_to_excel
 
 
 class NovedadTemporal(models.Model):
@@ -126,3 +126,19 @@ def novedades_detalle(request, id):
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
+
+def exportar_novedades(request):
+    if request.user.has_perm('tablamadre.puede_ver_novedades'):
+        queryset = Novedades.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Novedades, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Novedades.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

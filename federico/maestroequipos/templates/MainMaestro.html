@@ -255,9 +255,12 @@
     <div class="header">
     {% if alquiler %}
         <h1 style="font-family:'Helvetica', 'Arial', sans-serif;">Maestro Equipos Alquileres</h1>
+
     {% else %}
         <h1 style="font-family:'Helvetica', 'Arial', sans-serif;">Maestro Equipos</h1>
     {% endif %}
+    <a href="{% url "exportar_internos" %}" class="btn btn-primary">Descargar Internos</a>
+
 
     <div class="button-container">
         <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Cargo Equipos</a></p>

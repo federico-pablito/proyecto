@@ -85,7 +85,7 @@
 </nav>
 <body>
     <h1>Novedades</h1>
-    <div><a href="{% url "novedades_crear" %}" class="loadBtn">Cargar Falla</a></div><br>
+    <div><a href="{% url "novedades_crear" %}" class="loadBtn">Cargar Falla</a> <a href="{% url "exportar_novedades" %}" class="loadBtn">Descargar Novedad</a></div><br>
     <div>
         <form method="get">
             <label>UP: </label> {{ filter.form.up }}

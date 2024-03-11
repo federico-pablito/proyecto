@@ -7,6 +7,7 @@ from tablamadre.models import TanqueAceite, ConsumoAceite, RepostajeAceite
 from .forms import ConsumoAceiteForm, RepostajeAceiteForm, TanqueAceite
 from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib import messages
+from utils.modelo_a_excel import model_to_excel
 
 
 # Create your views here.
@@ -91,3 +92,37 @@ def historial_repostaje_aceite(request):
     # Obtener todos los repostajes
     repostajesac = RepostajeAceite.objects.all()
     return render(request, 'historial_repostaje_aceite.html', {'repostajesac': repostajesac})
+
+
+def exportar_consumos_aceite(request):
+    if request.user.has_perm('tablamadre.puede_ver_consumo'):
+        queryset = ConsumoAceite.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(ConsumoAceite, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="HistorialConsumosAceites.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_repostajes_aceite(request):
+    if request.user.has_perm('tablamadre.puede_ver_repostaje'):
+        queryset = RepostajeAceite.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(RepostajeAceite, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="HistorialRepostajesAceites.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

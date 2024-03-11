@@ -5,6 +5,7 @@ from django.http import JsonResponse, HttpResponse, HttpResponseForbidden
 from django.db import transaction
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from utils.modelo_a_excel import model_to_excel
 
 ##Gaspar recorda que para el JsonResponse tenes que copiar el archivo que cree en /static/assets/js/tanque.js
 ##sino jamas se te van a actualizar los tanques, trata de mantenerlo fuera de la app Combustible
@@ -100,6 +101,40 @@ def historial_repostajes(request):
         # Obtener todos los repostajes
         repostajes = Repostaje.objects.all()
         return render(request, 'historial_repostaje.html', {'repostajes': repostajes})
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_consumos(request):
+    if request.user.has_perm('tablamadre.puede_ver_consumo'):
+        queryset = Consumo.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Consumo, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="HistorialConsumosCombustible.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_repostajes(request):
+    if request.user.has_perm('tablamadre.puede_ver_repostaje'):
+        queryset = Repostaje.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Repostaje, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="HistorialRepostajesCombustible.xlsx"'
+
+        return response
     else:
         # Acción a realizar si el usuario no tiene permiso
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

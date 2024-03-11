@@ -6,6 +6,8 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
+from utils.modelo_a_excel import model_to_excel
+from django.http import HttpResponseForbidden
 
 # Create your views here.
 
@@ -46,3 +48,17 @@ class unidades_pdf_view(View):
         }
         pdf = unidadproduccion_pdf('unidades_pdf.html', context)
         return HttpResponse(pdf, content_type='application/pdf')
+
+
+@login_required
+def exportar_ups(request):
+    queryset = UnidadesdeProduccion.objects.all()
+
+    # No need to manually specify column headers now
+    excel_file = model_to_excel(UnidadesdeProduccion, queryset)
+
+    response = HttpResponse(excel_file,
+                            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="UnidadesdeProducion.xlsx"'
+
+    return response

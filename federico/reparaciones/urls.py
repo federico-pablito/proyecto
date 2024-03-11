@@ -5,5 +5,7 @@ urlpatterns = [path('cargar', views.cargar_reparacion, name='cargar_reparacion')
                path('', views.reparaciones_main, name='reparaciones-main'),
                path('editar/<int:id>', views.reparaciones_editar, name='reparaciones_editar'),
                path('<str:interno>', views.reparaciones_info, name='reparaciones_info'),
-               path('cambiar_estado/<int:id>', views.cambiar_estado, name='cambiar_estado_rep')
+               path('cambiar_estado/<int:id>', views.cambiar_estado, name='cambiar_estado_rep'),
+               path('exportar_reparaciones/', views.exportar_reparaciones, name='exportar_reparaciones'),
+               path('exportar_reparacion/<str:interno>', views.exportar_reparacion, name='exportar_reparacion'),
                ]

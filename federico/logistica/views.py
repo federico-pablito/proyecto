@@ -7,7 +7,7 @@ from django.template.loader import get_template
 from django.views import View
 from xhtml2pdf import pisa
 from django.contrib.auth.decorators import login_required
-
+from utils.modelo_a_excel import model_to_excel
 
 # Create your views here.
 @login_required
@@ -193,4 +193,21 @@ def logistica_pdf(request):
             return HttpResponse('We had some errors <pre>' + html_content + '</pre>')
         return response
     else:
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_logistica(request):
+    if request.user.has_perm('tablamadre.puede_ver_logistica'):
+        queryset = Logistica.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Logistica, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="HistorialConsumosCombustible.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

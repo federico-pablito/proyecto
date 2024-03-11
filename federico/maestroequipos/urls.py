@@ -13,4 +13,5 @@ urlpatterns = [path('cargar', views.cargointerno, name='cargointernos'),
                path('filtro/<str:interno>/', views.mostrar_filtros, name='mostrar_filtros'),
                path('cargar_neumatico/<str:interno>/', views.cargo_neumaticos, name='cargo_neumaticos'),
                path('neumatico/<str:interno>/', views.mostrar_neumaticos, name='mostrar_neumaticos'),
+               path('exportar_internos', views.exportar_internos, name='exportar_internos'),
                ]

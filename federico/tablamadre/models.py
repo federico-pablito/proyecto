@@ -375,9 +375,9 @@ class Consumo(models.Model):
 	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
 	consumo_litros = models.DecimalField(max_digits=10, decimal_places=2)
 	fecha_consumo = models.DateTimeField()
-	hskmactuales = models.IntegerField()
-	precinto_entrada = models.IntegerField()
-	precinto_salida = models.IntegerField()
+	hskmactuales = models.BigIntegerField()
+	precinto_entrada = models.BigIntegerField()
+	precinto_salida = models.BigIntegerField()
 	observaciones = models.CharField(max_length=600)
 
 	class Meta:
@@ -395,7 +395,7 @@ class Repostaje(models.Model):
 	tanque = models.ForeignKey('Tanque', on_delete=models.CASCADE, default=1)
 	cantidad_litros = models.DecimalField(max_digits=10, decimal_places=2)
 	fecha = models.DateTimeField(default=timezone.now)
-	remito = models.IntegerField(default=00000)
+	remito = models.CharField(unique=True, max_length=100)
 	proveedor = models.CharField(max_length=512, default="PabloFederico")
 
 	class Meta:
@@ -439,7 +439,7 @@ class ConsumoAceite(models.Model):
 
 
 class RepostajeAceite(models.Model):
-	remito = models.IntegerField(primary_key=True)
+	remito = models.CharField(primary_key=True, unique=True, max_length=100)
 	reservorio_aceite = models.ForeignKey('TanqueAceite', on_delete=models.CASCADE, default=1)
 	fecha_repostaje = models.DateTimeField()
 	cantidad_repostada = models.DecimalField(max_digits=10, decimal_places=2)

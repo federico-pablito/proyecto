@@ -15,4 +15,5 @@ urlpatterns = [path('', views.logistica_main, name='logistica_main'),
                path('requerimiento/traslado/<int:id>', views.requerimiento_traslado_info, name='requerimiento_traslado_info'),
                path('requerimiento/traslado/aprobar/<int:id>', views.requerimiento_traslado_aprobar, name='requerimiento_traslado_aprobar'),
                path('requerimiento/equipo/aprobar/<int:id>', views.requerimiento_equipo_aprobar, name='requerimiento_equipo_aprobar'),
+               path('requerimiento/equipo/pdf', views.exportar_logistica, name='exportar_logistica'),
                ]

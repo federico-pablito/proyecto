@@ -117,6 +117,8 @@
 </nav>
 <body>
     <h1>Reparaciones Activas</h1>
+    <a href="{% url "exportar_reparaciones" %}" class="btnEdit">Descargar Reparaciones</a>
+
     <div>
         <form method="get">
             <label>UP: </label> {{ filter.form.up }}

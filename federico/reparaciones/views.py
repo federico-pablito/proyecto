@@ -8,6 +8,8 @@ from .forms import ReparacionForm
 from django.db import models
 from django.http import HttpResponseForbidden
 from .filters import reparaciones_filter, ordenes_filter
+from utils.modelo_a_excel import model_to_excel
+from django.http import HttpResponse
 
 
 class ReparacionTemporal(models.Model):
@@ -278,4 +280,38 @@ def restar_stock_de_api(item_code, cantidad, warehouse):
     else:
         print(f"Login failed. Status code: {login_response.status_code}")
         return False
+
+
+def exportar_reparaciones(request):
+    if request.user.has_perm('tablamadre.puede_ver_reparaciones'):
+        queryset = Reparacion.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Reparacion, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Reparaciones.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_reparacion(request, interno=None):
+    if request.user.has_perm('tablamadre.puede_ver_reparaciones'):
+        reparaciones = Reparacion.objects.filter(interno=Internos.objects.get(interno=interno))
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Reparacion, reparaciones)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = f'attachment; filename="Reparaciones_{interno}.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
