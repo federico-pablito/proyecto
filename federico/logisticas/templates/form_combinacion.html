@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Combinación</title>
+    <!-- Agrega el enlace a Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo y nombre de la aplicación -->
+            <div class="flex-shrink-0 flex items-center">
+                <span class="text-white text-lg font-semibold ml-2">NombreApp</span>
+            </div>
+            <!-- Menú de navegación -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <!-- Enlaces del menú -->
+                    <a href="{% url 'pablofederico'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="{% url 'logout'%}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-md shadow-md">
+    <h1 class="text-2xl font-bold mb-6">Formulario Combinación</h1>
+    <form method="POST" class="space-y-4">
+        {% csrf_token %}
+        <!-- Agrega aquí los campos del formulario FormCombinacion -->
+        {{ form.as_p }}
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition">Guardar</button>
+    </form>
+</div>
+
+</body>
+</html>

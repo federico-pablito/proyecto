@@ -14,15 +14,12 @@ class Internos(models.Model):
 	anio = models.IntegerField()
 	aseguradora = models.CharField(max_length=512)
 	seguro = models.CharField(max_length=512)
-	seguro_pdf = models.CharField(max_length=512, default="No")
-	itv = models.CharField(max_length=512)
-	itv_pdf = models.CharField(max_length=512, default="No")
-	titulo_pdf = models.CharField(max_length=512, default="No")
-	tarjeta = models.CharField(max_length=256)
-	tarjeta_pdf = models.CharField(max_length=512, default="No")
+	seguro_pdf = models.FileField(upload_to='Seguros', default='default_value')
+	itv = models.FileField(upload_to='ITV', default='default_value')
+	titulo = models.FileField(upload_to='Titulos', default='default_value')
+	tarjeta = models.FileField(upload_to='Tarjetas', default='default_value')
 	# es propietario o proveedor, posibilidad de cambiar eso
 	propietario = models.CharField(max_length=512)
-	chofer = models.ForeignKey('Choferes', on_delete=models.CASCADE, default=1)
 	alquilado = models.BooleanField(default=False)
 	valorpesos = models.IntegerField()
 	valordolares = models.IntegerField()
@@ -35,6 +32,7 @@ class Internos(models.Model):
 	class Meta:
 		permissions = [
 			("puede_ver_internos", "Puede ver los internos"),
+			("puede_ver_info_internos", "Puede ver los info internos"),
 
 		]
 
@@ -100,12 +98,43 @@ class Novedades(models.Model):
 class Choferes(models.Model):
 	id = models.AutoField(primary_key=True)
 	nombre = models.CharField(max_length=512)
-	anioIngreso = models.DateTimeField()
-	dni = models.IntegerField()
-	licencia = models.CharField(max_length=512)
+	apellido = models.CharField(max_length=512)
+	fecha_ingreso = models.DateField()
+	dni = models.BigIntegerField()
+	licencia = models.FileField(upload_to='Licencias', default='default_value')
+	dni_pdf = models.FileField(upload_to='DNI', default='default_value')
+	usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE, default=1)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 
 	def __str__(self):
-		return ' '.join([str(self.nombre), str(self.dni)])
+		return ' '.join([str(self.nombre), str(self.apellido), str(self.dni)])
+
+	class Meta:
+		permissions = [
+			("puede_ver_choferes", "Puede ver los choferes"),
+			("puede_crear_choferes", "Puede crear los choferes")
+		]
+
+
+class Operadores(models.Model):
+	id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=512)
+	apellido = models.CharField(max_length=512)
+	fecha_ingreso = models.DateField()
+	dni = models.BigIntegerField()
+	licencia = models.FileField(upload_to='Licencias', default='default_value')
+	dni_pdf = models.FileField(upload_to='DNI', default='default_value')
+	usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE, default=1)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+
+	def __str__(self):
+		return ' '.join([str(self.nombre), str(self.apellido), str(self.dni)])
+
+	class Meta:
+		permissions = [
+			("puede_ver_operadores", "Puede ver los operadores"),
+			("puede_crear_operadores", "Puede crear los operadores")
+		]
 
 
 class DisponibilidadEquipos(models.Model):
@@ -139,26 +168,6 @@ class TipoActividad(models.Model):
 		return ', '.join([self.categoria, self.descripcion])
 
 
-class Talleres(models.Model):
-	id = models.AutoField(primary_key=True)
-	nombre = models.CharField(max_length=512)
-	ubicacion = models.CharField(max_length=512)
-
-	def __str__(self):
-		return ', '.join([str(self.nombre), str(self.ubicacion)])
-
-
-class MecanicosEncargados(models.Model):
-	id = models.AutoField(primary_key=True)
-	codigo = models.CharField(max_length=512)
-	nombre = models.CharField(max_length=512)
-	taller = models.ForeignKey('Talleres', on_delete=models.CASCADE, default=1)
-	precio_hora = models.PositiveIntegerField()
-
-	def __str__(self):
-		return ', '.join([str(self.codigo), str(self.nombre), str(self.taller)])
-
-
 class AlquilerEquipos(models.Model):
 	id = models.AutoField(primary_key=True)
 	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
@@ -175,11 +184,9 @@ class AlquilerEquipos(models.Model):
 	up = models.ForeignKey('UnidadesdeProduccion', on_delete=models.CASCADE, default=1)
 	combustible_incluido = models.BooleanField(default=False)
 	operario_incluido = models.BooleanField(default=False)
-	carnet_operario_vigente = models.BooleanField(default=False)
-	carnet_operario_fecha_vencimiento = models.DateTimeField()
-	art_operario = models.BooleanField(default=False)
+	art_operario = models.FileField(upload_to='ART', default='default_value')
 	observaciones_equipo = models.CharField(max_length=512)
-	titulo_tarjeta_verde = models.CharField(max_length=512)
+	titulo_tarjeta_verde = models.FileField(upload_to='Titulos', default='default_value')
 	kms = models.IntegerField()
 	estado = models.CharField(max_length=7)
 	inspeccion_equipo = models.BooleanField(default=False)
@@ -204,6 +211,7 @@ class AlquilerEquipos(models.Model):
 
 class CertificadosEquiposAlquilados(models.Model):
 	id = models.AutoField(primary_key=True)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
 	contratista = models.CharField(max_length=512)
 	obra = models.CharField(max_length=512)
 	periodo_certificado = models.CharField(max_length=512)
@@ -220,7 +228,7 @@ class CertificadosEquiposAlquilados(models.Model):
 	anio = models.IntegerField(default=2024)
 
 	def __str__(self):
-		return ', '.join([f'certificado n°{self.id}', str(self.contratista), str(self.equipo_alquilado)])
+		return ', '.join([f'certificado n°{self.id}', str(self.contratista), str(self.equipo_alquilado), str(self.interno.interno)])
 
 
 class HistorialService(models.Model):
@@ -246,7 +254,6 @@ class HistorialService(models.Model):
 	def __str__(self):
 		return ', '.join(
 			[str(self.interno), str(self.fechaservicio), str(self.planrealizado_hs), str(self.planrealizado)])
-
 
 
 class TipoVehiculo(models.Model):
@@ -354,6 +361,8 @@ class TanqueAceite(models.Model):
 
 		]
 
+	def __str__(self):
+		return self.nombre.title()
 
 class ConsumoAceite(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -384,3 +393,24 @@ class RepostajeAceite(models.Model):
 			("puede_ver_cargarrepostaje", "Puede ver los repostajes de aceites"),
 
 		]
+
+
+class FotoVehiculos(models.Model):
+	id = models.AutoField(primary_key=True)
+	fecha = models.DateTimeField(default=timezone.now)
+	titulo = models.CharField(max_length=512, default='Foto')
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	foto = models.ImageField(upload_to='FotosVehiculos', default='default_value')
+
+	def __str__(self):
+		return f'Foto de {self.interno}'
+
+
+class ArchivosAdjuntos(models.Model):
+	id = models.AutoField(primary_key=True)
+	titulo = models.CharField(max_length=512)
+	interno = models.ForeignKey('Internos', on_delete=models.CASCADE, default=1)
+	archivo = models.FileField(upload_to='ArchivosAdjuntos', default='default_value')
+
+	def __str__(self):
+		return f'Archivo de {self.interno} {self.titulo}'

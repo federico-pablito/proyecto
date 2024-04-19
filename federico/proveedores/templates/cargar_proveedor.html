@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FedeManager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="{% url 'pablofederico' %}" class=" ml-4">
+            <i class="fa-solid fa-house text-red-500"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class=" ml-4">
+            <i class="fa-solid fa-power-off text-red-500"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <div class="container mx-auto p-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg border border-gray-200 shadow-md p-5">
+            <div class="justify-center flex">
+                <h1 class="text-3xl font-bold mb-6">Proveedores</h1>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="grid  grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="interno" class="block mb-2 text-sm font-medium text-gray-900">Razon Social</label>
+                        {{ form.nombre|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                    <div>
+                        <label for="taller" class="block mb-2 text-sm font-medium text-gray-900">Cuit</label>
+                        {{ form.cuit|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                    <div>
+                        <label for="falla_general" class="block mb-2 text-sm font-medium text-gray-900">Nombre Contacto</label>
+                        {{ form.contacto|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                    <div>
+                        <label for="supervisor" class="block mb-2 text-sm font-medium text-gray-900">Telefono</label>
+                        {{ form.telefono|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                    <div>
+                        <label for="mecanico_encargado" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        {{ form.email|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                    <div>
+                        <label for="horas_km_entrada" class="block mb-2 text-sm font-medium text-gray-900">Activo</label>
+                        {{ form.activo|add_class:"block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" }}
+                    </div>
+                </div>
+                <!-- Continue with other form fields -->
+                <div class="pt-4">
+                    <button type="submit" class="w-full text-white bg-red-500 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,7 +3,8 @@ from .forms import disponibilidad_form
 from .filters import disponibilidadfilter
 from tablamadre.models import DisponibilidadEquipos, Internos, UnidadesdeProduccion
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponse
+import pandas as pd
 
 
 # Create your views here.
@@ -38,6 +39,7 @@ def main_disponibilidad(request):
         for anio in anios:
             meses = DisponibilidadEquipos.objects.filter(anio=anio).values_list('mes', flat=True).distinct()
             meses_por_anio[anio] = meses
+
         return render(request, 'main_disponibilidad.html', {'anios': anios, 'meses_por_anio': meses_por_anio})
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
@@ -53,10 +55,15 @@ def mostrar_disponibilidad(request, anio=None, mes=None):
         else:
             dataset_mes = transpose_disponibilidad(mes, anio, tabla=DisponibilidadEquipos.objects.filter(mes=mes, anio=anio))
         columns = ['Int', 'Dueño', 'Operador', 'UP', 'Ingreso Obra', 'Dias Obra']
-        for item in range(1, 32):
+        for item in range(1, 10):
+            columns.append(str(0) + str(item))
+        for item in range(10, 32):
             columns.append(item)
         columns.append('Dias Trabajados')
-        columns.append('Dias No Trabajados')
+        columns.append('Dias Sin Trabajar')
+        columns.append('%')
+        if 'excel' in request.GET:
+            return exportar_disponibilidad(columns, dataset_mes)
         return render(request, 'mostrar_disponibilidad.html', {'dataset_mes': dataset_mes, 'columns': columns,
                                                                'mes': mes.title(), 'anio': anio, 'filter': filter})
     else:
@@ -73,7 +80,7 @@ def transpose_disponibilidad(mes, anio, tabla=None):
             row = []
             row.append(Internos.objects.get(id=dato).interno)
             row.append(Internos.objects.get(id=dato).propietario)
-            row.append(tabla.filter(interno=dato, mes=mes, anio=anio).last().chofer)
+            row.append(str(tabla.filter(interno=dato, mes=mes, anio=anio).last().chofer.nombre) +' '+ str(tabla.filter(interno=dato, mes=mes, anio=anio).last().chofer.apellido))
             row.append(UnidadesdeProduccion.objects.get(id=up).unidadproduccion)
             row.append(tabla.filter(interno=dato, mes=mes, anio=anio).last().fecha_ingreso_de_obra.strftime('%d/%m/%Y'))
             row.append(tabla.filter(interno=dato, mes=mes, anio=anio).last().cantidad_de_dias_en_obra)
@@ -97,6 +104,15 @@ def transpose_disponibilidad(mes, anio, tabla=None):
             row.append(dias_trabajados)
             # Dias no trabajados
             row.append(30 - dias_trabajados)
+            row.append(str(dias_trabajados / 30 * 100)[:4])
             # Se agrega al dataset
             dataset.append(row)
     return dataset
+
+
+def exportar_disponibilidad(cols, df):
+    df = pd.DataFrame(df, columns=cols)
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="Disponibilidad.xls"'
+    df.to_excel(response, index=False)
+    return response

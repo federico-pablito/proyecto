@@ -1,13 +1,13 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
-from .models import OrdenDeReparacion, OrdenDeReparacionItem, Reparacion
-from tablamadre.models import Internos
+from .models import OrdenDeReparacion, OrdenDeReparacionItem, Reparacion, ParteDiarioMecanicos, MecanicoEncargado
+from tablamadre.models import Internos, UnidadesdeProduccion
 import requests
 from datetime import datetime
-from .forms import ReparacionForm
+from .forms import ReparacionForm, OrdenForm
 from django.db import models
 from django.http import HttpResponseForbidden
-from .filters import reparaciones_filter, ordenes_filter
+from .filters import reparaciones_filter, ordenes_filter, partes_filter
 from utils.modelo_a_excel import model_to_excel
 from django.http import HttpResponse
 
@@ -26,6 +26,13 @@ class ReparacionTemporal(models.Model):
     apto_traslado = models.CharField(max_length=512, default="X")
     descripcion = models.CharField(max_length=512, default="Generica")
     orden_reparacion = models.CharField(max_length=512, default="Generica")
+
+
+class ParteTemporal(models.Model):
+    fecha = models.DateField()
+    mecanico = models.CharField(max_length=512)
+    actividad = models.CharField(max_length=1024)
+    horas = models.CharField(max_length=512)
 
 
 def reparaciones_main(request):
@@ -70,7 +77,8 @@ def reparaciones_main(request):
                     descripcion=item.descripcion,
                     orden_reparacion=f"Orden N°{item.orden_reparacion.id}"
                 )
-
+        if 'excel' in request.GET:
+           return exportar_reparaciones_filtrado(tabla_temporal)
         return render(request, 'reparaciones_main.html', {'reparaciones': tabla_temporal, 'filter': filter})
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
@@ -107,17 +115,24 @@ def main_ordenes(request):
 
 def crear_orden(request):
     if request.user.has_perm('reparaciones.puede_crear_ordenes_reparacion'):
-
-        items = obtener_items_de_api()  # This function gets items from the API
+        if request.method == 'POST':
+            form = OrdenForm(request.POST)
+            if form.is_valid():
+                up = form.cleaned_data['up']
+        else:
+            form = OrdenForm()
+        items, warehouse_list = obtener_items_de_api()  # This function gets items from the API
         items_not_disc = []
         if request.method == 'POST':
             items_codes = request.POST.getlist('item_code[]')
             cantidades = request.POST.getlist('cantidad[]')
-            for item_code, cantidad in zip(items_codes, cantidades):
+            warehouse_codes = request.POST.getlist('warehouse[]')
+            for item_code, cantidad, warehouse_code in zip(items_codes, cantidades, warehouse_codes):
                 # Find the item details from the API response
-                item_details = next((item for item in items if item['ItemCode'] == item_code), None)
+                warehouse_items = items.get(warehouse_code, [])
+                item_details = next((item for item in warehouse_items if item['ItemCode'] == item_code), None)
                 if item_details:
-                    api_response = restar_stock_de_api(item_code, cantidad)
+                    api_response = restar_stock_de_api(item_code, cantidad, warehouse_code, up.unidadproduccion)
                     if api_response and api_response != "Item not Discounted":
                         try:
                             OrdenDeReparacionItem.objects.create(
@@ -125,18 +140,19 @@ def crear_orden(request):
                                 item_id=item_code,
                                 nombre=item_details['ItemName'],
                                 cantidad=cantidad,
+                                almacen=warehouse_code,
                                 # Assuming descripcion is optional, set it to an empty string or a default description
                             )
                         except NameError:
-                            orden = OrdenDeReparacion.objects.create()
+                            orden = OrdenDeReparacion.objects.create(up=up)
                             OrdenDeReparacionItem.objects.create(
                                 orden_de_reparacion=orden,
                                 item_id=item_code,
                                 nombre=item_details['ItemName'],
                                 cantidad=cantidad,
+                                almacen=warehouse_code,
                                 # Assuming descripcion is optional, set it to an empty string or a default description
                             )
-
                     elif api_response == "Item not Discounted":
                         items_not_disc.append({'item_name': item_details['ItemName'], 'item_code': item_code})
                 else:
@@ -153,7 +169,8 @@ def crear_orden(request):
                                                                'items_not_disc': items_not_disc})
         else:
             # Convert the items list to a dictionary for easy access in the template
-            return render(request, 'ordenes_reparacion.html', {'items': items})
+            return render(request, 'ordenes_reparacion.html', {'items': items, 'form': form,
+                                                               'warehouse_list': warehouse_list})
     else:
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
@@ -200,49 +217,59 @@ def cambiar_estado(request, id=None):
 
 def obtener_items_de_api():
     server_url = "https://pablofederico-hanadb.seidor.com.ar:50000"
-    username = {'CompanyDB': 'PAFTEST', 'UserName': 'Portal', 'Password': '1234'}
+    username = {'CompanyDB': 'PAFQUA', 'UserName': 'Portal', 'Password': 'PF2024'}
     login_url = f"{server_url}/b1s/v1/Login"
     login_response = requests.post(login_url, json=username)
+    items_by_warehouse = {}  # Initialize the dictionary to store items by warehouse
+    warehouse_list = []  # Initialize the list to store warehouse codes
+    warehouse_list_url = f"{server_url}/b1s/v1/Items('GASOIL')?$select=ItemWarehouseInfoCollection"  # List of warehouses to fetch items from
     if login_response.status_code == 200:
         print("Login successful")
         session = requests.Session()
-        session_id = login_response.json()["SessionId"]
-        login_data = login_response.json()
-        items_url = f"{server_url}/b1s/v1/Items?$select=ItemCode,ItemName,QuantityOnStock&$filter=QuantityOnStock ge 1"
-        all_items = []
-        # Verificar si la solicitud de items fue exitosa
-        print()
-        while items_url:
-            items_response = session.get(items_url, cookies=login_response.cookies)
-            print(len(all_items))
-            if items_response.status_code == 200:
-                items_data = items_response.json()
-                all_items.extend(items_data["value"])
-                items_url = items_data.get("odata.nextLink")
-                if items_url:
-                    items_url = f"{server_url}/b1s/v1/{items_url}"
-            else:
-                print("Failed to retrieve items. Status code:", items_response.status_code)
-                break
-        sap_values = []
-        for item in all_items:
-            if item not in sap_values:
-                sap_values.append(item)
-            else:
-                pass
+        warehouse_list = [almacen['WarehouseCode'] for almacen in session.get(warehouse_list_url, cookies=login_response.cookies).json()['ItemWarehouseInfoCollection']]
+        for warehouse_code in warehouse_list:
+            items_url = f"{server_url}/b1s/v1/$crossjoin(Items,Items/ItemWarehouseInfoCollection)?$expand=Items($select=ItemCode,ItemName),Items/ItemWarehouseInfoCollection($select=WarehouseCode,InStock)&$filter= Items/ItemCode eq Items/ItemWarehouseInfoCollection/ItemCode and Items/ItemWarehouseInfoCollection/WarehouseCode eq '{warehouse_code}'  and Items/ItemWarehouseInfoCollection/InStock ge 1"
+            all_items = []  # List to save all items before formatting
+            # Fetch and save items data
+            while items_url:
+                items_response = session.get(items_url, cookies=login_response.cookies)
+                if items_response.status_code == 200:
+                    items_data = items_response.json()
+                    all_items.extend(items_data["value"])
+
+                    # Pagination handling
+                    items_url = items_data.get("odata.nextLink", "")
+                    if items_url:
+                        items_url = f"{server_url}/b1s/v1/{items_url}"
+                else:
+                    print("Failed to retrieve items for warehouse:", warehouse_code, ". Status code:",
+                          items_response.status_code)
+                    break
+
+            # Format and save data for the current warehouse
+            formatted_items = []
+            for item in all_items:
+                if item['Items']['ItemCode'] is not None and item['Items']['ItemName'] is not None:
+                    formatted_item = {
+                        'ItemCode': item['Items']['ItemCode'],
+                        'ItemName': item['Items']['ItemName'],
+                        'QuantityOnStock': item['Items/ItemWarehouseInfoCollection']['InStock'],
+                    }
+                    formatted_items.append(formatted_item)
+
+            items_by_warehouse[warehouse_code] = formatted_items
+
     else:
-        sap_values = []
         print("Login failed. Status code:", login_response.status_code)
+    print(items_by_warehouse)
+    return items_by_warehouse, warehouse_list
 
-    # Aquí pondrías tu lógica para conectarte a la API y obtener los ítems
-    return sap_values
 
-
-def restar_stock_de_api(item_code, cantidad):
+def restar_stock_de_api(item_code, cantidad, warehouse_code, up):
     # Your server details
     server_url = "https://pablofederico-hanadb.seidor.com.ar:50000"
     login_url = f"{server_url}/b1s/v1/Login"
-    username = {'CompanyDB': 'PAFTEST', 'UserName': 'Portal', 'Password': '1234'}
+    username = {'CompanyDB': 'PAFQUA', 'UserName': 'Portal', 'Password': 'PF2024'}
 
     # Login
     login_response = requests.post(login_url, json=username)
@@ -259,8 +286,8 @@ def restar_stock_de_api(item_code, cantidad):
                 {
                     "ItemCode": item_code,
                     "Quantity": float(cantidad),
-                    "WarehouseCode": "CENTRAL",
-                    "CostingCode": "UP-0",
+                    "WarehouseCode": f"{warehouse_code}",
+                    "CostingCode": up,
                 }
             ],
         }
@@ -299,6 +326,16 @@ def exportar_reparaciones(request):
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
 
+def exportar_reparaciones_filtrado(reparaciones):
+    excel_file = model_to_excel(ReparacionTemporal, reparaciones)
+
+    response = HttpResponse(excel_file,
+                            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="Reparaciones.xlsx"'
+
+    return response
+
+
 def exportar_reparacion(request, interno=None):
     if request.user.has_perm('tablamadre.puede_ver_reparaciones'):
         reparaciones = Reparacion.objects.filter(interno=Internos.objects.get(interno=interno))
@@ -315,3 +352,60 @@ def exportar_reparacion(request, interno=None):
         # Acción a realizar si el usuario no tiene permiso
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
 
+
+def main_parte_mecanicos(request):
+    if request.user.has_perm('reparaciones.puede_ver_partes_diarios_mecanicos'):
+        if request.user.is_staff:
+            tabla = ParteDiarioMecanicos.objects.all()
+        else:
+            tabla = ParteDiarioMecanicos.objects.filter(mecanico=MecanicoEncargado.objects.get(user=request.user))
+        filtro = partes_filter(request.GET, queryset=tabla)
+        if filtro.is_valid():
+            partes = filtro.qs
+        else:
+            partes = tabla
+        tabla_temporal = ParteTemporal.objects.all()
+        tabla_temporal.delete()
+        for item in filtro.qs:
+            try:
+                objeto = tabla_temporal.get(mecanico=item.mecanico.nombre + " " + item.mecanico.apellido, fecha=item.fecha)
+                objeto.actividad = objeto.actividad + "\n" + item.actividad
+                objeto.horas = objeto.horas + "\n" + f"Cantidad hs {item.horas}"
+                objeto.save()
+            except ObjectDoesNotExist:
+                tabla_temporal.create(
+                    fecha=item.fecha,
+                    mecanico=item.mecanico.nombre + " " + item.mecanico.apellido,
+                    actividad=item.actividad,
+                    horas=f"Cantidad hs {item.horas}"
+                )
+        return render(request, 'main_parte_diario_mecanicos.html', {'partes': tabla_temporal, 'filter': filtro})
+    else:
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def cargar_parte_mecanicos(request):
+    if request.user.has_perm('reparaciones.puede_crear_partes_diarios_mecanicos'):
+        try:
+            mecanico = MecanicoEncargado.objects.get(user=request.user)
+        except ObjectDoesNotExist:
+            mecanico = MecanicoEncargado.objects.get(id=1)
+        if request.method == 'POST':
+            textos = request.POST.getlist('textos[]')
+            cantidades = request.POST.getlist('cantidad[]')
+            for texto, cantidad in zip(textos, cantidades):
+                if texto != "" and cantidad != "" or cantidad > 0:
+                    parte = ParteDiarioMecanicos.objects.create(
+                        actividad=texto,
+                        horas=cantidad,
+                        mecanico=mecanico
+                    )
+                    parte.save()
+            return redirect('main_parte_mecanicos')
+        else:
+            # Convert the items list to a dictionary for easy access in the template
+            return render(request, 'cargar_parte_diario_mecanicos.html',
+                          {'mecanico': f'{mecanico.nombre} {mecanico.apellido}',
+                           'fecha': datetime.now().strftime('%d/%m/%Y')})
+    else:
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")

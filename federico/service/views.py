@@ -36,6 +36,8 @@ def service_main(request):
         service_filter = servicefilter(request.GET, queryset=service)
         if service_filter.is_valid():
             service = service_filter.qs
+        if 'excel' in request.GET:
+           return exportar_services_filtrados(service)
         # ARREGLAR EL FILTRO
         return render(request, 'service_main.html', {'form': form, 'services': service, 'filter': service_filter})
     else:
@@ -191,6 +193,67 @@ def services_pdf(request):
 def exportar_services(request):
     if request.user.has_perm('tablamadre.puede_ver_services'):
         queryset = Services.objects.all()
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Services, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Services.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_services_filtrados(services):
+    excel_file = model_to_excel(Services, services)
+
+    response = HttpResponse(excel_file,
+                            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="Services.xlsx"'
+
+    return response
+
+
+def exportar_normales(request):
+    if request.user.has_perm('tablamadre.puede_ver_services'):
+        queryset = Services.objects.filter(necesidadservice='Normal')
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Services, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Services.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_proximos(request):
+    if request.user.has_perm('tablamadre.puede_ver_services'):
+        queryset = Services.objects.filter(necesidadservice='Proximo')
+
+        # No need to manually specify column headers now
+        excel_file = model_to_excel(Services, queryset)
+
+        response = HttpResponse(excel_file,
+                                content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        response['Content-Disposition'] = 'attachment; filename="Services.xlsx"'
+
+        return response
+    else:
+        # Acción a realizar si el usuario no tiene permiso
+        return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
+
+
+def exportar_necesitan(request):
+    if request.user.has_perm('tablamadre.puede_ver_services'):
+        queryset = Services.objects.filter(necesidadservice='Necesita Service')
 
         # No need to manually specify column headers now
         excel_file = model_to_excel(Services, queryset)

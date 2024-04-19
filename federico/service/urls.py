@@ -8,4 +8,7 @@ urlpatterns = [
     path('pdf', views.services_pdf, name='services_pd_view'),
     path('<str:interno>/', views.info_serv, name='info_serv'),
     path('exportar', views.exportar_services, name='exportar_services'),
+    path('exportar_normales', views.exportar_normales, name='exportar_normales'),
+    path('exportar_proximos', views.exportar_proximos, name='exportar_proximos'),
+    path('exportar_necesitan', views.exportar_necesitan, name='exportar_necesitan'),
 ]

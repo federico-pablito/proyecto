@@ -27,16 +27,7 @@
     <div class="container mx-auto mt-8">
         <h1 class="text-4xl font-bold text-center mb-6">{{ interno.interno }}</h1>
         <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            {% if formulario %}
-                <form method="post" class="mb-4">
-                    {% csrf_token %}
-                    <div class="mb-4">
-                        {{ form.as_p }}
-                    </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
-                </form>
-            {% endif %}
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'novedades_info' interno.interno %}" role="button">Novedades de este Equipo</a>
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'reparaciones_info' interno.interno %}" role="button">Reparaciones de este Equipo</a>
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url "info_serv" interno.interno %}">Services de este Equipo</a>
@@ -44,28 +35,73 @@
                 <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'mostrar_neumaticos' interno.interno %}" role="button">Neumaticos</a>
 
             </div>
-            <div class="text-gray-700 text-base">
-                <p>UP: {{ interno.up }}</p>
-                <p>Marca: {{ interno.marca }}</p>
-                <p>Modelo: {{ interno.modelo }}</p>
-                <p>Tipo Vehiculo: {{ interno.tipovehiculo }}</p>
-                <p>Chasis: {{ interno.chasis }}</p>
-                <p>Motor: {{ interno.motor }}</p>
-                <p>Dominio: {{ interno.dominio }}</p>
-                <p>Año: {{ interno.anio }}</p>
-                <p>Aseguradora: {{ interno.aseguradora }}</p>
-                <p>Seguro: {{ interno.seguro }}</p>
-                <p>Seg. PDF: {{ interno.seguro_pdf }}</p>
-                <p>ITV: {{ interno.itv }}</p>
-                <p>ITV PDF: {{ interno.itv_pdf }}</p>
-                <p>Tarjeta: {{ interno.tarjeta }}</p>
-                <p>Tarj. PDF: {{ interno.tarjeta_pdf }}</p>
-                <p>Propietario: {{ interno.propietario }}</p>
-                <p>Chofer: {{ interno.chofer }}</p>
-                <p>Valor Pesos: {{ interno.valorpesos }}</p>
-                <p>Valor Dolares: {{ interno.valordolares }}</p>
-                <p>Orden: {{ interno.orden }}</p>
-                <p>Actividad Vehiculo: {{ interno.actividadvehiculo }}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+                <div class="text-gray-700  text-2xl mb-10">
+                    <p>UP: {{ interno.up }}</p>
+                    <p>Marca: {{ interno.marca }}</p>
+                    <p>Modelo: {{ interno.modelo }}</p>
+                    <p>Tipo Vehiculo: {{ interno.tipovehiculo }}</p>
+                    <p>Chasis: {{ interno.chasis }}</p>
+                    <p>Motor: {{ interno.motor }}</p>
+                    <p>Dominio: {{ interno.dominio }}</p>
+                    <p>Año: {{ interno.anio }}</p>
+                    <p>Aseguradora: {{ interno.aseguradora }}</p>
+                    <p>Seguro: {{ interno.seguro }}</p>
+                    <p>Propietario: {{ interno.propietario }}</p>
+                    {% if alquilado %}
+                        <p>Alquilado: Es alquilado</p>
+                    {% else %}
+                        <p>Alquilado: No es alquilado</p>
+                    {% endif %}
+                    <p>Valor Pesos: {{ interno.valorpesos }}</p>
+                    <p>Valor Dolares: {{ interno.valordolares }}</p>
+                    <p>Orden: {{ interno.orden }}</p>
+                    <p>Actividad Vehiculo: {{ interno.actividadvehiculo }}</p>
+                </div>
+                <div class="flex">
+                    <a class="h-auto w-auto" href="{{ foto.foto.url }}" target="_blank">
+                        <img src="{{ foto.foto.url }}" alt="{{ foto.titulo }}" class="w-full h-full rounded-lg">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="md:flex flex-cols">
+            <div class="p-4 md:grow flex-cols">
+                <p>Documentacion:</p>
+                <div class="flex">
+                    <div class="p-4 grow flex h-28 gap-4">
+                        <a href="{{ interno.itv.url }}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex flex-col h-full w-16 items-center justify-center">
+                            <p>ITV</p>
+                            <i class="fas fa-file text-4xl mb-2"></i>
+                        </a>
+                        <a href="{{ interno.seguro_pdf.url }}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex flex-col h-full w-20 items-center justify-center">
+                            <p>Seg. PDF</p>
+                            <i class="fas fa-file text-4xl mb-2"></i>
+                        </a>
+                        <a href="{{ interno.titulo.url }}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex flex-col h-full w-16 items-center justify-center">
+                            <p>Titulo</p>
+                            <i class="fas fa-file text-4xl mb-2"></i>
+                        </a>
+                        <a href="{{ interno.tarjeta.url }}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex flex-col h-full w-16 items-center justify-center">
+                            <p>Tarjeta</p>
+                            <i class="fas fa-file text-4xl mb-2"></i>
+                        </a>
+                        <a href="{% url 'main_adjuntos' interno.id %}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex flex-col h-full w-20 items-center justify-center">
+                            <p>Adjuntos</p>
+                            <i class="fas fa-folder text-4xl mb-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 md:grow">
+                <p>Choferes:</p>
+                <ul class='grid md:grid-cols-2'>
+                    {% for chofer in choferes %}
+                        <li>{{ chofer.nombre }} {{ chofer.apellido }}: {{ chofer.dni }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Formularios</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-lg mx-auto p-8 bg-white shadow-md rounded-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">Traslados:</h1>
+        <!-- Tabla para equipos -->
+        <h2 class="text-lg font-semibold mb-4">Formularios de Equipos:</h2>
+        <table class="table-auto w-full mb-8">
+            <thead>
+                <tr class="bg-gray-50">
+                    <th class="px-4 py-2">ID</th>
+                    <th class="px-4 py-2">Solicitante</th>
+                    <th class="px-4 py-2">Fecha de Envío</th>
+                    <th class="px-4 py-2">Mas Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in equipos_forms %}
+                <tr>
+                    <td class="border px-4 py-2">{{ form.id }}</td>
+                    <td class="border px-4 py-2">{{ form.solicitante }}</td>
+                    <td class="border px-4 py-2">{{ form.fecha_envio }}</td>
+
+                    <!-- Fin de los campos restantes -->
+                    <td class="border px-4 py-2"><a href="{% url 'ver_form_detalle' form_id=form.id %}" class="text-blue-500 hover:underline">Ver Detalle</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Tabla para combinaciones -->
+        <h2 class="text-lg font-semibold mb-4">Formularios de Combinación:</h2>
+        <table class="table-auto w-full">
+            <thead>
+                <tr class="bg-gray-50">
+                    <th class="px-4 py-2">ID</th>
+                    <th class="px-4 py-2">ID Traslado (SAP)</th>
+                    <th class="px-4 py-2">Solicitante</th>
+                    <th class="px-4 py-2">Fecha de Envío</th>
+                    <th class="px-4 py-2">Mas Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in combination_forms %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ form.id }}</td>
+                        <td class="border px-4 py-2">{{ form.id_traslad0 }}</td>
+                        <td class="border px-4 py-2">{{ form.equipo_traslada }}</td>
+                        <td class="border px-4 py-2">{{ form.fecha_envio }}</td>
+                        <td class="border px-4 py-2"><a href="{% url 'ver_form_detalle' form_id=form.id %}" class="text-blue-500 hover:underline">Ver Detalle</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

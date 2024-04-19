@@ -42,7 +42,7 @@
     <div id="form-container" class="py-20">
         <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl mx-4">
             <h1 class="text-xl mb-4 font-semibold text-gray-700">Cargar Interno</h1>
-            <form method="post" class="space-y-4">
+            <form method="post" enctype="multipart/form-data" class="space-y-4">
                 {% csrf_token %}
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
@@ -78,8 +78,16 @@
                         {{ form.seguro|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">{{ form.itv.label }}</label>
-                        {{ form.itv_pdf|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                        <label class="block text-sm font-medium text-gray-700">{{ form.seguro_pdf.label }}</label>
+                        {{ form.seguro_pdf|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">ITV: </label>
+                        {{ form.itv|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.titulo.label }}</label>
+                        {{ form.titulo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">{{ form.tarjeta.label }}</label>
@@ -89,10 +97,7 @@
                         <label class="block text-sm font-medium text-gray-700">{{ form.propietario.label }}</label>
                         {{ form.propietario|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">{{ form.chofer.label }}</label>
-                        {{ form.chofer|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
-                    </div>
+
                     <div>
                         <label class="block text-sm font-medium text-gray-700">{{ form.alquilado.label }}</label>
                         {{ form.alquilado|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
@@ -117,15 +122,13 @@
                         <label class="block text-sm font-medium text-gray-700">{{ form.up.label }}</label>
                         {{ form.up|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
                     </div>
-                </div>
-                <div class="flex item-center justify-center">
-                    <div class="pr-8">
-                        <label class="block text-sm font-medium text-gray-700">{{ form.dominio.label }}</label>
-                        {{ form.dominio|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
-                    </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700">{{ form.tipovehiculo.label }}</label>
                         {{ form.tipovehiculo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">{{ form.dominio.label }}</label>
+                        {{ form.dominio|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500" }}
                     </div>
                 </div>
                 <div class="flex justify-center">

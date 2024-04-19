@@ -7,11 +7,14 @@ from django.shortcuts import render, redirect
 
 @ensure_csrf_cookie
 def inicio_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, request.POST)
-        if form.is_valid():
-            login(request, form.get_user())
-            return redirect('pablofederico')
+    if request.user.is_authenticated:
+        return redirect('pablofederico')
     else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+        if request.method == 'POST':
+            form = AuthenticationForm(request, request.POST)
+            if form.is_valid():
+                login(request, form.get_user())
+                return redirect('pablofederico')
+        else:
+            form = AuthenticationForm()
+        return render(request, 'login.html', {'form': form})

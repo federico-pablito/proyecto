@@ -1,87 +1,137 @@
 <!DOCTYPE html>
-<html lang="es">
+{% load widget_tweaks %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial de Cargas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        tr:hover {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <title>FedeManager</title>
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Historial de Cargas</h1>
-    <a href="{% url "exportar_consumos" %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Descargar Consumos</a>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="{% url 'pablofederico' %}" class=" ml-4">
+            <i class="fa-solid fa-house text-red-500"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class=" ml-4">
+            <i class="fa-solid fa-power-off text-red-500"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <header class="bg-white shadow">
+        <div class="grid justify-items-center mx-auto py-6 px-4">
+            <h1 class="text-3xl font-bold text-gray-900">Historial de Cargas</h1>
+        </div>
+    </header>
+    <div class="flex justify-center mt-5">
+        <div>
+            <div class="flex justify-center">
+                <a class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href="{% url 'exportar_consumos' %}">Descargar Consumos</a>
+            </div>
+        </div>
+    </div>
+    <main class="mb-5 mt-3">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center">
+                <form method="get" class="space-y-2 mb-2">
+                    {% csrf_token %}
+                    <div class="flex space-x-5 items-center">
+                        <div class="flex items-center space-x-5">
+                            <label class="block text-sm font-medium text-gray-700">Interno: </label>
+                            {{ filtro.form.interno|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm" }}
+                        </div>
+                        <div class="flex items-center space-x-5">
+                            <label class="block text-sm font-medium text-gray-700">Fecha Consumo: </label>
+                            {{ filtro.form.fecha_consumo|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm" }}
+                        </div>
+                        <div class="flex items-center space-x-5">
+                            <label class="block text-sm font-medium text-gray-700">Tanque: </label>
+                            {{ filtro.form.tanque|add_class:"mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 text-sm" }}
+                        </div>
+                        <div class="">
+                            <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Filtrar</button>
+                        </div>
+                        <a href="{% url "registrarCarga" %}"><i class="fa-solid fa-xmark text-l bg-gray-600 hover:bg-gray-800 text-white font-bold py-3 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"></i></a>
+                    </div>
+                </form>
+            </div>
+            <div class="bg-white shadow-md rounded-lg my-6 overflow-x-auto">
+              <table class="min-w-full leading-normal">
+                <thead>
+                  <tr>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      ID
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Tanque
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Interno
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Chofer
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Litros
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Fecha de Consumo
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      KM Actuales
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Precinto de Entrada
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Precinto de Salida
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                      Observaciones
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for consumo in cargas %}
+                    <tr>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.id }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.tanque }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.interno }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.chofer }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.consumo_litros }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.fecha_consumo|date:"d/m/Y" }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.hskmactuales }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.precinto_entrada }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.precinto_salida }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ consumo.observaciones }}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
 
-    <table class="my-4">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tanque</th>
-                <th>Interno</th>
-                <th>Chofer</th>
-                <th>Litros</th>
-                <th>Fecha de Consumo</th>
-                <th>HS/KM Actuales</th>
-                <th>Precinto de Entrada</th>
-                <th>Precinto de Salida</th>
-                <th>Observaciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for consumo in cargas %}
-            <tr>
-                <td>{{ consumo.id }}</td>
-                <td>{{ consumo.tanque }}</td>
-                <td>{{ consumo.interno }}</td>
-                <td>{{ consumo.chofer }}</td>
-                <td>{{ consumo.consumo_litros }}</td>
-                <td>{{ consumo.fecha_consumo|date:"d/m/Y" }}</td>
-                <td>{{ consumo.hskmactuales }}</td>
-                <td>{{ consumo.precinto_entrada }}</td>
-                <td>{{ consumo.precinto_salida }}</td>
-                <td>{{ consumo.observaciones }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        </div>
+    </main>
 </body>
 </html>
-
-
-
-

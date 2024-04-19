@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load widget_tweaks %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,93 +14,76 @@
 </head>
 <body class="bg-gray-50 p-60 py-16">
     <h1 class="text-2xl font-bold mb-6">Crear Orden de Reparación</h1>
-    <form method="post" id="orden-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form method="post" id="orden-form" class=" bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {% csrf_token %}
-        <div id="items-container" class="mb-4">
-            <!-- Los ítems dinámicos se insertarán aquí -->
+        {{ form.up|add_class:"w-auto px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out mb-1 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" }}
+        <div id="items-container" class="mb-3 w-full">
+            <!-- Dynamic items will be inserted here -->
         </div>
         <button type="button" id="add-item" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Agregar Ítem</button>
         <input type="submit" value="Guardar Orden de Reparación" class="ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
     </form>
-
     <script>
-        var addedItems = []; // Lista para llevar un registro de los ítems añadidos
-
-        document.getElementById('add-item').addEventListener('click', function() {
-            const container = document.getElementById('items-container');
-            const uniqueId = Date.now();
-
-            const selectHtml = `
-                <select name="item_code[]" class="item-select form-select appearance-none block w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="select-${uniqueId}">
-                    <option value="">Seleccione un ítem</option>
-                    {% for item in items %}
-                        <option value="{{ item.ItemCode }}" data-stock="{{ item.QuantityOnStock }}">
-                            {{ item.ItemCode }} - {{ item.ItemName }} - Stock: {{ item.QuantityOnStock }}
-                        </option>
-                    {% endfor %}
-                </select>
-            `;
-
-            const itemHtml = `
-                <div class="item flex flex-col md:flex-row items-center md:space-x-3 py-2" id="item-${uniqueId}" style="padding: 0.5rem">
-                    ${selectHtml}
-                    <input type="number" name="cantidad[]" placeholder="Cantidad" min="1" class="quantity-input form-input appearance-none block w-auto px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="quantity-${uniqueId}">
-
-                    <button type="button" class="remove-item bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 md:mt-0" data-id="${uniqueId}">Eliminar</button>
-                    <div class="error-message text-red-500 text-sm mt-2" id="error-${uniqueId}"></div>
-                </div>
-            `;
-
-            container.insertAdjacentHTML('beforeend', itemHtml);
-        });
-
-        document.getElementById('items-container').addEventListener('click', function(event) {
-            if (event.target.classList.contains('remove-item')) {
-                const itemId = event.target.getAttribute('data-id');
-                document.getElementById('item-' + itemId).remove();
-                updateAddedItemsList();
-            }
-        });
-
-        document.getElementById('items-container').addEventListener('change', function(event) {
-            if (event.target.classList.contains('item-select')) {
-                const selectedOption = event.target.options[event.target.selectedIndex];
-                const maxStock = selectedOption.getAttribute('data-stock');
-                const uniqueId = event.target.id.split('-')[1];
-                const quantityInput = document.getElementById('quantity-' + uniqueId);
-                const errorMessageDiv = document.getElementById('error-' + uniqueId);
-
-                quantityInput.max = maxStock;
-                quantityInput.addEventListener('input', function() {
-                    if (parseInt(quantityInput.value, 10) > parseInt(maxStock, 10)) {
-                        errorMessageDiv.style.display = 'block';
-                        errorMessageDiv.textContent = 'La cantidad seleccionada supera el stock disponible.';
-                        quantityInput.value = 0.0; // Opcional: establecer el valor al máximo permitido
-                    } else {
-                        errorMessageDiv.style.display = 'none';
-                    }
-                });
-
-                const itemCode = selectedOption.value;
-                if (!validateBeforeAdd(itemCode)) {
-                    event.target.value = ""; // Reset select si el ítem ya está añadido
-                    quantityInput.value = ""; // Reset cantidad
-                    errorMessageDiv.style.display = 'none';
-                } else {
-                    addedItems.push(itemCode); // Añadir el ítem al array de control
-                }
-            }
-        });
-
-        function updateAddedItemsList() {
-            addedItems = Array.from(document.querySelectorAll('.item-select'))
-                              .map(select => select.value)
-                              .filter(value => value !== "");
-        }
-
-        function validateBeforeAdd(itemCode) {
-            return !addedItems.includes(itemCode);
-        }
+        // Pass the items by warehouse data to the JavaScript file
+        var itemsByWarehouse = {{ items|safe }};
     </script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const addItemButton = document.getElementById('add-item');
+    const itemsContainer = document.getElementById('items-container');
+
+    addItemButton.addEventListener('click', addNewItemRow);
+
+    function addNewItemRow() {
+        const uniqueId = Date.now();
+        const newItemRow = document.createElement('div');
+        newItemRow.classList.add('item-row');
+        newItemRow.innerHTML = `
+            <select name="warehouse[]" class="warehouse-select w-auto px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mr-0.5 mt-2" onchange="updateItemOptions(this, ${uniqueId})">
+                <option value="">Almacen</option>
+                {% for item in warehouse_list %}
+                <option value="{{ item }}" >{{ item }}</option>
+                {% endfor %}
+                <!-- Add other warehouses as needed -->
+            </select>
+            <select name="item_code[]" id="item-select-${uniqueId}" class="item-select w-3/6 px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-0.5">
+                <option value="">Elegi el Item</option>
+                <!-- Items will be populated based on warehouse selection -->
+            </select>
+            <input type="number" name="cantidad[]" id="quantity-${uniqueId}" placeholder="Cantidad" min="1" class="quantity-input appearance-none w-auto px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none mx-0.5">
+            <button type="button" onclick="this.parentElement.remove()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 md:mt-0 mx-0.5">Remove</button>
+        `;
+        itemsContainer.appendChild(newItemRow);
+    }
+
+    window.updateItemOptions = (warehouseSelect, uniqueId) => {
+        const warehouse = warehouseSelect.value;
+        const itemSelect = document.getElementById(`item-select-${uniqueId}`);
+        // Assume itemsByWarehouse is a global variable containing item data
+        const items = itemsByWarehouse[warehouse] || [];
+
+        itemSelect.innerHTML = '<option value="">Elegi el item</option>';
+        items.forEach(item => {
+            const option = new Option(`${item.ItemCode} - ${item.ItemName} (${item.QuantityOnStock} Disponible)`, item.ItemCode);
+            option.dataset.stock = item.QuantityOnStock; // Attach stock data to the option for later use
+            itemSelect.appendChild(option);
+        });
+    };
+
+    // Event listener for handling quantity input validation
+    document.getElementById('items-container').addEventListener('input', function(event) {
+        if (event.target.classList.contains('quantity-input')) {
+            const itemSelect = event.target.previousElementSibling;
+            const selectedOption = itemSelect.options[itemSelect.selectedIndex];
+            const maxStock = selectedOption.dataset.stock;
+
+            if (parseInt(event.target.value, 10) > parseInt(maxStock, 10)) {
+                alert(`La cantidad sobrepasa el maximo (${maxStock}).`);
+                event.target.value = maxStock; // Set to max stock available
+            }
+        }
+    });
+});
+    </script> <!-- Link to the JavaScript file -->
 </body>
 </html>

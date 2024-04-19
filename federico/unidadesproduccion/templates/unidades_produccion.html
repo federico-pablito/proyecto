@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FedeManager</title>
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="{% url 'pablofederico' %}" class=" ml-4">
+            <i class="fa-solid fa-house text-red-500"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class=" ml-4">
+            <i class="fa-solid fa-power-off text-red-500"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <header class="bg-white shadow">
+        <div class="grid justify-items-center mx-auto py-6 px-4">
+            <h1 class="text-3xl font-bold text-gray-900">Unidades de Produccion</h1>
+        </div>
+    </header>
+    <div class="flex justify-center mt-5">
+        <div>
+            <div class="flex justify-center space-x-4">
+                <a class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href="{% url 'exportar_ups' %}">Descargar UPs</a>
+                <a class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href="{% url 'unidades_pdf_view' %}">Unidades PDF</a>
+            </div>
+        </div>
+    </div>
+    <main class="mb-5 mt-3">
+        <div class="container mx-auto px-6">
+            <div class="bg-white shadow-md rounded-lg my-6 overflow-x-auto">
+              <table class="min-w-full leading-normal">
+                <thead>
+                  <tr>
+                    {% for nombre in lista_nombres %}
+                      <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-sm font-semibold text-white uppercase tracking-wider">
+                        {{ nombre }}
+                      </th>
+                    {% endfor %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for dato in tabla %}
+                    <tr>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ dato.id }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ dato.unidadproduccion }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-md">
+                        {{ dato.ubicacion }}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
+

@@ -1,3 +1,4 @@
+
 """
 Django settings for federico project.
 
@@ -21,20 +22,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-_ur19)5#4-7&di71x%6dw8a=1s^a&71f2@qp)&+gl6r@rtwt*2'
-"""CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')"""
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-"""ALLOWED_HOSTS = ['fedemanager.com',
+ALLOWED_HOSTS = ['fedemanager.com',
                  'www.fedemanager.com',
-                 'https://fedemanager.com',
-                 'https://www.fedemanager.com']
-"""
-ALLOWED_HOSTS = ["*"]
+                 'http://fedemanager.com',
+                 'http://www.fedemanager.com']
+
 
 # Application definition
 
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'service',
     'unidadesproduccion',
     'tablamadre',
-    'logistica',
     'disponibilidadequipos',
     'login',
     'novedades',
@@ -59,6 +58,11 @@ INSTALLED_APPS = [
     'aceites',
     'reparaciones',
     'django_filters',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'api',
+    'logisticas',
+    'proveedores',
 ]
 
 MIDDLEWARE = [
@@ -124,23 +128,32 @@ LOGGING = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
+        'NAME': '347r30b2c87fe93f1a23b9eae76453c645e12a9f989f17coiuads823as',
         'USER': 'PabloFederico',
         'PASSWORD': '8d3A{0ViK!G!>@?FTp',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+
 """DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pablofederico_k71m',
-        'USER': 'pablofederico_k71m_user',
-        'PASSWORD': 'TxsdlhHyUZ7bDaopqv8qENo6JFUh30hO',
-        'HOST': 'dpg-cmepnpmd3nmc739blnq0-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }"""
+
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '527f70b6c33fe67f1a62b9eae76737c723e22a9f605f17c062bed2debff685e6',
+        'USER': 'PabloFederico',
+        'PASSWORD': '8d3A{0ViK!G!>@?FTp',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}"""
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -159,12 +172,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -175,13 +195,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_URL = 'static/'
-MEDIA_URL = 'images/'
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'static',
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'images'
+STATIC_ROOT = '/home/django_runner/produccion/federico/staticfiles/'
+MEDIA_ROOT = '/home/django_runner/produccion/federico/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

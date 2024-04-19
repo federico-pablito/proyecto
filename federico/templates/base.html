@@ -65,11 +65,42 @@
     a.d-block{
       color: black;
     }
-    footer{
-      position: fixed;
-      bottom: 0;
-      width: 81%;
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 87%;
+        transform: translateX(0%);
     }
+    .widget-user-header {
+        background-color: rgb(163, 39, 39) !important;
+    }
+    @media (max-width: 600px) {
+    footer {
+      width: 100%; /* Makes the footer full-width on small devices */
+      left: 0;
+      transform: translateX(0);
+      padding: 5px; /* Adjusts padding for smaller screens */
+    }}
+
+
+    @media (max-width: 768px) {
+    footer {
+      width: 100%; /* Makes the footer full-width on small devices */
+      left: 0;
+      transform: translateX(0);
+      padding: 5px; /* Adjusts padding for smaller screens */
+    }}
+
+    @media (max-width: 1024px) {
+    footer {
+      width: 100%; /* Makes the footer full-width on small devices */
+      left: 0;
+      transform: translateX(0);
+      padding: 5px; /* Adjusts padding for smaller screens */
+    }}
+
+
   </style>
 
 </head>
@@ -218,7 +249,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: rgba(206, 208, 210, 0.867);">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link" style="background-color: black;">
+    <a href="pablofederico.com.ar" class="brand-link" style="background-color: black;">
       <img src="../static/assets/dist/img/fedemanager1.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">FedeManager</span>
     </a>
@@ -246,7 +277,7 @@
 <!-- Sidebar Menu -->
 <nav class="mt-2">
   <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
+    {% if 'tablamadre.puede_ver_internos' in permisos %}
     <!-- Maestro -->
     <li class="nav-item">
       <a href="#" class="nav-link">
@@ -271,29 +302,111 @@
         </li>
       </ul>
     </li>
-
-    <!-- Service -->
     <li class="nav-item">
       <a href="#" class="nav-link">
-        <i class="fa-solid fa-bell"></i>
+        <i class="fa-solid fa-truck"></i>
         <p>
-          Service
-          <i class="fas fa-angle-left right"></i>
+          Conductores
+          <i class="right fas fa-angle-left"></i>
         </p>
       </a>
       <ul class="nav nav-treeview">
+        {% if 'tablamadre.puede_ver_choferes' in permisos %}
         <li class="nav-item">
-          <a href="{% url 'serviceprin'%}" class="nav-link">
+          <a href="{% url 'main_choferes' %}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
-            <p>Planilla Service</p>
+            <p>Choferes</p>
           </a>
         </li>
+        {% endif %}
+        {% if 'tablamadre.puede_crear_choferes' in permisos %}
+        <li class="nav-item">
+          <a href="{% url 'cargar_chofer' %}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Cargar Choferes</p>
+          </a>
+        </li>
+        {% endif %}
+        {% if 'tablamadre.puede_ver_operadores' in permisos %}
+        <li class="nav-item">
+          <a href="{% url 'main_operadores' %}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Operadores</p>
+          </a>
+        </li>
+        {% endif %}
+        {% if 'tablamadre.puede_crear_operadores' in permisos %}
+        <li class="nav-item">
+          <a href="{% url 'cargar_operario' %}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Cargar Operadores</p>
+          </a>
+        </li>
+        {% endif %}
       </ul>
     </li>
+    {% endif %}
+    {% if 'tablamadre.puede_ver_services' in permisos %}
+        <!-- Service -->
+        <li class="nav-item">
+          <a href="{% url 'serviceprin'%}" class="nav-link">
+            <i class="fa-solid fa-bell"></i>
+            <p>
+              Service
+            </p>
+          </a>
+        </li>
+    {% endif %}
+   
 
-    <!-- Logistica -->
+    {% if 'reparaciones.puede_ver_reparaciones' in permisos %}
+        <!-- Reparaciones -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <p>
+              Reparaciones
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'reparaciones-main' %}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Lista de Reparaciones</p>
+              </a>
+            </li>
+            {% if 'reparaciones.puede_crear_reparaciones' in permisos %}
+                <li class="nav-item">
+                  <a href="{% url 'cargar_reparacion' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Nueva Reparacion</p>
+                  </a>
+                </li>
+            {% endif %}
+            {% if 'reparaciones.puede_ver_ordenes_reparacion' in permisos %}
+                <li class="nav-item">
+                  <a href="{% url 'ordenes' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ordenes</p>
+                  </a>
+                </li>
+            {% endif %}
+            {% if 'reparaciones.puede_crear_ordenes_reparacion' in permisos %}
+                <li class="nav-item">
+                  <a href="{% url 'crear_orden' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cargar Orden</p>
+                  </a>
+                </li>
+            {% endif %}
+
+          </ul>
+        </li>
+    {% endif %}
+	    <!-- Logistica -->
     <li class="nav-item">
-      <a href="{% url 'visualizar_ups'%}" class="nav-link">
+      <a href="#" class="nav-link">
         <i class="fa-solid fa-pen-to-square"></i>
         <p>
           Logistica
@@ -302,52 +415,94 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="{% url 'solicitudtraslado'%}" class="nav-link">
+          <a href="{% url 'choose_form'%}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
-            <p>Traslado</p>
+            <p>Crear Traslado</p>
           </a>
         </li>
-
+        <li class="nav-item">
+          <a href="{% url 'ver_forms'%}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Ver Traslados</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'ver_solicitudes'%}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Ver solicitudes</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'solicitar_logistica'%}" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Solicitar Traslado</p>
+          </a>
       </ul>
     </li>
+    {% if 'reparaciones.puede_ver_partes_diarios_mecanicos' in permisos %}
+        <!-- Disponibilidad -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <p>
+              Parte Diario Mecanicos
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'main_parte_mecanicos'%}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Mostrar Partes</p>
+              </a>
+            </li>
+            {% if 'reparaciones.puede_ver_partes_diarios_mecanicos' in permisos %}
+                <li class="nav-item">
+                  <a href="{% url 'cargar_parte_mecanicos'%}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cargar Parte</p>
+                  </a>
+                </li>
+            {% endif %}
+          </ul>
+        </li>
+    {% endif %}
+        {% if 'proveedores.puede_ver_proveedores' in permisos %}
+        <!-- Disponibilidad -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>
+              Proveedores
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{% url 'cargar_proveedor'%}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cargar Proveedor</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'cargar_evaluacion'%}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cargar Evaluacion</p>
+              </a>
+            </li>
+            {% if 'reparaciones.puede_ver_partes_diarios_mecanicos' in permisos %}
+                <li class="nav-item">
+                  <a href="{% url 'main_evaluacion'%}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Proveedores</p>
+                  </a>
+                </li>
+            {% endif %}
+          </ul>
+        </li>
+    {% endif %}
 
-    <!-- Reparaciones -->
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="fa-solid fa-screwdriver-wrench"></i>
-        <p>
-          Reparaciones
-          <i class="fas fa-angle-left right"></i>
-        </p>
-      </a>
-      <ul class="nav nav-treeview">
-        <li class="nav-item">
-          <a href="{% url 'reparaciones-main' %}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Lista de Reparaciones</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'cargar_reparacion' %}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Nueva Reparacion</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'crear_orden' %}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Cargar Orden</p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="{% url 'ordenes' %}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-            <p>Ordenes</p>
-          </a>
-        </li>
-      </ul>
-    </li>
-
+    {% if 'tablamadre.puede_ver_disponibilidad' in permisos %}
         <!-- Disponibilidad -->
         <li class="nav-item">
           <a href="#" class="nav-link">
@@ -372,16 +527,19 @@
             </li>
           </ul>
         </li>
+    {% endif %}
+    {% if 'tablamadre.puede_ver_novedades' in permisos %}
         <!-- Novedades -->
-    <li class="nav-item">
-      <a href="{% url 'novedades_main'%}" class="nav-link">
-        <i class="fa-solid fa-newspaper"></i>
-        <p>
-          Novedades
-          <span class="right badge badge-danger"></span>
-        </p>
-      </a>
-    </li>
+        <li class="nav-item">
+          <a href="{% url 'novedades_main'%}" class="nav-link">
+            <i class="fa-solid fa-newspaper"></i>
+            <p>
+              Novedades
+              <span class="right badge badge-danger"></span>
+            </p>
+          </a>
+        </li>
+    {% endif %}
 
     <!-- UPS -->
     <li class="nav-item">
@@ -424,11 +582,6 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">DOLAR HOY</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -438,38 +591,91 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>Dolar Nacion</h3>
-                <h4>Compra: ${{ official_compra }}</h4>
-                <h4>Venta: ${{ official_venta }}</h4>
+                <h3>Equipos</h3>
+                <h4>Disponibles: {{ equipos.disponibles }}</h4>
+                <h4>Activos: {{ equipos.activos }} Inactivos: {{ equipos.inactivos }}</h4>
               </div>
               <div class="icon">
-                <i class="fa-solid fa-dollar-sign"></i>
+                <i class="fa-solid fa-car"></i>
               </div>
-              <a href="https://www.lanacion.com.ar/dolar-hoy/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'main-maestroequipos' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>Dolar Blue</h3>
-                <h4>Compra: ${{ blue_compra }}</h4>
-                <h4>Venta: ${{ blue_venta }}</h4>
+                <h3 id="titulo-reparaciones">Reparaciones</h3>
+                <h5 style="margin-bottom: 2.8rem;">Pendientes: {{ reparaciones_pendientes }}</h5>
+
               </div>
               <div class="icon">
-                <i class="fa-solid fa-dollar-sign"></i>
+                <i class="fa-solid fa-wrench"></i>
               </div>
-              <a href="https://www.lanacion.com.ar/tema/dolar-blue-tid67294/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'reparaciones-main' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>Alquilados</h3>
+                <h4 style="margin-bottom: 2.8rem;">Cantidad: {{ equipos.alquilados }}</h4>
+              </div>
+              <div class="icon">
+                <i class="fa-solid fa-car"></i>
+              </div>
+              <a href="{% url 'reparaciones-main' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
       </div>
+      <div class="content-fluid">
+          <div>
+              <div class="col-md-4">
+                    <div class="card card-widget widget-user-2 shadow-sm">
+                        <div class="widget-user-header bg-warning">
+                        <h1 class="widget-user-image" style="color: white; font-weight: 700;">Services</h1>
+                        </div>
+                    <div class="card-footer p-0">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="{% url 'serviceprin' %}" class="nav-link" style="font-size: x-large; color: black;">
+                                Normales: {{ services.normales }}
+                                <span class="float-right badge bg-info"><i class="fas fa-arrow-circle-right"></i></span>
+
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'serviceprin' %}" class="nav-link" style="font-size: x-large; color: black;">
+                                Próximos: {{ services.proximos }}
+                                <span class="float-right badge bg-info"><i class="fas fa-arrow-circle-right"></i></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'serviceprin' %}" class="nav-link" style="font-size: x-large; color: black;">
+                                Excedidos: {{ services.excedidos }}
+                                <span class="float-right badge bg-info"><i class="fas fa-arrow-circle-right"></i></span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
     <!-- /.container-fluid -->
     </section>
   <!-- /.content -->
@@ -522,5 +728,24 @@
 <script src="{% static 'assets/dist/js/adminlte.js' %}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{% static 'assets/dist/js/pages/dashboard.js' %}"></script>
+<script>
+    // Función para cambiar el título a "Reparación" en pantallas de celular
+    function cambiarTituloSegunTamañoPantalla() {
+        var screenWidth = window.innerWidth;
+
+        // Verificar si es una pantalla de celular
+        if (screenWidth <= 768) { // Cambia este valor según tu definición de "pantalla de celular"
+            // Obtener el elemento del título
+            var tituloReparaciones = document.getElementById('titulo-reparaciones');
+            // Cambiar el texto del título
+            tituloReparaciones.innerText = "Reparación";
+        }
+    }
+
+    // Llamar a la función cuando la página se cargue y cuando se redimensione la ventana
+    window.onload = cambiarTituloSegunTamañoPantalla;
+    window.onresize = cambiarTituloSegunTamañoPantalla;
+</script>
 </body>
 </html>
+

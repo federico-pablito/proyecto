@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-lg mx-auto p-8 bg-white shadow-md rounded-md">
+        <h1 class="text-2xl font-bold mb-6">Detalle del Formulario</h1>
+        <h2 class="text-xl font-bold mb-4">Detalles:</h2>
+        <ul class="list-disc pl-8">
+            <li>ID: {{ form.id }}</li>
+            <li>Carreton propio: {{ form.carreton_propio }}</li>
+            <li>Proveedor: {{ form.proovedor }}</li>
+            <li>Tara: {{ form.tara }}</li>
+            <li>Unidad de Producción Solicitante: {{ form.up_solicita }}</li>
+            <li>Fecha de Pedido: {{ form.fecha_pedido }}</li>
+            <li>Fecha Requerido en Obra: {{ form.fecha_requeridoobra }}</li>
+            <li>Nivel de Urgencia: {{ form.nivel_urgencia }}</li>
+            <li>Solicitante: {{ form.solicitante }}</li>
+            <li>Tipo de Equipo: {{ form.tipo_equipo }}</li>
+            <li>Descripción del Equipo: {{ form.descripcion_equipo }}</li>
+            <li>Motivo de Requerimiento: {{ form.motivo_requerimiento }}</li>
+            <li>Horas o Kilómetros: {{ form.hsKm }}</li>
+            <li>Tope de Requerimiento: {{ form.tope_requerimiento }}</li>
+            <li>Valor del Viaje: {{ form.valor_viaje }}</li>
+            <li>Chofer: {{ form.chofer }}</li>
+        </ul>
+    </div>
+</body>
+</html>

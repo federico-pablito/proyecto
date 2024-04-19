@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         // Iterar sobre los tanques y agregarlos al contenedor
         $.each(aceites, function(index, aceite) {
-            var porcentaje = (aceite.cantidad * 100) / aceite.capacidad;
+            var porcentaje = (aceite.cantidad_aceite * 100) / aceite.capacidad_aceite;
 
             var progressBar = $('<div class="barra-progreso">').append(
                 $('<div class="barra-progreso-fill">').css('width', porcentaje + '%')
@@ -26,8 +26,8 @@ $(document).ready(function() {
             var aceiteInfo = $('<div class="aceite">').append(
                 $('<div class="nombre">').text(aceite.nombre),
                 $('<div class="tipo">').text(aceite['tipo de aceite']),
-                $('<div class="capacidad">').text('Capacidad: ' + aceite.capacidad + ' litros'),
-                $('<div class="cantidad">').text('Cantidad de aceite: ' + aceite.cantidad + ' litros'),
+                $('<div class="capacidad">').text('Capacidad: ' + aceite.capacidad_aceite + ' litros'),
+                $('<div class="cantidad">').text('Cantidad de aceite: ' + aceite.cantidad_aceite + ' litros'),
                 progressBar
             );
 

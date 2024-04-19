@@ -4,6 +4,7 @@ from tablamadre.admin import Permission
 from django.http import HttpResponse, HttpResponseForbidden
 from django.http import JsonResponse
 from tablamadre.models import TanqueAceite, ConsumoAceite, RepostajeAceite
+from .filters import repostaje_filter, consumo_filter
 from .forms import ConsumoAceiteForm, RepostajeAceiteForm, TanqueAceite
 from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib import messages
@@ -57,7 +58,10 @@ def registrar_consumo_aceite(request):
 
 def historial_consumos_aceite(request):
     cargas = ConsumoAceite.objects.all()
-    return render(request, 'historial_consumo_aceite.html', {'cargas': cargas})
+    filtro = consumo_filter(request.GET, queryset=cargas)
+    if filtro.is_valid():
+        cargas = filtro.qs
+    return render(request, 'historial_consumo_aceite.html', {'cargas': cargas, 'filtro': filtro})
 
 
 def registrar_repostaje_aceite(request):
@@ -91,7 +95,12 @@ def registrar_repostaje_aceite(request):
 def historial_repostaje_aceite(request):
     # Obtener todos los repostajes
     repostajesac = RepostajeAceite.objects.all()
-    return render(request, 'historial_repostaje_aceite.html', {'repostajesac': repostajesac})
+    filtro = repostaje_filter(request.GET, queryset=repostajesac)
+    if filtro.is_valid():
+        repostajesac = filtro.qs
+
+    return render(request, 'historial_repostaje_aceite.html', {'repostajesac': repostajesac,
+                                                               'filtro': filtro})
 
 
 def exportar_consumos_aceite(request):

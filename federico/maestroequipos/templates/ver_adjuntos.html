@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <button class="text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="{% url 'pablofederico' %}" class="text-red-500 ml-4">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class="text-red-500 ml-4">
+            <i class="fas fa-power-off"></i> Logout
+          </a>
+    </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+        <h1 class="text-4xl font-bold text-center mb-5">{{ interno.interno }}</h1>
+        <div class="flex flex-grow justify-center space-x-5 mb-7">
+            <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'cargar_adjuntos' %}" role="button">Cargar Adjuntos</a>
+            <a class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" href="{% url 'cargar_fotos' %}" role="button">Cargar Fotos</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex justify-center">
+                <div class="grid grid-cols-2 gap-10 md:grid-cols-3">
+                    {% for foto in fotos %}
+                        <a class="w-48 h-48" href="{{ foto.foto.url }}" target="_blank">
+                            <img src="{{ foto.foto.url }}" alt="{{ foto.titulo }}" class="w-full h-full rounded-lg">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="grid grid-cols-2 gap-10 md:grid-cols-3 ">
+                    {% for adjunto in adjuntos %}
+                        <div>
+                            <a href="{{ adjunto.archivo.url }}" class="bg-slate-400 hover:bg-slate-500 shadow-lg hover:shadow-2xl rounded-lg flex justify-evenly items-center justify-center">
+                                <i class="fas fa-file-pdf text-4xl mb-1 py-3 pl-5"></i>
+                                <p class="pr-3 py-3 pl-3">{{ adjunto.titulo }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

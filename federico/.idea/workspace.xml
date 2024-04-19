@@ -5,29 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551a7a9c-41d0-4840-baed-7686e6c1656b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/proveedores/templates/main_evaluaciones.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/federico.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/federico.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/cronograma_crear.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/cronograma_mostrar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/logistica_crear.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/logistica_editar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/logistica_pdf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/logisticatabla.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_crear.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_equipo_mostrar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_crear.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_info.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/templates/requerimiento_traslado_mostrar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logistica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/logistica/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aceites/templates/historial_consumo_aceite.html" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/templates/historial_consumo_aceite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aceites/templates/historial_repostaje_aceite.html" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/templates/historial_repostaje_aceite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aceites/templates/mostrar_tanques_aceite.html" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/templates/mostrar_tanques_aceite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aceites/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/aceites/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_cargas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/historial_repostaje.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/templates/tanque_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/templates/tanque_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/combustible/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/combustible/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/templates/crear_disponibilidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/templates/crear_disponibilidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/templates/main_disponibilidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/templates/main_disponibilidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/templates/mostrar_disponibilidad.html" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/templates/mostrar_disponibilidad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disponibilidadequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/disponibilidadequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/federico/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/federico/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logistica/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/MainMaestro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/cargointernos.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/cargointernos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/editar_interno.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/editar_interno.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/templates/info_interno.html" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/templates/info_interno.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maestroequipos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/maestroequipos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/migrations/0002_novedadtemporal_marca_novedadtemporal_modelo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/migrations/0003_remove_novedadtemporal_id_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/migrations/0004_alter_novedadtemporal_fecha.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novedades/templates/novedades_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/novedades/templates/novedades_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/main_ordenes.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/main_ordenes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/ordenes_reparacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/ordenes_reparacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/templates/reparaciones_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reparaciones/templates/reparaciones_main.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reparaciones/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reparaciones/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/info_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/info_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/templates/service_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/service/templates/service_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tablamadre/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0002_alter_internos_chofer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0003_alter_consumo_hskmactuales_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tablamadre/migrations/0004_remove_logistica_interno_and_more.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tablamadre/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tablamadre/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unidadesproduccion/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unidadesproduccion/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/unidadesproduccion/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unidadesproduccion/templates/holaquease.html" beforeDir="false" afterPath="$PROJECT_DIR$/unidadesproduccion/templates/unidades_produccion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unidadesproduccion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/unidadesproduccion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/warrior.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/warrior.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +80,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -69,6 +108,8 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Django Server.federico.executor&quot;: &quot;Run&quot;,
+    &quot;Python.forms.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Debug&quot;,
     &quot;Python.warrior.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -76,7 +117,7 @@
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/aceites&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/fr33tr1st/Desktop/PabloFederico/proyecto/federico/proveedores&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,17 +129,66 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/proveedores" />
+      <recent name="$PROJECT_DIR$/proveedores/templates" />
       <recent name="$PROJECT_DIR$/aceites" />
       <recent name="$PROJECT_DIR$/maestroequipos/templates" />
       <recent name="$PROJECT_DIR$/logistica/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/proveedores/templates" />
       <recent name="$PROJECT_DIR$/utils" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/templatetags" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.warrior">
+  <component name="RunManager" selected="Django Server.federico">
+    <configuration name="forms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="federico" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/maestroequipos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maestroequipos/forms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="federico" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/maestroequipos" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maestroequipos/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="warrior" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="federico" />
       <option name="ENV_FILES" value="" />
@@ -129,7 +219,6 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="federico.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -149,6 +238,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.forms" />
+        <item itemvalue="Python.views" />
         <item itemvalue="Python.warrior" />
       </list>
     </recent_temporary>
@@ -156,7 +247,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
       </set>
     </attachedChunks>
   </component>
@@ -206,7 +298,40 @@
       <workItem from="1709914513217" duration="5592000" />
       <workItem from="1710156775049" duration="609000" />
       <workItem from="1710159854945" duration="8736000" />
-      <workItem from="1710180555501" duration="3651000" />
+      <workItem from="1710180555501" duration="4251000" />
+      <workItem from="1710250494584" duration="12000000" />
+      <workItem from="1710435623725" duration="36961000" />
+      <workItem from="1710523775299" duration="53000" />
+      <workItem from="1710524955700" duration="8841000" />
+      <workItem from="1710764104365" duration="13151000" />
+      <workItem from="1710812903329" duration="1372000" />
+      <workItem from="1710863608059" duration="4481000" />
+      <workItem from="1710964184856" duration="7542000" />
+      <workItem from="1711038833826" duration="20836000" />
+      <workItem from="1711496525291" duration="44000" />
+      <workItem from="1711499423037" duration="3095000" />
+      <workItem from="1711557179087" duration="837000" />
+      <workItem from="1711841587213" duration="8000" />
+      <workItem from="1711841617912" duration="49000" />
+      <workItem from="1712147725782" duration="278000" />
+      <workItem from="1712148684402" duration="451000" />
+      <workItem from="1712149863826" duration="18287000" />
+      <workItem from="1712263258338" duration="1051000" />
+      <workItem from="1712320790315" duration="33000" />
+      <workItem from="1712320824942" duration="27000" />
+      <workItem from="1712322585910" duration="732000" />
+      <workItem from="1712331570273" duration="16862000" />
+      <workItem from="1712593407116" duration="5502000" />
+      <workItem from="1712606983997" duration="207000" />
+      <workItem from="1712662459648" duration="8537000" />
+      <workItem from="1712749173685" duration="31557000" />
+      <workItem from="1713267775193" duration="13387000" />
+      <workItem from="1713300392823" duration="14000" />
+      <workItem from="1713305577218" duration="714000" />
+      <workItem from="1713310575702" duration="1007000" />
+      <workItem from="1713360797144" duration="11048000" />
+      <workItem from="1713380171538" duration="12635000" />
+      <workItem from="1713531444656" duration="1408000" />
     </task>
     <servers />
   </component>
@@ -214,6 +339,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/federico$forms.coverage" NAME="forms Coverage Results" MODIFIED="1710531187962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/maestroequipos" />
     <SUITE FILE_PATH="coverage/federico$warrior.coverage" NAME="warrior Coverage Results" MODIFIED="1708351323079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/static/assets/python" />
+    <SUITE FILE_PATH="coverage/federico$views.coverage" NAME="views Coverage Results" MODIFIED="1710514819442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/maestroequipos" />
   </component>
 </project>

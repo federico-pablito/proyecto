@@ -1,538 +1,214 @@
-
 <!DOCTYPE html>
+{% load widget_tweaks %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>FedeManager</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="/static/assets/dist/img/logo32x32.png" type="image/png">
     <script src="https://kit.fontawesome.com/c11348c6ce.js" crossorigin="anonymous"></script>
-    <style>
-    .header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        /* background: url('../../static/assets/dist/img/fondochiquito.jpg');
-        background-size: cover;
-        background-repeat: no-repeat; */
-
-        text-align: center;
-        align-items: center;
-    }
-    h1{
-        margin-top: 1rem;
-    }
-    form{
-        background-color: #6e6c6c48;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.489);
-        margin: auto;
-        border-radius: 8px;
-        padding: 20px;
-        width: 50%;
-        margin-top: 1rem;
-        align-items: center;
-    }
-    .header p{
-        margin-top: 1.5rem;
-    }
-    .header p a{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: black;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 500;
-        font-size: large;
-        border-radius: 10px;
-        padding: 8px 5px 8px 5px;
-    }
-        .header p a:hover{
-        background-color:  floralwhite;
-        color: black;
-        border: 1px solid black;
-        box-shadow: none !important;
-        background: linear-gradient(none);
-    }
-    .header p a:active{
-        background-color:  floralwhite;
-        color: black;
-        border: 1px solid black;
-        box-shadow: none !important;
-        background: linear-gradient(none);
-    }
-    .formCheck {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Be Vietnam Pro', sans-serif;
-        align-items: center;
-        background-color: #908d8d48;
-        padding: 10px 2rem;
-        margin: 0px 20%;
-        border-radius: 60px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.489);
-        width: 820px;
-        justify-content: center;
-    }
-    .navbar{
-        color: white;
-        background-color: black;
-    }
-    .navbar-light .navbar-nav .nav-link{
-        color: white;
-    }
-    .navbar-light .navbar-nav .nav-link:hover{
-        color: grey;
-    }
-    .form-row {
-        display: flex;
-        flex-wrap: nowrap;   
-    }
-    .form-group{
-        width: 100%;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
-    .formCheck div {
-        padding: 5px 8px; 
-        font-size: medium;
-    }
-    .btnEdit{
-        width: auto;
-        padding: 3px 10px 3px 10px;
-        outline: 0;
-        cursor: pointer;
-        border: 1px solid #1d1c1d4d;
-        font-weight: 600;
-        background: #fff;
-        font-size: 13px;
-        border-radius: 4px;
-        color: rgb(0, 0, 0);
-        height: 36px;
-        transition: all 80ms linear;
-        margin-top: 10px; 
-        transition: background-color 0.3s ease;
-        margin-left: 3px;
-        font-family:'Helvetica', 'Arial', sans-serif;
-    }
-        .btnEdit:hover{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid black;
-        color: white;
-        text-decoration: none
-    }
-    .btnEdit:active{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid black;
-        color: white;
-        text-decoration: none;
-    }
-    form a{
-        width: auto; 
-        display: inline-block; 
-        position: relative;
-        align-items: center;
-        padding: 5px 5px;
-        outline: 0;
-        cursor: pointer;
-        border: 2px solid #1d1c1d4d;
-        font-weight: 600;
-        background: #fff;
-        font-size: 13px;
-        border-radius: 4px;
-        color: rgb(29, 28, 29);
-        height: 36px;
-        transition: all 80ms linear;
-        margin: 5px; 
-        transition: background-color 0.3s ease;
-    }
-    form a:hover{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid black;
-        color: black;
-        text-decoration: none;
-    }
-    form a:active{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid;
-    }
-    .edit{
-        width: 135px;
-        height: 45px;
-    }
-    .filtrarBtn {
-        width: auto; 
-        display: inline-block; 
-        position: relative;
-        align-items: center;
-        padding: 5px 5px;
-        outline: 0;
-        cursor: pointer;
-        border: 2px solid #1d1c1d4d;
-        font-weight: 600;
-        background: #fff;
-        font-size: 13px;
-        border-radius: 4px;
-        color: rgb(29, 28, 29);
-        height: 36px;
-        transition: all 80ms linear;
-        margin: 5px; 
-        transition: background-color 0.3s ease;
-    }
-    .filtrarBtn:hover{
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid black;
-        color: black;
-    }
-    .filtrarBtn:active {
-        background-color: rgba(245, 0, 7, 0.93);
-        border: 1.5px solid;
-    }
-    .divCheck{
-        justify-content: center;
-    }
-    .button-container {
-        display: flex;
-    }
-    .button-container p {
-        margin-right: 10px; 
-    }
-    td a .btn-primary{
-        margin: 10px;
-    }
-    .table-bordered thead th{
-        background-color: rgba(97, 96, 96, 0.93);
-    }
-    .table-bordered td{
-        font-weight: bold;
-    }
-    .divBtn{
-        display: flex;
-        width: auto;
-        align-items: center;
-        flex-direction: row;
-    }
-    .table-bordered thead th{
-        font-family:'Helvetica', 'Arial', sans-serif;
-    }
-    .table-bordered td{
-        font-family:'Helvetica', 'Arial', sans-serif;
-    }
-    input{
-        width: 15px;
-        height: 15px;
-    }
-
-    table tr:nth-child(odd){
-        background-color: white;
-    }
-    table tr:nth-child(even){
-        background-color: rgba(163, 152, 152, 0.801);
-    }
-    #id_interno, #id_marca, #id_modelo, #id_dominio, #id_actividadvehiculo{
-        width: 5rem;
-        height: 1.5rem;
-    }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-house" style="color: red;"></i> Home</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-        <a href="{% url 'pablofederico'%}" class="nav-link" style="font-family:'Helvetica', 'Arial', sans-serif;"><i class="fa-solid fa-power-off" style="color: red;"></i>  Logout</a>
-    </li>
-    </ul>
-</nav>
-<body>
-    <div class="header">
-    {% if alquiler %}
-        <h1 style="font-family:'Helvetica', 'Arial', sans-serif;">Maestro Equipos Alquileres</h1>
-
-    {% else %}
-        <h1 style="font-family:'Helvetica', 'Arial', sans-serif;">Maestro Equipos</h1>
-    {% endif %}
-    <a href="{% url "exportar_internos" %}" class="btn btn-primary">Descargar Internos</a>
-
-
-    <div class="button-container">
-        <p><a class="btn btn-primary" href="{% url 'cargointernos' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Cargo Equipos</a></p>
-        <p><a class="btn btn-primary" href="{% url 'alquilerequipo' %}" role="button" style="font-family:'Helvetica', 'Arial', sans-serif;">Alquiler Equipo</a></p>
-    </div>
-        <p>
-            <button id="toggleFormBtn" class="filtrarBtn" style="font-family:'Helvetica', 'Arial', sans-serif; background-color: rgba(38, 38, 38, 0.93);color: white;border-color: rgba(0, 0, 0, 0.93);margin-bottom: 1rem;">Seleccionar Columnas</button>
-        </p>
-    </div>
-    <div  id="formContainer" class="divCheck" style="display: flex;justify-content: center;">
-        <form method="post" class="formCheck" style="font-family:'Helvetica', 'Arial', sans-serif;">
-            <div class="form-row">
-                <div class="form-group">
-                    {% csrf_token %}
-                    {{ form.id_value.label_tag }}{{ form.id_value }}
-                    <br>
-                    {{ form.interno_value.label_tag }}{{ form.interno_value }}
-                    <br>
-                    {{ form.up_value.label_tag }}{{ form.up_value }}
-                    <br>
-                    {{ form.marca_value.label_tag }}{{ form.marca_value }}
-                    <br>
-                    {{ form.modelo_value.label_tag }}{{ form.modelo_value }}
-                </div>
-                <div class="form-group">
-                    {{ form.tipovehiculo_value.label_tag }}{{ form.tipovehiculo_value }}
-                    {{ form.chasis_value.label_tag }}{{ form.chasis_value }}
-                    <br>
-                    {{ form.motor_value.label_tag }}{{ form.motor_value }}
-                    <br>
-                    {{ form.dominio_value.label_tag }}{{ form.dominio_value }}
-                    <br>
-                    {{ form.anio_value.label_tag }}{{ form.anio_value }}
-                </div>
-                <div class="form-group">
-                    {{ form.aseguradora_value.label_tag }}{{ form.aseguradora_value }}
-                    {{ form.seguro_value.label_tag }}{{ form.seguro_value }}
-                    {{ form.seguro_pdf_value.label_tag }}{{ form.seguro_pdf_value }}
-                    <br>
-                    {{ form.itv_value.label_tag }}{{ form.itv_value }}
-                    <br>
-                    {{ form.tarjeta_value.label_tag }}{{ form.tarjeta_value }}
-                </div>
-                <div class="form-group">
-                    {{ form.propietario_value.label_tag }}{{ form.propietario_value }}
-                    <br>
-                    {{ form.chofer_value.label_tag }}{{ form.chofer_value }}
-                    <br>
-                    {{ form.alquilado_value.label_tag }}{{ form.alquilado_value }}
-                    <br>
-                    {{ form.valorpesos_value.label_tag }}{{ form.valorpesos_value }}
-                    <br>
-                    {{ form.valordolares_value.label_tag }}{{ form.valordolares_value }}
-                </div>
-                <div class="form-group">
-                    {{ form.orden_value.label_tag }}{{ form.orden_value }}
-                    {{ form.actividad_value.label_tag }}{{ form.actividad_value }}
-                </div>
-            </div>
-                <div class="divBtn">
-                    <input type="submit" name= "columna" value="Elegir Columna" class="filtrarBtn">
-                    <input type="submit" name="crear_pdf" value="Crear PDF" class="filtrarBtn">
-                </div>
-        </form>
-    </div>
-    <div>
-        <form method="get">
-            <label>Interno:</label> {{ filter.form.interno }}
-            <label>UP: </label> {{ filter.form.up }}
-            <label>Marca: </label> {{ filter.form.marca }}
-            <label>Modelo: </label> {{ filter.form.modelo }}
-            <label>Dominio: </label> {{ filter.form.dominio }}
-            <label>Actividad: </label> {{ filter.form.actividadvehiculo }}
-            <div>
-            <button type="submit" class="filtrarBtn">Filtrar</button>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-black p-4 text-white flex justify-between items-center">
+        <div class="flex items-center">
+          <a href="{% url 'pablofederico' %}" class=" ml-4">
+            <i class="fa-solid fa-house text-red-500"></i> Home
+          </a>
+          <a href="{% url 'logout' %}" class=" ml-4">
+            <i class="fa-solid fa-power-off text-red-500"></i> Logout
+          </a>
+        </div>
+    </nav>
+    <header class="bg-white shadow">
+        <div class="grid justify-items-center mx-auto py-6 px-4">
             {% if alquiler %}
-                <a href="{% url "alquileresinternos" %}">Limpiar Filtro</a>
+                <h1 class="text-3xl font-bold text-gray-900">Maestro Equipos Alquileres</h1>
             {% else %}
-                <a href="{% url "main-maestroequipos" %}">Limpiar Filtro</a>
+                <h1 class="text-3xl font-bold text-gray-900">Maestro Equipos</h1>
             {% endif %}
+        </div>
+    </header>
+    <main class="my-8">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="{% url 'cargointernos' %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Cargo Equipos</a>
+                <a href="{% url 'alquilerequipo' %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Alquiler Equipo</a>
+                <a href="{% url "exportar_internos" %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">Descargar Internos</a>
             </div>
-        </form>
-    </div>
-    {% if alquiler %}
-        <div style="text-align: center; align-items: center;">
-            <h1 style="font-size: x-large;">Cantidad Pesos en alquileres ${{ valor_total_pesos }}</h1>
-            <h1 style="font-size: x-large;">Cantidad Dolares en alquileres ${{ valor_total_dolares }}</h1>
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form method="get" class="">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="interno">Interno:</label>
+                        {{ filter.form.interno|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="up">UP:</label>
+                        {{ filter.form.up|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="marca">Marca:</label>
+                        {{ filter.form.marca|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="modelo">Modelo:</label>
+                        {{ filter.form.modelo|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="dominio">Dominio:</label>
+                        {{ filter.form.dominio|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="actividad">Actividad:</label>
+                        {{ filter.form.actividadvehiculo|add_class:'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="actividad">Dueño</label>
+                        {{ filter.form.actividadvehiculo|add_class:'shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' }}
+                    </div>
+                </div>
+                <div class="flex items-center justify-center space-x-4 mt-4">
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        Filtrar
+                    </button>
+                    {% if alquiler %}
+                        <a href="{% url "alquileresinternos" %}" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            Limpiar Filtro
+                        </a>
+                    {% else %}
+                        <a href="{% url "main-maestroequipos" %}" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            Limpiar Filtro
+                        </a>
+                    {% endif %}
+                    <button type="submit" name="excel" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                </div>
+            </form>
         </div>
-    {% else %}
-        <div style="text-align: center; align-items: center;">
-            <h1 style="font-size: x-large;">Cantidad Pesos ${{ valor_total_pesos }}</h1>
-            <h1 style="font-size: x-large;">Cantidad Dolares ${{ valor_total_dolares }}</h1>
-        </div>
-    {% endif %}
-    <div class="container d-inline-flex p-2" style="display: flex;justify-content: center;font-size: small;font-weight: 200;width: 100%;margin-right: 12rem;">
-        <table class="table table-bordered" style="width: 100%;margin-top: 20px;margin-left: 12rem;">
-            <thead>
-                <tr>
-                    <th scope="col" class="align-middle">Info</th>
-                    {% if form_values.id_value %}
-                        <th scope="col" class="align-middle">Id</th>
+            {% if alquiler %}
+            <!-- Totals section -->
+                <div class="flex justify-between items-center px-6 py-4 bg-white rounded shadow-md">
+                    <h2 class="text-xl font-semibold text-gray-800">Cantidad Pesos en alquileres: ${{ valor_total_pesos }}</h2>
+                    <h2 class="text-xl font-semibold text-gray-800">Cantidad Dólares en alquileres: ${{ valor_total_dolares }}</h2>
+                </div>
+            {% else %}
+                <div class="flex justify-between items-center px-6 py-4 bg-white rounded shadow-md">
+                    <h2 class="text-xl font-semibold text-gray-800">Cantidad Pesos: ${{ valor_total_pesos }}</h2>
+                    <h2 class="text-xl font-semibold text-gray-800">Cantidad Dólares: ${{ valor_total_dolares }}</h2>
+                </div>
+            {% endif %}
+            <div class="bg-white shadow-md rounded-lg my-6 overflow-x-auto">
+              <table class="min-w-full leading-normal">
+                <thead>
+                  <tr>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Info
+                    </th>
+                    {% if alquiler %}
+                      <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                          Precio Dolares
+                      </th>
+                      <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                            Precio Pesos
+                      </th>
+                    {% else %}
+                        <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                          Id
+                        </th>
+                        <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                          Interno
+                        </th>
                     {% endif %}
-                    {% if form_values.interno_value %}
-                        <th scope="col" class="align-middle">Interno</th>
-                    {% endif %}
-                    {% if form_values.up_value %}
-                        <th scope="col" class="align-middle">UP</th>
-                    {% endif %}
-                    {% if form_values.marca_value %}
-                        <th scope="col" class="align-middle">Marca</th>
-                    {% endif %}
-                    {% if form_values.modelo_value %}
-                        <th scope="col" class="align-middle">Modelo</th>
-                    {% endif %}
-                    {% if form_values.tipovehiculo_value %}
-                        <th scope="col" class="align-middle">TipoV</th>
-                    {% endif %}
-                    {% if form_values.chasis_value %}
-                        <th scope="col" class="align-middle">Chasis</th>
-                    {% endif %}
-                    {% if form_values.motor_value %}
-                        <th scope="col" class="align-middle">Motor</th>
-                    {% endif %}
-                    {% if form_values.dominio_value %}
-                        <th scope="col" class="align-middle">Dominio</th>
-                    {% endif %}
-                    {% if form_values.anio_value %}
-                        <th scope="col" class="align-middle">Año</th>
-                    {% endif %}
-                    {% if form_values.aseguradora_value %}
-                        <th scope="col" class="align-middle">Aseguradora</th>
-                    {% endif %}
-                    {% if form_values.seguro_value %}
-                        <th scope="col" class="align-middle">Seguro</th>
-                    {% endif %}
-                    {% if form_values.seguro_pdf_value %}
-                        <th scope="col" class="align-middle">Seg PDF</th>
-                    {% endif %}
-                    {% if form_values.itv_value %}
-                        <th scope="col" class="align-middle">ITV</th>
-                    {% endif %}
-                    {% if form_values.itv_pdf_value %}
-                        <th scope="col" class="align-middle">ITV PDF</th>
-                    {% endif %}
-                    {% if form_values.titulo_pdf_value %}
-                        <th scope="col" class="align-middle">T PDF</th>
-                    {% endif %}
-                    {% if form_values.tarjeta_value %}
-                        <th scope="col" class="align-middle">Tarjeta</th>
-                    {% endif %}
-                    {% if form_values.tarjeta_pdf_value %}
-                        <th scope="col" class="align-middle">T PDF</th>
-                    {% endif %}
-                    {% if form_values.propietario_value %}
-                        <th scope="col" class="align-middle">Dueño</th>
-                    {% endif %}
-                    {% if form_values.chofer_value %}
-                        <th scope="col" class="align-middle">Chofer</th>
-                    {% endif %}
-                    {% if form_values.alquilado_value %}
-                        <th scope="col" class="align-middle">Alquilado</th>
-                    {% endif %}
-                    {% if form_values.valorpesos_value %}
-                        <th scope="col" class="align-middle">Valor P</th>
-                    {% endif %}
-                    {% if form_values.valordolares_value %}
-                        <th scope="col" class="align-middle">Valor D</th>
-                    {% endif %}
-                    {% if form_values.orden_value %}
-                        <th scope="col" class="align-middle">Orden</th>
-                    {% endif %}
-                    {% if form_values.actividad_value %}
-                        <th scope="col" class="align-middle">Actividad</th>
-                    {% endif %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for dato in filter.qs %}
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      UP
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Marca
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Modelo
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      TipoV
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Dominio
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Año
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Dueño
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Orden
+                    </th>
+                    <th scope="col" class="px-5 py-3 bg-gray-900 text-left text-xs font-semibold text-white uppercase tracking-wider">
+                      Actividad
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for dato in filter.qs %}
                     <tr>
-                        <td><a class="btnEdit" href="{% url 'editar_interno' dato.id%}" role="button">Editar</a><a class="btnEdit" href="{% url 'info_interno' dato.id%}" role="button">info</a></td>
-                        {% if form_values.id_value %}
-                            <td>{{ dato.id }}</td>
-                        {% endif %}
-                        {% if form_values.interno_value %}
-                            <td>{{ dato.interno }}</td>
-                        {% endif %}
-                        {% if form_values.up_value %}
-                            <td>{{ dato.up }}</td>
-                        {% endif %}
-                        {% if form_values.marca_value %}
-                            <td>{{ dato.marca }}</td>
-                        {% endif %}
-                        {% if form_values.modelo_value %}
-                            <td>{{ dato.modelo }}</td>
-                        {% endif %}
-                        {% if form_values.tipovehiculo_value %}
-                            <td>{{ dato.tipovehiculo }}</td>
-                        {% endif %}
-                        {% if form_values.chasis_value %}
-                            <td>{{ dato.chasis }}</td>
-                        {% endif %}
-                        {% if form_values.motor_value %}
-                            <td>{{ dato.motor }}</td>
-                        {% endif %}
-                        {% if form_values.dominio_value %}
-                            <td>{{ dato.dominio }}</td>
-                        {% endif %}
-                        {% if form_values.anio_value %}
-                            <td>{{ dato.anio }}</td>
-                        {% endif %}
-                        {% if form_values.aseguradora_value %}
-                            <td>{{ dato.aseguradora }}</td>
-                        {% endif %}
-                        {% if form_values.seguro_value %}
-                            <td>{{ dato.seguro }}</td>
-                        {% endif %}
-                        {% if form_values.seguro_pdf_value %}
-                            <td>{{ dato.seguro_pdf }}</td>
-                        {% endif %}
-                        {% if form_values.itv_value %}
-                            <td>{{ dato.itv }}</td>
-                        {% endif %}
-                        {% if form_values.itv_pdf_value %}
-                            <td>{{ dato.itv_pdf }}</td>
-                        {% endif %}
-                        {% if form_values.titulo_pdf_value %}
-                            <td>{{ dato.titulo_pdf }}</td>
-                        {% endif %}
-                        {% if form_values.tarjeta_value %}
-                            <td>{{ dato.tarjeta }}</td>
-                        {% endif %}
-                        {% if form_values.tarjeta_pdf_value %}
-                            <td>{{ dato.tarjeta_pdf }}</td>
-                        {% endif %}
-                        {% if form_values.propietario_value %}
-                            <td>{{ dato.propietario }}</td>
-                        {% endif %}
-                        {% if form_values.chofer_value %}
-                            <td>{{ dato.chofer }}</td>
-                        {% endif %}
-                        {% if form_values.alquilado_value %}
-                            <td>{{ dato.alquilado }}</td>
-                        {% endif %}
-                        {% if form_values.valorpesos_value %}
-                            <td>{{ dato.valorpesos }}</td>
-                        {% endif %}
-                        {% if form_values.valordolares_value %}
-                            <td>{{ dato.valordolares }}</td>
-                        {% endif %}
-                        {% if form_values.orden_value %}
-                            <td>{{ dato.orden }}</td>
-                        {% endif %}
-                        {% if form_values.actividad_value %}
-                            <td>{{ dato.actividadvehiculo }}</td>
-                        {% endif %}
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        <div class="flex items-center">
+                          <a class="bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href="{% url 'editar_interno' dato.id %}">Editar</a>
+                          <a class="ml-1 bg-red-600 hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110" href="{% url 'info_interno' dato.id %}">Info</a>
+                        </div>
+                      </td>
+                      {% if alquiler %}
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {{ dato.valordolares }}
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            {{ dato.valorpesos }}
+                        </td>
+                      {% else %}
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                          {{ dato.id }}
+                        </td>
+                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                          {{ dato.interno }}
+                        </td>
+                      {% endif %}
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.up }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.marca }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.modelo }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.tipovehiculo }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.dominio }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.anio }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.propietario }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.orden }}
+                      </td>
+                      <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                        {{ dato.actividadvehiculo }}
+                      </td>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        let formContainer = document.getElementById("formContainer");
-        let toggleFormBtn = document.getElementById("toggleFormBtn");
-        toggleFormBtn.addEventListener("click", function () {
-        if (formContainer.style.display === "none") {
-            formContainer.style.display = "block";
-            } else {
-            formContainer.style.display = "none";
-            }
-        });
-        });
-    </script>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
+        </div>
+    </main>
 </body>
 </html>

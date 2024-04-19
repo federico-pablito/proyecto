@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from tablamadre.models import Tanque, Consumo, Repostaje
+from .filters import consumo_filter, repostaje_filter
 from .forms import ConsumoForm, CargarTanqueForm, RepostajeForm
 from django.http import JsonResponse, HttpResponse, HttpResponseForbidden
 from django.db import transaction
@@ -61,7 +62,10 @@ def registrar_consumo(request):
 def historial_cargas(request):
     if request.user.has_perm('tablamadre.puede_ver_consumo'):
         cargas = Consumo.objects.all()
-        return render(request, 'historial_cargas.html', {'cargas': cargas})
+        filtro = consumo_filter(request.GET, queryset=cargas)
+        if filtro.is_valid():
+            cargas = filtro.qs
+        return render(request, 'historial_cargas.html', {'cargas': cargas, 'filtro': filtro})
     else:
         # Acción a realizar si el usuario no tiene permiso
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
@@ -70,6 +74,7 @@ def historial_cargas(request):
 def registrar_repostaje(request):
     if request.user.has_perm('tablamadre.puede_ver_repostaje'):
         if request.method == 'POST':
+
             form = RepostajeForm(request.POST)
             if form.is_valid():
                 repostaje = form.save(commit=False)
@@ -100,7 +105,10 @@ def historial_repostajes(request):
     if request.user.has_perm('tablamadre.puede_ver_repostaje'):
         # Obtener todos los repostajes
         repostajes = Repostaje.objects.all()
-        return render(request, 'historial_repostaje.html', {'repostajes': repostajes})
+        filtro = repostaje_filter(request.GET, queryset=repostajes)
+        if filtro.is_valid():
+            repostajes = filtro.qs
+        return render(request, 'historial_repostaje.html', {'repostajes': repostajes, 'filtro': filtro})
     else:
         # Acción a realizar si el usuario no tiene permiso
         return HttpResponseForbidden("No tienes permiso para acceder a esta página, haber estudiao.")
