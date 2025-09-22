@@ -8,14 +8,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from utils.modelo_a_excel import model_to_excel
 
-##Gaspar recorda que para el JsonResponse tenes que copiar el archivo que cree en /static/assets/js/tanque.js
-##sino jamas se te van a actualizar los tanques, trata de mantenerlo fuera de la app Combustible
-##otra cosa, en el models repostaje agregale la fecha porfavor, que me olvide en su momento y me da paja borrar la base de datos
-##el ivan quiere aplicar filtros para los historiales de repostaje y consumos no se que tipo de filtros aplicaste si los podes copiar
-##para poder filtrar por fecha de repostaje/consumo en el historial un exito sino lo veo yo despues, tambien quiere poder imprimirlo en pdf
-##Trata de copiar tal como esta solamente acomodando en el lugar correspondiente, los ajax son sensibles
-##Tirame la goma xddd
-
 
 @login_required
 def tanque_detail(request):
